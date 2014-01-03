@@ -1,0 +1,51 @@
+### Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+### IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+### OS X Ignores
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+*.sass-cache
+
+### SublimeText
+*.sublime-workspace
+
+### tags created by etags and ctags
+TAGS
+!TAGS/
+tags
+!tags/
+
+### vim
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
