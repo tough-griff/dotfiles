@@ -112,8 +112,7 @@ alias rdm='rake db:migrate'
 alias rdmr='rake db:migrate:redo'
 
 # Zeus
-alias zs='zeus server'
-alias zc='zeus console'
+alias zs='zeus start'
 
 # Rspec
 alias rs='rspec spec'
