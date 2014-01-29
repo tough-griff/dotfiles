@@ -1,0 +1,62 @@
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" === General Config ===
+set number
+set backspace=indent,eol,start
+set history=1000
+set showcmd
+set showmode
+set gcr=a:blinkon0
+set visualbell
+set autoread
+
+set hidden
+
+syntax on
+
+" === Vundle initialization ===
+if filereadable(expand("~/.vim/vundles.vim"))
+  source ~/.vim/vundles.vim
+endif
+
+" === Color scheme ===
+set background=dark
+let base16colorspace=256
+colorscheme base16-solarized
+
+filetype plugin on
+filetype indent on
+
+" === Turn Off Swap Files ===
+set noswapfile
+set nobackup
+set nowb
+
+" === Persistent Undo ===
+" Keep undo history across sessions, by storing in file.
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
+" === Indentation ===
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
+filetype plugin on
+filetype indent on
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+set nowrap
+set linebreak
+
