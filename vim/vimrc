@@ -14,15 +14,15 @@ set autoread
 
 set hidden
 
-syntax on
-
 " === Vundle initialization ===
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
-" === Color scheme ===
-set background=dark
+" === Color scheme and aesthetics ===
+syntax on
+set guifont=Menlo\ for\ Powerline
+
 let base16colorspace=256
 colorscheme base16-solarized
 
@@ -50,9 +50,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-
-filetype plugin on
-filetype indent on
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
