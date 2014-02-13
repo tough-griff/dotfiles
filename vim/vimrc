@@ -21,6 +21,7 @@ endif
 
 " === Color scheme and aesthetics ===
 syntax on
+set background=dark
 set guifont=Menlo\ for\ Powerline
 
 let base16colorspace=256
@@ -56,4 +57,3 @@ set list listchars=tab:\ \ ,trail:·
 
 set nowrap
 set linebreak
-
