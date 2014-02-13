@@ -6,20 +6,21 @@ alias psg="ps aux | grep "
 alias psr='ps aux | grep ruby'
 
 # Show human friendly numbers and colors
-alias df='df -h'
 alias ls='ls -Gh'
 alias ll='ls -lGh'
 alias la='ls -laGh'
+alias l.='ls -lGh -d .*'
+alias df='df -h'
 alias du='du -h -d 1'
 
-# show me files matching "ls grep"
+# Show me files matching "ls grep"
 alias lsg='la | grep'
 
 # Alias Editing
 alias ae='vim ~/.dotfiles/zsh/aliases.zsh'    # alias edit
 alias ar='source ~/.dotfiles/zsh/aliases.zsh' # alias reload
 
-# vim using
+# Using Vim
 mvim --version > /dev/null 2>&1
 MACVIM_INSTALLED=$?
 if [ $MACVIM_INSTALLED -eq 0 ]; then
@@ -102,25 +103,13 @@ alias path='echo -e ${PATH//:/\\n}' # print path entries one-per-line
 # Zippin
 alias gz='tar -zcvf'
 
+# Kill
 alias ka9='killall -9'
 alias k9='kill -9'
 
-# Forward port 80 to 3000
-alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
-
-alias rdm='rake db:migrate'
-alias rdmr='rake db:migrate:redo'
-
 # Zeus
 alias zs='zeus start'
-
-# Rspec
-alias rs='rspec spec'
-
-# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-alias sp='sprintly'
-# spb = sprintly branch - create a branch automatically based on the bug you're working on
-alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
+alias zrs='zeus rspec spec'
 
 # Sublime Text
 alias st='subl'  # I prefer an even shorter alias
