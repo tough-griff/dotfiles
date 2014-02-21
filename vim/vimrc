@@ -2,33 +2,79 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" === General Config ===
-set number
-set backspace=indent,eol,start
-set history=1000
-set showcmd
-set showmode
-set gcr=a:blinkon0
-set visualbell
-set autoread
+" Enable syntax highlighting
+syntax enable
 
-set hidden
+" === Vundle Config ===
+filetype on " without this, vim emits a zero exit status because of :ft off
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" === Vundle initialization ===
+" install Vundle bundles
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
+filetype plugin indent on
+
+" === General Config ===
+set autoread
+set backspace=indent,eol,start
+set clipboard=unnamed
+set gcr=a:blinkon0
+set hidden
+set history=1000
+set ignorecase
+set incsearch
+set laststatus=2
+set linebreak
+set nowrap
+set number
+set ruler
+set scrolloff=3
+set showcmd
+set showmode
+set visualbell
+set wildmenu
+set wildmode=longest,list,full
+
+set mouse=a
+if exists('$TMUX')
+  set ttymouse=xterm2
+endif
+
+let mapleader = ','
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <leader>l :Align
+nmap <leader>a :Ack<space>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>t :CtrlP<CR>
+nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nmap <leader>] :TagbarToggle<CR>
+nmap <leader><space> :call whitespace#strip_trailing()<CR>
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+let g:ctrlp_match_window = 'order:ttb,max:20'
+let g:NERDSpaceDelims=1
+
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " === Color scheme and aesthetics ===
-syntax on
 set background=dark
 set guifont=Menlo\ for\ Powerline
 
 let base16colorspace=256
 colorscheme base16-solarized
-
-filetype plugin on
-filetype indent on
 
 " === Turn Off Swap Files ===
 set noswapfile
@@ -45,15 +91,12 @@ endif
 
 " === Indentation ===
 set autoindent
+set expandtab
+set shiftwidth=2
 set smartindent
 set smarttab
-set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set expandtab
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
-
-set nowrap
-set linebreak
