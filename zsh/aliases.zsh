@@ -10,7 +10,7 @@ alias ls='ls -Gh'
 alias ll='ls -lGh'
 alias la='ls -laGh'
 alias l.='ls -lGh -d .*'
-alias df='df -h'
+alias df='df -H'
 alias du='du -h -d 1'
 
 # Show me files matching "ls grep"
