@@ -72,6 +72,7 @@ endif
 " === Color scheme and aesthetics ===
 set background=dark
 set guifont=Menlo\ for\ Powerline
+let g:airline_powerline_fonts = 1
 
 let base16colorspace=256
 colorscheme base16-solarized
