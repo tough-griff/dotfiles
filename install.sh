@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-if [ "$TG_DOTFILES_FLAG" == "TRUE" ]; then
-  echo "Already installed."
+if [ "$TG_DOTFILES_FLAG" = "TRUE" ]; then
+  echo "Already installed. Aborting."
 else
   echo "Installing Tough Griff dotfiles"
   cd $HOME
