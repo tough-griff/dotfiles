@@ -18,7 +18,7 @@ else
   # Vim
   echo "Installing Vim configurations"
   ln -sv .dotfiles/vim .vim
-  ln -sv .dotfiles/vim/vimrc .vim
+  ln -sv .dotfiles/vim/vimrc .vimrc
 
   # Git
   echo "Installing Git dotfiles"
@@ -37,4 +37,9 @@ else
   mkdir -v .config
   cd .config
   ln -sv ../.dotfiles/config/base16-shell
+
+  # .hushlogin
+  echo "Hushing login spam"
+  cd $HOME
+  ln -sv .dotfiles/hushlogin .hushlogin
 fi
