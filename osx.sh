@@ -546,7 +546,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 #defaults write org.x.X11 wm_ffm -bool true
 
 # Install pretty iTerm colors
-#open "${HOME}/init/Mathias.itermcolors"
+open "${HOME}/.dotfiles/iterm2/base16-iterm2/base16-solarized.dark.256.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
