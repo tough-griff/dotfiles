@@ -24,8 +24,8 @@ cask install iterm2
 cask install macvim
 cask install pckeyboardhack
 cask install sizeup
-cask install sublime-text
-cask install the-unarchiver
+cask install sublime-text --appdir=/Applications
+cask install the-unarchiver --appdir=/Applications
 cask install transmission
 cask install transmit
 cask install virtualbox
