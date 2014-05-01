@@ -42,4 +42,8 @@ else
   echo "Hushing login spam"
   cd $HOME
   ln -sv .dotfiles/hushlogin .hushlogin
+
+  # bin directory
+  echo "Installing personal bin directory"
+  ln -sv .dotfiles/bin
 fi
