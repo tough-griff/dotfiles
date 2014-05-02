@@ -6,10 +6,10 @@ alias psg="ps aux | grep "
 alias psr='ps aux | grep ruby'
 
 # Show human friendly numbers and colors
-alias ls='ls -Gh'
-alias ll='ls -lGh'
-alias la='ls -laGh'
-alias l.='ls -lGh -d .*'
+alias ls='ls -h --color=auto'
+alias ll='ls -lh --color=auto'
+alias la='ls -lah --color=auto'
+alias l.='ls -lh -d .*'
 alias df='df -H'
 alias du='du -h -d 1'
 
