@@ -3,9 +3,12 @@ My personal configuration and dotfiles.
 
 ## installation
 --- WIP ---
-Run the following from your home directory:
+First, run the following bootstrap script:
+
 ```
-git clone --recursive git@github.com:tough-griff/dotfiles.git .dotfiles
-cd .dotfiles
-./install.sh
+sh -c "`curl -fsSL https://raw.githubusercontent.com/tough-griff/dotfiles/master/bootstrapper.sh`"
 ```
+
+Then, once git and zsh are installed, clone the repository with
+`git clone --recursive https://github.com/tough-griff/dotfiles.git "$HOME/.dotfiles"`
+and run the install script `install.sh`
