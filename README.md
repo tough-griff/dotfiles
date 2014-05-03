@@ -1,7 +1,4 @@
-# dotfiles
-My personal dotfiles and install scripts.
-
-## installation
+# Installation
 First, run the following bootstrap script:
 
 ```
