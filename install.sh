@@ -46,6 +46,6 @@ else
   ln -sv $HOME/.dotfiles/bin $HOME/bin
 
   # Install Brewfile and Caskfile apps
-  brew bundle $HOME/Brewfile
-  brew bundle $HOME/Caskfile
+  brew bundle $HOME/.dotfiles/Brewfile
+  brew bundle $HOME/.dotfiles/Caskfile
 fi
