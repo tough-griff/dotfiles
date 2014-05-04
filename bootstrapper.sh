@@ -12,9 +12,5 @@ fi
 # Install zsh
 brew install git zsh
 
-# if [ ! -d "$HOME/.dotfiles" ]; then
-  # echo "Cloning dotfiles."
-  # git clone --recursive https://github.com/tough-griff/dotfiles.git "$HOME/.dotfiles"
-# else
-  # echo "Dotfiles repo alread exists."
-# fi
+echo "\nPlease configure git and run the following command:\n"
+echo '`git clone --recursive https://github.com/tough-griff/dotfiles.git "$HOME/.dotfiles"`\n'
