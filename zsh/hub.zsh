@@ -1,2 +1,4 @@
 # Implements the `hub` enhancements to `git`
-eval "$(hub alias -s)"
+if test $(which hub); then
+  eval "$(hub alias -s)"
+fi
