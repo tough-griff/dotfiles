@@ -46,6 +46,7 @@ else
   ln -sv $HOME/.dotfiles/bin $HOME/bin
 
   # Install Brewfile and Caskfile apps
+  export HOMEBREW_CASK_OPTS="--caskroom=/usr/local/Caskroom"
   brew bundle $HOME/.dotfiles/Brewfile
   brew bundle $HOME/.dotfiles/Caskfile
 fi
