@@ -14,6 +14,7 @@ cask install alfred
 cask install bartender
 cask install bittorrent-sync
 cask install caffeine
+cask install charles
 cask install dropbox
 cask install firefox --appdir=/Applications
 cask install firefox-aurora
