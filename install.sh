@@ -32,6 +32,7 @@ else
   ln -sv $HOME/.dotfiles/ruby/gemrc $HOME/.gemrc
   ln -sv $HOME/.dotfiles/ruby/pryrc $HOME/.pryrc
   ln -sv $HOME/.dotfiles/ruby/rdebugrc $HOME/.rdebugrc
+  ln -sv $HOME/.dotfiles/ruby/rvm/rvmrc $HOME/.rvmrc
 
   # .config
   echo "Installing base16-shell config files"
