@@ -67,6 +67,7 @@ alias glg='git l'
 alias glog='git l'
 alias co='git co'
 alias gf='git fetch'
+alias gfa='git fetch --all --verbose --prune'
 alias gfch='git fetch'
 alias gd='git diff'
 alias gb='git b'
@@ -108,9 +109,14 @@ alias ka9='killall -9'
 alias k9='kill -9'
 
 # Zeus
-alias zs='zeus start'
+alias zeus='NOEXEC_DISABLE=1 zeus'
+alias zc= 'zeus console'
+alias zg='zeus generate'
+alias zrk='zeus rake'
 alias zrs='zeus rspec spec'
+alias zs='zeus start'
 
 # Sublime Text
-alias st='subl'  # I prefer an even shorter alias
-alias stt='st .' # open this directory in ST2
+alias st='subl' # I prefer an even shorter alias
+alias stt='subl .' # open this directory in ST2
+alias stp='subl *.sublime-project'

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for dir in /Users/griffin/Staq/staq_*
+do
+  cd $dir
+  pwd
+  git pull
+done
+
