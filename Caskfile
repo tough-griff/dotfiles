@@ -23,7 +23,6 @@ cask install google-chrome-canary
 cask install google-drive
 cask install hipchat
 cask install iterm2
-cask install macvim
 cask install pckeyboardhack
 cask install sizeup
 cask install sublime-text --appdir=/Applications

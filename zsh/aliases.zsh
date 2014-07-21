@@ -17,21 +17,11 @@ alias du='du -h -d 1'
 alias lsg='la | grep'
 
 # Alias Editing
-alias ae='vim ~/.dotfiles/zsh/aliases.zsh'    # alias edit
+alias ae='nano ~/.dotfiles/zsh/aliases.zsh'    # alias edit
 alias ar='source ~/.dotfiles/zsh/aliases.zsh' # alias reload
 
-# Using Vim
-mvim --version > /dev/null 2>&1
-MACVIM_INSTALLED=$?
-if [ $MACVIM_INSTALLED -eq 0 ]; then
-  alias vim="mvim -v"
-fi
-
-# vimrc editing
-alias ve='vim ~/.vimrc'
-
 # zsh profile editing
-alias ze='vim ~/.zshrc'
+alias ze='nano ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
@@ -43,7 +33,6 @@ alias gsa='git stash apply'
 alias gsh='git show'
 alias gshw='git show'
 alias gshow='git show'
-alias gi='vim .gitignore'
 alias gcm='git ci -m'
 alias gcim='git ci -m'
 alias gci='git ci'
