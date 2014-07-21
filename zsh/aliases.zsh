@@ -99,7 +99,8 @@ alias tf='tail -f'
 alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias cl='clear'
-alias path='echo -e ${PATH//:/\\n}' # print path entries one-per-line
+alias path='echo -e ${PATH//:/\\n}'   # print path entries one-per-line
+alias fpath='echo -e ${FPATH//:/\\n}' # print fpath entries one-per-line
 
 # Zippin
 alias gz='tar -zcvf'
@@ -117,6 +118,6 @@ alias zrs='zeus rspec spec'
 alias zs='zeus start'
 
 # Sublime Text
-alias st='subl' # I prefer an even shorter alias
+alias st='subl'    # I prefer an even shorter alias
 alias stt='subl .' # open this directory in ST2
 alias stp='subl *.sublime-project'

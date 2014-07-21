@@ -47,10 +47,10 @@
 
   # log
   l = log --graph --date=short
-  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
-  changelog = log --pretty=format:\" * %s\"
-  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+  changes = "log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status"
+  short = "log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\""
+  changelog = "log --pretty=format:\" * %s\""
+  shortnocolor = "log --pretty=format:\"%h %cr %cn %s\""
 
   # pull
   pl = pull                         # pull
@@ -93,13 +93,9 @@
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
   prompt = false
-[mergetool "mvimdiff"]
-  cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
-  keepbackup=false
 [merge]
   summary = true
   verbosity = 1
-  tool = mvimdiff
 [apply]
   whitespace = nowarn
 [branch]
@@ -110,7 +106,7 @@
   default = current
 [core]
   autocrlf = false
-  editor = "mvim -v"
+  editor = "atom --wait"
   excludesfile = ~/.gitignore
   pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
 [advice]

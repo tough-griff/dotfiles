@@ -16,11 +16,6 @@ else
 
   chsh -s /usr/local/bin/zsh
 
-  # Vim
-  echo "Installing Vim configurations"
-  ln -sv $HOME/.dotfiles/vim $HOME/.vim
-  ln -sv $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
-
   # Git
   echo "Installing Git dotfiles"
   ln -sv $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
