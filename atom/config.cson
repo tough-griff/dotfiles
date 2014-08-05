@@ -1,0 +1,37 @@
+'core':
+  'destroyEmptyPanes': false
+  'projectHome': '/Users/griffin/Developer'
+  'useReactEditor': true
+  'themes': [
+    'atom-soda-dark-ui'
+    'base16-solarized-dark-syntax'
+  ]
+'editor':
+  'fontFamily': 'Menlo'
+  'fontSize': 15
+  'showIndentGuide': true
+'exception-reporting':
+  'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
+'file-types':
+  '(.?)gitconfig': 'source.git-config'
+  '(.?)gitignore': 'source.git-config'
+  '(.?)zlogin': 'source.shell'
+  '(.?)zlogout': 'source.shell'
+  '(.?)zpreztorc': 'source.shell'
+  '(.?)zprofile': 'source.shell'
+  '(.?)zshenv': 'source.shell'
+  '(.?)zshrc': 'source.shell'
+'fuzzy-finder':
+  'ignoredNames': [
+    '**/vendor/cache/*'
+  ]
+'metrics':
+  'userId': '8e7208e4b8bc82e2315cd4914081208b721197de'
+'minimap':
+  'minimapScrollIndicator': false
+'release-notes':
+  'viewedVersion': '0.94.0'
+'welcome':
+  'showOnStartup': false
+'whitespace':
+  'ignoreWhitespaceOnCurrentLine': false

@@ -25,6 +25,7 @@ install ack
 install fasd
 install git
 install hr
+install httpie
 install hub
 install lynx
 install node

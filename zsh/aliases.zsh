@@ -101,13 +101,8 @@ alias k9='kill -9'
 
 # Zeus
 alias zeus='NOEXEC_DISABLE=1 zeus'
-alias zc= 'zeus console'
+alias zc='zeus console'
 alias zg='zeus generate'
 alias zrk='zeus rake'
 alias zrs='zeus rspec spec'
 alias zs='zeus start'
-
-# Sublime Text
-alias st='subl'    # I prefer an even shorter alias
-alias stt='subl .' # open this directory in ST2
-alias stp='subl *.sublime-project'

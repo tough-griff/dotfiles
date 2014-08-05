@@ -18,16 +18,15 @@ else
 
   # Git
   echo "Installing Git dotfiles"
-  ln -sv $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
-  ln -sv $HOME/.dotfiles/git/gitignore $HOME/.gitignore
+  for rcfile in $HOME/.dotfiles/git/*; do
+    ln -sv "$rcfile" "$HOME/.${rcfile:t}"
+  done
 
   # Ruby
   echo "Installing Ruby dotfiles"
-  ln -sv $HOME/.dotfiles/ruby/aprc $HOME/.aprc
-  ln -sv $HOME/.dotfiles/ruby/gemrc $HOME/.gemrc
-  ln -sv $HOME/.dotfiles/ruby/pryrc $HOME/.pryrc
-  ln -sv $HOME/.dotfiles/ruby/rdebugrc $HOME/.rdebugrc
-  ln -sv $HOME/.dotfiles/ruby/rvm/rvmrc $HOME/.rvmrc
+  for rcfile in $HOME/.dotfiles/ruby/*; do
+    ln -sv "$rcfile" "$HOME/.${rcfile:t}"
+  done
 
   # .config
   echo "Installing base16-shell config files"

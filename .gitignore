@@ -1,5 +1,7 @@
-vim/backups
-vim/bundle/*
-!vim/bundle/vundle
+atom/.node-gyp
+atom/.npm
+atom/dev
+atom/compile-cache
+atom/storage
 
-git/gitconfig.user
+**/*.user

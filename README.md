@@ -1,4 +1,5 @@
-# Installation
+# ~/.dotfiles
+## Installation
 First, run the following bootstrap script:
 
 ```
@@ -15,5 +16,5 @@ Finally, run the install script:
 
 ```
 cd $HOME/.dotfiles
-./install.sh
+./install.zsh
 ```

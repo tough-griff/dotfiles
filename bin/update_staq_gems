@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for dir in ~/Staq/staq_*; do
+  cd $dir && pwd
+  git up
+  echo
+done

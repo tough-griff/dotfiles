@@ -11,6 +11,7 @@ tap caskroom/versions
 
 # Install applications
 cask install alfred
+cask install atom --appdir=/Applications
 cask install bartender
 cask install bittorrent-sync
 cask install caffeine
@@ -18,14 +19,14 @@ cask install charles
 cask install dropbox
 cask install firefox --appdir=/Applications
 cask install firefox-aurora
+cask install flux
 cask install google-chrome --appdir=/Applications
 cask install google-chrome-canary
 cask install google-drive
 cask install hipchat
 cask install iterm2
-cask install pckeyboardhack
-cask install sizeup
-cask install sublime-text --appdir=/Applications
+cask install seil
+cask install spectacle
 cask install the-unarchiver --appdir=/Applications
 cask install transmission
 cask install transmit

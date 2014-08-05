@@ -11,6 +11,7 @@ fi
 
 # Install zsh
 brew install git zsh
+echo "NOTE: /usr/local/bin/zsh must be added to /etc/shells"
 
 echo "\nPlease configure git and run the following command:\n"
 echo '`git clone --recursive https://github.com/tough-griff/dotfiles.git "$HOME/.dotfiles"`\n'

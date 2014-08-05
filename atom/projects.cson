@@ -1,0 +1,10 @@
+'the-draconomicon':
+  'title': 'The Draconomicon'
+  'paths': [
+    '/Users/griffin/Developer/the-draconomicon'
+  ]
+'dotfiles':
+  'title': '~/.dotfiles'
+  'paths': [
+    '/Users/griffin/.dotfiles'
+  ]
