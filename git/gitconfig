@@ -1,5 +1,33 @@
-# set your user tokens as environment variables, such as ~/.secrets
-# See the README for examples.
+[user]
+  name = "Griffin Yourick"
+  email = "gryphon92@gmail.com"
+
+[github]
+  user = tough-griff
+
+[advice]
+  statusHints = false
+
+[alias]
+  amend = commit --amend            # ammend your last commit
+  ammend = commit --amend           # ammend your last commit
+  b = branch -v                     # branch (verbose)
+  c = commit -m                     # commit with message
+  ca = commit -am                   # commit all with message
+  cb = checkout -b                  # create and switch to a new branch
+  ci = commit                       # commit
+  co = checkout                     # checkout
+  d = diff                          # diff unstaged changes
+  dc = diff --cached                # diff staged changes
+  r = remote -v                     # show remotes (verbose)
+  s = status --short                # short status
+  st = status                       # status
+  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+  unstage = reset HEAD              # remove files from index (tracking)
+
+[branch]
+  autosetuprebase = always
+
 [color]
   ui = true
 [color "branch"]
@@ -7,124 +35,27 @@
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow
   frag = magenta
-  old = red
+  meta = yellow
   new = green
-[alias]
-  # add
-  a = add                           # add
-  chunkyadd = add --patch           # stage commits chunk by chunk
-
-  # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
-  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-  snapshots = !git stash list --grep snapshot
-
-  #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
-  recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
-
-  # branch
-  b = branch -v                     # branch (verbose)
-
-  # commit
-  c = commit -m                     # commit with message
-  ca = commit -am                   # commit all with message
-  ci = commit                       # commit
-  amend = commit --amend            # ammend your last commit
-  ammend = commit --amend           # ammend your last commit
-
-  # checkout
-  co = checkout                     # checkout
-  nb = checkout -b                  # create and switch to a new branch (mnemonic: "git new branch branchname...")
-
-  # cherry-pick
-  cp = cherry-pick -x               # grab a change from a branch
-
-  # diff
-  d = diff                          # diff unstaged changes
-  dc = diff --cached                # diff staged changes
-  last = diff HEAD^                 # diff last committed change
-
-  # log
-  l = log --graph --date=short
-  changes = "log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status"
-  short = "log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\""
-  changelog = "log --pretty=format:\" * %s\""
-  shortnocolor = "log --pretty=format:\"%h %cr %cn %s\""
-
-  # pull
-  pl = pull                         # pull
-
-  # push
-  ps = push                         # push
-
-  # rebase
-  rc = rebase --continue            # continue rebase
-  rs = rebase --skip                # skip rebase
-
-  # remote
-  r = remote -v                     # show remotes (verbose)
-
-  # reset
-  unstage = reset HEAD              # remove files from index (tracking)
-  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
-  filelog = log -u                  # show changes to a file
-  mt = mergetool                    # fire up the merge tool
-
-  # stash
-  ss = stash                        # stash changes
-  sl = stash list                   # list stashes
-  sa = stash apply                  # apply stash (restore changes)
-  sd = stash drop                   # drop stashes (destory changes)
-
-  # status
-  s = status                        # status
-  st = status                       # status
-  stat = status                     # status
-
-  # tag
-  t = tag -n                        # show tags with <n> lines of each tag message
-
-  # svn helpers
-  svnr = svn rebase
-  svnd = svn dcommit
-  svnl = svn log --oneline --show-commit
-[format]
-  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
-[mergetool]
-  prompt = false
-[merge]
-  summary = true
-  verbosity = 1
-[apply]
-  whitespace = nowarn
-[branch]
-  autosetuprebase = always
-[push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
-  default = current
+  old = red
 [core]
-  autocrlf = false
   editor = "atom --wait"
   excludesfile = ~/.gitignore
-  pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
-[advice]
-  statusHints = false
+
 [diff]
-  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
-  # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
-  algorithm = patience
-[rerere]
-  # Remember my merges
-  # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
-  enabled = true
-[include]
-  path = ~/.gitconfig.user
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+
+[format]
+  graph = true
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
+[log]
+  abbrevCommit = true
+
+[push]
+  default = current
+
 [git-up "bundler"]
 	check = true
 	autoinstall = true

@@ -1,8 +1,7 @@
+# Atom
 atom/.node-gyp
 atom/.npm
 atom/compile-cache
 atom/dev
 atom/packages
 atom/storage
-
-**/*.user
