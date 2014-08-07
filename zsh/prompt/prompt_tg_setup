@@ -1,0 +1,10 @@
+function prompt_tg_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  PROMPT='%F{cyan}%1~ %B%F{red}❯%F{yellow}❯%F{green}❯%f%b '
+  RPROMPT=''
+  SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+}
+
+prompt_tg_setup "$@"

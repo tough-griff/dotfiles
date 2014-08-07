@@ -2,12 +2,21 @@ dotfiles="$HOME/dotfiles"
 
 # Load supporting config files
 source "$dotfiles/zsh/completion.zsh"
-
 autoload -U colors && colors
 
-# Prompt TODO
+# Prompt
 # ------
-export PROMPT="%~ $ "
+fpath=("$dotfiles/zsh/prompt" $fpath)
+autoload -Uz promptinit && promptinit
+prompt 'tg'
+
+# Tab Titles
+# ----------
+precmd () {
+  tab_label=${PWD/${HOME}/\~}
+  echo -ne "\e]2;${tab_label}\a"
+  echo -ne "\e]1;${tab_label: -24}\a"
+}
 
 # GNU-Utilities
 # -------------
@@ -88,15 +97,33 @@ chruby ruby-2.0.0
 # -----------------------
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Directories
-# -----------
-setopt AUTO_CD
-setopt CDABLE_VARS
-setopt EXTENDED_GLOB
-unsetopt CLOBBER
-
 # Aliases
 # -------
+# Disable correction.
+alias ack='nocorrect ag'
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias gcc='nocorrect gcc'
+alias gist='nocorrect gist'
+alias grep='nocorrect grep'
+alias heroku='nocorrect heroku'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+
+# Disable globbing.
+alias fc='noglob fc'
+alias find='noglob find'
+alias ftp='noglob ftp'
+alias history='noglob history'
+alias locate='noglob locate'
+alias rake='noglob rake'
+alias rsync='noglob rsync'
+alias scp='noglob scp'
+alias sftp='noglob sftp'
+
 # *nix
 alias l='ls -h --color=auto --group-directories-first'
 alias ls='ls -h --color=auto --group-directories-first'
@@ -259,3 +286,11 @@ function retry() {
   sleep 1
   retry $@
 }
+
+# Misc
+# ----
+setopt AUTO_CD
+setopt CDABLE_VARS
+setopt CORRECT
+setopt EXTENDED_GLOB
+unsetopt CLOBBER
