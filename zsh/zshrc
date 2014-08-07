@@ -1,0 +1,261 @@
+dotfiles="$HOME/dotfiles"
+
+# Load supporting config files
+source "$dotfiles/zsh/completion.zsh"
+
+autoload -U colors && colors
+
+# Prompt TODO
+# ------
+export PROMPT="%~ $ "
+
+# GNU-Utilities
+# -------------
+# Provides for the interactive use of GNU utilities on BSD systems.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Get the prefix or use the default.
+_gnu_utility_p='g'
+
+_gnu_utility_cmds=(
+  # Coreutils
+  '[' 'base64' 'basename' 'cat' 'chcon' 'chgrp' 'chmod' 'chown'
+  'chroot' 'cksum' 'comm' 'cp' 'csplit' 'cut' 'date' 'dd' 'df'
+  'dir' 'dircolors' 'dirname' 'du' 'echo' 'env' 'expand' 'expr'
+  'factor' 'false' 'fmt' 'fold' 'groups' 'head' 'hostid' 'id'
+  'install' 'join' 'kill' 'link' 'ln' 'logname' 'ls' 'md5sum'
+  'mkdir' 'mkfifo' 'mknod' 'mktemp' 'mv' 'nice' 'nl' 'nohup' 'nproc'
+  'od' 'paste' 'pathchk' 'pinee' 'pr' 'printenv' 'printf' 'ptx'
+  'pwd' 'readlink' 'realpath' 'rm' 'rmdir' 'runcon' 'seq' 'sha1sum'
+  'sha224sum' 'sha256sum' 'sha384sum' 'sha512sum' 'shred' 'shuf'
+  'sleep' 'sort' 'split' 'stat' 'stty' 'sum' 'sync' 'tac' 'tail'
+  'tee' 'test' 'timeout' 'touch' 'tr' 'true' 'truncate' 'tsort'
+  'tty' 'uname' 'unexpand' 'uniq' 'unlink' 'uptime' 'users' 'vdir'
+  'wc' 'who' 'whoami' 'yes'
+
+  # The following utilities are not part of Coreutils but installed separately.
+
+  # Binutils
+  'addr2line' 'ar' 'c++filt' 'elfedit' 'nm' 'objcopy' 'objdump'
+  'ranlib' 'readelf' 'size' 'strings' 'strip'
+
+  # Findutils
+  'find' 'locate' 'oldfind' 'updatedb' 'xargs'
+
+  # Libtool
+  'libtool' 'libtoolize'
+
+  # Miscellaneous
+  'getopt' 'grep' 'indent' 'sed' 'tar' 'time' 'units' 'which'
+)
+
+# Wrap GNU utilities in functions.
+for _gnu_utility_cmd in "${_gnu_utility_cmds[@]}"; do
+  _gnu_utility_pcmd="${_gnu_utility_p}${_gnu_utility_cmd}"
+  if (( ${+commands[${_gnu_utility_pcmd}]} )); then
+    eval "
+      function ${_gnu_utility_cmd} {
+        '${commands[${_gnu_utility_pcmd}]}' \"\$@\"
+      }
+    "
+  fi
+done
+
+unset _gnu_utility_{p,cmds,cmd,pcmd}
+
+# FASD
+# ----
+# Use fasd for ultra-fast navigation
+if test $(which fasd); then
+  fasd_cache="$HOME/.fasd-init-zsh"
+  if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+    eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)" >| "$fasd_cache"
+  fi
+  source "$fasd_cache"
+  unset fasd_cache
+fi
+
+# chruby
+# ------
+source '/usr/local/share/chruby/chruby.sh'
+source '/usr/local/share/chruby/auto.sh'
+chruby ruby-2.0.0
+
+# zsh-syntax-highlighting
+# -----------------------
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Directories
+# -----------
+setopt AUTO_CD
+setopt CDABLE_VARS
+setopt EXTENDED_GLOB
+unsetopt CLOBBER
+
+# Aliases
+# -------
+# *nix
+alias l='ls -h --color=auto --group-directories-first'
+alias ls='ls -h --color=auto --group-directories-first'
+alias ll='ls -l'
+alias la='ll -a'
+alias l.='ll -d .*'
+alias lsg='la | grep'
+
+alias df='df -H'
+alias du='du -h -d 1'
+
+alias psa='ps aux'
+function psg() {
+  ps aux | grep $@ | grep -v grep
+}
+
+alias path='echo -e ${PATH//:/\\n}' # print path entries one-per-line
+
+# Homebrew
+alias brewc='brew cleanup'
+alias brewC='brew cleanup --force'
+alias brewi='brew install'
+alias brewl='brew list'
+alias brews='brew search'
+alias brewu='brew upgrade'
+alias brewU='brew update && brew upgrade'
+alias brewx='brew remove'
+
+# Git
+alias g='git'
+alias ga='git a'
+alias gb='git b'
+alias gba='git ba'
+alias gc='git c'
+alias gci='git ci'
+alias gco='git co'
+alias gcob='git cob'
+alias gd='git d'
+alias gdc='git dc'
+alias gf='git f'
+alias gfa='git fa'
+alias gl='git l'
+alias gs='git s'
+alias gst='git st'
+
+# Ruby
+alias rb='ruby'
+alias rbb='bundle'
+alias rbbe='bundle exec'
+alias rbbi='bundle install'
+alias rbbu='bunlde update'
+
+# Misc
+eval "$(hub alias -s)"
+
+# Functions
+# ---------
+# Gets password from the OS X Keychain.
+# $ get-pass github
+function get-pass() {
+  keychain="$HOME/Library/Keychains/login.keychain"
+  security -q find-generic-password -g -l $@ $keychain 2>&1 |\
+    awk -F\" '/password:/ {print $2}';
+}
+
+# Opens file in EDITOR.
+function edit() {
+  local dir=$1
+  [[ -z "$dir" ]] && dir='.'
+  $EDITOR $dir
+}
+
+# Execute commands for each file in current directory.
+function foreach() {
+  for dir in *; do
+    echo "${dir}:"
+    cd $dir
+    $@
+    cd ..
+  done
+}
+
+# Find files and exec commands at them.
+# $ find-exec .coffee cat | wc -l
+# # => 9762
+function find-exec() {
+  find . -type f -iname "*${1:-}*" -exec "${2:-file}" '{}' \;
+}
+
+# Better find(1)
+function ff() {
+  find . -iname "*${1:-}*"
+}
+
+# Count code lines in some directory.
+# $ loc py js css
+# # => Lines of code for .py: 3781
+# # => Lines of code for .js: 3354
+# # => Lines of code for .css: 2970
+# # => Total lines of code: 10105
+function loc() {
+  local total
+  local firstletter
+  local ext
+  local lines
+  total=0
+  for ext in $@; do
+    firstletter=$(echo $ext | cut -c1-1)
+    if [[ firstletter != "." ]]; then
+      ext=".$ext"
+    fi
+    lines=`find-exec "*$ext" cat | wc -l`
+    lines=${lines// /}
+    total=$(($total + $lines))
+    echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
+  done
+  echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}$total${reset_color}"
+}
+
+# Show how much RAM application uses.
+# $ ram safari
+# # => safari uses 154.69 MBs of RAM.
+function ram() {
+  local sum
+  local items
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+  else
+    sum=0
+    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
+      sum=$(($i + $sum))
+    done
+    sum=$(echo "scale=2; $sum / 1024.0" | bc)
+    if [[ $sum != "0" ]]; then
+      echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM."
+    else
+      echo "There are no processes with pattern '${fg[blue]}${app}${reset_color}' are running."
+    fi
+  fi
+}
+
+# 4 lulz.
+function compute() {
+  while true; do head -n 100 /dev/urandom; sleep 0.1; done \
+    | hexdump -C | grep "ca fe"
+}
+
+# Load 8 cores at once.
+function maxcpu() {
+  dn=/dev/null
+  yes > $dn & yes > $dn & yes > $dn & yes > $dn &
+  yes > $dn & yes > $dn & yes > $dn & yes > $dn &
+}
+
+# $ retry ping google.com
+function retry() {
+  echo Retrying "$@"
+  $@
+  sleep 1
+  retry $@
+}
