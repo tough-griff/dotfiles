@@ -1,9 +1,14 @@
 function prompt_tg_setup {
   setopt LOCAL_OPTIONS
-  unsetopt XTRACE KSH_ARRAYS
 
-  PROMPT='%F{cyan}%1~ %B%F{red}❯%F{yellow}❯%F{green}❯%f%b '
-  RPROMPT=''
+  local cwd='%F{cyan}%1~%f'
+  local first='%F{red}❯%f'
+  local middle='%F{yellow}❯%f'
+  local last='%(?.%F{green}.%F{red})❯%f'
+  local clock='%F{yellow}%t%f'
+
+  PROMPT="$cwd $first$middle$last "
+  RPROMPT="$clock"
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 

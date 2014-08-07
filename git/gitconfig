@@ -19,6 +19,7 @@
 	r = "remote --verbose"
 	s = "status --short"
 	st = "status"
+	u = "up"
 
 	# new functionality
 	amend = "commit --amend"        # amend your last commit

@@ -10,7 +10,7 @@ fi
 
 # Editors
 # -------
-export EDITOR='nano'
+export EDITOR='atom'
 export VISUAL='atom'
 export PAGER='less'
 

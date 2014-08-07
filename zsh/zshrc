@@ -168,6 +168,7 @@ alias gfa='git fa'
 alias gl='git l'
 alias gs='git s'
 alias gst='git st'
+alias gu='git u'
 
 # Ruby
 alias rb='ruby'
@@ -197,12 +198,13 @@ function edit() {
 }
 
 # Execute commands for each file in current directory.
-function foreach() {
+function each() {
   for dir in *; do
     echo "${dir}:"
     cd $dir
     $@
     cd ..
+    echo
   done
 }
 
