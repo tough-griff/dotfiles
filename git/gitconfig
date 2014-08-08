@@ -16,6 +16,8 @@
 	f = "fetch"
 	fa = "fetch --all --verbose --prune"
 	l = "log --graph"
+	p = "push"
+	pl = "pull"
 	r = "remote --verbose"
 	s = "status --short"
 	st = "status"
