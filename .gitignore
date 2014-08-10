@@ -5,3 +5,5 @@ atom/compile-cache
 atom/dev
 atom/packages
 atom/storage
+
+secrets

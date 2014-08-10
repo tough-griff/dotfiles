@@ -6,46 +6,37 @@ update
 upgrade
 
 # Install GNU core utilities
-# Add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+# see zshrc GNU-utils
 install coreutils
 install moreutils
 install findutils
-install gnu-sed --default-names
-
-# Install new Bash and Zsh
-install bash
-install zsh
-
-# Install more recent versions of some OS X tools
-install vim --override-system-vi
-install homebrew/dupes/grep
+install gnu-sed
 
 # Install other useful binaries
-install ack
+install casperjs --devel
+install chruby
 install fasd
+install ghi
 install git
-install hr
+install heroku-toolbelt
 install httpie
 install hub
-install lynx
 install node
-install p7zip
-install pigz
-install pv
+install openssl
+install phantomjs
+install pound
 install python
 install python3
-install rename
+install readline
+install redis
+install ruby-install
 install the_silver_searcher
 install tree
-install webkit2png
 install wget --enable-iri
-install xz
-
-# Install less useful but fun binaries
-install cmatrix
-install cowsay
-install figlet
-install fortune
+install zsh
+install zsh-completions
+install zsh-history-substring-search
+install zsh-syntax-highlighting
 
 # Remove outdated versions from the cellar
 cleanup

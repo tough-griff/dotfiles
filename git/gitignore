@@ -1,51 +1,38 @@
-### Emacs
+# === emacs ===
 *~
 \#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
-.elc
+*.elc
 auto-save-list
 tramp
 .\#*
-
-# Org-mode
 .org-id-locations
 *_archive
+*_flymake.*
+/eshell/history
+/eshell/lastdir
+/elpa/
+*.rel
+/auto/
 
-### IntelliJ
-*.iml
-*.ipr
-*.iws
-.idea/
-
-### OS X Ignores
+# === OSX ===
 .DS_Store
 .AppleDouble
 .LSOverride
 Icon
-
-# Thumbnails
 ._*
-Thumbs.db
-
-# Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
-### SASS Ignores - "Sassy CSS" http://sass-lang.com/
-*.sass-cache
-
-### SublimeText
-*.sublime-workspace
-
-### tags created by etags and ctags
-TAGS
-!TAGS/
-tags
-!tags/
-
-### vim
-*.s[a-w][a-z]
+# === vim ===
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist

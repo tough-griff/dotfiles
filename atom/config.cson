@@ -7,20 +7,13 @@
     'base16-solarized-dark-syntax'
   ]
 'editor':
-  'fontFamily': 'Menlo'
-  'fontSize': 15
+  'fontFamily': 'Source Code Pro'
   'showIndentGuide': true
+  'fontSize': 14
 'exception-reporting':
   'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
 'file-types':
-  '(.?)gitconfig': 'source.git-config'
-  '(.?)gitignore': 'source.git-config'
-  '(.?)zlogin': 'source.shell'
-  '(.?)zlogout': 'source.shell'
-  '(.?)zpreztorc': 'source.shell'
-  '(.?)zprofile': 'source.shell'
-  '(.?)zshenv': 'source.shell'
-  '(.?)zshrc': 'source.shell'
+  '(\.?)zlogin': 'source.shell'
 'fuzzy-finder':
   'ignoredNames': [
     '**/vendor/cache/*'

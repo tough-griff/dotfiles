@@ -1,6 +1,0 @@
-#!/bin/sh
-# Usage: play "BEET QUERY"
-# Author: Griffin Yourick
-
-ALBUM_PATH=`beet list -a $1 -p | head -1`
-open -a Vox "$ALBUM_PATH"

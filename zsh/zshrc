@@ -1,0 +1,275 @@
+dotfiles="$HOME/dotfiles"
+
+# Load supporting config files
+source "$dotfiles/zsh/completion.zsh"
+source "$dotfiles/zsh/highlighting_and_history.zsh"
+source "$dotfiles/zsh/gnu_utils.zsh"
+autoload -U colors && colors
+
+# Set the TG Prompt
+fpath=("$dotfiles/zsh/prompt" $fpath)
+autoload -Uz promptinit && promptinit
+prompt 'tg'
+
+# Set the terminal and tab title
+precmd () {
+  tab_label=${PWD/${HOME}/\~}
+  echo -ne "\e]2;${tab_label}\a"
+  echo -ne "\e]1;${tab_label: -24}\a"
+}
+
+# FASD
+# ----
+# Use fasd for ultra-fast navigation
+if test $(which fasd); then
+  fasd_cache="$HOME/.fasd-init-zsh"
+  if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+    eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)" >| "$fasd_cache"
+  fi
+  source "$fasd_cache"
+  unset fasd_cache
+fi
+
+# Misc
+# ----
+setopt AUTO_CD
+setopt CDABLE_VARS
+setopt CORRECT
+setopt EXTENDED_GLOB
+unsetopt CLOBBER
+
+# chruby
+# ------
+source '/usr/local/share/chruby/chruby.sh'
+source '/usr/local/share/chruby/auto.sh'
+
+# Aliases
+# -------
+# Disable correction.
+alias ack='nocorrect ag'
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias gcc='nocorrect gcc'
+alias gist='nocorrect gist'
+alias grep='nocorrect grep'
+alias heroku='nocorrect heroku'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+
+# Disable globbing.
+alias fc='noglob fc'
+alias find='noglob find'
+alias ftp='noglob ftp'
+alias history='noglob history'
+alias locate='noglob locate'
+alias rake='noglob rake'
+alias rsync='noglob rsync'
+alias scp='noglob scp'
+alias sftp='noglob sftp'
+
+# *nix
+alias l='ls -h --color=auto --group-directories-first'
+alias ls='ls -h --color=auto --group-directories-first'
+alias ll='ls -l'
+alias la='ll -a'
+alias l.='ll -d .*'
+alias lsg='la | grep'
+
+alias df='df -H'
+alias du='du -h -d 1'
+
+alias psa='ps aux'
+function psg() {
+  ps aux | grep $@ | grep -v grep
+}
+
+alias path='echo -e ${PATH//:/\\n}'
+alias fpath='echo -e ${FPATH//:/\\n}'
+
+# Homebrew
+alias brewc='brew cleanup'
+alias brewC='brew cleanup --force'
+alias brewi='brew install'
+alias brewl='brew list'
+alias brews='brew search'
+alias brewu='brew upgrade'
+alias brewU='brew update && brew upgrade'
+alias brewx='brew remove'
+
+# Git
+alias g='git'
+alias ga='git a'
+alias gb='git b'
+alias gba='git ba'
+alias gc='git c'
+alias gci='git ci'
+alias gco='git co'
+alias gcob='git cob'
+alias gd='git d'
+alias gdc='git dc'
+alias gf='git f'
+alias gfa='git fa'
+alias gl='git l'
+alias gp='git p'
+alias gpl='git pl'
+alias gs='git s'
+alias gst='git st'
+alias gu='git u'
+
+# Ruby
+alias rb='ruby'
+alias rbb='bundle'
+alias rbbe='bundle exec'
+alias rbbi='bundle install'
+alias rbbu='bunlde update'
+
+# Misc
+eval "$(hub alias -s)"
+
+# Functions
+# ---------
+# Gets password from the OS X Keychain.
+# $ get-pass github
+function get-pass() {
+  local keychain="$HOME/Library/Keychains/login.keychain"
+  security -q find-generic-password -g -l $@ $keychain 2>&1 |\
+    awk -F\" '/password:/ {print $2}';
+}
+
+# Opens file in EDITOR.
+function edit() {
+  local dir=$1
+  [[ -z "$dir" ]] && dir='.'
+  $EDITOR $dir
+}
+
+# Execute commands for each file in current directory.
+function each() {
+  for dir in *; do
+    echo "${dir}:"
+    cd $dir
+    $@
+    cd ..
+    echo
+  done
+}
+
+# Find files and exec commands at them.
+# $ find-exec .coffee cat | wc -l
+# # => 9762
+function find-exec() {
+  find . -type f -iname "*${1:-}*" -exec "${2:-file}" '{}' \;
+}
+
+# Better find(1)
+function ff() {
+  find . -iname "*${1:-}*"
+}
+
+# Count code lines in some directory.
+# $ loc py js css
+# # => Lines of code for .py: 3781
+# # => Lines of code for .js: 3354
+# # => Lines of code for .css: 2970
+# # => Total lines of code: 10105
+function loc() {
+  local total
+  local firstletter
+  local ext
+  local lines
+  total=0
+  for ext in $@; do
+    firstletter=$(echo $ext | cut -c1-1)
+    if [[ firstletter != "." ]]; then
+      ext=".$ext"
+    fi
+    lines=`find-exec "*$ext" cat | wc -l`
+    lines=${lines// /}
+    total=$(($total + $lines))
+    echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
+  done
+  echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}$total${reset_color}"
+}
+
+# Show how much RAM application uses.
+# $ ram safari
+# # => safari uses 154.69 MBs of RAM.
+function ram() {
+  local sum
+  local items
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+  else
+    sum=0
+    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
+      sum=$(($i + $sum))
+    done
+    sum=$(echo "scale=2; $sum / 1024.0" | bc)
+    if [[ $sum != "0" ]]; then
+      echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM."
+    else
+      echo "There are no processes with pattern '${fg[blue]}${app}${reset_color}' are running."
+    fi
+  fi
+}
+
+# 4 lulz.
+function compute() {
+  while true; do head -n 100 /dev/urandom; sleep 0.1; done \
+    | hexdump -C | grep "ca fe"
+}
+
+function sayrandom() {
+  while true; do
+    perl -e 'open IN, "</usr/share/dict/words";rand($.) < 1 && ($n=$_) while <IN>;print $n' | say
+    sleep 0.1
+  done
+}
+
+# Load 8 cores at once.
+function maxcpu() {
+  local dn=/dev/null
+  yes > $dn & yes > $dn & yes > $dn & yes > $dn &
+  yes > $dn & yes > $dn & yes > $dn & yes > $dn &
+}
+
+# $ retry ping google.com
+function retry() {
+  echo Retrying "$@"
+  $@
+  sleep 1
+  retry $@
+}
+
+# Cleanup OS X crap
+function cleanup_osx() {
+  find "${@:-$PWD}" \( \
+    -type f -name '.DS_Store' -o \
+    -type f -name '__MACOSX' \
+  \) -print0 | xargs -0 rm -rf
+}
+
+# Opens a new tab in iTerm in the currend directory
+function tab() {
+  local cmd="cd $PWD; clear"
+  (( $# )) && cmd="$cmd; $*"
+  osascript 2>/dev/null <<EOF
+    tell application "iTerm"
+      set current_terminal to current terminal
+      tell current_terminal
+        launch session "Default Session"
+        set current_session to current session
+        tell current_session
+          write text "$cmd"
+        end tell
+      end tell
+    end tell
+EOF
+}
+
+# added by travis gem
+[ -f /Users/griffin/.travis/travis.sh ] && source /Users/griffin/.travis/travis.sh

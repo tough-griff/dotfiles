@@ -1,61 +1,54 @@
 [user]
-  name = "Griffin Yourick"
-  email = "gryphon92@gmail.com"
-
-[github]
-  user = tough-griff
-
-[advice]
-  statusHints = false
+	name = "Griffin Yourick"
+	email = "gryphon92@gmail.com"
 
 [alias]
-  amend = commit --amend            # ammend your last commit
-  ammend = commit --amend           # ammend your last commit
-  b = branch -v                     # branch (verbose)
-  c = commit -m                     # commit with message
-  ca = commit -am                   # commit all with message
-  cb = checkout -b                  # create and switch to a new branch
-  ci = commit                       # commit
-  co = checkout                     # checkout
-  d = diff                          # diff unstaged changes
-  dc = diff --cached                # diff staged changes
-  r = remote -v                     # show remotes (verbose)
-  s = status --short                # short status
-  st = status                       # status
-  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
-  unstage = reset HEAD              # remove files from index (tracking)
+	# commonly used git functions
+	a = "add -A"
+	b = "branch --verbose"
+	ba = "branch --all --verbose"
+	c = "commit --message"
+	ci = "commit"
+	co = "checkout"
+	cob = "checkout -b"
+	d = "diff"
+	dc = "diff --cached"
+	f = "fetch"
+	fa = "fetch --all --verbose --prune"
+	l = "log --graph"
+	p = "push"
+	pl = "pull"
+	r = "remote --verbose"
+	s = "status --short"
+	st = "status"
+	u = "up"
+
+	# new functionality
+	amend = "commit --amend"        # amend your last commit
+	uncommit = "reset --soft HEAD^" # go back before last commit
 
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 
 [color]
-  ui = true
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	ui = true
 [color "diff"]
-  frag = magenta
-  meta = yellow
-  new = green
-  old = red
+	frag = magenta
+	meta = yellow
+	new = green
+	old = red
+
 [core]
-  editor = "atom --wait"
-  excludesfile = ~/.gitignore
+	excludesfile = Users/griffin/.gitignore
 
 [diff]
-  mnemonicprefix = true
+	mnemonicprefix = true
 
 [format]
-  graph = true
-  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+	pretty = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
 
-[log]
-  abbrevCommit = true
+[heroku]
+	account = personal
 
 [push]
-  default = current
-
-[git-up "bundler"]
-	check = true
-	autoinstall = true
+	default = current

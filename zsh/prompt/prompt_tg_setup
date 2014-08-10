@@ -1,0 +1,40 @@
+# A simple ZSH prompt with git info
+#
+# ~/path ❯❯❯              (default)
+# ~/repo git:master ❯❯❯   (in git repo)
+#
+# * shows to the right with unstaged changes
+# + shows to the right with stages changes
+#
+# Author: Griffin Yourick
+function prompt_tg_precmd {
+  vcs_info
+}
+
+function prompt_tg_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+
+  add-zsh-hook precmd prompt_tg_precmd
+
+  zstyle ':vcs_info:*' enable git hg svn
+  zstyle ':vcs_info:*' check-for-changes true
+  zstyle ':vcs_info:*' unstagedstr '*'
+  zstyle ':vcs_info:*' stagedstr ' +'
+  zstyle ':vcs_info:*' actionformats \
+    '%F{yellow}%s:%b:%a%f ' '%F{blue}%u%f%F{green}%c%f'
+  zstyle ':vcs_info:*' formats \
+    '%F{green}%s:%b%f ' '%F{blue}%u%f%F{green}%c%f'
+  zstyle ':vcs_info:*' nvcsformats \
+    ''
+
+  PROMPT='%F{cyan}%1~%f ${vcs_info_msg_0_}%F{red}❯%f%F{yellow}❯%f%(?.%F{green}.%F{red})❯%f '
+  RPROMPT='%B${vcs_info_msg_1_}%b'
+  SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+}
+
+prompt_tg_setup "$@"
