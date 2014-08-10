@@ -36,7 +36,6 @@ cdpath=(
 
 # Set the list of directories zsh searches for functions.
 fpath=(
-  /usr/local/share/zsh-completions
   $fpath
 )
 
@@ -55,9 +54,13 @@ manpath=(
 )
 
 # Set the list of directories that zsh searches for programs.
+if [[ -d /Applications/Postgres.app/ ]]; then
+  pgbin=/Applications/Postgres.app/Contents/Versions/9.3/bin
+fi
+
 path=(
   $path
-  /Applications/Postgres.app/Contents/Versions/9.3/bin
+  $pgbin
 )
 
 # Misc
