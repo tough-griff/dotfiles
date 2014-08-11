@@ -1,6 +1,7 @@
 # Define secret environment variables.
 secrets="$HOME/.secrets"
 [[ -f "$secrets" ]] && source $secrets
+unset secrets
 
 # Browser
 # -------
@@ -62,6 +63,8 @@ path=(
   $path
   $pgbin
 )
+
+unset pgbin
 
 # Misc
 # ----

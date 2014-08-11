@@ -1,13 +1,13 @@
-dotfiles="$HOME/dotfiles"
+zshconfig="$HOME/dotfiles/zsh"
 
 # Load supporting config files
-source "$dotfiles/zsh/completion.zsh"
-source "$dotfiles/zsh/highlighting_and_history.zsh"
-source "$dotfiles/zsh/gnu_utils.zsh"
+source "$zshconfig/completion.zsh"
+source "$zshconfig/highlighting_and_history.zsh"
+source "$zshconfig/gnu_utils.zsh"
 autoload -U colors && colors
 
 # Set the TG Prompt
-fpath=("$dotfiles/zsh/prompt" $fpath)
+fpath=("$zshconfig/prompt" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'tg'
 
@@ -21,7 +21,7 @@ precmd () {
 # FASD
 # ----
 # Use fasd for ultra-fast navigation
-if test $(which fasd); then
+if (( ${+commands[fasd]} )); then
   fasd_cache="$HOME/.fasd-init-zsh"
   if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
     eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)" >| "$fasd_cache"
@@ -127,7 +127,9 @@ alias rbbi='bundle install'
 alias rbbu='bunlde update'
 
 # Misc
-eval "$(hub alias -s)"
+if (( ${+commands[hub]} )); then
+  eval "$(hub alias -s)"
+fi
 
 # Functions
 # ---------
@@ -270,6 +272,8 @@ function tab() {
     end tell
 EOF
 }
+
+unset zshconfig
 
 # added by travis gem
 [ -f /Users/griffin/.travis/travis.sh ] && source /Users/griffin/.travis/travis.sh

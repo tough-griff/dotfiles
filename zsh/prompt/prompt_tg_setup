@@ -5,8 +5,7 @@
 #
 # * shows to the right with unstaged changes
 # + shows to the right with stages changes
-#
-# Author: Griffin Yourick
+
 function prompt_tg_precmd {
   vcs_info
 }

@@ -1,14 +1,3 @@
-# GNU-Utilities
-# -------------
-# Provides for the interactive use of GNU utilities on BSD systems.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Get the prefix or use the default.
-_gnu_utility_p='g'
-
 _gnu_utility_cmds=(
   # Coreutils
   '[' 'base64' 'basename' 'cat' 'chcon' 'chgrp' 'chmod' 'chown'
@@ -43,7 +32,7 @@ _gnu_utility_cmds=(
 
 # Wrap GNU utilities in functions.
 for _gnu_utility_cmd in "${_gnu_utility_cmds[@]}"; do
-  _gnu_utility_pcmd="${_gnu_utility_p}${_gnu_utility_cmd}"
+  _gnu_utility_pcmd="g${_gnu_utility_cmd}"
   if (( ${+commands[${_gnu_utility_pcmd}]} )); then
     eval "
       function ${_gnu_utility_cmd} {
@@ -53,4 +42,4 @@ for _gnu_utility_cmd in "${_gnu_utility_cmds[@]}"; do
   fi
 done
 
-unset _gnu_utility_{p,cmds,cmd,pcmd}
+unset _gnu_utility_{cmds,cmd,pcmd}
