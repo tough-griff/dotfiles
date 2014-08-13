@@ -14,6 +14,8 @@
   'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
 'file-types':
   '(\.?)zlogin': 'source.shell'
+  '(\.?)zshenv': 'source.shell'
+  '(\.?)zshrc': 'source.shell'
 'fuzzy-finder':
   'ignoredNames': [
     '**/vendor/cache/*'

@@ -11,6 +11,12 @@ fpath=("$zshconfig/prompt" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'tg'
 
+setopt AUTO_CD
+setopt CDABLE_VARS
+setopt CORRECT
+setopt EXTENDED_GLOB
+unsetopt CLOBBER
+
 # Set the terminal and tab title
 precmd () {
   tab_label=${PWD/${HOME}/\~}
@@ -18,8 +24,6 @@ precmd () {
   echo -ne "\e]1;${tab_label: -24}\a"
 }
 
-# FASD
-# ----
 # Use fasd for ultra-fast navigation
 if (( ${+commands[fasd]} )); then
   fasd_cache="$HOME/.fasd-init-zsh"
@@ -30,21 +34,12 @@ if (( ${+commands[fasd]} )); then
   unset fasd_cache
 fi
 
-# Misc
-# ----
-setopt AUTO_CD
-setopt CDABLE_VARS
-setopt CORRECT
-setopt EXTENDED_GLOB
-unsetopt CLOBBER
-
 # chruby
-# ------
 source '/usr/local/share/chruby/chruby.sh'
 source '/usr/local/share/chruby/auto.sh'
 
-# Aliases
-# -------
+# Aliases & Functions
+# -------------------
 # Disable correction.
 alias ack='nocorrect ag'
 alias cd='nocorrect cd'
@@ -60,6 +55,7 @@ alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 
 # Disable globbing.
+alias bundle='noglob bundle'
 alias fc='noglob fc'
 alias find='noglob find'
 alias ftp='noglob ftp'
@@ -101,38 +97,36 @@ alias brewx='brew remove'
 
 # Git
 alias g='git'
-alias ga='git a'
-alias gb='git b'
-alias gba='git ba'
-alias gc='git c'
-alias gci='git ci'
-alias gco='git co'
-alias gcob='git cob'
-alias gd='git d'
-alias gdc='git dc'
-alias gf='git f'
-alias gfa='git fa'
-alias gl='git l'
-alias gp='git p'
-alias gpl='git pl'
-alias gs='git s'
-alias gst='git st'
-alias gu='git u'
+alias ga='git add -A'
+alias gb='git branch --verbose'
+alias gba='git branch --all --verbose'
+alias gc='git commit --message'
+alias gci='git commit'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gf='git fetch'
+alias gfa='git fetch --all --verbose --prune'
+alias gl='git log --graph'
+alias gp='git push'
+alias gpl='git pull'
+alias gs='git status --short'
+alias gst='git status'
+alias gu='git up'
 
 # Ruby
 alias rb='ruby'
 alias rbb='bundle'
 alias rbbe='bundle exec'
 alias rbbi='bundle install'
-alias rbbu='bunlde update'
+alias rbbu='bundle update'
 
 # Misc
 if (( ${+commands[hub]} )); then
   eval "$(hub alias -s)"
 fi
 
-# Functions
-# ---------
 # Gets password from the OS X Keychain.
 # $ get-pass github
 function get-pass() {
@@ -147,8 +141,12 @@ function edit() {
   [[ -z "$dir" ]] && dir='.'
   $EDITOR $dir
 }
+alias e='edit'
+alias edf='edit ~/dotfiles'
+alias ebc='edit ~/.bundle/config'
 
 # Execute commands for each file in current directory.
+# $ each git up
 function each() {
   for dir in *; do
     echo "${dir}:"
@@ -219,12 +217,13 @@ function ram() {
   fi
 }
 
-# 4 lulz.
+# Haxx
 function compute() {
   while true; do head -n 100 /dev/urandom; sleep 0.1; done \
     | hexdump -C | grep "ca fe"
 }
 
+# Spam `say` with random words.
 function sayrandom() {
   while true; do
     perl -e 'open IN, "</usr/share/dict/words";rand($.) < 1 && ($n=$_) while <IN>;print $n' | say
@@ -255,7 +254,9 @@ function cleanup_osx() {
   \) -print0 | xargs -0 rm -rf
 }
 
-# Opens a new tab in iTerm in the currend directory
+# Opens a new tab in iTerm in the current directory
+# $ tab     (opens a new tab)
+# $ tab ls  (opens a new tab and executes ls)
 function tab() {
   local cmd="cd $PWD; clear"
   (( $# )) && cmd="$cmd; $*"
