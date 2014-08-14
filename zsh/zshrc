@@ -67,6 +67,8 @@ alias scp='noglob scp'
 alias sftp='noglob sftp'
 
 # *nix
+alias _='sudo'
+
 alias l='ls -h --color=auto --group-directories-first'
 alias ls='ls -h --color=auto --group-directories-first'
 alias ll='ls -l'
@@ -78,8 +80,11 @@ alias df='df -H'
 alias du='du -h -d 1'
 
 alias psa='ps aux'
-function psg() {
+function psg {
   ps aux | grep $@ | grep -v grep
+}
+function psu {
+  ps -U "${1:-$USER}" -o 'pid,%cpu,%mem,command' "${(@)argv[2,-1]}"
 }
 
 alias path='echo -e ${PATH//:/\\n}'
@@ -127,16 +132,21 @@ if (( ${+commands[hub]} )); then
   eval "$(hub alias -s)"
 fi
 
+function mkcd {
+  [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
+}
+
 # Gets password from the OS X Keychain.
 # $ get-pass github
-function get-pass() {
-  local keychain="$HOME/Library/Keychains/login.keychain"
-  security -q find-generic-password -g -l $@ $keychain 2>&1 |\
-    awk -F\" '/password:/ {print $2}';
+function get-pass {
+  echo 'FIX ME'
+  # local keychain="$HOME/Library/Keychains/login.keychain"
+  # security -q find-generic-password -g -l $@ $keychain 2>&1 |\
+  #   awk -F\" '/password:/ {print $2}';
 }
 
 # Opens file in EDITOR.
-function edit() {
+function edit {
   local dir=$1
   [[ -z "$dir" ]] && dir='.'
   $EDITOR $dir
@@ -147,7 +157,7 @@ alias ebc='edit ~/.bundle/config'
 
 # Execute commands for each file in current directory.
 # $ each git up
-function each() {
+function each {
   for dir in *; do
     echo "${dir}:"
     cd $dir
@@ -160,12 +170,12 @@ function each() {
 # Find files and exec commands at them.
 # $ find-exec .coffee cat | wc -l
 # # => 9762
-function find-exec() {
+function find-exec {
   find . -type f -iname "*${1:-}*" -exec "${2:-file}" '{}' \;
 }
 
 # Better find(1)
-function ff() {
+function ff {
   find . -iname "*${1:-}*"
 }
 
@@ -175,7 +185,7 @@ function ff() {
 # # => Lines of code for .js: 3354
 # # => Lines of code for .css: 2970
 # # => Total lines of code: 10105
-function loc() {
+function loc {
   local total
   local firstletter
   local ext
@@ -197,7 +207,7 @@ function loc() {
 # Show how much RAM application uses.
 # $ ram safari
 # # => safari uses 154.69 MBs of RAM.
-function ram() {
+function ram {
   local sum
   local items
   local app="$1"
@@ -218,13 +228,13 @@ function ram() {
 }
 
 # Haxx
-function compute() {
+function compute {
   while true; do head -n 100 /dev/urandom; sleep 0.1; done \
     | hexdump -C | grep "ca fe"
 }
 
 # Spam `say` with random words.
-function sayrandom() {
+function sayrandom {
   while true; do
     perl -e 'open IN, "</usr/share/dict/words";rand($.) < 1 && ($n=$_) while <IN>;print $n' | say
     sleep 0.1
@@ -232,14 +242,14 @@ function sayrandom() {
 }
 
 # Load 8 cores at once.
-function maxcpu() {
+function maxcpu {
   local dn=/dev/null
   yes > $dn & yes > $dn & yes > $dn & yes > $dn &
   yes > $dn & yes > $dn & yes > $dn & yes > $dn &
 }
 
 # $ retry ping google.com
-function retry() {
+function retry {
   echo Retrying "$@"
   $@
   sleep 1
@@ -247,7 +257,7 @@ function retry() {
 }
 
 # Cleanup OS X crap
-function cleanup_osx() {
+function cleanup_osx {
   find "${@:-$PWD}" \( \
     -type f -name '.DS_Store' -o \
     -type f -name '__MACOSX' \
@@ -257,7 +267,7 @@ function cleanup_osx() {
 # Opens a new tab in iTerm in the current directory
 # $ tab     (opens a new tab)
 # $ tab ls  (opens a new tab and executes ls)
-function tab() {
+function tab {
   local cmd="cd $PWD; clear"
   (( $# )) && cmd="$cmd; $*"
   osascript 2>/dev/null <<EOF
