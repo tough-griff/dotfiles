@@ -1,13 +1,13 @@
-zshconfig="$HOME/dotfiles/zsh"
+export ZSHCONFIG="$HOME/dotfiles/zsh"
 
 # Load supporting config files
-source "$zshconfig/completion.zsh"
-source "$zshconfig/highlighting_and_history.zsh"
-source "$zshconfig/gnu_utils.zsh"
+source "$ZSHCONFIG/completion.zsh"
+source "$ZSHCONFIG/highlighting_and_history.zsh"
+source "$ZSHCONFIG/gnu_utils.zsh"
 autoload -U colors && colors
 
 # Set the TG Prompt
-fpath=("$zshconfig/prompt" $fpath)
+fpath=("$ZSHCONFIG/prompt" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'tg'
 
@@ -283,8 +283,6 @@ function tab {
     end tell
 EOF
 }
-
-unset zshconfig
 
 # added by travis gem
 [ -f /Users/griffin/.travis/travis.sh ] && source /Users/griffin/.travis/travis.sh

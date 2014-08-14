@@ -1,3 +1,6 @@
+# Environment variables are sourced prior to loading zshrc
+# --------------------------------------------------------
+
 # Define secret environment variables.
 secrets="$HOME/.secrets"
 [[ -f "$secrets" ]] && source $secrets
