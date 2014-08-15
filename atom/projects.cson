@@ -1,10 +1,15 @@
 'the-draconomicon':
-  'title': 'The Draconomicon'
+  'title': 'the-draconomicon'
   'paths': [
-    '/Users/griffin/Developer/the-draconomicon'
+    '/Users/griffin/dev/the-draconomicon/'
+  ]
+'tough-griff.github.io':
+  'title': 'tough-griff.github.io'
+  'paths': [
+    '/Users/griffin/dev/tough-griff.github.io/'
   ]
 'dotfiles':
-  'title': '~/.dotfiles'
+  'title': 'dotfiles'
   'paths': [
-    '/Users/griffin/.dotfiles'
+    '/Users/griffin/dotfiles/'
   ]
