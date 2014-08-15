@@ -7,9 +7,13 @@
  * If you are unfamiliar with LESS, you can read more about it here:
  * http://www.lesscss.org
  */
-.with-minimap .vertical-scrollbar {
-  opacity: 0;
-  width: 0;
+ @import "_file-icons";
+
+.with-minimap {
+  .vertical-scrollbar {
+    opacity: 0;
+    width: 0;
+  }
 }
 
 .editor {
@@ -22,25 +26,4 @@
   .wrap-guide{
     background-color: rgba(255, 255, 255, 0.1);
   }
-}
-
-.editor .cursor {
-
-}
-
-// File Icons
-@import "packages/file-icons/stylesheets/colors";
-@import "packages/file-icons/stylesheets/icons";
-@import "packages/file-icons/stylesheets/items";
-
-@{pane-tab-selector}, .icon-file-text {
-  &[data-name$=".ru"]:before,
-  &[data-name$=".rake"]:before { .ruby-icon; .medium-red; }
-
-  &[data-name$="Guardfile"]:before,
-  &[data-name$="Procfile"]:before { .ruby-icon }
-
-  &[data-name$="_spec.rb"]:before { .ruby-icon; .medium-green; }
-
-  &[data-name$=".sql"]:before { .database-icon; .dark-blue; }
 }
