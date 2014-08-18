@@ -13,7 +13,7 @@
 'exception-reporting':
   'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
 'file-types':
-  '^\.?gitconfig': 'source.git-config'
+  '^\\.?gitconfig': 'source.git-config'
 'fuzzy-finder':
   'ignoredNames': [
     '**/vendor/cache/*'

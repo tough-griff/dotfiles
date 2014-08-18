@@ -58,16 +58,11 @@ manpath=(
 )
 
 # Set the list of directories that zsh searches for programs.
-if [[ -d /Applications/Postgres.app/ ]]; then
-  pgbin=/Applications/Postgres.app/Contents/Versions/9.3/bin
-fi
-
 path=(
   $path
-  $pgbin
+  /Applications/Postgres.app/Contents/Versions/9.3/bin
+  /usr/local/share/git-core/contrib/diff-highlight
 )
-
-unset pgbin
 
 # Misc
 # ----

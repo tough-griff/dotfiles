@@ -118,6 +118,7 @@ alias gp='git push'
 alias gpl='git pull'
 alias gs='git status --short'
 alias gst='git status'
+alias gsh='git show'
 alias gu='git up'
 
 # Ruby

@@ -21,6 +21,7 @@
 	r = "remote --verbose"
 	s = "status --short"
 	st = "status"
+	sh = "show"
 	u = "up"
 
 	# new functionality
@@ -49,6 +50,11 @@
 
 [heroku]
 	account = personal
+
+[pager]
+	diff = diff-highlight | less
+	log = diff-highlight | less
+	show = diff-highlight | less
 
 [push]
 	default = current

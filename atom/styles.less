@@ -7,7 +7,6 @@
  * If you are unfamiliar with LESS, you can read more about it here:
  * http://www.lesscss.org
  */
- @import "_file-icons";
 
 .with-minimap {
   .vertical-scrollbar {
@@ -26,4 +25,38 @@
   .wrap-guide{
     background-color: rgba(255, 255, 255, 0.1);
   }
+}
+
+// highlight-selected overrides
+.pane.active {
+  .editor {
+    .highlight-selected .marker .region {
+      border: 0;
+      border-radius: 0;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// file-icon overrides
+@import "packages/file-icons/stylesheets/colors";
+@import "packages/file-icons/stylesheets/icons";
+@import "packages/file-icons/stylesheets/items";
+
+@{pane-tab-selector}, .icon-file-text {
+
+  // Database icon
+  &[data-name$=".sql"]:before { .database-icon; .dark-blue; }
+
+  // Javascript icon
+  &[data-name$="_spec.js"]:before { .js-icon; .medium-green; }
+
+  // Ruby icon
+  &[data-name$="Guardfile"]:before,
+  &[data-name$="Procfile"]:before { .ruby-icon; }
+
+  &[data-name$=".ru"]:before,
+  &[data-name$=".rake"]:before    { .ruby-icon; .medium-red; }
+
+  &[data-name$="_spec.rb"]:before { .ruby-icon; .medium-green; }
 }
