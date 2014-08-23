@@ -16,3 +16,7 @@
 #   'ctrl-P': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
+'.workspace':
+  'cmd-k cmd-m': 'minimap:toggle'
+  'cmd-k cmd-d': 'minimap:toggle-debug'
+  'cmd-k cmd-s': 'minimap:open-quick-settings'

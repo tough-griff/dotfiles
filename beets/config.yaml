@@ -3,7 +3,7 @@ directory: ~/Music/Library
 library: ~/Music/library.db
 original_date: yes
 paths:
-  compilation: $albumartist/($year) $album%aunique{}/$track $title
+  comp: $albumartist/($year) $album%aunique{}/$track $title
   default: $albumartist/($year) $album%aunique{}/$track $title
   singleton: $albumartist/$artist - $title
 plugins:

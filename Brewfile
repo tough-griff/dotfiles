@@ -15,6 +15,7 @@ install gnu-sed
 # Install other useful binaries
 install casperjs --devel
 install chruby
+install direnv
 install fasd
 install ghi
 install git
@@ -29,7 +30,7 @@ install python
 install python3
 install readline
 install redis
-install ruby-install
+install ruby-build
 install the_silver_searcher
 install tree
 install wget --enable-iri

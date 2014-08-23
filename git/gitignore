@@ -37,3 +37,7 @@ Temporary Items
 Session.vim
 .netrwhist
 *~
+
+# === direnv ===
+.direnv
+.envrc

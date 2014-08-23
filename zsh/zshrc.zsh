@@ -38,6 +38,11 @@ fi
 source '/usr/local/share/chruby/chruby.sh'
 source '/usr/local/share/chruby/auto.sh'
 
+# source npm completions
+if (( ${+commands[npm]} )); then
+  . <(npm completion)
+fi
+
 # Aliases & Functions
 # -------------------
 # Disable correction.
@@ -287,3 +292,8 @@ EOF
 
 # added by travis gem
 [ -f /Users/griffin/.travis/travis.sh ] && source /Users/griffin/.travis/travis.sh
+
+# direnv goes last
+if (( ${+commands[direnv]} )); then
+  eval "$(direnv hook $0)"
+fi
