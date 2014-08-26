@@ -40,7 +40,7 @@
 	old = red
 
 [core]
-	excludesfile = Users/griffin/.gitignore
+	excludesfile = Users/griffin/.gitignore.global
 
 [diff]
 	mnemonicprefix = true

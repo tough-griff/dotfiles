@@ -32,6 +32,9 @@ function prompt_tg_setup {
     ''
 
   PROMPT='%F{cyan}%1~%f ${vcs_info_msg_0_}%F{red}❯%f%F{yellow}❯%f%(?.%F{green}.%F{red})❯%f '
+  PROMPT2='%F{yellow}%_%f %F{green}...%f '
+  PROMPT3='%F{yellow}? %F{green}#%f '
+  PROMPT4='%F{yellow}+%N:%i %F{green}❯%f '
   RPROMPT='%B${vcs_info_msg_1_}%b'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }

@@ -1,4 +1,4 @@
-# === emacs ===
+# emacs
 *~
 \#*\#
 /.emacs.desktop
@@ -16,7 +16,7 @@ tramp
 *.rel
 /auto/
 
-# === OSX ===
+# OSX
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -30,7 +30,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# === vim ===
+# vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
@@ -38,6 +38,6 @@ Session.vim
 .netrwhist
 *~
 
-# === direnv ===
+# direnv
 .direnv
 .envrc
