@@ -3,13 +3,14 @@
   'projectHome': '/Users/griffin/Developer'
   'useReactEditor': true
   'themes': [
-    'atom-soda-dark-ui'
-    'base16-solarized-dark-syntax'
+    'atom-dark-ui'
+    'base16-tomorrow-dark-theme'
   ]
 'editor':
   'fontFamily': 'Source Code Pro'
   'showIndentGuide': true
   'fontSize': 14
+  'invisibles': {}
 'exception-reporting':
   'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
 'file-types':

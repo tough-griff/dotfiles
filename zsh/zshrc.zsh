@@ -84,6 +84,8 @@ alias lsg='la | grep'
 alias df='df -H'
 alias du='du -h -d 1'
 
+alias tree='tree -h -C --dirsfirst'
+
 alias psa='ps aux'
 function psg {
   ps aux | grep $@ | grep -v grep
