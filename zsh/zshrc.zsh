@@ -96,6 +96,7 @@ function psu {
 
 alias path='echo -e ${PATH//:/\\n}'
 alias fpath='echo -e ${FPATH//:/\\n}'
+alias manpath='echo -e ${MANPATH//:/\\n}'
 
 # Homebrew
 alias brewc='brew cleanup'

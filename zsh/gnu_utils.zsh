@@ -27,7 +27,7 @@ _gnu_utility_cmds=(
   'libtool' 'libtoolize'
 
   # Miscellaneous
-  'getopt' 'grep' 'indent' 'sed' 'tar' 'time' 'units' 'which'
+  'getopt' 'grep' 'indent' 'sed' 'tar' 'time' 'units' 'which' 'awk'
 )
 
 # Wrap GNU utilities in functions.

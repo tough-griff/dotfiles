@@ -2,7 +2,7 @@ begin
   require "awesome_print"
   AwesomePrint.pry!
 rescue LoadError
-  puts "gem install awesomeprint # <-- highly recommended"
+  puts "gem install awesome_print # <-- highly recommended"
 end
 
 # Allows files to be required from the ~/dotfiles/ruby/ directory.

@@ -30,6 +30,7 @@ install python
 install python3
 install readline
 install redis
+install rename
 install ruby-build
 install the_silver_searcher
 install tree

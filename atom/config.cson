@@ -8,9 +8,9 @@
   ]
 'editor':
   'fontFamily': 'Source Code Pro'
-  'showIndentGuide': true
   'fontSize': 14
   'invisibles': {}
+  'showIndentGuide': true
 'exception-reporting':
   'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
 'file-types':
@@ -25,6 +25,8 @@
   'minimapScrollIndicator': false
 'release-notes':
   'viewedVersion': '0.94.0'
+'tree-view':
+  'hideVcsIgnoredFiles': true
 'welcome':
   'showOnStartup': false
 'whitespace':
