@@ -220,7 +220,7 @@ function ram {
   local sum
   local items
   local app="$1"
-  if [ -z "$app" ]; then
+  if [[ -z "$app" ]]; then
     echo "First argument - pattern to grep from processes"
   else
     sum=0
@@ -238,8 +238,10 @@ function ram {
 
 # Haxx
 function compute {
-  while true; do head -n 100 /dev/urandom; sleep 0.1; done \
-    | hexdump -C | grep "ca fe"
+  while true; do
+    head -n 100 /dev/urandom
+    sleep 0.1
+  done | hexdump -C | grep "ca fe"
 }
 
 # Spam `say` with random words.
@@ -294,7 +296,7 @@ EOF
 }
 
 # added by travis gem
-[ -f /Users/griffin/.travis/travis.sh ] && source /Users/griffin/.travis/travis.sh
+[[ -f /Users/griffin/.travis/travis.sh ]] && source /Users/griffin/.travis/travis.sh
 
 # direnv goes last
 if (( ${+commands[direnv]} )); then
