@@ -40,13 +40,13 @@ source '/usr/local/share/chruby/auto.sh'
 
 # source npm completions
 if (( ${+commands[npm]} )); then
-  . <(npm completion)
+  eval "$(npm completion 2>/dev/null)"
 fi
 
 # Aliases & Functions
 # -------------------
 # Disable correction.
-alias ack='nocorrect ag'
+alias ag='nocorrect ag'
 alias cd='nocorrect cd'
 alias cp='nocorrect cp'
 alias gcc='nocorrect gcc'
@@ -60,6 +60,7 @@ alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 
 # Disable globbing.
+alias bower='noglob bower'
 alias bundle='noglob bundle'
 alias fc='noglob fc'
 alias find='noglob find'
@@ -268,7 +269,7 @@ function retry {
 }
 
 # Cleanup OS X crap
-function cleanup_osx {
+function rm-osx-cruft {
   find "${@:-$PWD}" \( \
     -type f -name '.DS_Store' -o \
     -type f -name '__MACOSX' \

@@ -1,9 +1,6 @@
 'global':
   'core':
     'destroyEmptyPanes': false
-    'ignoredNames': [
-      '*.pyc'
-    ]
     'projectHome': '/Users/griffin/Developer'
     'themes': [
       'unity-dark-ui'
