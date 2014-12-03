@@ -8,6 +8,7 @@
  * http://www.lesscss.org
  */
 
+// Hide the scrollbar with the minimap.
 .with-minimap {
   .vertical-scrollbar {
     opacity: 0;
@@ -15,35 +16,31 @@
   }
 }
 
-// Unity UI autocomplete fix
-.autocomplete-plus.select-list {
-  ol.list-group,
-  .error-message {
-    border-radius: 5px !important;
-    margin: 0 !important;
-  }
-
-  &.popover-list ol {
-    width: 100% !important;
-  }
-}
-
-// file-icon overrides
+// File-icon overrides.
 @import "packages/file-icons/stylesheets/colors";
 @import "packages/file-icons/stylesheets/icons";
 @import "packages/file-icons/stylesheets/items";
 
 @{pane-tab-selector}, .icon-file-text {
-
   // Database icon
+  &[data-name$="psqlrc"]:before { .database-icon; }
+
   &[data-name$=".sql"]:before { .database-icon; .dark-blue; }
+
+  // Gear icon
+  &[data-name$="agignore"]:before,
+  &[data-name$="gitconfig"]:before,
+  &[data-name$="gitignore"]:before,
+  &[data-name$="hushlogin"]:before { .gear-icon; }
 
   // Javascript icon
   &[data-name$="_spec.js"]:before { .js-icon; .medium-green; }
 
   // Ruby icon
-  &[data-name$="Guardfile"]:before,
-  &[data-name$="Procfile"]:before { .ruby-icon; }
+  &[data-name="Guardfile"]:before,
+  &[data-name="Procfile"]:before,
+  &[data-name$="gemrc"]:before,
+  &[data-name$="pryrc"]:before, { .ruby-icon; }
 
   &[data-name$=".ru"]:before,
   &[data-name$=".rake"]:before    { .ruby-icon; .medium-red; }

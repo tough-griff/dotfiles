@@ -3,15 +3,15 @@
     'destroyEmptyPanes': false
     'projectHome': '/Users/griffin/Developer'
     'themes': [
-      'unity-dark-ui'
-      'base16-tomorrow-dark-theme'
+      'unity-ui'
+      'base16-tomorrow-light-theme'
     ]
     'useReactEditor': true
   'editor':
     'fontFamily': 'Source Code Pro'
     'fontSize': 14
-    'invisibles': {}
     'showIndentGuide': true
+    'invisibles': {}
   'exception-reporting':
     'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
   'file-icons':
