@@ -4,18 +4,16 @@
     'projectHome': '/Users/griffin/Developer'
     'themes': [
       'unity-ui'
-      'base16-tomorrow-light-theme'
+      'base16-tomorrow-dark-theme'
     ]
     'useReactEditor': true
   'editor':
     'fontFamily': 'Source Code Pro'
-    'fontSize': 14
     'showIndentGuide': true
+    'fontSize': 14
     'invisibles': {}
   'exception-reporting':
     'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
-  'file-icons':
-    'forceShow': true
   'fuzzy-finder':
     'ignoredNames': [
       '**/vendor/cache/*'
@@ -32,3 +30,8 @@
     'showOnStartup': false
   'whitespace':
     'ignoreWhitespaceOnCurrentLine': false
+  'file-icons':
+    'forceShow': true
+'.c.source':
+  'editor':
+    'tabLength': 4
