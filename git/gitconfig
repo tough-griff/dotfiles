@@ -48,9 +48,6 @@
 [format]
 	pretty = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
 
-[heroku]
-	account = personal
-
 [pager]
 	diff = diff-highlight | less
 	log = diff-highlight | less
@@ -59,5 +56,8 @@
 [push]
 	default = current
 
+# ETC
 [git-up "bundler"]
 	check = true
+[heroku]
+	account = personal
