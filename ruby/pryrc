@@ -1,24 +1,24 @@
-begin
-  require "awesome_print"
-  AwesomePrint.pry!
-rescue LoadError
-  puts "gem install awesome_print # <-- highly recommended"
-end
-
 # Allows files to be required from the ~/dotfiles/ruby/ directory.
 #  note: currently not requiring local files!
 $LOAD_PATH << File.dirname(File.realpath(__FILE__))
 
-# Prompt configuration
-RUBY_STRING = "#{RUBY_ENGINE}-#{RUBY_VERSION}"
-Pry.prompt = [
-  lambda do |obj, level, _pry|
-    "#{RUBY_STRING.redish} (#{obj}):#{level} #{"❯".green} "
-  end,
-  lambda do |obj, level, _pry|
-    "#{RUBY_STRING.redish} (#{obj}):#{level} #{"*".green} "
-  end
-]
+begin
+  require "awesome_print"
+  AwesomePrint.pry!
+
+  # Prompt configuration
+  RUBY_STRING = "#{RUBY_ENGINE}-#{RUBY_VERSION}"
+  Pry.prompt = [
+    lambda do |obj, level, _pry|
+      "#{RUBY_STRING.redish} (#{obj}):#{level} #{"❯".green} "
+    end,
+    lambda do |obj, level, _pry|
+      "#{RUBY_STRING.redish} (#{obj}):#{level} #{"*".green} "
+    end
+  ]
+rescue LoadError
+  puts "gem install awesome_print # <-- highly recommended"
+end
 
 # List config
 Pry.config.ls.heading_color = :magenta

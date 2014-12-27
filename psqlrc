@@ -19,4 +19,4 @@
 
 \pset null '[NULL]'
 
-\unset quiet
+\unset QUIET
