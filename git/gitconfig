@@ -56,8 +56,15 @@
 [push]
 	default = current
 
-# ETC
+# plugins and etc
 [git-up "bundler"]
 	check = true
+
 [heroku]
 	account = personal
+
+[hub]
+	protocol = https
+
+[credential]
+	helper = osxkeychain

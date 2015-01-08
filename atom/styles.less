@@ -1,14 +1,8 @@
 // Hide the scrollbar with the minimap.
-.with-minimap {
-  .vertical-scrollbar {
-    opacity: 0;
-    width: 0;
-  }
-}
-
-// Fix statusbar padding
-.tool-panel.panel-bottom {
-  padding: 0;
+.with-minimap atom-text-editor .vertical-scrollbar,
+.with-minimap atom-text-editor::shadow .vertical-scrollbar {
+  opacity: 0;
+  width: 0;
 }
 
 // File-icon overrides.

@@ -1,18 +1,21 @@
-'global':
+'*':
   'core':
-    'destroyEmptyPanes': false
-    'projectHome': '/Users/griffin/Developer'
+    'followSymlinks': true
     'themes': [
       'unity-ui'
       'base16-tomorrow-dark-theme'
     ]
-    'useReactEditor': true
+    'projectHome': '/Users/griffin/Developer'
+    'destroyEmptyPanes': false
   'editor':
     'fontFamily': 'Source Code Pro'
-    'showIndentGuide': true
     'fontSize': 14
+    'showIndentGuide': true
+    'invisibles': {}
   'exception-reporting':
     'userId': 'b79bad53-b233-cbe4-cb63-b6fc98f94d50'
+  'file-icons':
+    'forceShow': true
   'fuzzy-finder':
     'ignoredNames': [
       '**/vendor/cache/*'
@@ -20,7 +23,9 @@
   'metrics':
     'userId': '8e7208e4b8bc82e2315cd4914081208b721197de'
   'minimap':
+    'displayPluginsControls': false
     'minimapScrollIndicator': false
+    'adjustMinimapWidthToSoftWrap': false
   'release-notes':
     'viewedVersion': '0.94.0'
   'tree-view':
@@ -29,8 +34,3 @@
     'showOnStartup': false
   'whitespace':
     'ignoreWhitespaceOnCurrentLine': false
-  'file-icons':
-    'forceShow': true
-'.c.source':
-  'editor':
-    'tabLength': 4
