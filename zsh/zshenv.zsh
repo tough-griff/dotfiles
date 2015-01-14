@@ -55,6 +55,8 @@ manpath=(
   /usr/local/share/man
   /usr/share/man
   $manpath
+  /Applications/Postgres.app/Contents/Versions/9.3/share/man/
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man/
 )
 
 # Set the list of directories that zsh searches for programs.

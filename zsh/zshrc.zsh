@@ -97,7 +97,9 @@ function psu {
 
 alias path='echo -e ${PATH//:/\\n}'
 alias fpath='echo -e ${FPATH//:/\\n}'
+alias cdpath='echo -e ${cdpath//:/\\n}'
 alias manpath='echo -e ${MANPATH//:/\\n}'
+alias infopath='echo -e ${infoPATH//:/\\n}'
 
 # Homebrew
 alias brewc='brew cleanup'
@@ -157,7 +159,7 @@ function get-pass {
 
 # Opens file in EDITOR.
 function edit {
-  local dir=$1
+  local dir="$1"
   [[ -z "$dir" ]] && dir='.'
   $EDITOR $dir
 }
@@ -274,6 +276,39 @@ function rm-osx-cruft {
     -type f -name '.DS_Store' -o \
     -type f -name '__MACOSX' \
   \) -print0 | xargs -0 rm -rf
+}
+
+# Displays the current Finder.app directory.
+function cfd {
+  osascript 2>/dev/null <<EOF
+    tell application "Finder"
+      return POSIX path of (target of first window as text)
+    end tell
+EOF
+}
+
+# Displays the current Finder.app selection.
+function cfs {
+  osascript 2>/dev/null <<EOF
+    tell application "Finder" to set the_selection to selection
+    if the_selection is not {}
+      repeat with an_item in the_selection
+        log POSIX path of (an_item as text)
+      end repeat
+    end if
+EOF
+}
+
+# Opens man pages in Preview.app
+function manp {
+  local page
+  if (( $# > 0 )); then
+    for page in $@; do
+      man -t "$page" | open -f -a Preview
+    done
+  else
+    echo "What manual page do you want?" >&2
+  fi
 }
 
 # Opens a new tab in iTerm in the current directory
