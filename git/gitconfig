@@ -40,6 +40,7 @@
 	old = red
 
 [core]
+	editor = atom --wait
 	excludesfile = Users/griffin/.gitignore.global
 
 [diff]

@@ -5,8 +5,10 @@
       "unity-ui"
       "base16-tomorrow-dark-theme"
     ]
-    projectHome: "/Users/griffin/Developer"
     destroyEmptyPanes: false
+    disabledPackages: [
+      "minimap"
+    ]
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 14

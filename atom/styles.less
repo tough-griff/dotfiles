@@ -11,6 +11,9 @@
 @import "packages/file-icons/stylesheets/items";
 
 @{pane-tab-selector}, .icon-file-text {
+  // Bower icon
+  &[data-name$="Bowerfile"]:before { .bower-icon; .medium-yellow }
+
   // Database icon
   &[data-name$="psqlrc"]:before { .database-icon; }
 
