@@ -1,6 +1,6 @@
 # Atom
 atom/.node-gyp
-atom/.npm
+atom/.apm
 atom/compile-cache
 atom/dev
 atom/packages

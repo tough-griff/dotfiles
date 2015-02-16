@@ -10,10 +10,10 @@ begin
   RUBY_STRING = "#{RUBY_ENGINE}-#{RUBY_VERSION}"
   Pry.prompt = [
     lambda do |obj, level, _pry|
-      "#{RUBY_STRING.redish} (#{obj}):#{level} #{"❯".green} "
+      "#{RUBY_STRING.redish} (#{obj}):#{level} #{'❯'.green} "
     end,
     lambda do |obj, level, _pry|
-      "#{RUBY_STRING.redish} (#{obj}):#{level} #{"*".green} "
+      "#{RUBY_STRING.redish} (#{obj}):#{level} #{'*'.green} "
     end
   ]
 rescue LoadError
@@ -34,7 +34,8 @@ class Array
 end
 
 class Hash
-  def self.toy(n = 10)
-    Hash[Array.toy(n).zip(Array.toy(n) { |c| (96 + (c + 1)).chr })]
+  def self.toy(n = 10, &block)
+    array = block_given? ? Array.toy(n, &block) : Array.toy(n) { |c| (96 + (c + 1)).chr }
+    Hash[Array.toy(n).zip(array)]
   end
 end
