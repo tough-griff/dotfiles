@@ -1,8 +1,7 @@
 # Atom
-atom/.node-gyp
 atom/.apm
+atom/.node-gyp
 atom/compile-cache
-atom/dev
 atom/packages
 atom/storage
 
