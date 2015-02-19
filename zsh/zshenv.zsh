@@ -61,6 +61,7 @@ manpath=(
 
 # Set the list of directories that zsh searches for programs.
 path=(
+  $HOME/bin
   $path
   /Applications/Postgres.app/Contents/Versions/9.3/bin
   /usr/local/share/git-core/contrib/diff-highlight

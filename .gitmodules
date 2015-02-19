@@ -1,0 +1,3 @@
+[submodule "bin/wifi-password"]
+	path = bin/wifi-password
+	url = https://github.com/rauchg/wifi-password.git

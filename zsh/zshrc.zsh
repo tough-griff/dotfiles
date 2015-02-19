@@ -148,15 +148,6 @@ function mkcd {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
 
-# Gets password from the OS X Keychain.
-# $ get-pass github
-function get-pass {
-  echo 'FIX ME'
-  # local keychain="$HOME/Library/Keychains/login.keychain"
-  # security -q find-generic-password -g -l $@ $keychain 2>&1 |\
-  #   awk -F\" '/password:/ {print $2}';
-}
-
 # Opens file in EDITOR.
 function edit {
   local dir="$1"
