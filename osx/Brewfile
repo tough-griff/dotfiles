@@ -24,10 +24,10 @@ install httpie
 install hub
 install node
 install openssl
-install phantomjs
+install p7zip
+install phantomjs192
 install pound
 install python
-install python3
 install readline
 install redis
 install rename

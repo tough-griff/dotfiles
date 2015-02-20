@@ -3,7 +3,7 @@
     followSymlinks: true
     themes: [
       "one-dark-ui"
-      "base16-tomorrow-dark-theme"
+      "one-dark-syntax"
     ]
     destroyEmptyPanes: false
   editor:
@@ -22,9 +22,9 @@
   metrics:
     userId: "8e7208e4b8bc82e2315cd4914081208b721197de"
   minimap:
-    displayPluginsControls: false
-    adjustMinimapWidthToSoftWrap: false
     minimapScrollIndicator: false
+    adjustMinimapWidthToSoftWrap: false
+    displayPluginsControls: false
   "release-notes":
     viewedVersion: "0.94.0"
   "tree-view":

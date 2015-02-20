@@ -2,9 +2,9 @@
 # --------------------------------------------------------
 
 # Define secret environment variables.
-secrets="$HOME/.secrets"
-[[ -f "$secrets" ]] && source $secrets
-unset secrets
+_secrets="$HOME/.secrets"
+[[ -f "$_secrets" ]] && source $_secrets
+unset _secrets
 
 # Browser
 # -------
