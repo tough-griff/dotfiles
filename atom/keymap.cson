@@ -20,3 +20,4 @@
   'cmd-k cmd-m': 'minimap:toggle'
   'cmd-k cmd-d': 'minimap:toggle-debug'
   'cmd-k cmd-s': 'minimap:open-quick-settings'
+  'cmd-|': 'symbols-tree-view:toggle'

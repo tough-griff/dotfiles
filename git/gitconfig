@@ -41,7 +41,7 @@
 
 [core]
 	editor = atom --wait
-	excludesfile = Users/griffin/.gitignore.global
+	excludesfile = /Users/griffin/.gitignore.global
 
 [diff]
 	mnemonicprefix = true

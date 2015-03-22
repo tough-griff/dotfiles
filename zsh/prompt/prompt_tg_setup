@@ -20,7 +20,7 @@ function prompt_tg_setup {
 
   add-zsh-hook precmd prompt_tg_precmd
 
-  zstyle ':vcs_info:*' enable git hg svn
+  zstyle ':vcs_info:*' enable git
   zstyle ':vcs_info:*' check-for-changes true
   zstyle ':vcs_info:*' unstagedstr '*'
   zstyle ':vcs_info:*' stagedstr ' +'

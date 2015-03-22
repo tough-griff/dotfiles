@@ -13,8 +13,7 @@
     invisibles: {}
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
-  "file-icons":
-    forceShow: true
+  "file-icons": {}
   "fuzzy-finder":
     ignoredNames: [
       "**/vendor/cache/*"
@@ -35,6 +34,11 @@
     ignoreWhitespaceOnCurrentLine: false
   linter:
     lintOnChange: false
+  "autocomplete-plus": {}
+  "remote-edit": {}
+  "symbols-tree-view":
+    scrollAnimation: false
+  react: {}
 ".makefile.source":
   editor:
     tabLength: 4
