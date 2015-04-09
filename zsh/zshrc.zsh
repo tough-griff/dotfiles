@@ -34,10 +34,6 @@ if (( ${+commands[fasd]} )); then
   unset fasd_cache
 fi
 
-# chruby
-source '/usr/local/share/chruby/chruby.sh'
-source '/usr/local/share/chruby/auto.sh'
-
 # source npm completions
 if (( ${+commands[npm]} )); then
   eval "$(npm completion 2>/dev/null)"
@@ -329,3 +325,5 @@ EOF
 if (( ${+commands[direnv]} )); then
   eval "$(direnv hook $0)"
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

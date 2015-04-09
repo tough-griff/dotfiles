@@ -1,44 +1,36 @@
-# Install command-line tools using Homebrew
-# Usage: `brew bundle Brewfile`
-
-# Make sure we're using the latest Homebrew, and upgrade any existing formulae
-update
-upgrade
+# Usage: `brew brewdle`
+# `brew tap Homebrew/brewdler` if uninstalled
 
 # Install GNU core utilities
 # see zshrc GNU-utils
-install coreutils
-install moreutils
-install findutils
-install gnu-sed
+brew "coreutils"
+brew "moreutils"
+brew "findutils"
+brew "gnu-sed"
 
 # Install other useful binaries
-install casperjs --devel
-install chruby
-install direnv
-install fasd
-install ghi
-install git
-install heroku-toolbelt
-install httpie
-install hub
-install node
-install openssl
-install p7zip
-install phantomjs192
-install pound
-install python
-install readline
-install redis
-install rename
-install ruby-build
-install the_silver_searcher
-install tree
-install wget --enable-iri
-install zsh
-install zsh-completions
-install zsh-history-substring-search
-install zsh-syntax-highlighting
-
-# Remove outdated versions from the cellar
-cleanup
+brew "casperjs", args: ["devel"]
+brew "direnv"
+brew "fasd"
+brew "ghi"
+brew "git"
+brew "gpg"
+brew "heroku-toolbelt"
+brew "httpie"
+brew "hub"
+brew "node"
+brew "openssl"
+brew "p7zip"
+brew "phantomjs192"
+brew "pound"
+brew "python"
+brew "readline"
+brew "redis"
+brew "rename"
+brew "the_silver_searcher"
+brew "tree"
+brew "wget", args: ["enable-iri"]
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-history-substring-search"
+brew "zsh-syntax-highlighting"

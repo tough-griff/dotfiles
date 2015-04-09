@@ -40,6 +40,7 @@
 	old = red
 
 [core]
+	autocrlf = input
 	editor = atom --wait
 	excludesfile = /Users/griffin/.gitignore.global
 

@@ -10,10 +10,8 @@
     fontFamily: "Source Code Pro"
     fontSize: 14
     showIndentGuide: true
-    invisibles: {}
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
-  "file-icons": {}
   "fuzzy-finder":
     ignoredNames: [
       "**/vendor/cache/*"
@@ -32,12 +30,10 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-  linter:
-    lintOnChange: false
-  "autocomplete-plus": {}
-  "remote-edit": {}
   "symbols-tree-view":
     scrollAnimation: false
+  "Remote-FTP":
+    hideLocalWhenDisplayed: true
   react: {}
 ".makefile.source":
   editor:

@@ -1,36 +1,34 @@
+// Hide the scrollbar, we're using minimap (again)
+atom-text-editor::shadow .vertical-scrollbar {
+  opacity: 0;
+  width: 0;
+}
+
 // File-icon overrides.
-@import "packages/file-icons/stylesheets/colors";
-@import "packages/file-icons/stylesheets/icons";
-@import "packages/file-icons/stylesheets/items";
-
+@import "packages/file-icons/styles/colors";
+@import "packages/file-icons/styles/icons";
+@import "packages/file-icons/styles/items";
 @{pane-tab-selector}, .icon-file-text {
-  // Bower icon
-  &[data-name$="Bowerfile"]:before { .bower-icon; .medium-yellow }
-
-  // CPP icon
+  // C++
   &[data-name$=".hh"]:before { .cpp-icon; .light-purple }
 
-  // Database icon
-  &[data-name$="psqlrc"]:before { .database-icon; }
+  // Database Icon
+  &[data-name="psqlrc"]:before { .sql-icon; }
 
-  &[data-name$=".sql"]:before { .database-icon; .dark-blue; }
+  // Gear Icon
+  &[data-name="agignore"]:before,
+  &[data-name="gitconfig"]:before,
+  &[data-name="gitignore"]:before,
+  &[data-name="hushlogin"]:before { .gear-icon; }
 
-  // Gear icon
-  &[data-name$="agignore"]:before,
-  &[data-name$="gitconfig"]:before,
-  &[data-name$="gitignore"]:before,
-  &[data-name$="hushlogin"]:before { .gear-icon; }
-
-  // Javascript icon
+  // Javascript
   &[data-name$="_spec.js"]:before { .js-icon; .medium-green; }
 
-  // Ruby icon
-  &[data-name="Guardfile"]:before,
+  // Ruby
   &[data-name="Procfile"]:before,
-  &[data-name$="gemrc"]:before,
-  &[data-name$="pryrc"]:before,
-  &[data-name$="railsrc"]:before { .ruby-icon; }
+  &[data-name="gemrc"]:before,
+  &[data-name="pryrc"]:before,
+  &[data-name="railsrc"]:before { .ruby-icon; }
 
-  &[data-name$=".ru"]:before,
-  &[data-name$=".rake"]:before    { .ruby-icon; .medium-red; }
+  &[data-name$=".rake"]:before { .ruby-icon; .medium-red; }
 }
