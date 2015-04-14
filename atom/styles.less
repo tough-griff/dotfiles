@@ -8,7 +8,13 @@ atom-text-editor::shadow .vertical-scrollbar {
 @import "packages/file-icons/styles/colors";
 @import "packages/file-icons/styles/icons";
 @import "packages/file-icons/styles/items";
+
+.apple-icon { .fa; content: "\f179"; }
+
 @{pane-tab-selector}, .icon-file-text {
+  // Apple Icon
+  &[data-name="Brewfile"]:before { .apple-icon; }
+
   // C++
   &[data-name$=".hh"]:before { .cpp-icon; .light-purple }
 

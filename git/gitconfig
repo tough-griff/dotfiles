@@ -15,17 +15,19 @@
 	dc = "diff --cached"
 	f = "fetch"
 	fa = "fetch --all --verbose --prune"
+	h = "hash"
 	l = "log --graph"
 	p = "push"
 	pl = "pull"
 	r = "remote --verbose"
 	s = "status --short"
-	st = "status"
 	sh = "show"
+	st = "status"
 	u = "up"
 
 	# new functionality
 	amend = "commit --amend"        # amend your last commit
+	hash = "log HEAD -n1 --pretty=format:'%h'"
 	uncommit = "reset --soft HEAD^" # go back before last commit
 
 [branch]
@@ -52,7 +54,7 @@
 
 [pager]
 	diff = diff-highlight | less
-	log = diff-highlight | less
+	log = less
 	show = diff-highlight | less
 
 [push]
