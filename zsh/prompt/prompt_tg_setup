@@ -12,16 +12,26 @@ function prompt_tg_pwd {
   local pwd="${PWD/#$HOME/~}"
 
   if [[ "$pwd" == (#m)[/~] ]]; then
-    _prompt_tg_pwd="$MATCH"
+    _pwd="$MATCH"
     unset MATCH
   else
-    _prompt_tg_pwd="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
+    _pwd="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
   fi
+}
+
+# TODO: implement for cool things like ahead, behind, untracked, etc
+function prompt_tg_git_info {
+  typeset -gA _git_info
+
+  ahead='%F{green}⬆%f'
+  behind='%F{green}⬇%f'
+
 }
 
 function prompt_tg_precmd {
   vcs_info
   prompt_tg_pwd
+  prompt_tg_git_info
 }
 
 function prompt_tg_setup {
@@ -36,16 +46,16 @@ function prompt_tg_setup {
 
   zstyle ':vcs_info:*' enable git
   zstyle ':vcs_info:*' check-for-changes true
-  zstyle ':vcs_info:*' unstagedstr '*'
-  zstyle ':vcs_info:*' stagedstr ' +'
+  zstyle ':vcs_info:*' unstagedstr '%F{blue}*%f'
+  zstyle ':vcs_info:*' stagedstr '%F{green}+%f'
   zstyle ':vcs_info:*' actionformats \
-    '%F{yellow}%s:%b:%a%f ' '%F{blue}%u%f%F{green}%c%f'
+    '%F{yellow}%s:%b:%a%f ' '%u%c'
   zstyle ':vcs_info:*' formats \
-    '%F{green}%s:%b%f ' '%F{blue}%u%f%F{green}%c%f'
+    '%F{green}%s:%b%f ' '%u%c'
   zstyle ':vcs_info:*' nvcsformats \
     ''
 
-  PROMPT='%F{cyan}${_prompt_tg_pwd}%f ${vcs_info_msg_0_}%F{red}%(!.!.)❯%f%F{yellow}❯%f%(?.%F{green}.%F{red})❯%f '
+  PROMPT='%F{cyan}${_pwd}%f ${vcs_info_msg_0_}%F{red}%(!.!.)❯%f%F{yellow}❯%f%(?.%F{green}.%F{red})❯%f '
   PROMPT2='%F{yellow}%_%f %F{green}...%f '
   PROMPT3='%F{yellow}? %F{green}#%f '
   PROMPT4='%F{yellow}+%N:%i %F{green}❯%f '

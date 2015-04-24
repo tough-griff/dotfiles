@@ -136,9 +136,16 @@ alias rbbe='bundle exec'
 alias rbbi='bundle install'
 alias rbbu='bundle update'
 
+# ZSH
+alias zr="exec zsh"
+
 # Misc
 if (( ${+commands[hub]} )); then
   eval "$(hub alias -s)"
+fi
+
+if (( ${+commands[thefuck]} )); then
+  alias fuck='$(thefuck $(fc -ln -1))'
 fi
 
 function mkcd {
