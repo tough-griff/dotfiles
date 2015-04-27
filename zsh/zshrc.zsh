@@ -103,8 +103,8 @@ alias brewC='brew cleanup --force'
 alias brewi='brew install'
 alias brewl='brew list'
 alias brews='brew search'
-alias brewu='brew upgrade'
-alias brewU='brew update && brew upgrade'
+alias brewu='brew upgrade --all'
+alias brewU='brew update && brew upgrade --all'
 alias brewx='brew remove'
 
 # Git
@@ -136,8 +136,13 @@ alias rbbe='bundle exec'
 alias rbbi='bundle install'
 alias rbbu='bundle update'
 
+# Node
+alias npml='npm list --depth=0'
+
 # ZSH
-alias zr="exec zsh"
+alias zr='exec zsh'
+
+alias electron='/Applications/Electron.app/Contents/MacOS/Electron'
 
 # Misc
 if (( ${+commands[hub]} )); then
@@ -329,9 +334,10 @@ EOF
 # added by travis gem
 [[ -f /Users/griffin/.travis/travis.sh ]] && source /Users/griffin/.travis/travis.sh
 
+# NVM
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # direnv goes last
 if (( ${+commands[direnv]} )); then
   eval "$(direnv hook $0)"
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

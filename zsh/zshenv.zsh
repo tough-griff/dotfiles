@@ -65,6 +65,7 @@ path=(
   $path
   /Applications/Postgres.app/Contents/Versions/9.3/bin
   /usr/local/share/git-core/contrib/diff-highlight
+  $HOME/.rvm/bin
 )
 
 # Misc
@@ -78,3 +79,5 @@ if [[ -d "$TMPDIR" ]]; then
 fi
 
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/ca-bundle.crt
+
+export NVM_DIR=$HOME/.nvm

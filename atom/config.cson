@@ -35,7 +35,9 @@
     scrollAnimation: false
   "Remote-FTP":
     hideLocalWhenDisplayed: true
-  react: {}
+  linter:
+    lintOnChange: false
+    lintOnSave: true
 ".makefile.source":
   editor:
     tabLength: 4
