@@ -1,16 +1,16 @@
 "*":
   core:
     followSymlinks: true
-    themes: [
-      "one-dark-ui"
-      "one-dark-syntax"
-    ]
     destroyEmptyPanes: false
+    disabledPackages: [
+      "remote-ftp"
+    ]
+    projectHome: "/Users/griffin/dev/"
   editor:
     fontFamily: "Source Code Pro"
-    showIndentGuide: true
     fontSize: 14
     invisibles: {}
+    showIndentGuide: true
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "fuzzy-finder":
@@ -20,24 +20,22 @@
   metrics:
     userId: "8e7208e4b8bc82e2315cd4914081208b721197de"
   minimap:
-    minimapScrollIndicator: false
     adjustMinimapWidthToSoftWrap: false
     displayPluginsControls: false
-  "release-notes":
-    viewedVersion: "0.94.0"
+    minimapScrollIndicator: false
+  "one-dark-ui":
+    layoutMode: "Compact"
+  react: {}
+  "Remote-FTP":
+    hideLocalWhenDisplayed: true
+  "symbols-tree-view":
+    scrollAnimation: false
   "tree-view":
     hideIgnoredNames: true
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-  "symbols-tree-view":
-    scrollAnimation: false
-  "Remote-FTP":
-    hideLocalWhenDisplayed: true
-  linter:
-    lintOnChange: false
-    lintOnSave: true
 ".makefile.source":
   editor:
     tabLength: 4
