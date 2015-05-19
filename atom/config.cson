@@ -2,14 +2,12 @@
   core:
     followSymlinks: true
     destroyEmptyPanes: false
-    disabledPackages: [
-      "remote-ftp"
-    ]
     projectHome: "/Users/griffin/dev/"
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 14
-    invisibles: {}
+    invisibles:
+      {}
     showIndentGuide: true
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
@@ -25,7 +23,8 @@
     minimapScrollIndicator: false
   "one-dark-ui":
     layoutMode: "Compact"
-  react: {}
+  react:
+    {}
   "Remote-FTP":
     hideLocalWhenDisplayed: true
   "symbols-tree-view":

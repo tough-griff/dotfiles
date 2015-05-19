@@ -150,7 +150,7 @@ if (( ${+commands[hub]} )); then
 fi
 
 if (( ${+commands[thefuck]} )); then
-  alias fuck='$(thefuck $(fc -ln -1))'
+  alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 fi
 
 function mkcd {
@@ -336,6 +336,10 @@ EOF
 
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+if (( ${+commands[rbenv]} )); then
+  eval "$(rbenv init -)"
+fi
 
 # direnv goes last
 if (( ${+commands[direnv]} )); then

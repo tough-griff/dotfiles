@@ -66,7 +66,6 @@ path=(
   /Applications/Postgres.app/Contents/Versions/9.3/bin
   /usr/local/share/git-core/contrib/diff-highlight
   $HOME/Library/Android/sdk/platform-tools
-  $HOME/.rvm/bin
 )
 
 # Misc
@@ -82,3 +81,5 @@ fi
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/ca-bundle.crt
 
 export NVM_DIR=$HOME/.nvm
+
+export RBENV_ROOT=/usr/local/var/rbenv
