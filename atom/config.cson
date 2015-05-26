@@ -1,4 +1,6 @@
 "*":
+  "atom-fuzzy-grep":
+    {}
   core:
     followSymlinks: true
     destroyEmptyPanes: false
@@ -29,6 +31,9 @@
     hideLocalWhenDisplayed: true
   "symbols-tree-view":
     scrollAnimation: false
+  "tool-bar":
+    iconSize: "16px"
+    position: "Left"
   "tree-view":
     hideIgnoredNames: true
   welcome:

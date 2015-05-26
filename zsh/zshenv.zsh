@@ -78,6 +78,10 @@ if [[ -d "$TMPDIR" ]]; then
   fi
 fi
 
+# Atom
+export ATOM_HOME=$HOME/.atom
+export ATOM_DEV_RESOURCE_PATH=$HOME/dev/atom
+
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/ca-bundle.crt
 
 export NVM_DIR=$HOME/.nvm
