@@ -99,12 +99,10 @@ alias infopath='echo -e ${infoPATH//:/\\n}'
 
 # Homebrew
 alias brewc='brew cleanup'
-alias brewC='brew cleanup --force'
 alias brewi='brew install'
 alias brewl='brew list'
 alias brews='brew search'
-alias brewu='brew upgrade --all'
-alias brewU='brew update && brew upgrade --all'
+alias brewu='brew update && brew upgrade --all'
 alias brewx='brew remove'
 
 # Git

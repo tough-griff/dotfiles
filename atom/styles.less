@@ -1,7 +1,18 @@
+* {
+  font-family: "Source Sans Pro";
+  font-weight: 200;
+}
+
 // Hide the scrollbar, we're using minimap (again)
-atom-text-editor::shadow .vertical-scrollbar {
-  opacity: 0;
-  width: 0;
+atom-text-editor::shadow {
+  .line {
+    width: 100% !important;
+  }
+
+  .vertical-scrollbar {
+    opacity: 0;
+    width: 0 !important;
+  }
 }
 
 // File-icon overrides.

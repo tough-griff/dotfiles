@@ -1,5 +1,5 @@
-# Usage: `brew brewdle`
-# `brew tap Homebrew/brewdler` if uninstalled
+# Usage: `brew bundle`
+# `brew tap Homebrew/bundle` if uninstalled
 
 # Install GNU core utilities
 # see zshrc GNU-utils

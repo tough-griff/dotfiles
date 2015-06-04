@@ -2,9 +2,7 @@
   "atom-fuzzy-grep":
     {}
   core:
-    followSymlinks: true
     destroyEmptyPanes: false
-    projectHome: "/Users/griffin/dev/"
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 14
@@ -15,7 +13,7 @@
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "fuzzy-finder":
     ignoredNames: [
-      "**/vendor/cache/*"
+      "vendor/cache"
     ]
   metrics:
     userId: "8e7208e4b8bc82e2315cd4914081208b721197de"
@@ -23,14 +21,12 @@
     adjustMinimapWidthToSoftWrap: false
     displayPluginsControls: false
     minimapScrollIndicator: false
+    plugins:
+      "find-and-replace": true
   "one-dark-ui":
     layoutMode: "Compact"
   react:
     {}
-  "Remote-FTP":
-    hideLocalWhenDisplayed: true
-  "symbols-tree-view":
-    scrollAnimation: false
   "tool-bar":
     iconSize: "16px"
     position: "Left"
