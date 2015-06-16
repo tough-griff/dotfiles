@@ -17,13 +17,6 @@ setopt CORRECT
 setopt EXTENDED_GLOB
 unsetopt CLOBBER
 
-# Set the terminal and tab title
-precmd () {
-  tab_label=${PWD/${HOME}/\~}
-  echo -ne "\e]2;${tab_label}\a"
-  echo -ne "\e]1;${tab_label: -24}\a"
-}
-
 # Use fasd for ultra-fast navigation
 if (( ${+commands[fasd]} )); then
   fasd_cache="$HOME/.fasd-init-zsh"
