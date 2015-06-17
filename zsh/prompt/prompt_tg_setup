@@ -5,6 +5,8 @@
 #
 # * shows to the right with unstaged changes
 # + shows to the right with stages changes
+# ⇡ shows to the right when ahead of origin
+# ⇣ shows to the right when behind origin
 
 # stolen from https://github.com/sorin-ionescu/prezto/blob/master/modules/prompt/functions/prompt_sorin_setup
 # beautifully shortens paths like ~/dotfiles/zsh/prompt to ~/d/z/prompt
@@ -19,17 +21,18 @@ function prompt_tg_pwd {
   fi
 }
 
-function prompt_tg_git {
+# parts of
+function prompt_tg_git_info {
   command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
 
-  prompt_tg_git_dirty=$(prompt_tg_check_git_dirty)
-  prompt_tg_git_added=$(prompt_tg_check_git_added)
-  prompt_tg_git_arrows=$(prompt_tg_check_git_ahead_behind)
+  _git_dirty=$(prompt_tg_check_git_dirty)
+  _git_added=$(prompt_tg_check_git_added)
+  _git_arrows=$(prompt_tg_check_git_ahead_behind)
 }
 
 function prompt_tg_check_git_dirty {
   local dirty=''
-  (( $(command git status --porcelain --ignore-submodules -unormal 2>/dev/null | grep "^.M" | wc -l) > 0 )) && dirty="*"
+  (( $(command git status --porcelain --ignore-submodules -unormal 2>/dev/null | grep "^.M\|??" | wc -l) > 0 )) && dirty="*"
   [[ "$dirty" != "" ]] && echo "${dirty}"
 }
 
@@ -48,25 +51,14 @@ function prompt_tg_check_git_ahead_behind {
 
 function prompt_tg_precmd {
   prompt_tg_pwd
-
-  prompt_tg_git
-
-  print -Pn "\e]0;"
-  print -Pnr "${PWD/${HOME}/~}"
-  print -Pn "\a"
-
+  prompt_tg_git_info
   vcs_info
 
-  unset prompt_tg_cmd_timestamp
-}
-
-# TODO
-function prompt_tg_preexec {
-  prompt_tg_cmd_timestamp=$EPOCHSECONDS
-
   print -Pn "\e]0;"
   print -Pnr "${PWD/${HOME}/~}"
   print -Pn "\a"
+
+  unset prompt_tg_cmd_timestamp
 }
 
 function prompt_tg_setup {
@@ -78,7 +70,6 @@ function prompt_tg_setup {
   autoload -Uz vcs_info
 
   add-zsh-hook precmd prompt_tg_precmd
-  add-zsh-hook preexec prompt_tg_preexec
 
   zstyle ':vcs_info:*' enable git
   zstyle ':vsc_info:*' use-simple true
@@ -89,7 +80,7 @@ function prompt_tg_setup {
   PROMPT2='%F{yellow}%_%f %F{green}...%f '
   PROMPT3='%F{yellow}? %F{green}#%f '
   PROMPT4='%F{yellow}+%N:%i %F{green}❯%f '
-  RPROMPT='%F{blue}${prompt_tg_git_dirty}%f%F{green}${prompt_tg_git_added}%f%F{cyan}${prompt_tg_git_arrows}%f'
+  RPROMPT='%F{blue}${_git_dirty}%f%F{green}${_git_added}%f%F{cyan}${_git_arrows}%f'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
