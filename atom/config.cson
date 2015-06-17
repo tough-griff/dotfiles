@@ -1,13 +1,11 @@
 "*":
-  "atom-fuzzy-grep":
-    {}
+  "atom-fuzzy-grep": {}
   core:
     destroyEmptyPanes: false
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 14
-    invisibles:
-      {}
+    invisibles: {}
     showIndentGuide: true
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
@@ -25,8 +23,9 @@
       "find-and-replace": true
   "one-dark-ui":
     layoutMode: "Compact"
-  react:
-    {}
+  react: {}
+  tabs:
+    usePreviewTabs: true
   "tool-bar":
     iconSize: "16px"
     position: "Left"

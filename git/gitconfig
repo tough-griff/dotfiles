@@ -60,6 +60,10 @@
 [push]
 	default = current
 
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+	insteadOf = git@github.com:
+
 # plugins and etc
 [git-up "bundler"]
 	check = true
