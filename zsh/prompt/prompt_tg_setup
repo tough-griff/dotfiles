@@ -21,7 +21,7 @@ function prompt_tg_pwd {
   fi
 }
 
-# parts of
+# git checks taken in part from https://github.com/sindresorhus/pure/blob/master/pure.zsh
 function prompt_tg_git_info {
   command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
 
