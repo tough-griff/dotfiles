@@ -25,6 +25,7 @@
     layoutMode: "Compact"
   react: {}
   tabs:
+    enableVcsColoring: true
     usePreviewTabs: true
   "tool-bar":
     iconSize: "16px"
