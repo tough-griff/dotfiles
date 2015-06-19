@@ -33,24 +33,28 @@ function prompt_tg_git_info {
   _git_removed=$(prompt_tg_check_git_removed)
 }
 
+# checks for unstaged deleted ( D), modified ( M), or unknown (??) files
 function prompt_tg_check_git_dirty {
   local dirty=''
-  (( $(echo ${_git_status} | grep "^.M\|??\|.D" | wc -l) > 0 )) && dirty="*"
+  (( $(echo ${_git_status} | egrep '^(.[DM]|\?\?)' | wc -l) > 0 )) && dirty="*"
   [[ "${dirty}" != "" ]] && echo "${dirty}"
 }
 
+# checks for staged added (A ), modified (M ), or renamed (R ) files
 function prompt_tg_check_git_added {
   local added=''
-  (( $(echo ${_git_status} | grep "^M\|A" | wc -l) > 0 )) && added="+"
+  (( $(echo ${_git_status} | egrep '^[AMR]' | wc -l) > 0 )) && added="+"
   [[ "${added}" != "" ]] && echo "${added}"
 }
 
+# checks for staged deleted (D ) files.
 function prompt_tg_check_git_removed {
   local removed=''
-  (( $(echo ${_git_status} | grep "^D" | wc -l) > 0 )) && removed="-"
+  (( $(echo ${_git_status} | egrep '^D' | wc -l) > 0 )) && removed="-"
   [[ "${removed}" != "" ]] && echo "${removed}"
 }
 
+# checks whether the local repository is ahead or behind of origin
 function prompt_tg_check_git_ahead_behind {
   local arrows=''
   (( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows="⇣"
