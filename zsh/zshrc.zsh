@@ -128,7 +128,18 @@ alias rbbi='bundle install'
 alias rbbu='bundle update'
 
 # Node
+alias npmi='npm install'
 alias npml='npm list --depth=0'
+alias npms='npm search'
+alias npmu='npm update'
+alias npmx='npm uninstall'
+
+# apm (atom package manager)
+alias apmi='apm install'
+alias apml='apm list --installed'
+alias apms='apm search'
+alias apmu='apm update'
+alias apmx='apm uninstall'
 
 # ZSH
 alias zr='exec zsh'
