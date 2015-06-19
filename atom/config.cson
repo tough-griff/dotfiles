@@ -1,5 +1,9 @@
 "*":
   "atom-fuzzy-grep": {}
+  "autocomplete-plus": {}
+  "color-picker":
+    abbreviateValues: true
+    preferredFormat: "HEX"
   core:
     destroyEmptyPanes: false
   editor:
@@ -13,6 +17,10 @@
     ignoredNames: [
       "vendor/cache"
     ]
+  "git-diff": {}
+  "grammar-selector": {}
+  "markdown-preview":
+    useGitHubStyle: true
   metrics:
     userId: "8e7208e4b8bc82e2315cd4914081208b721197de"
   minimap:
@@ -24,8 +32,11 @@
   "one-dark-ui":
     layoutMode: "Compact"
   react: {}
+  "spell-check": {}
+  "status-bar": {}
   tabs:
     enableVcsColoring: true
+    tabScrolling: true
     usePreviewTabs: true
   "tool-bar":
     iconSize: "16px"
