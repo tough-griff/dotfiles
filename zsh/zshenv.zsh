@@ -63,7 +63,7 @@ manpath=(
 path=(
   $HOME/bin
   $path
-  /Applications/Postgres.app/Contents/Versions/9.3/bin
+  /Applications/Postgres.app/Contents/Versions/9.4/bin
   /usr/local/share/git-core/contrib/diff-highlight
   $HOME/Library/Android/sdk/platform-tools
 )
