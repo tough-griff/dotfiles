@@ -23,7 +23,7 @@ function prompt_tg_pwd {
 
 # git checks taken in part from https://github.com/sindresorhus/pure/blob/master/pure.zsh
 function prompt_tg_git_info {
-  command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
+  command git rev-parse --abbrev-ref @ &>/dev/null || return
 
   _git_status=$(command git status --porcelain --ignore-submodules -unormal 2>/dev/null)
 
@@ -56,6 +56,8 @@ function prompt_tg_check_git_removed {
 
 # checks whether the local repository is ahead or behind of origin
 function prompt_tg_check_git_ahead_behind {
+  command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
+
   local arrows=''
   (( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows="⇣"
   (( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows+="⇡"
