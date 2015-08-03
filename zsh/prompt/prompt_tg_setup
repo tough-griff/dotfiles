@@ -70,7 +70,7 @@ function prompt_tg_precmd {
   vcs_info
 
   print -Pn "\e]0;"
-  print -Pnr "${PWD/${HOME}/~}"
+  print -Pnr "${_pwd}"
   print -Pn "\a"
 }
 

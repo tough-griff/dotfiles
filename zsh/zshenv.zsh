@@ -78,9 +78,6 @@ if [[ -d "$TMPDIR" ]]; then
   fi
 fi
 
-# nvm
-export NVM_DIR=$HOME/.nvm
-
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 

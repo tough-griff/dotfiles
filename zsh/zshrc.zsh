@@ -152,7 +152,7 @@ if (( ${+commands[hub]} )); then
 fi
 
 if (( ${+commands[thefuck]} )); then
-  alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+  eval "$(thefuck-alias)"
 fi
 
 function mkcd {
@@ -335,9 +335,6 @@ EOF
 
 # added by travis gem
 [[ -f /Users/griffin/.travis/travis.sh ]] && source /Users/griffin/.travis/travis.sh
-
-# NVM
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 if (( ${+commands[rbenv]} )); then
   eval "$(rbenv init -)"

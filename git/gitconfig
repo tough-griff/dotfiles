@@ -65,6 +65,9 @@
 	insteadOf = git@github.com:
 
 # plugins and etc
+[credential]
+	helper = osxkeychain
+
 [git-up "bundler"]
 	check = true
 
@@ -73,6 +76,3 @@
 
 [hub]
 	protocol = https
-
-[credential]
-	helper = osxkeychain

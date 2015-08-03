@@ -157,6 +157,9 @@ systemsetup -settimezone "America/New_York" > /dev/null
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Enable Magic Trackpad orientation detection
+defaults write com.apple.MultitouchSupport ForceAutoOrientation YES
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################

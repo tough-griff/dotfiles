@@ -24,6 +24,7 @@
   metrics:
     userId: "8e7208e4b8bc82e2315cd4914081208b721197de"
   minimap:
+    absoluteMode: true
     adjustMinimapWidthToSoftWrap: false
     displayPluginsControls: false
     minimapScrollIndicator: false
