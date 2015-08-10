@@ -1,5 +1,6 @@
 # Usage: `brew bundle`
-# `brew tap Homebrew/bundle` if uninstalled
+# `brew tap homebrew/bundle` if uninstalled
+# `brew tap homebrew/versions` for phantomjs192
 
 # Install GNU core utilities
 # see zshrc GNU-utils
@@ -9,13 +10,15 @@ brew "findutils"
 brew "gnu-sed"
 
 # Install other useful binaries
-brew "casperjs", args: ["devel"]
+brew "bash"
+brew "casperjs"
 brew "direnv"
 brew "fasd"
 brew "ghi"
 brew "git"
-brew "gpg"
+brew "gnupg"
 brew "heroku-toolbelt"
+brew "hr"
 brew "httpie"
 brew "hub"
 brew "node"
@@ -24,10 +27,13 @@ brew "p7zip"
 brew "phantomjs192"
 brew "pound"
 brew "python"
+brew "rbenv"
 brew "readline"
 brew "redis"
 brew "rename"
+brew "ruby-build"
 brew "the_silver_searcher"
+brew "thefuck"
 brew "tree"
 brew "wget", args: ["enable-iri"]
 brew "zsh"
