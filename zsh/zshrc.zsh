@@ -120,6 +120,11 @@ alias gsh='git show'
 alias gst='git status'
 alias gu='git up'
 
+# Foreman
+alias fm='foreman'
+alias fms='foreman start'
+alias fmsd='foreman start -f Procfile.dev'
+
 # Ruby
 alias rb='ruby'
 alias rbb='bundle'
