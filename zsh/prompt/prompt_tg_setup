@@ -28,6 +28,7 @@ function prompt_tg_git_info {
   _git_status=$(command git status --porcelain --ignore-submodules -unormal 2>/dev/null)
 
   _git_dirty=$(prompt_tg_check_git_dirty)
+  _git_stashed=$(prompt_tg_check_git_stashed)
   _git_added=$(prompt_tg_check_git_added)
   _git_arrows=$(prompt_tg_check_git_ahead_behind)
   _git_removed=$(prompt_tg_check_git_removed)
@@ -38,6 +39,12 @@ function prompt_tg_check_git_dirty {
   local dirty=''
   (( $(echo ${_git_status} | egrep '^(.[DM]|\?\?)' | wc -l) > 0 )) && dirty="*"
   [[ "${dirty}" != "" ]] && echo "${dirty}"
+}
+
+function prompt_tg_check_git_stashed {
+  local stashed=''
+  (( $(command git stash list | wc -l) > 0 )) && stashed="."
+  [[ "${stashed}" != "" ]] && echo "${stashed}"
 }
 
 # checks for staged added (A ), modified (M ), or renamed (R ) files
@@ -104,7 +111,7 @@ function prompt_tg_setup {
   PROMPT2='%F{yellow}%_%f %F{green}...%f '
   PROMPT3='%F{yellow}? %F{green}#%f '
   PROMPT4='%F{yellow}+%N:%i %F{green}❯%f '
-  RPROMPT='%F{blue}${_git_dirty}%f%F{green}${_git_added}%f%F{red}${_git_removed}%f%F{cyan}${_git_arrows}%f'
+  RPROMPT='%F{blue}${_git_dirty}%f%F{cyan}${_git_stashed}%f%F{green}${_git_added}%f%F{red}${_git_removed}%f%F{cyan}${_git_arrows}%f'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 

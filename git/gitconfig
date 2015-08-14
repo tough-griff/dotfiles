@@ -17,7 +17,7 @@
 	fa = "fetch --all --verbose --prune"
 	h = "hash"
 	l = "log --graph"
-	p = "push"
+	p = "push --set-upstream"
 	pl = "pull"
 	r = "remote --verbose"
 	s = "status --short"
@@ -82,3 +82,8 @@
 
 [hub]
 	protocol = https
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
