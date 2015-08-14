@@ -143,7 +143,7 @@ alias npmx='npm uninstall'
 alias apmi='apm install'
 alias apml='apm list --installed'
 alias apms='apm search'
-alias apmu='apm update'
+alias apmu='apm update --confirm false'
 alias apmx='apm uninstall'
 
 # ZSH
