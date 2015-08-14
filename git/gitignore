@@ -30,7 +30,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# vim
+# === vim ===
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~

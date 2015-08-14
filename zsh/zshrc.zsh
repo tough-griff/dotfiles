@@ -157,7 +157,7 @@ if (( ${+commands[hub]} )); then
 fi
 
 if (( ${+commands[thefuck]} )); then
-  eval "$(thefuck-alias)"
+  eval "$(thefuck --alias)"
 fi
 
 function mkcd {

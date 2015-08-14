@@ -1,89 +1,89 @@
 [user]
-	name = "Griffin Yourick"
-	email = "gryphon92@gmail.com"
+  name = "Griffin Yourick"
+  email = "gryphon92@gmail.com"
 
 [alias]
-	# commonly used git functions
-	a = "add -A"
-	b = "branch --verbose"
-	ba = "branch --all --verbose"
-	c = "commit --message"
-	ci = "commit"
-	co = "checkout"
-	cob = "checkout -b"
-	d = "diff"
-	dc = "diff --cached"
-	f = "fetch"
-	fa = "fetch --all --verbose --prune"
-	h = "hash"
-	l = "log --graph"
-	p = "push --set-upstream"
-	pl = "pull"
-	r = "remote --verbose"
-	s = "status --short"
-	sh = "show"
-	st = "status"
-	u = "up"
+  # commonly used git functions
+  a = "add -A"
+  b = "branch --verbose"
+  ba = "branch --all --verbose"
+  c = "commit --message"
+  ci = "commit"
+  co = "checkout"
+  cob = "checkout -b"
+  d = "diff"
+  dc = "diff --cached"
+  f = "fetch"
+  fa = "fetch --all --verbose --prune"
+  h = "hash"
+  l = "log --graph"
+  p = "push --set-upstream"
+  pl = "pull"
+  r = "remote --verbose"
+  s = "status --short"
+  sh = "show"
+  st = "status"
+  u = "up"
 
-	# new functionality
-	amend = "commit --amend"        			 # amend your last commit
-	hash = "log -n 1 --pretty=format:'%h'" # print the most recent commit's hash
-	uncommit = "reset --soft HEAD^" 			 # go back before last commit
+  # new functionality
+  amend = "commit --amend"                # amend your last commit
+  hash = "log -n 1 --pretty=format:'%h'"  # print the most recent commit's hash
+  uncommit = "reset --soft HEAD^"         # go back before last commit
 
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 
 [color]
-	ui = true
+  ui = true
 [color "diff"]
-	frag = magenta
-	meta = yellow
-	new = green
-	old = red
+  frag = magenta
+  meta = yellow
+  new = green
+  old = red
 
 [core]
-	autocrlf = input
-	editor = atom --wait
-	excludesfile = ~/.gitignore.global
+  autocrlf = input
+  editor = atom --wait
+  excludesfile = ~/.gitignore.global
 
 [diff]
-	mnemonicprefix = true
+  mnemonicprefix = true
 
 [format]
-	pretty = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset"
+  pretty = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset"
 
 [pager]
-	diff = diff-highlight | less
-	log = diff-highlight | less
-	show = diff-highlight | less
+  diff = diff-highlight | less
+  log = diff-highlight | less
+  show = diff-highlight | less
 
 [push]
-	default = current
+  default = current
 
 [url "https://github.com/"]
-	insteadOf = git://github.com/
-	insteadOf = git@github.com:
-	insteadOf = ssh://git@github.com:
+  insteadOf = git://github.com/
+  insteadOf = git@github.com:
+  insteadOf = ssh://git@github.com:
 
 [url "https://git.heroku.com/"]
-	insteadOf = git://heroku.com/
-	insteadOf = git@heroku.com:
-	insteadOf = ssh://git@heroku.com:
+  insteadOf = git://heroku.com/
+  insteadOf = git@heroku.com:
+  insteadOf = ssh://git@heroku.com:
 
 # plugins and etc
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [git-up "bundler"]
-	check = true
+  check = true
 
 [heroku]
-	account = personal
+  account = personal
 
 [hub]
-	protocol = https
+  protocol = https
 
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
