@@ -80,6 +80,7 @@ alias psa='ps aux'
 function psg {
   ps aux | grep $@ | grep -v grep
 }
+
 function psu {
   ps -U "${1:-$USER}" -o 'pid,%cpu,%mem,command' "${(@)argv[2,-1]}"
 }
@@ -101,8 +102,8 @@ alias brewx='brew remove'
 # Git
 alias g='git'
 alias ga='git add -A'
-alias gb='git branch --verbose'
-alias gba='git branch --all --verbose'
+alias gb='git branch --verbose --verbose'
+alias gba='git branch --all --verbose --verbose'
 alias gc='git commit --message'
 alias gci='git commit'
 alias gco='git checkout'
@@ -131,6 +132,16 @@ alias rbb='bundle'
 alias rbbe='bundle exec'
 alias rbbi='bundle install'
 alias rbbu='bundle update'
+
+# Adds the current working directory as the source for a local gem git repo.
+function bundle-set-local-gem {
+  bundle config "local.${PWD##*/}" "$PWD"
+}
+
+# Removes a given local gem git repo, given a gem name as the argument.
+function bundle-unset-local-gem {
+  bundle config --delete "local.$@"
+}
 
 # Node
 alias npmi='npm install'

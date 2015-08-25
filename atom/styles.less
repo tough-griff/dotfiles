@@ -30,17 +30,19 @@ atom-text-editor::shadow {
   // Gear Icon
   &[data-name="agignore"]:before,
   &[data-name="eslintrc"]:before,
-  &[data-name="gitconfig"]:before,
-  &[data-name="gitignore"]:before,
   &[data-name="hushlogin"]:before { .gear-icon; }
+
+  // Git Icon
+  &[data-name="gitconfig"]:before,
+  &[data-name="gitignore"]:before { .git-icon; }
 
   // Javascript
   &[data-name$="spec.js"]:before { .js-icon; .medium-green; }
 
   // Ruby
+  &[data-name^="Procfile"]:before,
   &[data-name="default-gems"]:before,
   &[data-name="gemrc"]:before,
-  &[data-name="Procfile"]:before,
   &[data-name="pryrc"]:before,
   &[data-name="railsrc"]:before,
   &[data-name="ruby-version"]:before { .ruby-icon; }
