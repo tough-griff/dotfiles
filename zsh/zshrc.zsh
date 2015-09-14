@@ -1,5 +1,3 @@
-export ZSHCONFIG="$HOME/dotfiles/zsh"
-
 # Load supporting config files
 source "$ZSHCONFIG/completion.zsh"
 source "$ZSHCONFIG/highlighting_and_history.zsh"
@@ -10,7 +8,6 @@ autoload -U colors && colors
 source "$ZSHCONFIG/zshaliases.zsh"
 
 # Set the TG Prompt
-fpath=("$ZSHCONFIG/prompt" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'tg'
 

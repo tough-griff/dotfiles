@@ -1,5 +1,7 @@
 # Environment variables are sourced prior to loading zshrc
 # --------------------------------------------------------
+# Define the zsh configuration folder.
+export ZSHCONFIG="$HOME/dotfiles/zsh"
 
 # Define secret environment variables.
 _secrets="$HOME/.secrets"
@@ -40,6 +42,7 @@ cdpath=(
 
 # Set the list of directories zsh searches for functions.
 fpath=(
+  $ZSHCONFIG/prompt
   $fpath
 )
 
