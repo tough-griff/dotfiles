@@ -84,8 +84,8 @@ fi
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 
-# nvm
-export NVM_DIR=/usr/local/var/nvm
+# nodenv
+export NODENV_ROOT=/usr/local/var/nodenv
 
 # CA Bundle
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/ca-bundle.crt

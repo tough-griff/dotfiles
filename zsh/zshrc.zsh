@@ -42,9 +42,9 @@ if (( ${+commands[rbenv]} )); then
   eval "$(rbenv init -)"
 fi
 
-# load up nvm
-if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-  source "$NVM_DIR/nvm.sh"
+# initialize nodenv
+if (( ${+commands[nodenv]} )); then
+  eval "$(nodenv init -)"
 fi
 
 # direnv goes last
