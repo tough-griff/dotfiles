@@ -88,3 +88,6 @@ export NODENV_ROOT=/usr/local/var/nodenv
 
 # CA Bundle
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/ca-bundle.crt
+
+# Android SDK
+export ANDROID_HOME=/usr/local/opt/android-sdk

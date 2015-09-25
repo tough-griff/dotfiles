@@ -37,7 +37,7 @@ function prompt_tg_git_info {
 # checks for unstaged deleted ( D), modified ( M), or unknown (??) files
 function prompt_tg_check_git_dirty {
   local dirty=''
-  (( $(echo ${_git_status} | egrep '^(.[DM]|\?\?)' | wc -l) > 0 )) && dirty="*"
+  (( $(egrep '^(.[DM]|\?\?)' <<< ${_git_status} | wc -l) > 0 )) && dirty="*"
   [[ "${dirty}" != "" ]] && echo "${dirty}"
 }
 
@@ -50,14 +50,14 @@ function prompt_tg_check_git_stashed {
 # checks for staged added (A ), modified (M ), or renamed (R ) files
 function prompt_tg_check_git_added {
   local added=''
-  (( $(echo ${_git_status} | egrep '^[AMR]' | wc -l) > 0 )) && added="+"
+  (( $(egrep '^[AMR]' <<< ${_git_status} | wc -l) > 0 )) && added="+"
   [[ "${added}" != "" ]] && echo "${added}"
 }
 
 # checks for staged deleted (D ) files.
 function prompt_tg_check_git_removed {
   local removed=''
-  (( $(echo ${_git_status} | egrep '^D' | wc -l) > 0 )) && removed="-"
+  (( $(egrep '^D' <<< ${_git_status} | wc -l) > 0 )) && removed="-"
   [[ "${removed}" != "" ]] && echo "${removed}"
 }
 

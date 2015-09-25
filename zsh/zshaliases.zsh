@@ -131,6 +131,8 @@ alias zr="source ${0:a}"
 
 alias electron='/Applications/Electron.app/Contents/MacOS/Electron'
 
+alias wifi-password='wifi-password -q'
+
 # Misc
 if (( ${+commands[hub]} )); then
   eval "$(hub alias -s)"
