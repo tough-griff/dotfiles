@@ -1,6 +1,9 @@
+babel
 babel-eslint
 eslint
 eslint-plugin-babel
 eslint-plugin-react
+express
 npm
 npm-check-updates
+react-native-cli

@@ -8,7 +8,6 @@
     destroyEmptyPanes: false
   editor:
     fontFamily: "Source Code Pro"
-    fontSize: 14
     invisibles: {}
     showIndentGuide: true
   "exception-reporting":
