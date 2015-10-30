@@ -10,6 +10,7 @@
     fontFamily: "Source Code Pro"
     invisibles: {}
     showIndentGuide: true
+    fontSize: 13
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "fuzzy-finder":
@@ -43,6 +44,7 @@
     position: "Left"
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:
