@@ -5,7 +5,14 @@
     abbreviateValues: true
     preferredFormat: "HEX"
   core:
-    destroyEmptyPanes: false
+    themes: [
+      "native-ui"
+      "one-dark-syntax"
+    ]
+    disabledPackages: [
+      "linter-eslint"
+      "linter-rubocop"
+    ]
   editor:
     fontFamily: "Source Code Pro"
     invisibles: {}
@@ -13,12 +20,18 @@
     fontSize: 13
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
+  "file-icons":
+    coloured: false
   "fuzzy-finder":
     ignoredNames: [
       "vendor/cache"
     ]
   "git-diff": {}
   "grammar-selector": {}
+  linter: {}
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+  "linter-rubocop": {}
   "markdown-preview":
     useGitHubStyle: true
   metrics:
@@ -43,7 +56,6 @@
     iconSize: "16px"
     position: "Left"
   "tree-view":
-    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
