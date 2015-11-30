@@ -15,9 +15,9 @@
     ]
   editor:
     fontFamily: "Source Code Pro"
+    fontSize: 13
     invisibles: {}
     showIndentGuide: true
-    fontSize: 13
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "file-icons":
