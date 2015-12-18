@@ -5,17 +5,17 @@
     abbreviateValues: true
     preferredFormat: "HEX"
   core:
+    audioBeep: false
+    disabledPackages: [
+      "linter"
+    ]
+    openEmptyEditorOnStart: false
     themes: [
       "native-ui"
       "one-dark-syntax"
     ]
-    disabledPackages: [
-      "linter-eslint"
-      "linter-rubocop"
-    ]
   editor:
     fontFamily: "Source Code Pro"
-    fontSize: 13
     invisibles: {}
     showIndentGuide: true
   "exception-reporting":
@@ -29,8 +29,7 @@
   "git-diff": {}
   "grammar-selector": {}
   linter: {}
-  "linter-eslint":
-    disableWhenNoEslintrcFileInPath: true
+  "linter-eslint": {}
   "linter-rubocop": {}
   "markdown-preview":
     useGitHubStyle: true

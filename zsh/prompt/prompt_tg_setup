@@ -4,12 +4,13 @@
 # ~/repo git:master ❯❯❯   (in git repo)
 #
 # * shows to the right with unstaged changes
-# + shows to the right with stages changes
+# + shows to the right with staged additions/changes
+# - shows to the right with staged deletions
 # ⇡ shows to the right when ahead of origin
 # ⇣ shows to the right when behind origin
 
-# stolen from https://github.com/sorin-ionescu/prezto/blob/master/modules/prompt/functions/prompt_sorin_setup
-# beautifully shortens paths like ~/dotfiles/zsh/prompt to ~/d/z/prompt
+# Stolen from https://github.com/sorin-ionescu/prezto/blob/master/modules/prompt/functions/prompt_sorin_setup
+# Beautifully shortens paths like ~/dotfiles/zsh/prompt to ~/d/z/prompt
 function prompt_tg_pwd {
   local pwd="${PWD/#$HOME/~}"
 
@@ -22,6 +23,7 @@ function prompt_tg_pwd {
 }
 
 # git checks taken in part from https://github.com/sindresorhus/pure/blob/master/pure.zsh
+#   @note exits early when no git repo is detected
 function prompt_tg_git_info {
   command git rev-parse --abbrev-ref @ &>/dev/null || return
 
@@ -34,34 +36,36 @@ function prompt_tg_git_info {
   _git_removed=$(prompt_tg_check_git_removed)
 }
 
-# checks for unstaged deleted ( D), modified ( M), or unknown (??) files
+# Checks for unstaged deleted ( D), modified ( M), or unknown (??) files
 function prompt_tg_check_git_dirty {
   local dirty=''
   (( $(egrep '^(.[DM]|\?\?)' <<< ${_git_status} | wc -l) > 0 )) && dirty="*"
   [[ "${dirty}" != "" ]] && echo "${dirty}"
 }
 
+# Checks for stashed changes
 function prompt_tg_check_git_stashed {
   local stashed=''
   (( $(command git stash list | wc -l) > 0 )) && stashed="."
   [[ "${stashed}" != "" ]] && echo "${stashed}"
 }
 
-# checks for staged added (A ), modified (M ), or renamed (R ) files
+# Checks for staged added (A ), modified (M ), or renamed (R ) files
 function prompt_tg_check_git_added {
   local added=''
   (( $(egrep '^[AMR]' <<< ${_git_status} | wc -l) > 0 )) && added="+"
   [[ "${added}" != "" ]] && echo "${added}"
 }
 
-# checks for staged deleted (D ) files.
+# Checks for staged deleted (D ) files.
 function prompt_tg_check_git_removed {
   local removed=''
   (( $(egrep '^D' <<< ${_git_status} | wc -l) > 0 )) && removed="-"
   [[ "${removed}" != "" ]] && echo "${removed}"
 }
 
-# checks whether the local repository is ahead or behind of origin
+# Checks whether the local repository is ahead or behind of origin
+#   @note requires an upstream branch to be set, otherwise exits early
 function prompt_tg_check_git_ahead_behind {
   command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
 
