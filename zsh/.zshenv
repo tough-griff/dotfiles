@@ -1,4 +1,4 @@
-# Environment variables are sourced prior to loading zshrc
+# Environment variables are sourced prior to loading .zshrc
 # --------------------------------------------------------
 # Define the zsh configuration folder.
 export ZSHCONFIG="$HOME/dotfiles/zsh"

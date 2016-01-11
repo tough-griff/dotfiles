@@ -21,29 +21,32 @@ atom-text-editor::shadow {
   &[data-name$=".hh"]:before { .cpp-icon; .light-purple }
 
   // Database Icon
-  &[data-name="psqlrc"]:before { .sql-icon; }
+  &[data-name$=".psqlrc"]:before { .sql-icon; }
 
   // Gear Icon
-  &[data-name="agignore"]:before,
-  &[data-name="eslintrc"]:before,
-  &[data-name="hushlogin"]:before,
-  &[data-name="rubocop.yml"]:before { .gear-icon; }
+  &[data-name$=".agignore"]:before,
+  &[data-name$=".hushlogin"]:before,
+  &[data-name$=".rubocop.yml"]:before { .gear-icon; }
 
   // Git Icon
   &[data-name$=".keep"]:before,
-  &[data-name="gitconfig"]:before,
-  &[data-name="gitignore"]:before { .git-icon; }
 
   // Javascript
-  &[data-name$="spec.js"]:before { .js-icon; .medium-green; }
+  &[data-name$=".node-version"]:before { .js-icon; }
+
+  &[data-name$=".spec.js"]:before { .js-icon; .medium-green; }
 
   // Ruby
   &[data-name^="Procfile"]:before,
-  &[data-name="default-gems"]:before,
-  &[data-name="gemrc"]:before,
-  &[data-name="pryrc"]:before,
-  &[data-name="railsrc"]:before,
-  &[data-name="ruby-version"]:before { .ruby-icon; }
+  &[data-name$=".default-gems"]:before,
+  &[data-name$=".gemrc"]:before,
+  &[data-name$=".pryrc"]:before,
+  &[data-name$=".railsrc"]:before { .ruby-icon; }
 
   &[data-name$=".rake"]:before { .ruby-icon; .medium-red; }
+
+  // Shell
+  &[data-name$=".secrets"]:before,
+  &[data-name$=".zlogin"]:before,
+  &[data-name$=".zshenv"]:before { .terminal-icon; }
 }

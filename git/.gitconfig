@@ -44,7 +44,7 @@
 [core]
   autocrlf = input
   editor = atom --wait
-  excludesfile = ~/.gitignore.global
+  excludesfile = ~/.gitignore
 
 [diff]
   mnemonicprefix = true

@@ -6,4 +6,4 @@ atom/compile-cache
 atom/packages
 atom/storage
 
-secrets
+.secrets
