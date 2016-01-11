@@ -1,5 +1,5 @@
 # ~/.dotfiles
-My personal configuration.
+My personal configuration. ZSH, Atom, and more.
 
 ## Instructions
 Download this repo and symlink everything with the commands below!
