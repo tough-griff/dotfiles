@@ -13,7 +13,7 @@ atom-text-editor::shadow {
 
 .apple-icon { .fa; content: "\f179"; }
 
-@{pane-tab-selector}, .icon-file-text {
+.icon-file-text {
   // Apple Icon
   &[data-name="Brewfile"]:before { .apple-icon; }
 
@@ -26,7 +26,8 @@ atom-text-editor::shadow {
   // Gear Icon
   &[data-name="agignore"]:before,
   &[data-name="eslintrc"]:before,
-  &[data-name="hushlogin"]:before { .gear-icon; }
+  &[data-name="hushlogin"]:before,
+  &[data-name="rubocop.yml"]:before { .gear-icon; }
 
   // Git Icon
   &[data-name$=".keep"]:before,

@@ -91,3 +91,6 @@ export SSL_CERT_FILE=/usr/local/etc/openssl/certs/ca-bundle.crt
 
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# homebrew-cask install directory
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"

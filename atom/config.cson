@@ -23,6 +23,7 @@
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "file-icons":
     coloured: false
+    tabPaneIcon: false
   "fuzzy-finder":
     ignoredNames: [
       "vendor/cache"
