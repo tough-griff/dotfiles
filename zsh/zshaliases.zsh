@@ -81,8 +81,9 @@ alias gfa='git fetch --all --verbose --prune'
 alias gh='git hash'
 alias ghc='git hash | pbcopy'
 alias gl='git log --graph'
-alias gp='git push --set-upstream'
+alias gp='git push'
 alias gpl='git pull'
+alias gpu='git push --set-upstream'
 alias gs='git status --short'
 alias gsh='git show'
 alias gst='git status'
@@ -120,11 +121,13 @@ alias npmu='npm update'
 alias npmx='npm uninstall'
 
 # apm (atom package manager)
-alias apmi='apm install'
+function apmi {
+  apm install $@ && apm list --installed --bare !> ${HOME}/.atom/package-list
+}
 alias apml='apm list --installed'
 alias apms='apm search'
-alias apmu='apm update --confirm false'
-alias apmx='apm uninstall'
+alias apmu='apm update --confirm false && apm list --installed --bare >! ${HOME}/.atom/package-list'
+alias apmx='apm uninstall && apm list --installed --bare >! ${HOME}/.atom/package-list'
 
 # ZSH
 alias zr="source ${0:a}"
@@ -160,11 +163,11 @@ alias ebc='edit ~/.bundle/config'
 # $ each git up
 function each {
   for dir in *; do
-    echo "${dir}:"
-    cd $dir
-    eval "$@"
-    cd ..
-    echo
+    if [[ -d ${dir} ]]; then
+      echo "${dir}:"
+      (cd ${dir} && eval "$@")
+      echo
+    fi
   done
 }
 

@@ -6,14 +6,15 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
+    disabledPackages: [
+      "linter-eslint"
+      "linter-rubocop"
+      "linter"
+    ]
     openEmptyEditorOnStart: false
     themes: [
       "native-ui"
       "one-dark-syntax"
-    ]
-    disabledPackages: [
-      "linter-eslint"
-      "linter-rubocop"
     ]
   editor:
     fontFamily: "Source Code Pro"
