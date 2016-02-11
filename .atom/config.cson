@@ -7,9 +7,9 @@
   core:
     audioBeep: false
     disabledPackages: [
+      "linter"
       "linter-eslint"
       "linter-rubocop"
-      "linter"
     ]
     openEmptyEditorOnStart: false
     themes: [

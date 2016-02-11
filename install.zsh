@@ -52,7 +52,9 @@ echo
 echo "misc"
 echo "===="
 ln -sfv ${DOTDIR}/.agignore
+ln -sfv ${DOTDIR}/.haml-lint.yml
 ln -sfv ${DOTDIR}/.hushlogin
 ln -sfv ${DOTDIR}/.psqlrc
+ln -sfv ${DOTDIR}/.scss-lint.yml
 [[ -f ${DOTDIR}/.secrets ]] && ln -sfv ${DOTDIR}/.secrets
 echo

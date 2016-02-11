@@ -1,5 +1,7 @@
 awesome_print
 bundler
 git-up
+haml-lint
 pry
 rubocop
+scss-lint

@@ -4,5 +4,6 @@ eslint-config-airbnb
 eslint-plugin-babel
 eslint-plugin-react
 gulp
+nativefier
 npm
 npm-check-updates
