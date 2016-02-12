@@ -87,7 +87,7 @@ export RBENV_ROOT=/usr/local/var/rbenv
 export NODENV_ROOT=/usr/local/var/nodenv
 
 # CA Bundle
-export SSL_CERT_FILE=/usr/local/etc/openssl/certs/ca-bundle.crt
+export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cacert.pem
 
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
