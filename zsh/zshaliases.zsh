@@ -122,7 +122,7 @@ alias npmx='npm uninstall'
 
 # apm (atom package manager)
 function apmi {
-  apm install $@ && apm list --installed --bare !> ${HOME}/.atom/package-list
+  apm install $@ && apm list --installed --bare >! ${HOME}/.atom/package-list
 }
 alias apml='apm list --installed'
 alias apms='apm search'

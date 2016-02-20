@@ -2,5 +2,6 @@ dist
 log
 node_modules
 tmp
+vendor/assets
 vendor/bundle
 vendor/cache

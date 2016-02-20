@@ -10,6 +10,7 @@
       "linter"
       "linter-eslint"
       "linter-rubocop"
+      "linter-scss-lint"
     ]
     openEmptyEditorOnStart: false
     themes: [
@@ -34,6 +35,7 @@
   linter: {}
   "linter-eslint": {}
   "linter-rubocop": {}
+  "linter-scss-lint": {}
   "markdown-preview":
     useGitHubStyle: true
   metrics:
