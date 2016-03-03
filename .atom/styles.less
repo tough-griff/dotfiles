@@ -21,15 +21,11 @@ atom-text-editor::shadow {
   &[data-name$=".hh"]:before { .cpp-icon; .light-purple }
 
   // Database Icon
-  &[data-name$=".psqlrc"]:before { .sql-icon; }
+  &[data-name$=".psqlrc"]:before { .database-icon; }
 
   // Gear Icon
   &[data-name$=".agignore"]:before,
-  &[data-name$=".hushlogin"]:before,
-  &[data-name$=".rubocop.yml"]:before { .gear-icon; }
-
-  // Git Icon
-  &[data-name$=".keep"]:before,
+  &[data-name$=".hushlogin"]:before { .gear-icon; }
 
   // Javascript
   &[data-name$=".spec.js"]:before { .js-icon; .medium-green; }
@@ -43,7 +39,8 @@ atom-text-editor::shadow {
   &[data-name$=".rake"]:before { .ruby-icon; .medium-red; }
 
   // Shell
-  &[data-name$=".secrets"]:before,
+  &[data-name$=".secrets"]:before { .terminal-icon; }
+
   &[data-name$=".zlogin"]:before,
-  &[data-name$=".zshenv"]:before { .terminal-icon; }
+  &[data-name$=".zshenv"]:before { .terminal-icon; .medium-blue; }
 }
