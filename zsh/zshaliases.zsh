@@ -93,6 +93,7 @@ alias gu='git up'
 alias fm='foreman'
 alias fms='foreman start'
 alias fmsd='foreman start -f Procfile.dev'
+alias fmsp='foreman start -e .env.prod'
 
 # Ruby
 alias rb='ruby'

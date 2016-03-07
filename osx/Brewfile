@@ -15,6 +15,7 @@ brew "moreutils"
 # Install other useful binaries
 brew "bash"
 brew "direnv"
+brew "diff-so-fancy"
 brew "fasd"
 brew "flow"
 brew "ghi"

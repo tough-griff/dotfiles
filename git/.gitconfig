@@ -5,8 +5,8 @@
 [alias]
   # commonly used git functions
   a = "add -A"
-  b = "branch --verbose"
-  ba = "branch --all --verbose"
+  b = "branch --verbose --verbose"
+  ba = "branch --all --verbose --verbose"
   c = "commit --message"
   ci = "commit"
   co = "checkout"
@@ -36,27 +36,40 @@
 
 [color]
   ui = true
+[color "branch"]
+  current = green reverse
+  local = green
+  remote = yellow
 [color "diff"]
-  frag = magenta
-  meta = yellow
-  new = green
-  old = red
+  commit = green bold
+  frag = magenta bold
+  meta = yellow bold
+  new = green bold
+  old = red bold
+  whitespace = red reverse
+[color "diff-higlight"]
+  newHighlight = "green 52"
+  newNormal = green
+  oldHighlight = "red 52"
+  oldNormal = red
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  branch = green bold
+  unmerged = red bold
+  untracked = magenta bold
 
 [core]
   autocrlf = input
   editor = atom --wait
   excludesfile = ~/.gitignore
+  pager = diff-highlight | diff-so-fancy | less -r
 
 [diff]
   mnemonicprefix = true
 
 [format]
   pretty = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset"
-
-[pager]
-  diff = diff-highlight | less
-  log = diff-highlight | less
-  show = diff-highlight | less
 
 [push]
   default = current
