@@ -18,11 +18,12 @@ echo
 
 echo "js"
 echo "===="
-ln -sfv ${DOTDIR}/js/.eslintrc
+ln -sfv ${DOTDIR}/js/.eslintrc.js
 echo
 
 if (( ${+commands[nodenv]} )); then
   echo $(nodenv root)
+  (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/default-packages)
   (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/version)
   echo
 fi

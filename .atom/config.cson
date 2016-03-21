@@ -6,12 +6,6 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
-    disabledPackages: [
-      "linter"
-      "linter-eslint"
-      "linter-rubocop"
-      "linter-scss-lint"
-    ]
     openEmptyEditorOnStart: false
     themes: [
       "native-ui"
@@ -33,7 +27,8 @@
   "git-diff": {}
   "grammar-selector": {}
   linter: {}
-  "linter-eslint": {}
+  "linter-eslint":
+    useGlobalEslint: true
   "linter-rubocop": {}
   "linter-scss-lint": {}
   "markdown-preview":
@@ -49,6 +44,7 @@
       "find-and-replace": true
   "one-dark-ui":
     layoutMode: "Compact"
+  "pdf-view": {}
   react: {}
   "spell-check": {}
   "status-bar": {}

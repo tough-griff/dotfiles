@@ -1,6 +1,6 @@
 babel-cli
 babel-eslint
-eslint
+eslint@2.2.0
 eslint-config-airbnb
 eslint-plugin-babel
 eslint-plugin-react

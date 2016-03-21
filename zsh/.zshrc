@@ -17,6 +17,11 @@ setopt CORRECT
 setopt EXTENDED_GLOB
 unsetopt CLOBBER
 
+# configure less using lesspipe
+if (( ${+commands[lesspipe.sh]} )); then
+  export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
+fi
+
 # Use fasd for ultra-fast navigation
 if (( ${+commands[fasd]} )); then
   fasd_cache="$HOME/.fasd-init-zsh"

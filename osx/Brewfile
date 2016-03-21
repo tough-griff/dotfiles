@@ -14,8 +14,8 @@ brew "moreutils"
 
 # Install other useful binaries
 brew "bash"
-brew "direnv"
 brew "diff-so-fancy"
+brew "direnv"
 brew "fasd"
 brew "flow"
 brew "ghi"
@@ -27,6 +27,7 @@ brew "hr"
 brew "httpie"
 brew "hub"
 brew "imagemagick"
+brew "lesspipe", args: ["with-syntax-highlighting"]
 brew "node-build"
 brew "nodenv"
 brew "openssl"
