@@ -55,6 +55,8 @@
   "tool-bar":
     iconSize: "16px"
     position: "Left"
+  "tool-bar-almighty": {}
+  "travis-ci-status": {}
   "tree-view": {}
   welcome:
     showOnStartup: false

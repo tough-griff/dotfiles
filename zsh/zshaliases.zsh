@@ -128,7 +128,9 @@ function apmi {
 alias apml='apm list --installed'
 alias apms='apm search'
 alias apmu='apm update --confirm false && apm list --installed --bare >! ${HOME}/.atom/package-list'
-alias apmx='apm uninstall && apm list --installed --bare >! ${HOME}/.atom/package-list'
+function apmx {
+  apm uninstall $@ && apm list --installed --bare >! ${HOME}/.atom/package-list
+}
 
 # ZSH
 alias zr="source ${0:a}"

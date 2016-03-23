@@ -4,12 +4,13 @@ autocomplete-modules@1.4.1
 autocomplete-paths@1.0.2
 color-picker@2.1.1
 file-icons@1.6.18
+git-control@0.7.1
 git-plus@5.13.0
 language-haml@0.23.15
 language-rspec@0.5.0
 language-rust@0.4.6
 linter@1.11.4
-linter-eslint@7.1.1
+linter-eslint@7.1.3
 linter-rubocop@0.4.7
 linter-scss-lint@2.5.1
 merge-conflicts@1.3.7
@@ -17,11 +18,11 @@ minimap@4.21.0
 minimap-find-and-replace@4.5.0
 minimap-git-diff@4.2.0
 native-ui@0.17.0
-pain-split@1.4.0
 pdf-view@0.50.0
 react@0.14.2
 sort-lines@0.14.0
 tool-bar@0.4.0
-tool-bar-main@0.0.9
+tool-bar-almighty@0.6.1
+travis-ci-status@1.0.0
 turbo-javascript@1.4.0
 
