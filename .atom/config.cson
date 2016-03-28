@@ -27,8 +27,7 @@
   "git-diff": {}
   "grammar-selector": {}
   linter: {}
-  "linter-eslint":
-    useGlobalEslint: true
+  "linter-eslint": {}
   "linter-rubocop": {}
   "linter-scss-lint": {}
   "markdown-preview":

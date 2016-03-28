@@ -1,5 +1,5 @@
-# Executes after .zshrc
-# --------------------
+# Executes after .zshrc in a login shell
+# --------------------------------------
 
 # Execute code that does not affect the current session in the background.
 {

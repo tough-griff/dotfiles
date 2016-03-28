@@ -1,45 +1,39 @@
-_gnu_utility_cmds=(
-  # Coreutils
-  '[' 'base64' 'basename' 'cat' 'chcon' 'chgrp' 'chmod' 'chown'
-  'chroot' 'cksum' 'comm' 'cp' 'csplit' 'cut' 'date' 'dd' 'df'
-  'dir' 'dircolors' 'dirname' 'du' 'echo' 'env' 'expand' 'expr'
-  'factor' 'false' 'fmt' 'fold' 'groups' 'head' 'hostid' 'id'
-  'install' 'join' 'kill' 'link' 'ln' 'logname' 'ls' 'md5sum'
-  'mkdir' 'mkfifo' 'mknod' 'mktemp' 'mv' 'nice' 'nl' 'nohup' 'nproc'
-  'od' 'paste' 'pathchk' 'pinee' 'pr' 'printenv' 'printf' 'ptx'
-  'pwd' 'readlink' 'realpath' 'rm' 'rmdir' 'runcon' 'seq' 'sha1sum'
-  'sha224sum' 'sha256sum' 'sha384sum' 'sha512sum' 'shred' 'shuf'
-  'sleep' 'sort' 'split' 'stat' 'stty' 'sum' 'sync' 'tac' 'tail'
-  'tee' 'test' 'timeout' 'touch' 'tr' 'true' 'truncate' 'tsort'
-  'tty' 'uname' 'unexpand' 'uniq' 'unlink' 'uptime' 'users' 'vdir'
-  'wc' 'who' 'whoami' 'yes'
+if (( ${+commands[gwhoami]} )); then
+  local gcmds
+  local gcmd
 
-  # The following utilities are not part of Coreutils but installed separately.
+  # Coreutils
+  gcmds=('g[' 'gbase32' 'gbase64' 'gbasename' 'gcat' 'gchcon' 'gchgrp' 'gchmod'
+    'gchown' 'gchroot' 'gcksum' 'gcomm' 'gcp' 'gcsplit' 'gcut' 'gdate' 'gdd'
+    'gdf' 'gdir' 'gdircolors' 'gdirname' 'gdu' 'gecho' 'genv' 'gexpand' 'gexpr'
+    'gfactor' 'gfalse' 'gfmt' 'gfold' 'ggroups' 'ghead' 'ghostid' 'gid'
+    'ginstall' 'gjoin' 'gkill' 'glink' 'gln' 'glogname' 'gls' 'gmd5sum' 'gmkdir'
+    'gmkfifo' 'gmknod' 'gmktemp' 'gmv' 'gnice' 'gnl' 'gnohup' 'gnproc' 'gnumfmt'
+    'god''gpaste' 'gpathchk' 'gpinky' 'gpr' 'gprintenv' 'gprintf' 'gptx' 'gpwd'
+    'greadlink' 'grealpath' 'grm' 'grmdir' 'gruncon' 'gseq' 'gsha1sum'
+    'gsha224sum' 'gsha256sum' 'gsha384sum' 'gsha512sum' 'gshred' 'gshuf'
+    'gsleep' 'gsort' 'gsplit' 'gstat' 'gstdbuf' 'gstty' 'gsum' 'gsync' 'gtac'
+    'gtail' 'gtee' 'gtest' 'gtimeout' 'gtouch' 'gtr' 'gtrue' 'gtruncate'
+    'gtsort' 'gtty' 'guname' 'gunexpand' 'guniq' 'gunlink' 'guptime' 'gusers'
+    'gvdir' 'gwc' 'gwho' 'gwhoami' 'gyes')
 
   # Binutils
-  'addr2line' 'ar' 'c++filt' 'elfedit' 'nm' 'objcopy' 'objdump'
-  'ranlib' 'readelf' 'size' 'strings' 'strip'
+  gcmds+=('gaddr2line' 'gar' 'gc++filt' 'gcoffdump' 'gdlltool' 'gdllwrap'
+    'gelfedit' 'gnlmconv' 'gnm' 'gobjcopy' 'gobjdump' 'granlib' 'greadelf'
+    'gsize' 'gsrconv' 'gstrings' 'gstrip' 'gsysdump' 'gwindmc' 'gwindres')
 
   # Findutils
-  'find' 'locate' 'oldfind' 'updatedb' 'xargs'
+  gcmds+=('gfind' 'glocate' 'gupdatedb' 'gxargs')
 
   # Libtool
-  'libtool' 'libtoolize'
+  gcmds+=('glibtool' 'glibtoolize')
 
   # Miscellaneous
-  'getopt' 'grep' 'indent' 'sed' 'tar' 'time' 'units' 'which' 'awk'
-)
+  gcmds+=('gawk' 'gsed' 'gtar')
 
-# Wrap GNU utilities in functions.
-for _gnu_utility_cmd in "${_gnu_utility_cmds[@]}"; do
-  _gnu_utility_pcmd="g${_gnu_utility_cmd}"
-  if (( ${+commands[${_gnu_utility_pcmd}]} )); then
-    eval "
-      function ${_gnu_utility_cmd} {
-        '${commands[${_gnu_utility_pcmd}]}' \"\$@\"
-      }
-    "
-  fi
-done
-
-unset _gnu_utility_{cmds,cmd,pcmd}
+  # Wrap GNU utilities in functions.
+  for gcmd in "${gcmds[@]}"; do
+    (( ${+commands[${gcmd}]} )) &&
+      eval "function ${gcmd[2,-1]} { '${commands[${gcmd}]}' \"\$@\" }"
+  done
+fi

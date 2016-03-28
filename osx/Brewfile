@@ -7,10 +7,12 @@ tap "homebrew/versions"
 # Install GNU core utilities
 # see zshrc GNU-utils
 brew "coreutils"
+brew "binutils"
 brew "findutils"
+brew "moreutils"
 brew "gawk"
 brew "gnu-sed"
-brew "moreutils"
+brew "gnu-tar"
 
 # Install other useful binaries
 brew "bash"

@@ -58,12 +58,18 @@ alias manpath='echo -e ${MANPATH//:/\\n}'
 alias infopath='echo -e ${INFOPATH//:/\\n}'
 
 # Homebrew
-alias brewc='brew cleanup'
+alias brewc='brew cleanup && brew cask cleanup'
 alias brewi='brew install'
 alias brewl='brew list'
 alias brews='brew search'
 alias brewu='brew update && brew upgrade --all'
-alias brewx='brew remove'
+alias brewx='brew uninstall'
+
+alias cask='brew cask'
+alias caski='cask install'
+alias caskl='cask list'
+alias casks='cask search'
+alias caskx='cask uninstall'
 
 # Git
 alias g='git'
