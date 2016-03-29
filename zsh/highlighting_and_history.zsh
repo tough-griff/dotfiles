@@ -8,7 +8,7 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white'
 # bind UP and DOWN arrow keys
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-# bind P and N for emacs mode
+# bind ^P and ^N for emacs mode
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
