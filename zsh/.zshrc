@@ -1,11 +1,11 @@
 # Load supporting config files
 source "$ZSHCONFIG/completion.zsh"
-source "$ZSHCONFIG/highlighting_and_history.zsh"
-source "$ZSHCONFIG/gnu_utils.zsh"
+source "$ZSHCONFIG/highlighting-and-history.zsh"
+source "$ZSHCONFIG/gnu-utils.zsh"
 autoload -U colors && colors
 
 # Load aliases and functions.
-source "$ZSHCONFIG/zshaliases.zsh"
+source "$ZSHCONFIG/aliases-and-functions.zsh"
 
 # Set the TG Prompt
 autoload -Uz promptinit && promptinit
