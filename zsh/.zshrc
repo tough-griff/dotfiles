@@ -32,6 +32,11 @@ if (( ${+commands[fasd]} )); then
   unset _fasd_cache
 fi
 
+# https://github.com/Homebrew/homebrew-command-not-found
+if brew command command-not-found-init > /dev/null; then
+  eval "$(brew command-not-found-init)"
+fi
+
 # source npm completions
 if (( ${+commands[npm]} )); then
   eval "$(npm completion 2>/dev/null)"

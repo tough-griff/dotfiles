@@ -1,7 +1,8 @@
+# Usage: `brew bundle`
 cask_args appdir: "/Applications"
 
-# Usage: `brew bundle`
 tap "homebrew/bundle"
+tap "homebrew/command-not-found"
 tap "homebrew/versions"
 
 # Install GNU core utilities

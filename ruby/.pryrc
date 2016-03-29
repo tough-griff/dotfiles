@@ -7,7 +7,7 @@ begin
   AwesomePrint.pry!
 
   # Prompt configuration
-  RUBY_STRING = "#{RUBY_ENGINE}-#{RUBY_VERSION}"
+  RUBY_STRING = "#{RUBY_ENGINE}-#{RUBY_VERSION}".freeze
   Pry.prompt = [
     lambda do |obj, level, _pry|
       "#{RUBY_STRING.redish} (#{obj}):#{level} #{'❯'.green} "
