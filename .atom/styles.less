@@ -11,14 +11,9 @@ atom-text-editor::shadow {
 @import "packages/file-icons/styles/icons";
 @import "packages/file-icons/styles/items";
 
-.apple-icon { .fa; content: "\f179"; }
-
 .icon-file-text {
   // Apple Icon
   &[data-name="Brewfile"]:before { .apple-icon; }
-
-  // C++
-  &[data-name$=".hh"]:before { .cpp-icon; .light-purple }
 
   // Database Icon
   &[data-name$=".psqlrc"]:before { .database-icon; }
@@ -28,7 +23,7 @@ atom-text-editor::shadow {
   &[data-name$=".hushlogin"]:before { .gear-icon; }
 
   // Javascript
-  &[data-name$=".spec.js"]:before { .js-icon; .medium-green; }
+  &[data-name$=".spec.js"]:before { .js-icon; .light-green; }
 
   // Ruby
   &[data-name^="Procfile"]:before,

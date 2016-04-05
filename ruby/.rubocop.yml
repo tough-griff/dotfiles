@@ -2,11 +2,17 @@ Metrics/LineLength:
   Enabled: false
 Style/Documentation:
   Enabled: false
-Style/DotPosition:
+Style/MultilineMethodCallIndentation:
   Enabled: true
-  EnforcedStyle: leading
+  EnforcedStyle: indented
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
 Style/SymbolArray:
   Enabled: true
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
