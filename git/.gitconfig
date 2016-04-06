@@ -1,6 +1,5 @@
-[user]
-  name = "Griffin Yourick"
-  email = "gryphon92@gmail.com"
+[include]
+  path = ~/.gitconfig.personal
 
 [alias]
   # commonly used git functions
@@ -58,6 +57,9 @@
   branch = green bold
   unmerged = red bold
   untracked = magenta bold
+
+[commit]
+  gpgsign = true
 
 [core]
   autocrlf = input

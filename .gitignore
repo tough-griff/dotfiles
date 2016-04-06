@@ -6,4 +6,6 @@
 .atom/packages
 .atom/storage
 
+git/.gitconfig.personal
+
 .secrets

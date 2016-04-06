@@ -6,9 +6,6 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
-    disabledPackages: [
-      "linter"
-    ]
     openEmptyEditorOnStart: false
     themes: [
       "native-ui"
