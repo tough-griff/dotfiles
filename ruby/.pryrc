@@ -14,7 +14,7 @@ begin
     end,
     lambda do |obj, level, _pry|
       "#{RUBY_STRING.redish} (#{obj}):#{level} #{'*'.green} "
-    end
+    end,
   ]
 rescue LoadError
   puts "gem install awesome_print # <-- highly recommended"

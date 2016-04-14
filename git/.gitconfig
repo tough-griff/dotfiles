@@ -26,7 +26,7 @@
   u = "up"
 
   # new functionality
-  amend = "commit --amend"                # amend your last commit
+  amend = "commit --amend --no-edit"      # amend your last commit
   hash = "log -n 1 --pretty=format:'%h'"  # print the most recent commit's hash
   uncommit = "reset --soft HEAD^"         # go back before last commit
 
