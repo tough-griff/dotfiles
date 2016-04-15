@@ -164,10 +164,16 @@ function mkcd {
 # Opens file in EDITOR.
 function edit {
   local dir="$1"
-  [[ -z "$dir" ]] && dir='.'
-  $EDITOR $dir
+  [[ -z "${dir}" ]] && dir='.'
+  $EDITOR ${dir}
 }
 alias e='edit'
+function edit-add {
+  local dir="$1"
+  [[ -z  "${dir}" ]] && dir='.'
+  $EDITOR --add ${dir}
+}
+alias ea='edit-add'
 alias edf='edit ~/dotfiles'
 alias ebc='edit ~/.bundle/config'
 

@@ -16,8 +16,8 @@ fi
 
 # Editors
 # -------
-export EDITOR='atom'
-export VISUAL='atom'
+export EDITOR='atom-beta'
+export VISUAL='atom-beta'
 export PAGER='less'
 
 # Language

@@ -3,6 +3,7 @@ babel-eslint
 eslint
 eslint-config-airbnb
 eslint-plugin-babel
+eslint-plugin-jsx-a11y
 eslint-plugin-react
 npm
 npm-check-updates
