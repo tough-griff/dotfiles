@@ -76,6 +76,7 @@ alias caskx='brew cask uninstall'
 # Git
 alias g='git'
 alias ga='git add -A'
+alias gam='git amend'
 alias gb='git branch --verbose --verbose'
 alias gba='git branch --all --verbose --verbose'
 alias gc='git commit --message'
