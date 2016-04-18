@@ -63,7 +63,7 @@
 
 [core]
   autocrlf = input
-  editor = atom --wait
+  editor = atom-beta --wait
   excludesfile = ~/.gitignore
 
 [diff]
