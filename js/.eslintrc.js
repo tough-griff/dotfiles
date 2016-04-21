@@ -5,13 +5,10 @@ const ERROR = 2;
 module.exports = {
   extends: 'airbnb',
   parser: 'babel-eslint',
-  plugins: [
-    'babel'
-  ],
   rules: {
-    'new-cap': OFF,
-    'babel/new-cap': ERROR,
+    'new-cap': [WARN, { newIsCap: true, capIsNew: false }],
+    'no-unused-vars': [ERROR, { argsIgnorePattern: "^_" }],
 
-    'react/prefer-stateless-function': OFF,
-  }
+    'react/prefer-stateless-function': WARN,
+  },
 }

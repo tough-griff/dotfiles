@@ -25,10 +25,21 @@
     ]
   "git-diff": {}
   "grammar-selector": {}
-  linter: {}
-  "linter-eslint": {}
-  "linter-rubocop": {}
-  "linter-scss-lint": {}
+  linter:
+    ignoreVCSIgnoredFiles: false
+    showErrorTabFile: false
+    showErrorTabProject: false
+    statusIconScope: "File"
+  "linter-eslint":
+    eslintrcPath: "/Users/griffin/.eslintrc.js"
+    globalNodePath: "/usr/local/var/nodenv/versions/5.10.0"
+    useGlobalEslint: true
+  "linter-haml":
+    hamlLintExecutablePath: "/usr/local/var/rbenv/versions/2.3.0/bin/haml-lint"
+  "linter-rubocop":
+    command: "/usr/local/var/rbenv/versions/2.3.0/bin/rubocop --config /Users/griffin/.rubocop.yml"
+  "linter-scss-lint":
+    executablePath: "/usr/local/var/rbenv/versions/2.3.0/bin/scss-lint"
   "markdown-preview":
     useGitHubStyle: true
   metrics:
