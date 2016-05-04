@@ -98,6 +98,13 @@ alias gsh='git show'
 alias gst='git status'
 alias gu='git up'
 
+function git-ignore-dir {
+  local dir="$1"
+  [[ -z "${dir}" ]] && dir='.'
+  git ls-files -z ${dir} | xargs -0 git update-index --assume-unchanged
+}
+alias gigd='git-ignore-dir'
+
 # Foreman
 alias fm='foreman'
 alias fms='foreman start'
@@ -116,12 +123,14 @@ function bundle-set-local-gem {
   echo "$ bundle config \"local.${PWD##*/}\" \"$PWD\""
   bundle config "local.${PWD##*/}" "$PWD"
 }
+alias bslg='bundle-set-local-gem'
 
 # Removes a given local gem git repo, given a gem name as the argument.
 function bundle-unset-local-gem {
   echo "$ bundle config --delete \"local.$@\""
   bundle config --delete "local.$@"
 }
+alias bulg='bundle-unset-local-gem'
 
 # Node
 alias npmi='npm install'

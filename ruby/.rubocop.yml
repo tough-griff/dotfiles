@@ -4,6 +4,9 @@ Style/Documentation:
   Enabled: false
 Style/FileName:
   Enabled: false
+Style/FirstParameterIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
 Style/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented

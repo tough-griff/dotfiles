@@ -1,4 +1,6 @@
 "*":
+  "activate-power-mode":
+    autoToggle: false
   "atom-fuzzy-grep": {}
   "autocomplete-plus": {}
   "color-picker":
