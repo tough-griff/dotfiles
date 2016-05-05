@@ -4,7 +4,7 @@ autocomplete-emojis@2.3.0
 autocomplete-modules@1.4.1
 autocomplete-paths@1.0.2
 color-picker@2.1.1
-file-icons@1.7.8
+file-icons@1.7.9
 git-control@0.7.1
 git-plus@5.13.4
 language-haml@0.24.0
@@ -16,7 +16,7 @@ linter-haml@1.2.0
 linter-rubocop@0.4.7
 linter-scss-lint@2.5.1
 merge-conflicts@1.4.2
-minimap@4.23.2
+minimap@4.23.4
 minimap-find-and-replace@4.5.1
 minimap-git-diff@4.3.0
 native-ui@0.17.0

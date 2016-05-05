@@ -1,5 +1,5 @@
-'atom-workspace':
-  'cmd-|':       'tool-bar:toggle'
+'body':
+  'cmd-ctrl-\\':       'tool-bar:toggle'
   'cmd-k cmd-m': 'minimap:toggle'
 
   # Create an empty split pane
@@ -25,3 +25,9 @@
   'cmd-ctrl-shift-right': 'window:move-active-item-to-pane-on-right'
   'cmd-ctrl-shift-up':    'window:move-active-item-to-pane-above'
   'cmd-ctrl-shift-down':  'window:move-active-item-to-pane-below'
+
+  # Use original ctrl-tab behavior
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab': 'pane:show-previous-item'
