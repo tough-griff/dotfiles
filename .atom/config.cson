@@ -37,11 +37,11 @@
     globalNodePath: "/usr/local/var/nodenv/versions/5.10.0"
     useGlobalEslint: true
   "linter-haml":
-    hamlLintExecutablePath: "/usr/local/var/rbenv/versions/2.3.0/bin/haml-lint"
+    hamlLintExecutablePath: "/usr/local/var/rbenv/versions/2.3.1/bin/haml-lint"
   "linter-rubocop":
-    command: "/usr/local/var/rbenv/versions/2.3.0/bin/rubocop --config /Users/griffin/.rubocop.yml"
+    command: "/usr/local/var/rbenv/versions/2.3.1/bin/rubocop --config /Users/griffin/.rubocop.yml"
   "linter-scss-lint":
-    executablePath: "/usr/local/var/rbenv/versions/2.3.0/bin/scss-lint"
+    executablePath: "/usr/local/var/rbenv/versions/2.3.1/bin/scss-lint"
   "markdown-preview":
     useGitHubStyle: true
   metrics:
