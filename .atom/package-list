@@ -14,7 +14,7 @@ linter@1.11.4
 linter-eslint@7.2.2
 linter-haml@1.2.0
 linter-rubocop@0.4.7
-linter-scss-lint@3.0.3
+linter-scss-lint@3.0.4
 merge-conflicts@1.4.2
 minimap@4.23.5
 minimap-find-and-replace@4.5.1

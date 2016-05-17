@@ -1,4 +1,9 @@
 function _osx_get_frontmost_app {
+  if [[ -n $TERMINAL ]]; then
+    echo "$TERMINAL"
+    return
+  fi
+
   local the_app=$(
     osascript 2>/dev/null <<EOF
       tell application "System Events"
@@ -8,6 +13,10 @@ EOF
   )
   echo "${the_app}"
 }
+
+# Cache the frontmost app on terminal open so we can change focus without
+# breaking terminal commands.
+export TERMINAL=$(_osx_get_frontmost_app)
 
 function tab {
   # Must not have trailing semicolon, for iTerm compatibility
