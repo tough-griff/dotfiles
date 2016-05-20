@@ -7,6 +7,7 @@ color-picker@2.1.1
 file-icons@1.7.11
 git-control@0.7.1
 git-plus@5.13.4
+language-arduino@0.4.1
 language-haml@0.24.0
 language-rspec@0.5.0
 language-rust@0.4.6

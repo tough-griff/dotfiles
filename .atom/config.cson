@@ -21,6 +21,7 @@
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "file-icons":
     coloured: false
+    forceShow: true
   "fuzzy-finder":
     ignoredNames: [
       "vendor/cache"
@@ -29,19 +30,17 @@
   "grammar-selector": {}
   linter:
     ignoreVCSIgnoredFiles: false
-    showErrorTabFile: false
+    showErrorTabLine: true
     showErrorTabProject: false
+    statusIconPosition: "Right"
     statusIconScope: "File"
   "linter-eslint":
     eslintrcPath: "/Users/griffin/.eslintrc.js"
-    globalNodePath: "/usr/local/var/nodenv/versions/5.10.0"
+    globalNodePath: "/usr/local/var/nodenv/versions/6.2.0"
     useGlobalEslint: true
-  "linter-haml":
-    hamlLintExecutablePath: "/usr/local/var/rbenv/versions/2.3.1/bin/haml-lint"
-  "linter-rubocop":
-    command: "/usr/local/var/rbenv/versions/2.3.1/bin/rubocop --config /Users/griffin/.rubocop.yml"
-  "linter-scss-lint":
-    executablePath: "/usr/local/var/rbenv/versions/2.3.1/bin/scss-lint"
+  "linter-haml": {}
+  "linter-rubocop": {}
+  "linter-scss-lint": {}
   "markdown-preview":
     useGitHubStyle: true
   metrics:

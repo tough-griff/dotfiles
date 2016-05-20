@@ -12,9 +12,6 @@ atom-text-editor::shadow {
 @import "packages/file-icons/styles/items";
 
 .icon-file-text {
-  // Apple Icon
-  &[data-name="Brewfile"]:before { .apple-icon; }
-
   // Database Icon
   &[data-name$=".psqlrc"]:before { .database-icon; }
 
@@ -22,22 +19,15 @@ atom-text-editor::shadow {
   &[data-name$=".agignore"]:before,
   &[data-name$=".hushlogin"]:before { .gear-icon; }
 
-  // Git Icon
-  &[data-name^=".gitconfig"]:before { .git-icon; }
+  // Heroku
+  &[data-name^="Procfile"]:before { .heroku-icon; .medium-purple }
 
   // Javascript
   &[data-name$=".spec.js"]:before { .js-icon; .light-green; }
 
   // Ruby
-  &[data-name^="Procfile"]:before,
-  &[data-name$=".gemrc"]:before,
   &[data-name$=".railsrc"]:before { .ruby-icon; }
-
-  &[data-name$=".rake"]:before { .ruby-icon; .medium-red; }
 
   // Shell
   &[data-name$=".secrets"]:before { .terminal-icon; }
-
-  &[data-name$=".zlogin"]:before,
-  &[data-name$=".zshenv"]:before { .terminal-icon; .medium-blue; }
 }
