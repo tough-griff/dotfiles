@@ -58,7 +58,7 @@ manpath=(
   /usr/local/share/man
   /usr/share/man
   $manpath
-  /Applications/Postgres.app/Contents/Versions/9.3/share/man/
+  /Applications/Postgres.app/Contents/Versions/latest/share/man/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man/
 )
 
@@ -66,7 +66,7 @@ manpath=(
 path=(
   $HOME/bin
   $path
-  /Applications/Postgres.app/Contents/Versions/9.4/bin
+  /Applications/Postgres.app/Contents/Versions/latest/bin
   /usr/local/share/git-core/contrib/diff-highlight
 )
 

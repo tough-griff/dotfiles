@@ -1,12 +1,12 @@
 activate-power-mode@0.5.2
 atom-fuzzy-grep@0.13.0
-autocomplete-emojis@2.3.0
-autocomplete-modules@1.4.1
+autocomplete-emojis@2.5.0
+autocomplete-modules@1.5.1
 autocomplete-paths@1.0.2
 color-picker@2.1.1
-file-icons@1.7.11
+file-icons@1.7.13
 git-control@0.7.1
-git-plus@5.13.4
+git-plus@5.14.0
 language-arduino@0.4.1
 language-haml@0.24.0
 language-rspec@0.5.0
@@ -16,8 +16,8 @@ linter-eslint@7.2.2
 linter-haml@1.2.0
 linter-rubocop@0.4.7
 linter-scss-lint@3.0.4
-merge-conflicts@1.4.2
-minimap@4.23.5
+merge-conflicts@1.4.3
+minimap@4.24.3
 minimap-find-and-replace@4.5.1
 minimap-git-diff@4.3.1
 native-ui@0.18.2
@@ -26,7 +26,7 @@ react@0.15.0
 sort-lines@0.14.0
 tool-bar@0.4.0
 tool-bar-almighty@0.6.1
-travis-ci-status@1.0.0
+travis-ci-status@1.1.1
 turbo-javascript@1.4.0
 
 

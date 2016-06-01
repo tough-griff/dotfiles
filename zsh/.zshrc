@@ -62,3 +62,8 @@ fi
 if (( ${+commands[direnv]} )); then
   eval "$(direnv hook $0)"
 fi
+
+# Docker
+if (( ${+commands[docker-machine]} )); then
+  eval "$(docker-machine env 2>/dev/null)"
+fi
