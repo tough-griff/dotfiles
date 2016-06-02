@@ -4,9 +4,7 @@
 export ZSHCONFIG="$HOME/dotfiles/zsh"
 
 # Define secret environment variables.
-_secrets="$HOME/.secrets"
-[[ -f "$_secrets" ]] && source $_secrets
-unset _secrets
+[[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
 
 # Browser
 # -------
@@ -42,7 +40,7 @@ cdpath=(
 
 # Set the list of directories zsh searches for functions.
 fpath=(
-  $ZSHCONFIG/prompt
+  ${ZSHCONFIG}/prompt
   $fpath
 )
 

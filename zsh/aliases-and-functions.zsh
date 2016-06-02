@@ -142,13 +142,13 @@ alias npmx='npm uninstall'
 
 # apm (atom package manager)
 function apmi {
-  apm install $@ && apm list --installed --bare >! ${HOME}/.atom/package-list
+  apm install $@ && apm list --installed --bare >! $HOME/.atom/package-list
 }
 alias apml='apm list --installed'
 alias apms='apm search'
-alias apmu='apm update --confirm false && apm list --installed --bare >! ${HOME}/.atom/package-list'
+alias apmu='apm update --confirm false && apm list --installed --bare >! $HOME/.atom/package-list'
 function apmx {
-  apm uninstall $@ && apm list --installed --bare >! ${HOME}/.atom/package-list
+  apm uninstall $@ && apm list --installed --bare >! $HOME/.atom/package-list
 }
 
 # ZSH
@@ -224,16 +224,16 @@ function loc {
   local lines
   total=0
   for ext in $@; do
-    firstletter=$(echo $ext | cut -c1-1)
+    firstletter=$(echo ${ext} | cut -c1-1)
     if [[ firstletter != "." ]]; then
-      ext=".$ext"
+      ext=".${ext}"
     fi
-    lines=`find-exec "*$ext" cat | wc -l`
+    lines=`find-exec "*${ext}" cat | wc -l`
     lines=${lines// /}
-    total=$(($total + $lines))
-    echo "Lines of code for ${fg[blue]}$ext${reset_color}: ${fg[green]}$lines${reset_color}"
+    total=$((${total} + ${lines}))
+    echo "Lines of code for ${fg[blue]}${ext}${reset_color}: ${fg[green]}${lines}${reset_color}"
   done
-  echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}$total${reset_color}"
+  echo "${fg[blue]}Total${reset_color} lines of code: ${fg[green]}${total}${reset_color}"
 }
 
 # Show how much RAM application uses.
@@ -243,15 +243,15 @@ function ram {
   local sum
   local items
   local app="$1"
-  if [[ -z "$app" ]]; then
+  if [[ -z "${app}" ]]; then
     echo "First argument - pattern to grep from processes"
   else
     sum=0
-    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
-      sum=$(($i + $sum))
+    for i in `ps aux | grep -i "${app}" | grep -v "grep" | awk '{print $6}'`; do
+      sum=$((${i} + ${sum}))
     done
-    sum=$(echo "scale=2; $sum / 1024.0" | bc)
-    if [[ $sum != "0" ]]; then
+    sum=$(echo "scale=2; ${sum} / 1024.0" | bc)
+    if [[ ${sum} != "0" ]]; then
       echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM."
     else
       echo "There are no processes with pattern '${fg[blue]}${app}${reset_color}' are running."
@@ -278,8 +278,8 @@ function sayrandom {
 # Load 8 cores at once.
 function maxcpu {
   local dn=/dev/null
-  yes > $dn & yes > $dn & yes > $dn & yes > $dn &
-  yes > $dn & yes > $dn & yes > $dn & yes > $dn &
+  yes > ${dn} & yes > ${dn} & yes > ${dn} & yes > ${dn} &
+  yes > ${dn} & yes > ${dn} & yes > ${dn} & yes > ${dn} &
 }
 
 # $ retry ping google.com

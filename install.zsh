@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-cd ${HOME}
+cd $HOME
 
 DOTDIR=${DOTDIR:="./dotfiles"}
-DOTDIRABS=$(cd $DOTDIR && pwd)
+DOTDIRABS=$(cd ${DOTDIR} && pwd)
 
 echo "Atom"
 echo "===="

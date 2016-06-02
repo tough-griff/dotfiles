@@ -213,7 +213,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -240,7 +240,7 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -405,7 +405,7 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
 # Reset Launchpad, but keep the desktop wallpaper intact
-# find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
+# find "$HOME/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
 # Add iOS & Watch Simulator to Launchpad
 # sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
@@ -724,7 +724,7 @@ defaults write com.divisiblebyzero.Spectacle UndoLastMove -data 62706c6973743030
 
 # Use `~/Downloads/Torrents` to store incomplete downloads
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Torrents"
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "$HOME/Downloads/Torrents"
 
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false

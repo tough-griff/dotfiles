@@ -1,10 +1,10 @@
 # Load supporting config files
 autoload -U colors && colors
-source "$ZSHCONFIG/aliases-and-functions.zsh"
-source "$ZSHCONFIG/completion.zsh"
-source "$ZSHCONFIG/gnu-utils.zsh"
-source "$ZSHCONFIG/highlighting-and-history.zsh"
-source "$ZSHCONFIG/osx.zsh"
+source "${ZSHCONFIG}/aliases-and-functions.zsh"
+source "${ZSHCONFIG}/completion.zsh"
+source "${ZSHCONFIG}/gnu-utils.zsh"
+source "${ZSHCONFIG}/highlighting-and-history.zsh"
+source "${ZSHCONFIG}/osx.zsh"
 
 # Load aliases and functions.
 
@@ -26,10 +26,10 @@ fi
 # Use fasd for ultra-fast navigation
 if (( ${+commands[fasd]} )); then
   _fasd_cache="$HOME/.fasd-init-zsh"
-  if [ "$(command -v fasd)" -nt "$_fasd_cache" -o ! -s "$_fasd_cache" ]; then
-    eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)" >| "$_fasd_cache"
+  if [ "$(command -v fasd)" -nt "${_fasd_cache}" -o ! -s "${_fasd_cache}" ]; then
+    eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)" >| "${_fasd_cache}"
   fi
-  source "$_fasd_cache"
+  source "${_fasd_cache}"
   unset _fasd_cache
 fi
 
@@ -44,8 +44,8 @@ if (( ${+commands[npm]} )); then
 fi
 
 # added by travis gem
-if [[ -f /Users/griffin/.travis/travis.sh ]]; then
-  source /Users/griffin/.travis/travis.sh
+if [[ -f "$HOME/.travis/travis.sh" ]]; then
+  source "$HOME/.travis/travis.sh"
 fi
 
 # initialize rbenv
@@ -66,4 +66,9 @@ fi
 # Docker
 if (( ${+commands[docker-machine]} )); then
   eval "$(docker-machine env 2>/dev/null)"
+fi
+
+# Added by iTerm2
+if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
+  source "$HOME/.iterm2_shell_integration.zsh"
 fi
