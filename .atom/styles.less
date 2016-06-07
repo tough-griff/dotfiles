@@ -4,6 +4,17 @@ atom-text-editor::shadow {
     opacity: 0;
     width: 0 !important;
   }
+
+  // Syntax overrides.
+  .source.js {
+    .variable.readwrite {
+      color: @mono-1;
+    }
+
+    .punctuation.quasi.element {
+      color: @hue-5-2;
+    }
+  }
 }
 
 // File-icon overrides.
