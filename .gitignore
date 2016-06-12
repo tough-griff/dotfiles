@@ -4,6 +4,7 @@
 .atom/blob-store
 .atom/compile-cache
 .atom/packages
+.atom/recovery
 .atom/storage
 
 git/.gitconfig.personal

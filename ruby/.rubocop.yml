@@ -10,6 +10,8 @@ Style/FirstParameterIndentation:
 Style/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+Style/NumericLiterals:
+  Enabled: false
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes

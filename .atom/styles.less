@@ -1,18 +1,29 @@
-// Hide the scrollbar, we're using minimap (again)
 atom-text-editor::shadow {
+  // Hide the scrollbar, we're using minimap (again)
   .vertical-scrollbar {
     opacity: 0;
     width: 0 !important;
   }
 
   // Syntax overrides.
+  // JS
   .source.js {
-    .variable.readwrite {
-      color: @mono-1;
+    .keyword.operator {
+      &.accessor,
+      &.assignment,
+      &.comparison,
+      &.logical,
+      &.relational {
+        color: @mono-1;
+      }
     }
 
     .punctuation.quasi.element {
       color: @hue-5-2;
+    }
+
+    .variable.readwrite {
+      color: @mono-1;
     }
   }
 }
