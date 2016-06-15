@@ -13,7 +13,7 @@ echo
 echo "git"
 echo "===="
 ln -sfv ${DOTDIR}/git/.gitconfig
-[[ -f ${DOTDIR}/.secrets ]] && ln -sfv ${DOTDIR}/git/.gitconfig.personal
+[[ -f ${DOTDIR}/git/.gitconfig.personal ]] && ln -sfv ${DOTDIR}/git/.gitconfig.personal
 ln -sfv ${DOTDIR}/git/.gitignore
 echo
 
