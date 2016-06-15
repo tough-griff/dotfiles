@@ -1,5 +1,5 @@
 'body':
-  'cmd-ctrl-\\':       'tool-bar:toggle'
+  'cmd-ctrl-\\': 'tool-bar:toggle'
   'cmd-k cmd-m': 'minimap:toggle'
 
   # Create an empty split pane

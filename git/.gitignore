@@ -1,3 +1,7 @@
+# === direnv ===
+.direnv
+.envrc
+
 # === emacs ===
 *~
 \#*\#
@@ -15,6 +19,35 @@ tramp
 /elpa/
 *.rel
 /auto/
+.cask/
+dist/
+flycheck_*.el
+/server/
+.projectile
+
+# === Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm ===
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/libraries
+.idea/mongoSettings.xml
+*.iws
+/out/
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
 
 # === OSX ===
 .DS_Store
@@ -37,63 +70,14 @@ Temporary Items
 # === vim ===
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
-*.un~
 Session.vim
 .netrwhist
 *~
-
-# === direnv ===
-.direnv
-.envrc
-
-# === Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm ===
-*.iml
-
-## Directory-based project format:
-.idea/
-# if you remove the above rule, at least ignore the following:
-
-# User-specific stuff:
-# .idea/workspace.xml
-# .idea/tasks.xml
-# .idea/dictionaries
-
-# Sensitive or high-churn files:
-# .idea/dataSources.ids
-# .idea/dataSources.xml
-# .idea/sqlDataSources.xml
-# .idea/dynamic.xml
-# .idea/uiDesigner.xml
-
-# Gradle:
-# .idea/gradle.xml
-# .idea/libraries
-
-# Mongo Explorer plugin:
-# .idea/mongoSettings.xml
-
-## File-based project format:
-*.ipr
-*.iws
-
-## Plugin-specific files:
-
-# IntelliJ
-/out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
+tags
 
 # === Xcode ===
 build/
+DerivedData/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -102,8 +86,7 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
-*.xccheckout
+xcuserdata/
 *.moved-aside
-DerivedData
-*.xcuserstate
+*.xccheckout
+*.xcscmblueprint

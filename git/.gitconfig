@@ -89,7 +89,6 @@
   insteadOf = git://github.com/
   insteadOf = git@github.com:
   insteadOf = ssh://git@github.com:
-
 [url "https://git.heroku.com/"]
   insteadOf = git://heroku.com/
   insteadOf = git@heroku.com:
