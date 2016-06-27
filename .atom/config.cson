@@ -55,6 +55,8 @@
   "one-dark-ui":
     layoutMode: "Compact"
   "pdf-view": {}
+  pigments:
+    markerType: "native-square-dot"
   react: {}
   "spell-check": {}
   "status-bar": {}
