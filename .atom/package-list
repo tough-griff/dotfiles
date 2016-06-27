@@ -1,9 +1,11 @@
 activate-power-mode@0.5.2
 atom-fuzzy-grep@0.13.0
+atom-typescript@8.11.0
 autocomplete-emojis@2.5.0
 autocomplete-modules@1.5.2
 autocomplete-paths@1.0.2
 color-picker@2.1.1
+docblockr@0.7.3
 file-icons@1.7.15
 git-control@0.7.1
 git-plus@5.16.0

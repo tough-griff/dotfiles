@@ -1,5 +1,7 @@
 ---
 directory: ~/Music/Library
+embedart:
+  maxwidth: 500
 library: ~/Music/library.db
 original_date: yes
 paths:
@@ -11,4 +13,5 @@ plugins:
   embedart
   fetchart
   missing
+  scrub
   the
