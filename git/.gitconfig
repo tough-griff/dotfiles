@@ -82,6 +82,9 @@
   diff = diff-so-fancy | less
   show = diff-so-fancy | less
 
+[pull]
+  rebase = true
+
 [push]
   default = current
 
@@ -103,6 +106,7 @@
 
 [heroku]
   account = personal
+  remote = heroku
 
 [hub]
   protocol = https
