@@ -8,6 +8,11 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
+    disabledPackages: [
+      "linter-scss-lint"
+      "tool-bar"
+      "tool-bar-almighty"
+    ]
     openEmptyEditorOnStart: false
     themes: [
       "native-ui"
