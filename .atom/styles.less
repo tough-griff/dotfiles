@@ -49,11 +49,13 @@ atom-text-editor::shadow {
   &[data-name$=".psqlrc"]:before { .database-icon; }
 
   // Gear Icon
+  &[data-name^=".envrc"]:before,
   &[data-name$=".agignore"]:before,
   &[data-name$=".hushlogin"]:before { .gear-icon; }
 
   // Heroku
-  &[data-name^="Procfile"]:before { .heroku-icon; .medium-purple }
+  &[data-name^="Procfile"]:before,
+  &[data-name=".slugignore"]:before { .heroku-icon; .medium-purple }
 
   // Javascript
   &[data-name$=".spec.js"]:before { .js-icon; .light-green; }

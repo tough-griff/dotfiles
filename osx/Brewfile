@@ -83,6 +83,7 @@ cask "transmit"
 cask "ubersicht"
 cask "virtualbox"
 cask "vlc"
+cask "whatsapp"
 cask "xld"
 cask "xquartz"
 
