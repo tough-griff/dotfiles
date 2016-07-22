@@ -1,14 +1,10 @@
-const OFF = 0;
-const WARN = 1;
-const ERROR = 2;
-
 module.exports = {
   extends: 'airbnb',
   parser: 'babel-eslint',
   rules: {
-    'new-cap': [WARN, { newIsCap: true, capIsNew: false }],
-    'no-unused-vars': [ERROR, { argsIgnorePattern: "^_" }],
+    'new-cap': ['warn', { newIsCap: true, capIsNew: false }],
+    'no-unused-vars': ['error', { argsIgnorePattern: "^_" }],
 
-    'react/prefer-stateless-function': WARN,
+    'react/prefer-stateless-function': 'warn',
   },
 }
