@@ -4,14 +4,15 @@ atom-typescript@10.1.5
 autocomplete-emojis@2.5.0
 autocomplete-modules@1.5.2
 autocomplete-paths@1.0.2
-change-case@0.6.2
+change-case@0.6.3
 color-picker@2.2.2
 docblockr@0.7.3
 file-icons@1.7.17
 git-control@0.8.2
 git-plus@5.16.2
 language-arduino@0.4.1
-language-babel@2.32.0
+language-babel@2.32.1
+language-docker@1.1.6
 language-haml@0.24.0
 language-rspec@0.5.0
 language-rust@0.4.6
