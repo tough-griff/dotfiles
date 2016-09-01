@@ -1,3 +1,4 @@
+atom-text-editor,
 atom-text-editor::shadow {
   // Color modified and added line numbers.
   .gutter .line-number {
@@ -36,6 +37,27 @@ atom-text-editor::shadow {
   .vertical-scrollbar {
     opacity: 0;
     width: 0 !important;
+  }
+}
+
+// Tweak toolbar borders.
+.tool-bar {
+  border-width: 0;
+
+  &.tool-bar-bottom {
+    border-top-width: 1px;
+  }
+
+  &.tool-bar-left {
+    border-right-width: 1px;
+  }
+
+  &.tool-bar-right {
+    border-left-width: 1px;
+  }
+
+  &.tool-bar-top {
+    border-bottom-width: 1px;
   }
 }
 

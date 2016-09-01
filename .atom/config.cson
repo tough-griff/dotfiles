@@ -8,12 +8,8 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
-    disabledPackages: [
-      "linter-scss-lint"
-      "tool-bar"
-      "tool-bar-almighty"
-    ]
     openEmptyEditorOnStart: false
+    telemetryConsent: "limited"
     themes: [
       "native-ui"
       "one-dark-syntax"
