@@ -86,6 +86,3 @@ export NODENV_ROOT=/usr/local/var/nodenv
 
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
-
-# homebrew-cask install directory
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
