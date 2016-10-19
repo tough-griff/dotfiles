@@ -63,7 +63,7 @@ alias brewc='brew cleanup'
 alias brewi='brew install'
 alias brewl='brew list'
 alias brews='brew search'
-alias brewu='brew update && brew upgrade --all'
+alias brewu='brew update && brew upgrade'
 alias brewx='brew uninstall'
 
 alias cask='brew cask'

@@ -1,6 +1,7 @@
 dist
 log
 node_modules
+public/assets
 tmp
 vendor/assets
 vendor/bundle

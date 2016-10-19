@@ -112,6 +112,6 @@
   protocol = https
 
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+  clean = git-lfs clean -- %f
   required = true
+  smudge = git-lfs smudge -- %f
