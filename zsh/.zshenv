@@ -85,5 +85,6 @@ export RUBY_CONFIGURE_OPTS=--disable-install-doc # doc-free installation
 # nodenv
 export NODENV_ROOT=/usr/local/var/nodenv
 
-# Android SDK
-export ANDROID_HOME=/usr/local/opt/android-sdk
+# Java & Scala
+export JAVA_HOME=$(/usr/libexec/java_home)
+export SCALA_HOME=/usr/local/opt/scala
