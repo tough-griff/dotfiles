@@ -10,7 +10,6 @@ file-icons@1.7.25
 git-control@0.8.2
 git-plus@5.25.1
 language-arduino@0.4.2
-language-babel@2.49.2
 language-docker@1.1.7
 language-haml@0.24.1
 language-rspec@0.5.0
@@ -28,6 +27,7 @@ minimap-git-diff@4.3.1
 native-ui@0.19.1
 pdf-view@0.53.0
 pigments@0.38.0
+react@0.16.1
 sort-lines@0.14.0
 tool-bar@1.0.1
 tool-bar-almighty@0.8.1

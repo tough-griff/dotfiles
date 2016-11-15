@@ -1,4 +1,4 @@
-atom-text-editor {
+atom-text-editor.editor {
   // Color modified and added line numbers.
   .gutter .line-number {
     &.git-line-added {
@@ -10,25 +10,19 @@ atom-text-editor {
     }
   }
 
+  // Linter gutter fix
+  .linter-gutter {
+    border-radius: 0;
+    height: 0.5em !important;
+  }
+
   // Syntax overrides.
   // JS
-  .source.js {
-    .keyword.operator {
-      &.accessor,
-      &.assignment,
-      &.comparison,
-      &.logical,
-      &.relational {
+  .syntax--js {
+    .syntax--import {
+      .syntax--variable {
         color: @mono-1;
       }
-    }
-
-    .punctuation.quasi.element {
-      color: @hue-5-2;
-    }
-
-    .variable.readwrite {
-      color: @mono-1;
     }
   }
 }
