@@ -143,13 +143,13 @@ alias npmx='npm uninstall'
 
 # apm (atom package manager)
 function apmi {
-  apm install $@ && apm list --installed --bare >! $HOME/.atom/package-list
+  apm-beta install $@ && apm-beta list --installed --bare >! $HOME/.atom/package-list
 }
-alias apml='apm list --installed'
-alias apms='apm search'
-alias apmu='apm update --confirm false && apm list --installed --bare >! $HOME/.atom/package-list'
+alias apml='apm-beta list --installed'
+alias apms='apm-beta search'
+alias apmu='apm-beta update --confirm false && apm-beta list --installed --bare >! $HOME/.atom/package-list'
 function apmx {
-  apm uninstall $@ && apm list --installed --bare >! $HOME/.atom/package-list
+  apm-beta uninstall $@ && apm-beta list --installed --bare >! $HOME/.atom/package-list
 }
 
 # ZSH

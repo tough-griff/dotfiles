@@ -36,7 +36,7 @@
     statusIconPosition: "Right"
     statusIconScope: "File"
   "linter-eslint":
-    eslintrcPath: "/Users/griffin/.eslintrc.js"
+    eslintrcPath: "~/.eslintrc.js"
     globalNodePath: "/usr/local/var/nodenv/versions/6.9.1"
     useGlobalEslint: true
   "linter-haml": {}

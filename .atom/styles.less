@@ -1,5 +1,4 @@
-atom-text-editor,
-atom-text-editor::shadow {
+atom-text-editor {
   // Color modified and added line numbers.
   .gutter .line-number {
     &.git-line-added {
@@ -31,12 +30,6 @@ atom-text-editor::shadow {
     .variable.readwrite {
       color: @mono-1;
     }
-  }
-
-  // Hide the scrollbar, we're using minimap (again)
-  .vertical-scrollbar {
-    opacity: 0;
-    width: 0 !important;
   }
 }
 
