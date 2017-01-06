@@ -8,6 +8,16 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
+    customFileTypes:
+      "source.css.less": [
+        "overrides"
+        "variables"
+      ]
+    disabledPackages: [
+      "circle-ci"
+      "pigments"
+      "travis-ci-status"
+    ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
     themes: [
@@ -23,11 +33,15 @@
   "file-icons":
     coloured: false
     forceShow: true
+    strategies: {}
   "fuzzy-finder":
     ignoredNames: [
       "vendor/cache"
     ]
   "git-diff": {}
+  "git-plus":
+    general:
+      _analyticsUserId: "78a8e1ee-6282-4a3d-b981-8a5a55034efd"
   "grammar-selector": {}
   linter:
     ignoreVCSIgnoredFiles: false

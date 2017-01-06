@@ -110,7 +110,7 @@ alias gigd='git-ignore-dir'
 alias fm='foreman'
 alias fms='foreman start'
 alias fmsd='foreman start -f Procfile.dev'
-alias fmsp='foreman start -e .env.prod'
+alias fmsp='foreman start -f Procfile.prod -e .env.prod'
 
 # Ruby
 alias rb='ruby'

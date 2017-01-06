@@ -60,6 +60,7 @@ cask "bartender"
 cask "beardedspice"
 cask "bittorrent-sync"
 cask "cheatsheet"
+cask "dash"
 cask "discord"
 cask "docker"
 cask "dropbox"
@@ -70,7 +71,6 @@ cask "iterm2"
 cask "kap"
 cask "karabiner-elements"
 cask "keyboard-cleaner"
-cask "lunchy"
 cask "near-lock"
 cask "postico"
 cask "scroll-reverser"
@@ -87,7 +87,6 @@ cask "xquartz"
 
 # Install Mac App Store Applications
 mas "Caffeine", id: 411246225
-mas "Dash", id: 449589707
 mas "Growl", id: 467939042
 mas "Keynote", id: 409183694
 mas "Monit", id: 1014850245

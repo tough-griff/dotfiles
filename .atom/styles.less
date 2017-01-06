@@ -1,3 +1,5 @@
+@import "syntax";
+
 atom-text-editor.editor {
   // Color modified and added line numbers.
   .gutter .line-number {
@@ -10,10 +12,8 @@ atom-text-editor.editor {
     }
   }
 
-  // Linter gutter fix
   .linter-gutter {
     border-radius: 0;
-    height: 0.5em !important;
   }
 
   // Syntax overrides.
@@ -49,29 +49,40 @@ atom-text-editor.editor {
 }
 
 // File-icon overrides.
-@import "packages/file-icons/styles/colors";
-@import "packages/file-icons/styles/icons";
-@import "packages/file-icons/styles/items";
+.icon {
+  @import "packages/file-icons/styles/colours";
+  @devicons: "Devicons";
+  @octicons: "Octicons Regular";
+  @fi: "file-icons";
 
-.icon-file-text {
-  // Database Icon
-  &[data-name$=".psqlrc"]:before { .database-icon; }
-
-  // Gear Icon
-  &[data-name^=".envrc"]:before,
-  &[data-name$=".agignore"]:before,
-  &[data-name$=".hushlogin"]:before { .gear-icon; }
+  &[data-name$=".psqlrc"]:before {
+    content: "\f096";
+    font-family: @octicons;
+  }
 
   // Heroku
-  &[data-name^="Procfile"]:before,
-  &[data-name=".slugignore"]:before { .heroku-icon; .medium-purple }
+  &[data-name^="Procfile"]:before {
+    // color: @medium-purple;
+    content: "\e67b";
+    font-family: @devicons;
+  }
 
   // Javascript
-  &[data-name$=".spec.js"]:before { .js-icon; .light-green; }
+  &[data-name$=".spec.js"]:before {
+    // color: @light-green;
+  }
 
   // Ruby
-  &[data-name$=".railsrc"]:before { .ruby-icon; }
+  &[data-name$=".railsrc"]:before {
+    content: "\f047";
+    font-family: @octicons;
+  }
 
   // Shell
-  &[data-name$=".secrets"]:before { .terminal-icon; }
+  &[data-name$=".secrets"]:before {
+    content: "\f0c8";
+    font-family: @fi;
+    font-size: 14px;
+    top: 2px;
+  }
 }
