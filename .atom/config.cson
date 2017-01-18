@@ -51,7 +51,7 @@
     statusIconScope: "File"
   "linter-eslint":
     eslintrcPath: "~/.eslintrc.js"
-    globalNodePath: "/usr/local/var/nodenv/versions/6.9.1"
+    globalNodePath: "/usr/local/var/nodenv/versions/6.9.4"
     useGlobalEslint: true
   "linter-haml": {}
   "linter-rubocop": {}

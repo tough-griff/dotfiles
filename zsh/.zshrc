@@ -6,8 +6,6 @@ source "${ZSHCONFIG}/gnu-utils.zsh"
 source "${ZSHCONFIG}/highlighting-and-history.zsh"
 source "${ZSHCONFIG}/osx.zsh"
 
-# Load aliases and functions.
-
 # Set the TG Prompt
 autoload -Uz promptinit && promptinit
 prompt 'tg'
@@ -69,6 +67,6 @@ if (( ${+commands[docker-machine]} )); then
 fi
 
 # Added by iTerm2
-if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
+if [[ $TERM_PROGRAM =~ "iTerm" && -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
   source "$HOME/.iterm2_shell_integration.zsh"
 fi

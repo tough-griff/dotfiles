@@ -1,11 +1,11 @@
 # Atom
-.atom/.apm
-.atom/.node-gyp
-.atom/blob-store
-.atom/compile-cache
-.atom/packages
-.atom/recovery
-.atom/storage
+.atom/*
+!.atom/config.cson
+!.atom/init.coffee
+!.atom/keymap.cson
+!.atom/package-list
+!.atom/snippets.cson
+!.atom/styles.less
 
 git/.gitconfig.personal
 

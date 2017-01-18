@@ -14,8 +14,8 @@ fi
 
 # Editors
 # -------
-export EDITOR='atom-beta' # used by `edit` function, and many other programs.
-export VISUAL='nano'      # set for `visudo`
+export EDITOR='atom' # used by `edit` function, and many other programs.
+export VISUAL='nano' # set for `visudo`
 export PAGER='less'
 
 # Language
