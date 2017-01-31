@@ -17,12 +17,9 @@ ln -sfv ${DOTDIR}/git/.gitconfig
 ln -sfv ${DOTDIR}/git/.gitignore
 echo
 
-echo "js"
-echo "===="
-ln -sfv ${DOTDIR}/js/.eslintrc.js
-echo
-
 if (( ${+commands[nodenv]} )); then
+  echo "js"
+  echo "===="
   echo $(nodenv root)
   (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/default-packages)
   (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/version)

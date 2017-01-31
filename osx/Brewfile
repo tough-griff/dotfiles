@@ -61,15 +61,17 @@ cask "beardedspice"
 cask "cheatsheet"
 cask "dash"
 cask "discord"
-cask "docker"
 cask "dropbox"
 cask "firefox"
+cask "google-chrome"
 cask "google-drive"
 cask "google-hangouts"
-cask "iterm2"
+cask "java"
 cask "kap"
 cask "karabiner-elements"
+cask "keybase"
 cask "keyboard-cleaner"
+cask "postgres"
 cask "postico"
 cask "resilio-sync"
 cask "scroll-reverser"
@@ -85,7 +87,7 @@ cask "xld"
 cask "xquartz"
 
 # Install Mac App Store Applications
-# mas "Caffeine", id: 411246225
+mas "Amphetamine", id: 937984704
 mas "Growl", id: 467939042
 mas "Keynote", id: 409183694
 mas "Monit", id: 1014850245

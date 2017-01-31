@@ -1,59 +1,55 @@
 @import "syntax";
+@import "syntax-variables";
 
-atom-text-editor.editor {
-  // Color modified and added line numbers.
-  .gutter .line-number {
-    &.git-line-added {
-      color: @syntax-color-added;
-    }
-
-    &.git-line-modified {
-      color: @syntax-color-modified;
-    }
+// Color modified and added line numbers.
+atom-text-editor .gutter .line-number {
+  &.git-line-added {
+    color: @syntax-color-added;
   }
 
-  .linter-gutter {
-    border-radius: 0;
+  &.git-line-modified {
+    color: @syntax-color-modified;
+  }
+}
+
+// Make linter gutter icons square.
+atom-text-editor.editor .linter-gutter {
+  border-radius: 0;
+}
+
+// Fix linter tab icon borders.
+linter-bottom-tab {
+  &:first-child {
+    border-radius: 4px 0 0 4px;
   }
 
-  // Syntax overrides.
-  // JS
-  .syntax--js {
-    .syntax--import {
-      .syntax--variable {
-        color: @mono-1;
-      }
+  &:nth-child(2) {
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+// ======
+// Syntax
+// ======
+.syntax--source.syntax--js {
+  .syntax--variable {
+    &.syntax--readwrite {
+      color: @syntax-text-color;
+    }
+
+    &.syntax--static {
+      color: @syntax-color-constant;
     }
   }
 }
 
-// Tweak toolbar borders.
-.tool-bar {
-  border-width: 0;
-
-  &.tool-bar-bottom {
-    border-top-width: 1px;
-  }
-
-  &.tool-bar-left {
-    border-right-width: 1px;
-  }
-
-  &.tool-bar-right {
-    border-left-width: 1px;
-  }
-
-  &.tool-bar-top {
-    border-bottom-width: 1px;
-  }
-}
-
-// File-icon overrides.
+// =====
+// Icons
+// =====
 .icon {
-  @import "packages/file-icons/styles/colours";
+  // @import "packages/file-icons/styles/colours";
   @devicons: "Devicons";
   @octicons: "Octicons Regular";
-  @fi: "file-icons";
 
   &[data-name$=".psqlrc"]:before {
     content: "\f096";
@@ -81,8 +77,31 @@ atom-text-editor.editor {
   // Shell
   &[data-name$=".secrets"]:before {
     content: "\f0c8";
-    font-family: @fi;
+    font-family: "file-icons";
     font-size: 14px;
     top: 2px;
+  }
+}
+
+// =======
+// Toolbar
+// =======
+.tool-bar {
+  border-width: 0;
+
+  &.tool-bar-bottom {
+    border-top-width: 1px;
+  }
+
+  &.tool-bar-left {
+    border-right-width: 1px;
+  }
+
+  &.tool-bar-right {
+    border-left-width: 1px;
+  }
+
+  &.tool-bar-top {
+    border-bottom-width: 1px;
   }
 }

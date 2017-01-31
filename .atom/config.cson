@@ -14,8 +14,6 @@
         "variables"
       ]
     disabledPackages: [
-      "circle-ci"
-      "pigments"
       "travis-ci-status"
     ]
     openEmptyEditorOnStart: false
@@ -44,13 +42,12 @@
       _analyticsUserId: "78a8e1ee-6282-4a3d-b981-8a5a55034efd"
   "grammar-selector": {}
   linter:
-    ignoreVCSIgnoredFiles: false
     showErrorTabLine: true
     showErrorTabProject: false
+    showProviderName: false
     statusIconPosition: "Right"
     statusIconScope: "File"
   "linter-eslint":
-    eslintrcPath: "~/.eslintrc.js"
     globalNodePath: "/usr/local/var/nodenv/versions/6.9.4"
     useGlobalEslint: true
   "linter-haml": {}
@@ -71,7 +68,7 @@
     layoutMode: "Compact"
   "pdf-view": {}
   pigments:
-    markerType: "native-square-dot"
+    markerType: "square-dot"
   react: {}
   "spell-check": {}
   "status-bar": {}
