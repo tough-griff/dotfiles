@@ -9,5 +9,6 @@ git clone https://github.com/tough-griff/dotfiles.git "${DOTDIR:="$HOME/dotfiles
 ${DOTDIR:="$HOME/dotfiles"}/install.sh
 ```
 
-`git update-index --assume-unchanged git/.gitconfig.personal` to ignore all
-future changes to your personal git config.
+## Personal files
+Create a `~/.gitconfig.personal` file for saving your username and email
+configuration.
