@@ -10,5 +10,7 @@ ${DOTDIR:="$HOME/dotfiles"}/install.sh
 ```
 
 ## Personal files
-Create a `~/.gitconfig.personal` file for saving your username and email
+Create a `~/.gitconfig.personal` file for saving your `git` username and email
 configuration.
+
+`.secrets` is where any secret environment variables can live.
