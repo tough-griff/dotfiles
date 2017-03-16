@@ -62,7 +62,7 @@
   untracked = magenta bold
 
 [commit]
-  gpgsign = true
+  # gpgsign = true
 
 [core]
   autocrlf = input
@@ -101,9 +101,6 @@
 # plugins and etc
 [credential]
   helper = osxkeychain
-
-[git-up "bundler"]
-  check = true
 
 [heroku]
   account = personal

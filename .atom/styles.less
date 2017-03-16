@@ -12,22 +12,6 @@ atom-text-editor .gutter .line-number {
   }
 }
 
-// Make linter gutter icons square.
-atom-text-editor.editor .linter-gutter {
-  border-radius: 0;
-}
-
-// Fix linter tab icon borders.
-linter-bottom-tab {
-  &:first-child {
-    border-radius: 4px 0 0 4px;
-  }
-
-  &:nth-child(2) {
-    border-radius: 0 4px 4px 0;
-  }
-}
-
 // ======
 // Syntax
 // ======
@@ -47,7 +31,7 @@ linter-bottom-tab {
 // Icons
 // =====
 .icon {
-  // @import "packages/file-icons/styles/colours";
+  @import "packages/file-icons/styles/colours";
   @devicons: "Devicons";
   @octicons: "Octicons Regular";
 
@@ -58,14 +42,17 @@ linter-bottom-tab {
 
   // Heroku
   &[data-name^="Procfile"]:before {
-    // color: @medium-purple;
+    color: @medium-purple;
     content: "\e67b";
     font-family: @devicons;
   }
 
   // Javascript
-  &[data-name$=".spec.js"]:before {
-    // color: @light-green;
+  &[data-name$=".spec.js"]:before,
+  &[data-name$=".test.js"]:before,
+  &[data-name$=".spec.jsx"]:before,
+  &[data-name$=".test.jsx"]:before {
+     color: @light-green;
   }
 
   // Ruby
@@ -80,28 +67,5 @@ linter-bottom-tab {
     font-family: "file-icons";
     font-size: 14px;
     top: 2px;
-  }
-}
-
-// =======
-// Toolbar
-// =======
-.tool-bar {
-  border-width: 0;
-
-  &.tool-bar-bottom {
-    border-top-width: 1px;
-  }
-
-  &.tool-bar-left {
-    border-right-width: 1px;
-  }
-
-  &.tool-bar-right {
-    border-left-width: 1px;
-  }
-
-  &.tool-bar-top {
-    border-bottom-width: 1px;
   }
 }

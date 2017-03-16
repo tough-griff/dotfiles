@@ -1,7 +1,4 @@
 "*":
-  "activate-power-mode":
-    autoToggle: false
-  "atom-fuzzy-grep": {}
   "autocomplete-plus": {}
   "color-picker":
     abbreviateValues: true
@@ -14,45 +11,28 @@
         "variables"
       ]
     disabledPackages: [
-      "travis-ci-status"
+      "linter-haml"
+      "linter-rubocop"
+      "linter-scss-lint"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
-    themes: [
-      "native-ui"
-      "one-dark-syntax"
-    ]
   editor:
     fontFamily: "Source Code Pro"
+    fontSize: 12
     invisibles: {}
     showIndentGuide: true
   "exception-reporting":
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "file-icons":
-    coloured: false
-    forceShow: true
-    strategies: {}
+    defaultIconClass: "text-icon"
   "fuzzy-finder":
     ignoredNames: [
       "vendor/cache"
     ]
   "git-diff": {}
-  "git-plus":
-    general:
-      _analyticsUserId: "78a8e1ee-6282-4a3d-b981-8a5a55034efd"
   "grammar-selector": {}
-  linter:
-    showErrorTabLine: true
-    showErrorTabProject: false
-    showProviderName: false
-    statusIconPosition: "Right"
-    statusIconScope: "File"
-  "linter-eslint":
-    globalNodePath: "/usr/local/var/nodenv/versions/6.9.4"
-    useGlobalEslint: true
-  "linter-haml": {}
-  "linter-rubocop": {}
-  "linter-scss-lint": {}
+  "linter-ui-default": {}
   "markdown-preview":
     useGitHubStyle: true
   metrics:
@@ -66,22 +46,21 @@
       "find-and-replace": true
   "one-dark-ui":
     layoutMode: "Compact"
+  "one-light-ui":
+    layoutMode: "Compact"
   "pdf-view": {}
   pigments:
     markerType: "square-dot"
-  react: {}
   "spell-check": {}
   "status-bar": {}
   tabs:
     enableVcsColoring: true
     tabScrolling: true
     usePreviewTabs: true
-  "tool-bar":
-    iconSize: "16px"
-    position: "Left"
-  "tool-bar-almighty": {}
   "travis-ci-status": {}
-  "tree-view": {}
+  "tree-view":
+    alwaysOpenExisting: true
+    autoReveal: true
   welcome:
     showOnStartup: false
   whitespace:

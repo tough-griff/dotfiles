@@ -3,10 +3,11 @@
 !.atom/config.cson
 !.atom/init.coffee
 !.atom/keymap.cson
-!.atom/package-list
+!.atom/package.list
 !.atom/snippets.cson
 !.atom/styles.less
 
 git/.gitconfig.personal
 
+.hgrc
 .secrets
