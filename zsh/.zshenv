@@ -79,11 +79,7 @@ if [[ -d "$TMPDIR" ]]; then
 fi
 
 # rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
 export RUBY_CONFIGURE_OPTS=--disable-install-doc # doc-free installation
-
-# nodenv
-export NODENV_ROOT=/usr/local/var/nodenv
 
 # Java & Scala
 export JAVA_HOME=$(/usr/libexec/java_home)

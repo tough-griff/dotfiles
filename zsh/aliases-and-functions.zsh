@@ -31,9 +31,9 @@ alias sftp='noglob sftp'
 # *nix
 alias _='sudo'
 
-alias l='ls -h --color=auto --group-directories-first'
 alias ls='ls -h --color=auto --group-directories-first'
 alias ll='ls -l'
+alias l='ll'
 alias la='ll -a'
 alias l.='ll -d .*'
 alias lsg='la | grep'

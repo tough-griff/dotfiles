@@ -17,10 +17,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "hermes2"
-sudo scutil --set HostName "hermes2"
-sudo scutil --set LocalHostName "hermes2"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "hermes2"
+sudo scutil --set ComputerName "hermes-sp"
+sudo scutil --set HostName "hermes-sp"
+sudo scutil --set LocalHostName "hermes-sp"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "hermes-sp"
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400

@@ -46,27 +46,15 @@ if [[ -f "$HOME/.travis/travis.sh" ]]; then
   source "$HOME/.travis/travis.sh"
 fi
 
-# initialize rbenv
-if (( ${+commands[rbenv]} )); then
-  eval "$(rbenv init -)"
+# Added by iTerm2
+if [[ $TERM_PROGRAM =~ "iTerm" && -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
+  source "$HOME/.iterm2_shell_integration.zsh"
 fi
 
-# initialize nodenv
-if (( ${+commands[nodenv]} )); then
-  eval "$(nodenv init -)"
-fi
+# Boxen
+source /opt/boxen/env.sh
 
 # direnv goes last
 if (( ${+commands[direnv]} )); then
   eval "$(direnv hook $0)"
-fi
-
-# Docker
-if (( ${+commands[docker-machine]} )); then
-  eval "$(docker-machine env 2>/dev/null)"
-fi
-
-# Added by iTerm2
-if [[ $TERM_PROGRAM =~ "iTerm" && -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
-  source "$HOME/.iterm2_shell_integration.zsh"
 fi

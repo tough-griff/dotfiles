@@ -14,6 +14,7 @@ brew "gnu-sed"
 brew "gnu-tar"
 
 # Install other useful binaries
+# My `boxen` install takes care of things commented out.
 brew "bash"
 brew "diff-so-fancy"
 brew "direnv"
@@ -29,17 +30,17 @@ brew "imagemagick"
 brew "lastpass-cli", args: ["with-pinentry"]
 brew "lesspipe", args: ["with-syntax-highlighting"]
 brew "mas"
-brew "node-build"
+# brew "node-build"
 brew "node"
-brew "nodenv"
+# brew "nodenv"
 brew "openssl"
 brew "p7zip"
 brew "python"
-brew "rbenv"
+# brew "rbenv"
 brew "readline"
 brew "redis"
 brew "rename"
-brew "ruby-build"
+# brew "ruby-build"
 brew "terminal-notifier"
 brew "the_silver_searcher"
 brew "thefuck"
@@ -52,6 +53,7 @@ brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 
 # Install Applications
+# # My `boxen` install takes care of things commented out.
 cask "aerial"
 cask "alfred"
 cask "appcleaner"
@@ -59,31 +61,27 @@ cask "atom"
 cask "bartender"
 cask "beardedspice"
 cask "cheatsheet"
-cask "dash"
 cask "discord"
-cask "dropbox"
-cask "firefox"
-cask "google-chrome"
-cask "google-drive"
-cask "google-hangouts"
-cask "java"
+# cask "dropbox"
+# cask "firefox"
+# cask "google-chrome"
+# cask "google-drive"
+# cask "java"
 cask "kap"
 cask "karabiner-elements"
-cask "keybase"
 cask "keyboard-cleaner"
 cask "postgres"
 cask "postico"
 cask "resilio-sync"
 cask "scroll-reverser"
+cask "slack"
 cask "spectacle"
 cask "transmission"
 cask "transmit"
 cask "ubersicht"
 cask "unity-web-player"
-cask "virtualbox"
 cask "vlc"
 cask "whatsapp"
-cask "xld"
 cask "xquartz"
 
 # Install Mac App Store Applications
@@ -93,6 +91,5 @@ mas "Keynote", id: 409183694
 mas "Monit", id: 1014850245
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Slack", id: 803453959
 mas "The Unarchiver", id: 425424353
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835 # this is nice, but big
