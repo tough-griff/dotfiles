@@ -1,60 +1,116 @@
-# Load supporting config files
-autoload -U colors && colors
-source "${ZSHCONFIG}/aliases-and-functions.zsh"
-source "${ZSHCONFIG}/completion.zsh"
-source "${ZSHCONFIG}/gnu-utils.zsh"
-source "${ZSHCONFIG}/highlighting-and-history.zsh"
-source "${ZSHCONFIG}/osx.zsh"
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-# Set the TG Prompt
-autoload -Uz promptinit && promptinit
-prompt 'tg'
-
-setopt AUTO_CD
-setopt CDABLE_VARS
-setopt CORRECT
-setopt EXTENDED_GLOB
-unsetopt CLOBBER
-
-# configure less using lesspipe
-if (( ${+commands[lesspipe.sh]} )); then
-  export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Use fasd for ultra-fast navigation
-if (( ${+commands[fasd]} )); then
-  _fasd_cache="$HOME/.fasd-init-zsh"
-  if [ "$(command -v fasd)" -nt "${_fasd_cache}" -o ! -s "${_fasd_cache}" ]; then
-    eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)" >| "${_fasd_cache}"
-  fi
-  source "${_fasd_cache}"
-  unset _fasd_cache
-fi
-
-# https://github.com/Homebrew/homebrew-command-not-found
-if brew command command-not-found-init > /dev/null; then
-  eval "$(brew command-not-found-init)"
-fi
-
-# source npm completions
-if (( ${+commands[npm]} )); then
-  eval "$(npm completion 2>/dev/null)"
-fi
-
-# added by travis gem
-if [[ -f "$HOME/.travis/travis.sh" ]]; then
-  source "$HOME/.travis/travis.sh"
-fi
-
-# Added by iTerm2
-if [[ $TERM_PROGRAM =~ "iTerm" && -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
-  source "$HOME/.iterm2_shell_integration.zsh"
-fi
-
-# Boxen
+# Customize to your needs...
 source /opt/boxen/env.sh
+eval "$(fasd --init posix-alias)"
 
-# direnv goes last
-if (( ${+commands[direnv]} )); then
-  eval "$(direnv hook $0)"
-fi
+alias tree='tree -h -C --dirsfirst'
+
+alias psa='ps aux'
+function psg {
+  ps aux | grep $@ | grep -v grep
+}
+
+function psu {
+  ps -U "${1:-$USER}" -o 'pid,%cpu,%mem,command' "${(@)argv[2,-1]}"
+}
+
+alias path='echo -e ${PATH//:/\\n}'
+alias fpath='echo -e ${FPATH//:/\\n}'
+alias cdpath='echo -e ${CDPATH//:/\\n}'
+alias manpath='echo -e ${MANPATH//:/\\n}'
+
+# Homebrew
+alias brewc='brew cleanup'
+alias brewi='brew install'
+alias brewl='brew list'
+alias brews='brew search'
+alias brewu='brew update && brew upgrade'
+alias brewx='brew uninstall'
+
+alias cask='brew cask'
+alias caskc='brew cask cleanup'
+alias caski='brew cask install'
+alias caskl='brew cask list'
+alias casks='brew cask search'
+alias caskx='brew cask uninstall'
+
+# Git
+alias git='hub'
+alias g='git'
+alias ga='git add -A'
+alias gam='git amend'
+alias gb='git branch --verbose --verbose'
+alias gba='git branch --all --verbose --verbose'
+alias gc='git commit --message'
+alias gci='git commit'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gf='git fetch --verbose --prune'
+alias gfa='git fetch --all --verbose --prune'
+alias gh='git hash'
+alias ghc='git hash | pbcopy'
+alias gl='git log --graph'
+alias glb='git log --graph --branches'
+alias gp='git push'
+alias gpl='git pull'
+alias gpu='git push --set-upstream'
+alias gs='git status --short'
+alias gsb='git show-branch'
+alias gsh='git show'
+alias gst='git status'
+alias gu='git up'
+
+function git-ignore-dir {
+  local dir="$1"
+  [[ -z "${dir}" ]] && dir='.'
+  git ls-files -z ${dir} | xargs -0 git update-index --assume-unchanged
+}
+alias gigd='git-ignore-dir'
+
+# Node
+alias npmi='npm install'
+alias npml='npm list --depth=0'
+alias npmr='npm run'
+alias npms='npm search'
+alias npmu='npm update'
+alias npmx='npm uninstall'
+
+# apm (atom package manager)
+function apmi {
+  apm install $@ && apm list --installed --bare >! $HOME/.atom/package.list
+}
+alias apml='apm list --installed'
+alias apms='apm search'
+alias apmu='apm update --confirm false && apm list --installed --bare >! $HOME/.atom/package.list'
+function apmx {
+  apm uninstall $@ && apm list --installed --bare >! $HOME/.atom/package.list
+}
+
+# Opens file in EDITOR.
+function edit {
+  local dir="$1"
+  [[ -z "${dir}" ]] && dir='.'
+  atom ${dir}
+}
+alias e='edit'
+function edit-add {
+  local dir="$1"
+  [[ -z  "${dir}" ]] && dir='.'
+  atom --add ${dir}
+}
+alias ea='edit-add'
+alias edf='edit ~/dotfiles'
+alias ebc='edit ~/.bundle/config'

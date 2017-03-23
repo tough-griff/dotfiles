@@ -17,6 +17,7 @@
   h = "hash"
   hc = "!git hash | pbcopy"
   l = "log --graph"
+  lb = "log --graph --branches"
   p = "push"
   pl = "pull"
   pu = "push --set-upstream"

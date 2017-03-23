@@ -44,6 +44,8 @@ fi
 echo "zsh"
 echo "===="
 ln -sfv ${DOTDIR}/zsh/.zlogin
+ln -sfv ${DOTDIR}/zsh/.zpreztorc
+ln -sfv ${DOTDIR}/zsh/.zprofile
 ln -sfv ${DOTDIR}/zsh/.zshenv
 ln -sfv ${DOTDIR}/zsh/.zshrc
 echo

@@ -43,7 +43,6 @@ brew "rename"
 # brew "ruby-build"
 brew "terminal-notifier"
 brew "the_silver_searcher"
-brew "thefuck"
 brew "tree"
 brew "wget", args: ["enable-iri"]
 brew "wifi-password"
