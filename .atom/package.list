@@ -1,4 +1,4 @@
-atom-hg@2.0.11
+atom-hg@2.0.14
 autocomplete-emojis@2.5.0
 autocomplete-modules@1.6.8
 autocomplete-paths@1.0.5
@@ -25,7 +25,7 @@ minimap@4.26.8
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
 native-ui@0.20.4
-pdf-view@0.56.0
+pdf-view@0.57.0
 pigments@0.39.1
 sort-lines@0.14.0
 turbo-javascript@1.4.0

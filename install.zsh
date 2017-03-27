@@ -43,11 +43,11 @@ fi
 
 echo "zsh"
 echo "===="
-ln -sfv ${DOTDIR}/zsh/.zlogin
-ln -sfv ${DOTDIR}/zsh/.zpreztorc
-ln -sfv ${DOTDIR}/zsh/.zprofile
-ln -sfv ${DOTDIR}/zsh/.zshenv
-ln -sfv ${DOTDIR}/zsh/.zshrc
+setopt EXTENDED_GLOB
+ln -sfv ${DOTDIR}/zsh/.zprezto
+for rcfile in ${DOTDIR}/zsh/.zprezto/runcoms/^README.md(.N); do
+  ln -sfv "$rcfile" ".${rcfile:t}"
+done
 echo
 
 echo "misc"
