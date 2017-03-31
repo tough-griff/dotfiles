@@ -47,16 +47,9 @@ atom-text-editor .gutter .line-number {
     font-family: @devicons;
   }
 
-  // Javascript
-  &[data-name$=".spec.js"]:before,
-  &[data-name$=".test.js"]:before,
-  &[data-name$=".spec.jsx"]:before,
-  &[data-name$=".test.jsx"]:before {
-     color: @light-green;
-  }
-
   // Ruby
   &[data-name$=".railsrc"]:before {
+    color: @red;
     content: "\f047";
     font-family: @octicons;
   }

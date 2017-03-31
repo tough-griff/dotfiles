@@ -21,7 +21,6 @@ if (( ${+commands[nodenv]} )); then
   echo "js"
   echo "===="
   echo $(nodenv root)
-  (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/default-packages)
   (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/version)
   echo
 fi
@@ -36,7 +35,6 @@ echo
 
 if (( ${+commands[rbenv]} )); then
   echo $(rbenv root)
-  (cd $(rbenv root) && ln -sfv ${DOTDIRABS}/ruby/default-gems)
   (cd $(rbenv root) && ln -sfv ${DOTDIRABS}/ruby/version)
   echo
 fi

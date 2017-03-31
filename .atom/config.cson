@@ -17,6 +17,7 @@
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
+    useCustomTitleBar: true
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
