@@ -32,32 +32,46 @@ atom-text-editor .gutter .line-number {
 // =====
 .icon {
   @import "packages/file-icons/styles/colours";
-  @devicons: "Devicons";
-  @octicons: "Octicons Regular";
+  @import "packages/file-icons/styles/icons";
 
   &[data-name$=".psqlrc"]:before {
+    .octicons;
     content: "\f096";
-    font-family: @octicons;
   }
 
   // Heroku
   &[data-name^="Procfile"]:before {
+    .devicons;
     color: @medium-purple;
     content: "\e67b";
-    font-family: @devicons;
+  }
+
+  // JavaScript
+  &[data-name$=".spec.js"]:before,
+  &[data-name$=".test.js"]:before {
+    .fi;
+    .test-file;
+    content: "\ea64";
+  }
+
+  &[data-name$=".spec.jsx"]:before,
+  &[data-name$=".test.jsx"]:before {
+    .fi;
+    .test-file;
+    content: "\ea67";
   }
 
   // Ruby
   &[data-name$=".railsrc"]:before {
+    .devicons;
     color: @red;
-    content: "\f047";
-    font-family: @octicons;
+    content: "\e63b";
   }
 
   // Shell
   &[data-name$=".secrets"]:before {
+    .fi;
     content: "\f0c8";
-    font-family: "file-icons";
     font-size: 14px;
     top: 2px;
   }
