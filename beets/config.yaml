@@ -2,7 +2,7 @@
 directory: ~/Music/Library
 embedart:
   maxwidth: 500
-library: ~/Music/library.db
+library: ~/Music/Library/beets.db
 original_date: yes
 paths:
   comp: $albumartist/($year) $album%aunique{}/$track $title
