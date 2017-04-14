@@ -26,10 +26,50 @@ module.exports = {
     backgroundColor: '#282c34',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#181a1f',
 
     // custom css to embed in the main window
-    css: '',
+    css: `
+      .tabs_nav {
+        height: 22px;
+      }
+
+      .tabs_nav {
+        background-color: #21252b;
+      }
+
+      .tabs_title {
+        border-bottom: 1px solid #181a1f;
+        line-height: 22px;
+        max-height: 22px;
+        overflow: hidden;
+        padding-left: 76px;
+      }
+
+      .tabs_list {
+        max-height: 22px;
+      }
+
+      .tab_active {
+        background-color: #282c34;
+      }
+
+      .tab_text {
+        height: 22px;
+      }
+
+      .tab_textInner {
+        line-height: 22px;
+      }
+
+      .tab_icon {
+        top: 4px;
+      }
+
+      .terms_terms {
+        margin-top: 22px;
+      }
+    `,
 
     // custom css to embed in the terminal window
     termCSS: '',
@@ -44,7 +84,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '2px 4px',
+    padding: '4px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -104,10 +144,10 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: ["hypercwd"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: []
+  localPlugins: ["hypertg"]
 };

@@ -10,6 +10,12 @@ echo "===="
 ln -sfv ${DOTDIR}/.atom
 echo
 
+echo "Hyper"
+echo "====="
+ln -sfv ${DOTDIR}/hyper/.hyper.js
+(cd .hyper_plugins && rm -rf local/ && ln -sfv ${DOTDIRABS}/hyper/plugins ./local)
+echo
+
 echo "git"
 echo "===="
 ln -sfv ${DOTDIR}/git/.gitconfig
@@ -20,7 +26,7 @@ echo
 if (( ${+commands[nodenv]} )); then
   echo "js"
   echo "===="
-  echo $(nodenv root)
+  echo "in $(nodenv root)"
   (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/version)
   echo
 fi
@@ -34,7 +40,7 @@ ln -sfv ${DOTDIR}/ruby/.rubocop.yml
 echo
 
 if (( ${+commands[rbenv]} )); then
-  echo $(rbenv root)
+  echo "in $(rbenv root)"
   (cd $(rbenv root) && ln -sfv ${DOTDIRABS}/ruby/version)
   echo
 fi

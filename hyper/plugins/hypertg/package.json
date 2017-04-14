@@ -1,0 +1,11 @@
+{
+  "name": "hypertg",
+  "version": "1.0.0",
+  "description": "My personal theme and customizations for Hyper.",
+  "author": "Griffin Yourick <gryphon922@gmail.com",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "hyper", "hyperterm"
+  ]
+}

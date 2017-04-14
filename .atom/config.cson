@@ -5,6 +5,7 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
+    closeEmptyWindows: false
     customFileTypes:
       "source.css.less": [
         "overrides"
@@ -17,7 +18,7 @@
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
@@ -33,6 +34,8 @@
     ]
   "git-diff": {}
   "grammar-selector": {}
+  "hey-pane":
+    expandedWidth: 70
   "linter-ui-default": {}
   "markdown-preview":
     useGitHubStyle: true
@@ -40,11 +43,12 @@
     userId: "8e7208e4b8bc82e2315cd4914081208b721197de"
   minimap:
     absoluteMode: true
-    adjustMinimapWidthToSoftWrap: false
     displayPluginsControls: false
     minimapScrollIndicator: false
     plugins:
       "find-and-replace": true
+  "minimap-git-diff": {}
+  "minimap-linter": {}
   "one-dark-ui":
     layoutMode: "Compact"
   "one-light-ui":
@@ -62,6 +66,7 @@
   "tree-view":
     alwaysOpenExisting: true
     autoReveal: true
+    squashDirectoryNames: true
   welcome:
     showOnStartup: false
   whitespace:

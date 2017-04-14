@@ -1,6 +1,11 @@
 @import "syntax";
 @import "syntax-variables";
 
+// Make title bar darker.
+atom-panel .title-bar {
+  background-color: inherit;
+}
+
 // Color modified and added line numbers.
 atom-text-editor .gutter .line-number {
   &.git-line-added {
@@ -10,6 +15,16 @@ atom-text-editor .gutter .line-number {
   &.git-line-modified {
     color: @syntax-color-modified;
   }
+}
+
+// Hide scrollbar
+atom-text-editor .scrollbar-content {
+  display: none;
+}
+
+//
+atom-text-editor atom-text-editor-minimap {
+  background: transparent;
 }
 
 // ======
