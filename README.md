@@ -5,7 +5,7 @@ My personal configuration. ZSH, Atom, and more.
 Download this repo and symlink everything with the commands below!
 
 ```sh
-git clone https://github.com/tough-griff/dotfiles.git "${DOTDIR:="$HOME/dotfiles"}"
+git clone --recursive https://github.com/tough-griff/dotfiles.git "${DOTDIR:="$HOME/dotfiles"}"
 ${DOTDIR:="$HOME/dotfiles"}/install.sh
 ```
 
