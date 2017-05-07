@@ -25,9 +25,9 @@ linter-flow@5.6.0
 linter-haml@2.0.1
 linter-rubocop@2.1.1
 linter-scss-lint@3.1.0
-linter-ui-default@1.2.3
+linter-ui-default@1.2.4
 merge-conflicts@1.4.4
-minimap@4.28.1
+minimap@4.28.2
 minimap-autohider@1.4.0
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
