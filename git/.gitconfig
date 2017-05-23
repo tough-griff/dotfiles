@@ -67,7 +67,6 @@
 
 [core]
   autocrlf = input
-  editor = atom --wait
   excludesfile = ~/.gitignore
 
 [diff]
