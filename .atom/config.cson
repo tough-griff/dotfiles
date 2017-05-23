@@ -19,6 +19,7 @@
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
     titleBar: "custom"
+  docblockr: {}
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
@@ -36,7 +37,8 @@
   "grammar-selector": {}
   "hey-pane":
     expandedWidth: 70
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   metrics:
@@ -50,10 +52,8 @@
       "find-and-replace": true
   "minimap-git-diff": {}
   "minimap-linter": {}
-  "one-dark-ui":
-    layoutMode: "Compact"
-  "one-light-ui":
-    layoutMode: "Compact"
+  "one-dark-ui": {}
+  "one-light-ui": {}
   "pdf-view": {}
   pigments:
     markerType: "square-dot"

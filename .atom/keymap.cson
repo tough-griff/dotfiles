@@ -1,5 +1,5 @@
-'body':
-  'cmd-ctrl-\\': 'tool-bar:toggle'
+'.workspace':
+  'cmd-|': 'github:toggle-git-tab'
   'cmd-k cmd-m': 'minimap:toggle'
 
   # Create an empty split pane

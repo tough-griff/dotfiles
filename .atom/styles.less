@@ -27,6 +27,19 @@ atom-text-editor atom-text-editor-minimap {
   background: transparent;
 }
 
+// GitHub
+.github-HunkView-line {
+  &.is-added .github-HunkView-lineContent {
+    color: @syntax-color-added;
+    background-color: shade(@syntax-color-added, 60%);
+  }
+
+  &.is-deleted .github-HunkView-lineContent {
+    color: @syntax-color-removed;
+    background-color: shade(@syntax-color-removed, 60%);
+  }
+}
+
 // ======
 // Syntax
 // ======
