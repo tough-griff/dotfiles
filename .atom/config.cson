@@ -38,7 +38,7 @@
   "hey-pane":
     expandedWidth: 70
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 69
   "markdown-preview":
     useGitHubStyle: true
   metrics:
