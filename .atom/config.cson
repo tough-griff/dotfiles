@@ -12,6 +12,7 @@
         "variables"
       ]
     disabledPackages: [
+      "atom-beautify"
       "linter-haml"
       "linter-rubocop"
       "linter-scss-lint"
