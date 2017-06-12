@@ -1,4 +1,4 @@
-# Atom
+
 .atom/*
 !.atom/config.cson
 !.atom/init.coffee
@@ -6,6 +6,16 @@
 !.atom/package.list
 !.atom/snippets.cson
 !.atom/styles.less
+
+beets/*
+!beets/config.yaml
+
+fish/completions/*
+fish/conf.d/*
+fish/functions/*
+fish/fishd.*
+!fish/conf.d/___env.fish
+!fish/conf.d/git.fish
 
 git/.gitconfig.personal
 

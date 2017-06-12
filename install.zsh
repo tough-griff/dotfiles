@@ -16,6 +16,10 @@ ln -sfv ${DOTDIR}/hyper/.hyper.js
 (cd .hyper_plugins && rm -rf local/ && ln -sfv ${DOTDIRABS}/hyper/plugins ./local)
 echo
 
+echo "fish"
+echo "===="
+(cd .config && ln -sfv ${DOTDIRABS}/fish)
+
 echo "git"
 echo "===="
 ln -sfv ${DOTDIR}/git/.gitconfig

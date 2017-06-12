@@ -1,7 +1,5 @@
 # Usage: `brew bundle`
 tap "homebrew/bundle"
-tap "homebrew/command-not-found"
-tap "homebrew/versions"
 
 # Install GNU core utilities
 # see zshrc GNU-utils
