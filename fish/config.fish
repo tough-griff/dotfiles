@@ -68,11 +68,11 @@ function edit
   test -z $dir; and set dir '.';
   atom $dir
 end
-alias e edit
+abbr e edit
 
 function edit-add
   set dir $argv[1]
   test -z $dir; and set dir '.';
   atom --add $dir
 end
-alias ea edit-add
+abbr ea edit-add

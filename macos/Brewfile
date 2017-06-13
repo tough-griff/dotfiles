@@ -8,8 +8,12 @@ brew "binutils"
 brew "findutils"
 brew "moreutils"
 brew "gawk"
+brew "grep"
 brew "gnu-sed"
 brew "gnu-tar"
+brew "gnu-time"
+brew "gnu-units"
+brew "gnu-which"
 
 # Install other useful binaries
 brew "bash"
