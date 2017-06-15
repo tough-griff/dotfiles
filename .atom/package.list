@@ -13,7 +13,7 @@ file-icons@2.1.7
 hey-pane@1.0.0
 intentions@1.1.2
 language-arduino@0.4.3
-language-babel@2.65.1
+language-babel@2.65.2
 language-cassandra-cql@0.1.2
 language-fish-shell@1.0.5
 language-haml@0.24.5
@@ -36,6 +36,7 @@ minimap-git-diff@4.3.1
 minimap-linter@2.0.0
 pdf-view@0.59.0
 pigments@0.39.1
+prettier-atom@0.33.0
 sort-lines@0.14.0
 turbo-javascript@1.4.0
 

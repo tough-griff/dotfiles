@@ -30,6 +30,9 @@
     userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
   "file-icons":
     defaultIconClass: "text-icon"
+    strategies:
+      grammar: false
+      modelines: false
   "fuzzy-finder":
     ignoredNames: [
       "vendor/cache"
@@ -58,6 +61,13 @@
   "pdf-view": {}
   pigments:
     markerType: "square-dot"
+  "prettier-atom":
+    formatOnSaveOptions:
+      isDisabledIfNotInPackageJson: true
+    prettierOptions:
+      singleQuote: true
+      trailingComma: "es5"
+    useEslint: true
   "spell-check": {}
   "status-bar": {}
   tabs:

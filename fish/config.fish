@@ -30,6 +30,7 @@ abbr brewl 'brew list'
 abbr brews 'brew search'
 abbr brewu 'brew update; and brew upgrade'
 abbr brewx 'brew uninstall'
+abbr brewU 'brew update; and brew upgrade; and brew cleanup; and brew cask cleanup'
 
 abbr cask 'brew cask'
 abbr caskc 'brew cask cleanup'
@@ -76,3 +77,6 @@ function edit-add
   atom --add $dir
 end
 abbr ea edit-add
+
+test -e {$HOME}/.iterm2_shell_integration.fish;
+and source {$HOME}/.iterm2_shell_integration.fish
