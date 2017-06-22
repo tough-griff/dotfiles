@@ -5,6 +5,7 @@
     preferredFormat: "HEX"
   core:
     audioBeep: false
+    closeDeletedFileTabs: true
     closeEmptyWindows: false
     customFileTypes:
       "source.css.less": [
