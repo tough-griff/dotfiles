@@ -1,8 +1,8 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 cd $HOME
 
-DOTDIR=${DOTDIR:="./dotfiles"}
+DOTDIR=${DOTDIR-"./dotfiles"}
 DOTDIRABS=$(cd ${DOTDIR} && pwd)
 
 echo "Atom"
@@ -13,12 +13,18 @@ echo
 echo "Hyper"
 echo "====="
 ln -sfv ${DOTDIR}/hyper/.hyper.js
-(cd .hyper_plugins && rm -rf local/ && ln -sfv ${DOTDIRABS}/hyper/plugins ./local)
+(cd .hyper_plugins && rm -rf local && ln -sfv ${DOTDIRABS}/hyper/plugins ./local)
+echo
+
+echo "beets"
+echo "===="
+(cd .config && ln -sfv ${DOTDIRABS}/beets)
 echo
 
 echo "fish"
 echo "===="
 (cd .config && ln -sfv ${DOTDIRABS}/fish)
+echo
 
 echo "git"
 echo "===="
@@ -27,7 +33,7 @@ ln -sfv ${DOTDIR}/git/.gitconfig
 ln -sfv ${DOTDIR}/git/.gitignore
 echo
 
-if (( ${+commands[nodenv]} )); then
+if type nodenv >/dev/null; then
   echo "js"
   echo "===="
   echo "in $(nodenv root)"
@@ -43,20 +49,11 @@ ln -sfv ${DOTDIR}/ruby/.railsrc
 ln -sfv ${DOTDIR}/ruby/.rubocop.yml
 echo
 
-if (( ${+commands[rbenv]} )); then
+if type rbenv >/dev/null; then
   echo "in $(rbenv root)"
   (cd $(rbenv root) && ln -sfv ${DOTDIRABS}/ruby/version)
   echo
 fi
-
-echo "zsh"
-echo "===="
-setopt EXTENDED_GLOB
-ln -sfv ${DOTDIR}/zsh/.zprezto
-for rcfile in ${DOTDIR}/zsh/.zprezto/runcoms/^README.md(.N); do
-  ln -sfv "$rcfile" ".${rcfile:t}"
-done
-echo
 
 echo "misc"
 echo "===="

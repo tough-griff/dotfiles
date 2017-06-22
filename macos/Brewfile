@@ -2,7 +2,6 @@
 tap "homebrew/bundle"
 
 # Install GNU core utilities
-# see zshrc GNU-utils
 brew "coreutils"
 brew "binutils"
 brew "findutils"
@@ -46,10 +45,6 @@ brew "the_silver_searcher"
 brew "tree"
 brew "wget", args: ["enable-iri"]
 brew "wifi-password"
-brew "zsh"
-brew "zsh-completions"
-brew "zsh-history-substring-search"
-brew "zsh-syntax-highlighting"
 
 # Install Applications
 # # My `boxen` install takes care of things commented out.
