@@ -1,5 +1,4 @@
 "*":
-  "autocomplete-plus": {}
   "color-picker":
     abbreviateValues: true
     preferredFormat: "HEX"
@@ -20,8 +19,11 @@
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "one-dark-syntax"
+    ]
     titleBar: "custom"
-  docblockr: {}
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
@@ -38,8 +40,6 @@
     ignoredNames: [
       "vendor/cache"
     ]
-  "git-diff": {}
-  "grammar-selector": {}
   "hey-pane":
     expandedWidth: 70
   "linter-ui-default":
@@ -55,11 +55,6 @@
     minimapScrollIndicator: false
     plugins:
       "find-and-replace": true
-  "minimap-git-diff": {}
-  "minimap-linter": {}
-  "one-dark-ui": {}
-  "one-light-ui": {}
-  "pdf-view": {}
   pigments:
     markerType: "square-dot"
   "prettier-atom":
@@ -69,13 +64,10 @@
       singleQuote: true
       trailingComma: "es5"
     useEslint: true
-  "spell-check": {}
-  "status-bar": {}
   tabs:
     enableVcsColoring: true
     tabScrolling: true
     usePreviewTabs: true
-  "travis-ci-status": {}
   "tree-view":
     alwaysOpenExisting: true
     autoReveal: true
