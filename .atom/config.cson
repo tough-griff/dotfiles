@@ -11,18 +11,8 @@
         "overrides"
         "variables"
       ]
-    disabledPackages: [
-      "atom-beautify"
-      "linter-haml"
-      "linter-rubocop"
-      "linter-scss-lint"
-    ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
-    themes: [
-      "one-dark-ui"
-      "one-dark-syntax"
-    ]
     titleBar: "custom"
   editor:
     fontFamily: "Source Code Pro"
