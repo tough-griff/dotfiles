@@ -40,7 +40,7 @@
 [color]
   ui = true
 [color "branch"]
-  current = green reverse
+  current = green bold
   local = green
   remote = yellow
 [color "diff"]
@@ -51,10 +51,10 @@
   old = red bold
   whitespace = red reverse
 [color "diff-higlight"]
-  newHighlight = "green 52"
-  newNormal = green
-  oldHighlight = "red 52"
-  oldNormal = red
+  newHighlight = green bold 52
+  newNormal = green bold
+  oldHighlight = red bold 52
+  oldNormal = red bold
 [color "status"]
   added = green bold
   changed = yellow bold
@@ -68,6 +68,7 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
+  pager = diff-so-fancy | less --tabs=4 -FRSX
 
 [diff]
   compactionHeuristic = true # let's give it a try!
@@ -78,10 +79,6 @@
 
 [interactive]
   diffFilter = diff-so-fancy
-
-[pager]
-  diff = diff-so-fancy | less
-  show = diff-so-fancy | less
 
 [pull]
   rebase = true
@@ -101,6 +98,9 @@
 # plugins and etc
 [credential]
   helper = osxkeychain
+
+[diff-so-fancy]
+	first-run = false
 
 [heroku]
   account = personal
