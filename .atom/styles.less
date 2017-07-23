@@ -2,7 +2,7 @@
 @import "syntax-variables";
 
 // Make title bar darker.
-atom-panel .title-bar {
+.title-bar {
   background-color: inherit;
 }
 
@@ -17,14 +17,19 @@ atom-text-editor .gutter .line-number {
   }
 }
 
-// Hide scrollbar
+// Hide scrollbar.
 atom-text-editor .scrollbar-content {
   display: none;
 }
 
-//
+// Hide minimap background.
 atom-text-editor atom-text-editor-minimap {
   background: transparent;
+}
+
+// Hide the update squirrel.
+status-bar .about-release-notes {
+  display: none;
 }
 
 // GitHub
@@ -37,6 +42,18 @@ atom-text-editor atom-text-editor-minimap {
   &.is-deleted .github-HunkView-lineContent {
     color: @syntax-color-removed;
     background-color: shade(@syntax-color-removed, 60%);
+  }
+}
+
+.github-FilePatchView:focus .github-HunkView-line {
+  &.is-added.is-selected .github-HunkView-lineContent {
+    color: tint(@syntax-color-added, 25%);
+    background-color: shade(@syntax-color-added, 50%);
+  }
+
+  &.is-deleted.is-selected .github-HunkView-lineContent {
+    color: tint(@syntax-color-removed, 25%);
+    background-color: shade(@syntax-color-removed, 50%);
   }
 }
 
