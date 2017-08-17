@@ -46,7 +46,7 @@
     plugins:
       "find-and-replace": true
   pigments:
-    markerType: "square-dot"
+    markerType: "native-square-dot"
   "prettier-atom":
     formatOnSaveOptions:
       isDisabledIfNotInPackageJson: true
