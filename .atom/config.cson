@@ -11,6 +11,9 @@
         "overrides"
         "variables"
       ]
+    disabledPackages: [
+      "whitespace"
+    ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
     titleBar: "custom"
