@@ -1,5 +1,5 @@
-@import "syntax";
-@import "syntax-variables";
+@import 'syntax';
+@import 'syntax-variables';
 
 // Make title bar darker.
 .title-bar {
@@ -15,6 +15,12 @@ atom-text-editor .gutter .line-number {
   &.git-line-modified {
     color: @syntax-color-modified;
   }
+}
+
+// Adjust bracket matcher line numbers and background.
+atom-text-editor .line-number.bracket-matcher {
+  color: #282c34;
+  background-color: #636d83;
 }
 
 // Hide scrollbar.
@@ -72,47 +78,47 @@ atom-text-editor atom-text-editor-minimap {
 // Icons
 // =====
 .icon {
-  @import "packages/file-icons/styles/colours";
-  @import "packages/file-icons/styles/icons";
+  @import 'packages/file-icons/styles/colours';
+  @import 'packages/file-icons/styles/icons';
 
-  &[data-name$=".psqlrc"]:before {
+  &[data-name$='.psqlrc']:before {
     .octicons;
-    content: "\f096";
+    content: '\f096';
   }
 
   // Heroku
-  &[data-name^="Procfile"]:before {
+  &[data-name^='Procfile']:before {
     .devicons;
     color: @medium-purple;
-    content: "\e67b";
+    content: '\e67b';
   }
 
   // JavaScript
-  &[data-name$=".spec.js"]:before,
-  &[data-name$=".test.js"]:before {
+  &[data-name$='.spec.js']:before,
+  &[data-name$='.test.js']:before {
     .fi;
     .test-file;
-    content: "\ea64";
+    content: '\ea64';
   }
 
-  &[data-name$=".spec.jsx"]:before,
-  &[data-name$=".test.jsx"]:before {
+  &[data-name$='.spec.jsx']:before,
+  &[data-name$='.test.jsx']:before {
     .fi;
     .test-file;
-    content: "\ea67";
+    content: '\ea67';
   }
 
   // Ruby
-  &[data-name$=".railsrc"]:before {
+  &[data-name$='.railsrc']:before {
     .devicons;
     color: @red;
-    content: "\e63b";
+    content: '\e63b';
   }
 
   // Shell
-  &[data-name$=".secrets"]:before {
+  &[data-name$='.secrets']:before {
     .fi;
-    content: "\f0c8";
+    content: '\f0c8';
     font-size: 14px;
     top: 2px;
   }

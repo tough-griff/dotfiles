@@ -1,4 +1,9 @@
 "*":
+  "atom-ide-ui":
+    hyperclick:
+      darwinTriggerKeys: "altKey"
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
   "color-picker":
     abbreviateValues: true
     preferredFormat: "HEX"
@@ -12,6 +17,7 @@
         "variables"
       ]
     disabledPackages: [
+      "atom-ide-ui"
       "whitespace"
     ]
     openEmptyEditorOnStart: false

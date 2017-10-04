@@ -67,14 +67,14 @@ end
 function edit
   set dir $argv[1]
   test -z $dir; and set dir '.';
-  atom $dir
+  atom-beta $dir
 end
 abbr e edit
 
 function edit-add
   set dir $argv[1]
   test -z $dir; and set dir '.';
-  atom --add $dir
+  atom-beta --add $dir
 end
 abbr ea edit-add
 
