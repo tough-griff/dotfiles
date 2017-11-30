@@ -65,15 +65,13 @@ function apmx --description 'apm uninstall'
 end
 
 function edit
-  set dir $argv[1]
-  test -z $dir; and set dir '.';
+  set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
   atom-beta $dir
 end
 abbr e edit
 
 function edit-add
-  set dir $argv[1]
-  test -z $dir; and set dir '.';
+  set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
   atom-beta --add $dir
 end
 abbr ea edit-add

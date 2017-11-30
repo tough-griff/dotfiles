@@ -16,6 +16,7 @@ fish/functions/*
 fish/fishd.*
 !fish/conf.d/___env.fish
 !fish/conf.d/git.fish
+!fish/conf.d/python.fish
 
 git/.gitconfig.personal
 
