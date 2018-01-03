@@ -13,7 +13,6 @@ echo
 echo "Hyper"
 echo "====="
 ln -sfv ${DOTDIR}/hyper/.hyper.js
-(cd .hyper_plugins && rm -rf local && ln -sfv ${DOTDIRABS}/hyper/plugins ./local)
 echo
 
 echo "beets"
