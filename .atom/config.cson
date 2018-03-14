@@ -2,6 +2,7 @@
   "atom-ide-ui":
     hyperclick:
       darwinTriggerKeys: "altKey"
+    use: {}
   "bracket-matcher":
     highlightMatchingLineNumber: true
   "color-picker":
@@ -17,16 +18,16 @@
         "variables"
       ]
     disabledPackages: [
-      "ide-flow"
+      "ide-flowtype"
       "ide-typescript"
-      "linter"
       "linter-ui-default"
+      "linter"
       "whitespace"
-      "ide-cpp"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
     titleBar: "custom"
+    useTreeSitterParsers: true
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
@@ -58,6 +59,7 @@
     minimapScrollIndicator: false
     plugins:
       "find-and-replace": true
+  "one-dark-ui": {}
   pigments:
     markerType: "native-square-dot"
   "prettier-atom":
