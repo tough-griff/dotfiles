@@ -63,6 +63,16 @@ module.exports = {
     `,
 
     // plugins...
+    broadcast: {
+      indicatorStyle: {
+        background: red,
+        height: '10px',
+        opacity: 0.6,
+        position: 'absolute',
+        right: 10,
+        width: 10,
+      },
+    },
     hyperTabs: {
       border: true,
       closeAlign: 'right',
@@ -71,6 +81,7 @@ module.exports = {
   },
 
   plugins: [
+    'hyper-broadcast',
     'hyper-statusline',
     'hyper-tabs-enhanced',
     'hypercwd',

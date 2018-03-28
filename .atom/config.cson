@@ -27,7 +27,6 @@
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
     titleBar: "custom"
-    useTreeSitterParsers: true
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
