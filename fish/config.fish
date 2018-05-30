@@ -46,27 +46,30 @@ abbr caskx 'brew cask uninstall'
 
 # Node
 alias npmi 'npm install'
-alias npmci 'npmc install'
 alias npml 'npm ls --depth 0'
-alias npmcl 'npmc ls --depth 0'
+
+abbr ne 'nodenv each -v'
+abbr npmle '/usr/local/bin/npm list -g --depth=0; and nodenv each -v npm list -g --depth=0'
 
 # Atom
-alias apml 'apm list --installed'
-alias apms 'apm search'
+alias atom 'atom-beta'
+alias apm 'apm-beta'
+abbr apml 'apm-beta list --installed'
+abbr apms 'apm-beta search'
 
-function apmi --description 'apm instal'
-  apm install $argv;
-  and apm list --installed --bare > $HOME/.atom/package.list
+function apmi --description 'apm install'
+  apm-beta install $argv;
+  and apm-beta list --installed --bare > $HOME/.atom/package.list
 end
 
 function apmu --description 'apm update'
-  apm update --confirm false;
-  and apm list --installed --bare > $HOME/.atom/package.list
+  apm-beta update --confirm false;
+  and apm-beta list --installed --bare > $HOME/.atom/package.list
 end
 
 function apmx --description 'apm uninstall'
-  apm uninstall $argv;
-  and apm list --installed --bare > $HOME/.atom/package.list
+  apm-beta uninstall $argv;
+  and apm-beta list --installed --bare > $HOME/.atom/package.list
 end
 
 function edit

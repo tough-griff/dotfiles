@@ -11,11 +11,13 @@
   core:
     audioBeep: false
     closeDeletedFileTabs: true
-    closeEmptyWindows: false
     customFileTypes:
       "source.css.less": [
         "overrides"
         "variables"
+      ]
+      "source.git-config": [
+        ".gitconfig.personal"
       ]
     disabledPackages: [
       "ide-flowtype"
@@ -63,7 +65,9 @@
     markerType: "native-square-dot"
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
       isDisabledIfNotInPackageJson: true
+      showInStatusBar: true
     prettierEslintOptions: {}
     prettierOptions:
       arrowParens: "always"
@@ -85,3 +89,4 @@
 ".makefile.source":
   editor:
     tabLength: 4
+    tabType: "hard"
