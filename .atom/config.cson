@@ -65,7 +65,6 @@
     markerType: "native-square-dot"
   "prettier-atom":
     formatOnSaveOptions:
-      enabled: true
       isDisabledIfNotInPackageJson: true
       showInStatusBar: true
     prettierEslintOptions: {}
