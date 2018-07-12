@@ -63,7 +63,7 @@
   untracked = magenta bold
 
 [commit]
-  # gpgsign = true
+  gpgsign = true
 
 [core]
   autocrlf = input
