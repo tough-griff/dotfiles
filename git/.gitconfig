@@ -85,6 +85,7 @@
 
 [push]
   default = current
+  followTags = true
 
 [url "https://github.com/"]
   insteadOf = git://github.com/
@@ -110,6 +111,7 @@
   protocol = https
 
 [filter "lfs"]
-  clean = git-lfs clean -- %f
   required = true
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
   smudge = git-lfs smudge -- %f
