@@ -1,124 +1,94 @@
-{
-  "*": {
-    "atom-ide-ui": {
-      "hyperclick": {
-        "darwinTriggerKeys": "altKey"
-      },
-      "use": {}
-    },
-    "bracket-matcher": {
-      "highlightMatchingLineNumber": true
-    },
-    "color-picker": {
-      "abbreviateValues": true,
-      "preferredFormat": "HEX"
-    },
-    "core": {
-      "audioBeep": false,
-      "closeDeletedFileTabs": true,
-      "customFileTypes": {
-        "source.css.less": [
-          "overrides",
-          "variables"
-        ],
-        "source.gfm": [
-          "apib"
-        ],
-        "source.git-config": [
-          ".gitconfig.personal"
-        ]
-      },
-      "disabledPackages": [
-        "ide-flowtype",
-        "ide-typescript",
-        "linter-ui-default",
-        "linter",
-        "whitespace"
-      ],
-      "openEmptyEditorOnStart": false,
-      "telemetryConsent": "limited",
-      "titleBar": "custom"
-    },
-    "editor": {
-      "fontFamily": "Source Code Pro",
-      "fontSize": 12,
-      "invisibles": {},
-      "showIndentGuide": true
-    },
-    "exception-reporting": {
-      "userId": "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
-    },
-    "file-icons": {
-      "defaultIconClass": "text-icon",
-      "strategies": {
-        "grammar": false,
-        "modelines": false
-      }
-    },
-    "fuzzy-finder": {
-      "ignoredNames": [
-        "vendor/cache"
+"*":
+  "atom-ide-ui":
+    hyperclick:
+      darwinTriggerKeys: "altKey"
+    use: {}
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
+  "color-picker":
+    abbreviateValues: true
+    preferredFormat: "HEX"
+  core:
+    audioBeep: false
+    closeDeletedFileTabs: true
+    customFileTypes:
+      "source.css.less": [
+        "overrides"
+        "variables"
       ]
-    },
-    "hey-pane": {
-      "expandedWidth": 70
-    },
-    "linter-ui-default": {
-      "panelHeight": 69
-    },
-    "markdown-preview": {
-      "useGitHubStyle": true
-    },
-    "metrics": {
-      "userId": "8e7208e4b8bc82e2315cd4914081208b721197de"
-    },
-    "minimap": {
-      "absoluteMode": true,
-      "disablePythonDocLinks": true,
-      "displayPluginsControls": false,
-      "minimapScrollIndicator": false,
-      "plugins": {
-        "find-and-replace": true
-      }
-    },
-    "one-dark-ui": {},
-    "pigments": {
-      "markerType": "native-square-dot"
-    },
-    "prettier-atom": {
-      "formatOnSaveOptions": {
-        "isDisabledIfNotInPackageJson": true,
-        "showInStatusBar": true
-      },
-      "prettierEslintOptions": {},
-      "prettierOptions": {
-        "arrowParens": "always",
-        "singleQuote": true,
-        "trailingComma": "es5"
-      },
-      "useEslint": true
-    },
-    "tabs": {
-      "enableVcsColoring": true,
-      "tabScrolling": true,
-      "usePreviewTabs": true
-    },
-    "tree-view": {
-      "alwaysOpenExisting": true,
-      "autoReveal": true,
-      "squashDirectoryNames": true
-    },
-    "welcome": {
-      "showOnStartup": false
-    },
-    "whitespace": {
-      "ignoreWhitespaceOnCurrentLine": false
-    }
-  },
-  ".makefile.source": {
-    "editor": {
-      "tabLength": 4,
-      "tabType": "hard"
-    }
-  }
-}
+      "source.gfm": [
+        "apib"
+      ]
+      "source.git-config": [
+        ".gitconfig.personal"
+      ]
+    disabledPackages: [
+      "ide-flowtype"
+      "ide-typescript"
+      "linter-ui-default"
+      "linter"
+      "whitespace"
+    ]
+    openEmptyEditorOnStart: false
+    telemetryConsent: "limited"
+    titleBar: "custom"
+  editor:
+    fontFamily: "Source Code Pro"
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "b79bad53-b233-cbe4-cb63-b6fc98f94d50"
+  "file-icons":
+    defaultIconClass: "text-icon"
+    strategies:
+      grammar: false
+      modelines: false
+  "fuzzy-finder":
+    ignoredNames: [
+      "vendor/cache"
+    ]
+  "hey-pane":
+    expandedWidth: 70
+  "linter-ui-default":
+    panelHeight: 69
+  "markdown-preview":
+    useGitHubStyle: true
+  metrics:
+    userId: "8e7208e4b8bc82e2315cd4914081208b721197de"
+  minimap:
+    absoluteMode: true
+    disablePythonDocLinks: true
+    displayPluginsControls: false
+    minimapScrollIndicator: false
+    plugins:
+      "find-and-replace": true
+  "one-dark-ui": {}
+  pigments:
+    markerType: "native-square-dot"
+  "prettier-atom":
+    formatOnSaveOptions:
+      isDisabledIfNotInPackageJson: true
+      showInStatusBar: true
+    prettierEslintOptions: {}
+    prettierOptions:
+      arrowParens: "always"
+      singleQuote: true
+      trailingComma: "es5"
+    useEslint: true
+  tabs:
+    enableVcsColoring: true
+    tabScrolling: true
+    usePreviewTabs: true
+  "tree-view":
+    alwaysOpenExisting: true
+    autoReveal: true
+    squashDirectoryNames: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".makefile.source":
+  editor:
+    tabLength: 4
+    tabType: "hard"
