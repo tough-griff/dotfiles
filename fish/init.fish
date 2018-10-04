@@ -1,7 +1,9 @@
+#!/usr/bin/env fish
 
-if not type fisher > /dev/null
+if not test -f ~/.config/fish/functions/fisher.fish
   echo "installing fisherman"
-  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+  curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+  fisher
 end
 
 set -U fish_color_autosuggestion brblack
