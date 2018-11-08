@@ -2,7 +2,7 @@ atom-hg@2.0.14
 atom-ide-debugger-node@0.7.3
 atom-ide-ui@0.13.0
 autocomplete-emojis@2.5.0
-autocomplete-modules@2.2.1
+autocomplete-modules@2.2.4
 autocomplete-paths@2.12.2
 busy-signal@1.4.3
 change-case@0.6.5
@@ -11,10 +11,10 @@ dash@1.7.1
 declarations@1.1.3
 docblockr@0.13.7
 editorconfig@2.2.2
-file-icons@2.1.25
+file-icons@2.1.26
 hey-pane@1.1.2
-ide-flowtype@0.23.1
-ide-typescript@0.7.6
+ide-flowtype@0.24.0
+ide-typescript@0.7.9
 intentions@1.1.5
 language-arduino@0.4.3
 language-cassandra-cql@0.1.2
@@ -41,7 +41,7 @@ minimap@4.29.9
 minimap-autohider@1.5.4
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
-minimap-linter@2.2.0
+minimap-linter@2.2.1
 pdf-view@0.71.0
 pigments@0.40.2
 prettier-atom@0.55.2

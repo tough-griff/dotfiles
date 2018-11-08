@@ -59,10 +59,10 @@ echo "===="
 ln -sfv ${DOTDIR}/.agignore
 ln -sfv ${DOTDIR}/.hushlogin
 ln -sfv ${DOTDIR}/.psqlrc
-[[ -f ${DOTDIR}/.secrets ]] && ln -sfv ${DOTDIR}/.secrets
 echo
 
 echo "reverse links"
 echo "===="
 (cd ${DOTDIR} && ln -sfv ${HOME}/.config)
+(cd ${DOTDIR} && ln -sfv ${HOME}/.ssh)
 echo

@@ -1,4 +1,5 @@
 # Misc
+alias cat bat
 alias df 'df -kh'
 alias du 'du -khd1'
 

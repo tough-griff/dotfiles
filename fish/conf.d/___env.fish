@@ -1,3 +1,6 @@
+# bat
+set -x BAT_THEME "TwoDark"
+
 # less
 set -x LESS "-F -g -i -M -R -S -w -X -z-4"
 

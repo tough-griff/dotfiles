@@ -1,27 +1,14 @@
 # Usage: `brew bundle`
 tap "homebrew/bundle"
 
-# Install GNU core utilities
-brew "coreutils"
-brew "binutils"
-brew "findutils"
-brew "moreutils"
-brew "gawk"
-brew "grep"
-brew "gnu-sed"
-brew "gnu-tar"
-brew "gnu-time"
-brew "gnu-units"
-brew "gnu-which"
-
 # Install other useful binaries
 brew "bash"
+brew "bat"
 brew "diff-so-fancy"
 brew "direnv"
 brew "fish"
 brew "git-lfs"
 brew "git"
-brew "heroku-toolbelt"
 brew "hr"
 brew "httpie"
 brew "hub"
@@ -60,20 +47,24 @@ cask "dropbox"
 cask "etcher"
 cask "firefox"
 cask "google-chrome"
-cask "google-drive"
+cask "google-backup-and-sync"
 cask "java"
 cask "kap"
 cask "karabiner-elements"
+cask "keybase"
 cask "keyboard-cleaner"
+cask "kid3"
+cask "lastpass"
+cask "ngrok"
 cask "postgres"
 cask "postico"
 cask "postman"
 cask "resilio-sync"
 cask "scroll-reverser"
-cask "signal"
 cask "slack"
 cask "spectacle"
 cask "spotify"
+cask "steam"
 cask "transmission"
 cask "transmit"
 cask "ubersicht"
@@ -86,8 +77,11 @@ cask "xquartz"
 mas "Amphetamine", id: 937984704
 mas "Growl", id: 467939042
 mas "Keynote", id: 409183694
+mas "LastPass", id: 926036361
 mas "Monit", id: 1014850245
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Speedtest", id: 1153157709
+mas "Textual 7", id: 1262957439
 mas "The Unarchiver", id: 425424353
-# mas "Xcode", id: 497799835 # this is nice, but big
+# mas "Xcode", id: 497799835
