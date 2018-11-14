@@ -86,10 +86,3 @@ abbr ea edit-add
 
 test -e {$HOME}/.iterm2_shell_integration.fish;
 and source {$HOME}/.iterm2_shell_integration.fish
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/gyourick/GitHub/aws-todo-mvc/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/gyourick/GitHub/aws-todo-mvc/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/gyourick/GitHub/aws-todo-mvc/node_modules/tabtab/.completions/sls.fish ]; and . /Users/gyourick/GitHub/aws-todo-mvc/node_modules/tabtab/.completions/sls.fish
