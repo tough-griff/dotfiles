@@ -1,7 +1,5 @@
 # Usage: `brew bundle`
-tap "homebrew/bundle"
 
-# Install other useful binaries
 brew "bash"
 brew "bat"
 brew "diff-so-fancy"
@@ -13,8 +11,6 @@ brew "hr"
 brew "httpie"
 brew "hub"
 brew "imagemagick"
-brew "lastpass-cli", args: ["with-pinentry"]
-brew "lesspipe", args: ["with-syntax-highlighting"]
 brew "mas"
 brew "node-build"
 brew "node"
@@ -77,7 +73,6 @@ cask "xquartz"
 mas "Amphetamine", id: 937984704
 mas "Growl", id: 467939042
 mas "Keynote", id: 409183694
-mas "LastPass", id: 926036361
 mas "Monit", id: 1014850245
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541

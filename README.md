@@ -15,3 +15,8 @@ ${DOTDIR:="$HOME/dotfiles"}/install.sh
 
 Create a `~/.gitconfig.personal` file for saving your `git` username and email
 configuration.
+
+## Auto-Updates
+
+See [this gist](https://gist.github.com/tough-griff/3cb387b151bfa1d405135f422f863a0a)
+for a `launchctl` script to sync your dotfiles daily.
