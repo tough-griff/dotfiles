@@ -2,7 +2,7 @@ atom-hg@2.0.14
 atom-ide-debugger-node@0.7.3
 atom-ide-ui@0.13.0
 autocomplete-emojis@2.5.0
-autocomplete-modules@2.2.5
+autocomplete-modules@2.2.6
 autocomplete-paths@2.12.2
 busy-signal@1.4.3
 change-case@0.6.5
@@ -44,7 +44,7 @@ minimap-git-diff@4.3.1
 minimap-linter@2.2.1
 pdf-view@0.71.0
 pigments@0.40.2
-prettier-atom@0.55.2
+prettier-atom@0.56.0
 set-syntax@0.4.0
 sort-lines@0.18.0
 teletype@0.13.3
