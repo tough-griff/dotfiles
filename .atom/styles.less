@@ -3,7 +3,7 @@
 
 // Make title bar darker.
 .title-bar {
-  background-color: inherit;
+  background-color: transparent;
 }
 
 // Color modified and added line numbers.
@@ -17,16 +17,14 @@ atom-text-editor .gutter .line-number {
   }
 }
 
-// Adjust bracket matcher line numbers and background.
-atom-text-editor .line-number.bracket-matcher {
-  color: #282c34;
-  background-color: #636d83;
-}
-
 // Hide scrollbar.
 atom-text-editor .vertical-scrollbar,
 atom-text-editor .horizontal-scrollbar {
   display: none;
+}
+
+atom-text-editor > div {
+  background-color: transparent !important;
 }
 
 // Hide minimap background.
