@@ -14,7 +14,7 @@ editorconfig@2.2.2
 file-icons@2.1.26
 hey-pane@1.1.2
 ide-flowtype@0.24.0
-ide-typescript@0.7.9
+ide-typescript@0.8.0
 intentions@1.1.5
 language-arduino@0.4.3
 language-cassandra-cql@0.1.2
