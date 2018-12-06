@@ -50,6 +50,8 @@
     ]
   "hey-pane":
     expandedWidth: 70
+  "ide-rust":
+    rlsToolchain: "stable"
   "linter-ui-default":
     panelHeight: 69
   "markdown-preview":

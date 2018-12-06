@@ -15,5 +15,9 @@ set -x NODENV_ROOT /usr/local/var/nodenv
 set -x RBENV_ROOT /usr/local/var/rbenv
 set -x RUBY_CONFIGURE_OPTS --disable-install-doc
 
+# rust
+set -x RUSTUP_HOME /usr/local/var/rustup
+set -x CARGO_HOME $RUSTUP_HOME
+
 # SparkPost/gitplus
 set -x PATH $PATH $HOME/SparkPost/gitplus/commands
