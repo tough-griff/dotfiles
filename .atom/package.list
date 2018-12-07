@@ -14,7 +14,7 @@ editorconfig@2.2.2
 file-icons@2.1.26
 hey-pane@1.1.2
 ide-flowtype@0.24.0
-ide-rust@0.19.1
+ide-rust@0.19.2
 ide-typescript@0.8.0
 intentions@1.1.5
 language-arduino@0.4.3
@@ -45,7 +45,7 @@ minimap-git-diff@4.3.1
 minimap-linter@2.2.1
 pdf-view@0.71.0
 pigments@0.40.2
-prettier-atom@0.56.1
+prettier-atom@0.56.2
 set-syntax@0.4.0
 sort-lines@0.18.0
 teletype@0.13.3
