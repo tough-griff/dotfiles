@@ -18,6 +18,16 @@ function mkcd
   cd $argv[1]
 end
 
+function cde
+  cd $argv[1]
+  edit .
+end
+
+function cdea
+  cd $argv[1]
+  edit-add .
+end
+
 function each
   for dir in *
     if test -d $dir
