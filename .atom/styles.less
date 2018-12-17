@@ -62,39 +62,11 @@ atom-text-editor atom-text-editor-minimap {
 // =====
 .icon {
   @import 'packages/file-icons/styles/colours';
-  @import 'packages/file-icons/styles/icons';
-
-  &[data-name$='.psqlrc']:before {
-    .octicons;
-    content: '\f096';
-  }
 
   // Heroku
   &[data-name^='Procfile']:before {
-    .devicons;
     color: @medium-purple;
     content: '\e67b';
-  }
-
-  // JavaScript
-  &[data-name$='.spec.js']:before,
-  &[data-name$='.test.js']:before {
-    .fi;
-    .test-file;
-    content: '\ea64';
-  }
-
-  &[data-name$='.spec.jsx']:before,
-  &[data-name$='.test.jsx']:before {
-    .fi;
-    .test-file;
-    content: '\ea67';
-  }
-
-  // Ruby
-  &[data-name$='.railsrc']:before {
-    .devicons;
-    color: @red;
-    content: '\e63b';
+    font-family: Devicons;
   }
 }
