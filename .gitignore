@@ -15,10 +15,13 @@ beets/*
 fish/completions/*
 fish/conf.d/*
 fish/functions/*
-fish/fishd.*
+fish/fish_variables
+!fish/completions/nodenv.fish
 !fish/conf.d/___env.fish
 !fish/conf.d/git.fish
+!fish/conf.d/nodenv.fish
 !fish/conf.d/python.fish
+!fish/conf.d/rbenv.fish
 !fish/conf.d/rust.fish
 
 git/.gitconfig.personal

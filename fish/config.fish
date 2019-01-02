@@ -8,35 +8,35 @@ alias tree 'tree -h -C --dirsfirst'
 alias psa 'ps aux'
 
 function psg
-  ps aux | grep $argv | grep -v grep
+    ps aux | grep $argv | grep -v grep
 end
 
 alias path 'echo "" $PATH\n'
 
 function mkcd
-  mkdir $argv[1]
-  cd $argv[1]
+    mkdir $argv[1]
+    cd $argv[1]
 end
 
 function cde
-  cd $argv[1]
-  edit .
+    cd $argv[1]
+    edit .
 end
 
 function cdea
-  cd $argv[1]
-  edit-add .
+    cd $argv[1]
+    edit-add .
 end
 
 function each
-  for dir in *
-    if test -d $dir
-      echo $dir:
-      cd $dir; and eval $argv
-      echo
-      cd ..
+    for dir in *
+        if test -d $dir
+            echo $dir:
+            cd $dir; and eval $argv
+            echo
+            cd ..
+        end
     end
-  end
 end
 
 # Homebrew
@@ -68,29 +68,29 @@ abbr apml 'apm-beta list --installed'
 abbr apms 'apm-beta search'
 
 function apmi --description 'apm install'
-  apm-beta install $argv;
-  and apm-beta list --installed --bare > $HOME/.atom/package.list
+    apm-beta install $argv;
+    and apm-beta list --installed --bare > $HOME/.atom/package.list
 end
 
 function apmu --description 'apm update'
-  apm-beta update --confirm false;
-  and apm-beta list --installed --bare > $HOME/.atom/package.list
+    apm-beta update --confirm false;
+    and apm-beta list --installed --bare > $HOME/.atom/package.list
 end
 
 function apmx --description 'apm uninstall'
-  apm-beta uninstall $argv;
-  and apm-beta list --installed --bare > $HOME/.atom/package.list
+    apm-beta uninstall $argv;
+    and apm-beta list --installed --bare > $HOME/.atom/package.list
 end
 
 function edit
-  set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
-  atom-beta $dir
+    set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
+    atom-beta $dir
 end
 abbr e edit
 
 function edit-add
-  set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
-  atom-beta --add $dir
+    set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
+    atom-beta --add $dir
 end
 abbr ea edit-add
 

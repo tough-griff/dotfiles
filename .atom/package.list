@@ -4,7 +4,7 @@ atom-ide-ui@0.13.0
 autocomplete-emojis@2.5.0
 autocomplete-modules@2.2.6
 autocomplete-paths@2.12.2
-busy-signal@1.4.3
+busy-signal@2.0.0
 change-case@0.6.5
 color-picker@2.3.0
 dash@1.7.1
@@ -14,7 +14,7 @@ editorconfig@2.2.2
 file-icons@2.1.27
 hey-pane@1.1.2
 ide-flowtype@0.24.0
-ide-rust@0.19.2
+ide-rust@0.19.3
 ide-typescript@0.8.0
 intentions@1.1.5
 language-arduino@0.4.3
