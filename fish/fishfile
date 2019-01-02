@@ -1,8 +1,8 @@
 barnybug/docker-fish-completion
 edc/bass
-fisherman/fishtape
-fisherman/getopts
-fisherman/z
+jethrokuan/z
+jorgebucaran/fishopts
+jorgebucaran/fishtape
 oh-my-fish/plugin-aws
 oh-my-fish/plugin-direnv
 oh-my-fish/plugin-osx
