@@ -82,15 +82,16 @@ function apmx --description 'apm uninstall'
     and apm-beta list --installed --bare > $HOME/.atom/package.list
 end
 
+# Edit
 function edit
     set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
-    atom-beta $dir
+    code $dir
 end
 abbr e edit
 
 function edit-add
     set -q $argv[1]; and set -l dir '.'; or set -l dir $argv[1]
-    atom-beta --add $dir
+    code --add $dir
 end
 abbr ea edit-add
 
