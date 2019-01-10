@@ -46,7 +46,7 @@ abbr brewl 'brew list'
 abbr brews 'brew search'
 abbr brewu 'brew update; and brew upgrade'
 abbr brewx 'brew uninstall'
-abbr brewU 'brew update; and brew upgrade; and brew cleanup'
+abbr brewU 'brew update; and brew upgrade; and brew cask upgrade; and brew cleanup'
 
 abbr cask 'brew cask'
 abbr caski 'brew cask install'
