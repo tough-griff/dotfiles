@@ -30,7 +30,7 @@
 
   # new functionality
   amend = "commit --amend --no-edit"      # amend your last commit
-  hash = "log -n 1 --pretty=format:'%h'"  # print the most recent commit's hash
+  hash = "rev-parse --short HEAD"         # print the most recent commit's hash
   uncommit = "reset --soft HEAD^"         # go back before last commit
   up = "pull --rebase --autostash"        # this is basically what `git-up` did
 
@@ -102,6 +102,9 @@
 
 [diff-so-fancy]
 	first-run = false
+
+[gpg]
+  program = /usr/local/bin/gpg
 
 [heroku]
   account = personal
