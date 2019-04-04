@@ -19,6 +19,7 @@
   l = "log --graph"
   lb = "log --graph --branches"
   p = "push"
+  pf = "push --force"
   pl = "pull"
   pu = "push --set-upstream"
   r = "remote --verbose"
