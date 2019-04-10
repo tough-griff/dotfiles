@@ -6,6 +6,7 @@
 !.atom/snippets.cson
 !.atom/styles.less
 
+.aws
 .config
 .ssh
 
