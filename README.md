@@ -1,4 +1,5 @@
 # Instructions
+> See: https://gist.github.com/tough-griff/3cb387b151bfa1d405135f422f863a0a
 - Save the `plist` file to `$HOME/Library/LaunchAgents/`, renamed appropriately 
 (e.g. `username.UpdateSomeRepository.plist`)
 - Copy `update.sh` to the repository you wish to sync. Change the message if you want.
