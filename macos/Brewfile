@@ -26,28 +26,24 @@ brew "ruby-build"
 brew "terminal-notifier"
 brew "the_silver_searcher"
 brew "tree"
-brew "wget", args: ["enable-iri"]
+brew "wget"
 brew "wifi-password"
 
 # Install Applications
-cask "1password"
 cask "aerial"
 cask "alfred"
 cask "appcleaner"
-cask "atom-beta"
 cask "bartender"
 cask "beardedspice"
 cask "cheatsheet"
 cask "discord"
 cask "docker"
 cask "dropbox"
-cask "etcher"
 cask "firefox"
 cask "google-backup-and-sync"
 cask "google-chrome"
 cask "java"
 cask "kap"
-cask "karabiner-elements"
 cask "keybase"
 cask "keyboard-cleaner"
 cask "kid3"
@@ -57,14 +53,13 @@ cask "postico"
 cask "postman"
 cask "resilio-sync"
 cask "scroll-reverser"
-cask "slack"
 cask "spectacle"
 cask "spotify"
-cask "steam"
 cask "transmission"
 cask "transmit"
 cask "ubersicht"
 cask "unity-web-player"
+cask "visual-studio-code"
 cask "vlc"
 cask "xld"
 cask "xquartz"
@@ -75,7 +70,9 @@ mas "Growl", id: 467939042
 mas "Keynote", id: 409183694
 mas "Monit", id: 1014850245
 mas "Numbers", id: 409203825
+mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
+mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 mas "Textual 7", id: 1262957439
 mas "The Unarchiver", id: 425424353
