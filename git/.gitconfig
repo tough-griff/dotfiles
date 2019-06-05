@@ -68,6 +68,7 @@
 
 [core]
   autocrlf = input
+  editor = vim
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -FRSX
 

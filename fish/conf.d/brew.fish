@@ -1,0 +1,13 @@
+abbr brewc 'brew cleanup'
+abbr brewi 'brew install'
+abbr brewl 'brew list'
+abbr brews 'brew search'
+abbr brewu 'brew update; and brew upgrade'
+abbr brewx 'brew uninstall'
+abbr brewU 'brew update; and brew upgrade; and brew cask upgrade; and brew cleanup'
+
+abbr cask 'brew cask'
+abbr caski 'brew cask install'
+abbr caskl 'brew cask list'
+abbr casks 'brew cask search'
+abbr caskx 'brew cask uninstall'

@@ -1,11 +1,5 @@
 #!/usr/bin/env fish
 
-if not test -f ~/.config/fish/functions/fisher.fish
-    echo "installing fisherman"
-    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-    fish -c fisher
-end
-
 set -U fish_color_autosuggestion brblack
 set -U fish_color_cancel red
 set -U fish_color_command green
@@ -30,3 +24,11 @@ set -U fish_color_valid_path --underline
 set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix white
 set -U fish_pager_color_progress brblack
+
+set -U pure_begin_prompt_with_current_directory false
+
+if not test -f ~/.config/fish/functions/fisher.fish
+    echo "installing fisherman"
+    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+end
+fish -c fisher

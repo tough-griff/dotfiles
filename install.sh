@@ -28,7 +28,7 @@ echo
 echo "git"
 echo "===="
 ln -sfv ${DOTDIR}/git/.gitconfig
-[[ -f ${DOTDIR}/git/.gitconfig.personal ]] && ln -sfv ${DOTDIR}/git/.gitconfig.personal
+touch ${DOTDIR}/git/.gitconfig.personal && ln -sfv ${DOTDIR}/git/.gitconfig.personal
 ln -sfv ${DOTDIR}/git/.gitignore
 echo
 

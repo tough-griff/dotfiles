@@ -4,6 +4,14 @@ set -x BAT_THEME "TwoDark"
 # less
 set -x LESS "-F -g -i -M -R -S -w -X -z-4"
 
+# localization
+set -x LANG en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
+
+# editors
+set -x EDITOR vim
+set -x VISUAL code
+
 # homebrew
 set -x CFLAGS "-I/usr/local/include"
 set -x LDFLAGS "-L/usr/local/lib"

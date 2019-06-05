@@ -1,5 +1,6 @@
 # Usage: `brew bundle`
 
+brew "awscli"
 brew "bash"
 brew "bat"
 brew "diff-so-fancy"
@@ -12,12 +13,14 @@ brew "httpie"
 brew "hub"
 brew "imagemagick"
 brew "mas"
+brew "mongodb"
 brew "node-build"
 brew "node"
 brew "nodenv"
 brew "openssl"
 brew "p7zip"
 brew "python"
+brew "python@2"
 brew "rbenv"
 brew "readline"
 brew "redis"
@@ -35,7 +38,7 @@ cask "alfred"
 cask "appcleaner"
 cask "bartender"
 cask "beardedspice"
-cask "cheatsheet"
+# cask "cheatsheet"
 cask "discord"
 cask "docker"
 cask "dropbox"
@@ -44,35 +47,31 @@ cask "google-backup-and-sync"
 cask "google-chrome"
 cask "java"
 cask "kap"
-cask "keybase"
 cask "keyboard-cleaner"
-cask "kid3"
-cask "ngrok"
+# cask "kid3"
 cask "postgres"
 cask "postico"
 cask "postman"
-cask "resilio-sync"
-cask "scroll-reverser"
 cask "spectacle"
 cask "spotify"
 cask "transmission"
-cask "transmit"
-cask "ubersicht"
+# cask "ubersicht"
 cask "unity-web-player"
 cask "visual-studio-code"
 cask "vlc"
-cask "xld"
+# cask "xld"
 cask "xquartz"
 
 # Install Mac App Store Applications
+mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
-mas "Growl", id: 467939042
 mas "Keynote", id: 409183694
 mas "Monit", id: 1014850245
 mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709
 mas "Textual 7", id: 1262957439
 mas "The Unarchiver", id: 425424353
