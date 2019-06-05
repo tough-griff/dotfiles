@@ -1,11 +1,3 @@
-.atom/*
-!.atom/config.cson
-!.atom/init.coffee
-!.atom/keymap.cson
-!.atom/package.list
-!.atom/snippets.cson
-!.atom/styles.less
-
 .aws
 .config
 .ssh

@@ -5,11 +5,6 @@ cd $HOME
 DOTDIR=${DOTDIR-"./dotfiles"}
 DOTDIRABS=$(cd ${DOTDIR} && pwd)
 
-echo "Atom"
-echo "===="
-ln -sfv ${DOTDIR}/.atom
-echo
-
 echo "Hyper"
 echo "====="
 ln -sfv ${DOTDIR}/hyper/.hyper.js
