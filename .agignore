@@ -6,3 +6,5 @@ tmp
 vendor/assets
 vendor/bundle
 vendor/cache
+
+*.min.js
