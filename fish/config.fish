@@ -9,5 +9,4 @@ alias psa 'ps aux'
 alias path 'echo "" $PATH\n'
 alias where 'type -a'
 
-test -e {$HOME}/.iterm2_shell_integration.fish;
-and source {$HOME}/.iterm2_shell_integration.fish
+test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish

@@ -11,8 +11,8 @@ else
     set nodenv_root "$NODENV_ROOT"
 end
 
-set -x PATH $nodenv_root/shims $PATH
-set -x NODENV_SHELL fish
 if test ! -d "$nodenv_root/shims"; or test ! -d "$nodenv_root/versions"
     command mkdir -p $nodenv_root/{shims,versions}
 end
+
+status --is-interactive; and source (nodenv init -|psub)
