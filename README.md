@@ -1,6 +1,13 @@
-# Instructions
+# Installation
+After cloning, run the installation script. If you cloned somewhere besides ~/dotfiles,
+you can tell the installation script by setting the DOTDIR environment variable.
+
+After the install script has completed, restart your shell. Run `~/.config/fish/init.fish`
+to initialize fish
+
+## Sync Instructions
 > See: https://gist.github.com/tough-griff/3cb387b151bfa1d405135f422f863a0a
-- Save the `plist` file to `$HOME/Library/LaunchAgents/`, renamed appropriately 
+- Save the `plist` file to `$HOME/Library/LaunchAgents/`, renamed appropriately
 (e.g. `username.UpdateSomeRepository.plist`)
 - Copy `update.sh` to the repository you wish to sync. Change the message if you want.
 - Replace user/machine specific variables in the `plist` file

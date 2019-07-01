@@ -21,10 +21,13 @@ fish/functions/*
 !fish/functions/each.fish
 !fish/functions/edit.fish
 !fish/functions/mkcd.fish
+!fish/functions/node.fish
 !fish/functions/psg.fish
 fish/fish_variables
 
 git/.gitconfig.personal
+
+js/node_modules/
 
 .hgrc
 griffin.UpdateDotfiles.plist
