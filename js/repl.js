@@ -1,14 +1,28 @@
+const os = require('os');
+const path = require('path');
 const repl = require('repl');
 
+const prompt = `${process.version} ❯ `;
+const replServer = repl.start({ prompt });
+
+replServer.setupHistory(
+  path.join(os.homedir(), '.node_repl_history'),
+  (err, repl) => {
+    if (err) throw err;
+  }
+);
+
 try {
-  const chalk = require('chalk');
-  const _ = require('lodash');
+  const lodash = require('lodash');
 
-  const replServer = repl.start(`${chalk.green('⬡')} ${process.version} ${chalk.green('❯')} `);
+  function initializeContext(ctx) {
+    Object.defineProperty(ctx, '_', {
+      value: lodash.runInContext(ctx)
+    });
+  }
 
-  Object.defineProperty(replServer.context, '_', {
-    value: _
-  });
+  initializeContext(replServer.context);
+  replServer.on('reset', initializeContext);
 
   Object.defineProperty(Array, 'toy', {
     /**
@@ -41,10 +55,12 @@ try {
   });
 } catch (err) {
   if (err.code === 'MODULE_NOT_FOUND') {
+    console.log(err);
     console.log('Missing dependencies, installing in a separate process');
     console.log('Restart this interpreter later for improved functionality!');
     const { exec } = require('child_process');
-    exec('npm install lodash chalk');
-    repl.start();
+    exec('npm install lodash');
+
+    replServer.displayPrompt();
   }
 }
