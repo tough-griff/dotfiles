@@ -89,15 +89,6 @@
   default = current
   followTags = true
 
-[url "https://github.com/"]
-  insteadOf = git://github.com/
-  insteadOf = git@github.com:
-  insteadOf = ssh://git@github.com:
-[url "https://git.heroku.com/"]
-  insteadOf = git://heroku.com/
-  insteadOf = git@heroku.com:
-  insteadOf = ssh://git@heroku.com:
-
 # plugins and etc
 [credential]
   helper = osxkeychain
@@ -113,7 +104,7 @@
   remote = heroku
 
 [hub]
-  protocol = https
+  protocol = ssh
 
 [filter "lfs"]
   required = true

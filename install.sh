@@ -22,9 +22,10 @@ touch ${DOTDIR}/git/.gitconfig.personal && ln -sfv ${DOTDIR}/git/.gitconfig.pers
 ln -sfv ${DOTDIR}/git/.gitignore
 echo
 
+echo "js"
+echo "===="
+ln -sfv ${DOTDIR}/js/.noderc
 if type nodenv >/dev/null; then
-  echo "js"
-  echo "===="
   echo "in $(nodenv root)"
   (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/version)
   echo

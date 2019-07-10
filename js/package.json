@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "lodash": "^4.17.11"
+  }
+}
