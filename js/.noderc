@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const Bluebird = require('bluebird');
 const chalk = require('chalk');
 const _ = require('lodash');
 
@@ -8,11 +9,15 @@ const defaultKeyCb = c => String.fromCharCode(96 + (c + 1));
 
 function initializeContext(ctx) {
   Object.defineProperty(ctx, '_', {
-    value: _.runInContext(ctx)
+    value: _.runInContext(ctx),
+  });
+
+  Object.defineProperty(ctx, 'Bluebird', {
+    value: Bluebird
   });
 }
 
-module.exports = repl => {
+module.exports = (repl) => {
   repl.setPrompt(`${process.version} ${chalk.green('❯')} `);
 
   initializeContext(repl.context);
@@ -27,7 +32,7 @@ module.exports = repl => {
      */
     value: function toy(n = 10, cb = defaultValCb) {
       return _.times(n, cb);
-    }
+    },
   });
 
   Object.defineProperty(Object, 'toy', {
@@ -45,6 +50,6 @@ module.exports = repl => {
       const valArray = Array.toy(n, valCb);
 
       return _.zipObject(keyArray, valArray);
-    }
+    },
   });
 };
