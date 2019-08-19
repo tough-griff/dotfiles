@@ -28,6 +28,7 @@ git/.gitconfig.personal
 
 js/node_modules/
 
+LaunchAgents
+
 .hgrc
 griffin.UpdateDotfiles.plist
-update.sh

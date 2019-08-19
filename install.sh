@@ -56,4 +56,5 @@ echo "reverse links"
 echo "===="
 (cd ${DOTDIR} && ln -sfv ${HOME}/.config)
 (cd ${DOTDIR} && ln -sfv ${HOME}/.ssh)
+(cd ${DOTDIR} && ln -sfv ${HOME}/Library/LaunchAgents)
 echo
