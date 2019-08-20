@@ -31,4 +31,4 @@ js/node_modules/
 LaunchAgents
 
 .hgrc
-griffin.UpdateDotfiles.plist
+*.UpdateDotfiles.plist
