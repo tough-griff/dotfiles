@@ -1,72 +1,46 @@
 #!/usr/bin/env bash
 
-cd $HOME
+DOTDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) # Absolute path
+DOTDIR_REL=${DOTDIR/#"$HOME"/"."}                    # Relative path
 
-DOTDIR=${DOTDIR-"./dotfiles"}
-DOTDIRABS=$(cd ${DOTDIR} && pwd)
+echo "# .config"
+ln -sfv "$DOTDIR/beets" "$DOTDIR/fish" "$HOME/.config"
+echo
+
+echo "# git"
+touch "$DOTDIR/git/.gitconfig.personal"
+ln -sfv "$DOTDIR_REL/git/.gitconfig" "$DOTDIR_REL/git/.gitconfig.personal" "$DOTDIR_REL/git/.gitignore" "$HOME"
+echo
+
+echo "# js"
+ln -sfv "$DOTDIR_REL/js/.noderc" "$HOME"
+if type nodenv >/dev/null; then
+  ln -sfv "$DOTDIR/js/version" "$(nodenv root)"
+fi
+echo
+
+echo "# ruby"
+ln -sfv "$DOTDIR_REL/ruby/.gemrc" "$DOTDIR_REL/ruby/.pryrc" "$DOTDIR_REL/ruby/.railsrc" "$DOTDIR_REL/ruby/.rubocop.yml" "$HOME"
+if type rbenv >/dev/null; then
+  ln -sfv "$DOTDIR/ruby/version" "$(rbenv root)"
+fi
+echo
+
+echo "# misc"
+ln -sfv "$DOTDIR_REL/.agignore" "$DOTDIR_REL/.hushlogin" "$DOTDIR_REL/.psqlrc" "$HOME"
+echo
+
+echo "# reverse links"
+ln -sfv "$HOME/.config" "$HOME/.ssh" "$HOME/Library/LaunchAgents" "$DOTDIR"
+echo
+
+echo "# autoupdate"
 PLIST_URL="https://gist.githubusercontent.com/tough-griff/3cb387b151bfa1d405135f422f863a0a/raw/gyourick.UpdateDotfiles.plist"
 WHOAMI=$(whoami)
-
-echo "beets"
-echo "===="
-(cd .config && ln -sfv ${DOTDIRABS}/beets)
+PLIST="$WHOAMI.UpdateDotfiles.plist"
+PLIST_PATH="$DOTDIR/$PLIST"
+curl "$PLIST_URL" --output "$PLIST_PATH"
+sed -i "" "s/gyourick/$WHOAMI/g" "$PLIST_PATH"
+ln -sfv "$PLIST_PATH" "$HOME/Library/LaunchAgents/$PLIST"
+launchctl load -w "$HOME/Library/LaunchAgents/$PLIST"
 echo
-
-echo "fish"
-echo "===="
-(cd .config && ln -sfv ${DOTDIRABS}/fish)
-echo
-
-echo "git"
-echo "===="
-ln -sfv ${DOTDIR}/git/.gitconfig
-touch ${DOTDIR}/git/.gitconfig.personal && ln -sfv ${DOTDIR}/git/.gitconfig.personal
-ln -sfv ${DOTDIR}/git/.gitignore
-echo
-
-echo "js"
-echo "===="
-ln -sfv ${DOTDIR}/js/.noderc
-if type nodenv >/dev/null; then
-  echo "in $(nodenv root)"
-  (cd $(nodenv root) && ln -sfv ${DOTDIRABS}/js/version)
-  echo
-fi
-
-echo "ruby"
-echo "===="
-ln -sfv ${DOTDIR}/ruby/.gemrc
-ln -sfv ${DOTDIR}/ruby/.pryrc
-ln -sfv ${DOTDIR}/ruby/.railsrc
-ln -sfv ${DOTDIR}/ruby/.rubocop.yml
-echo
-
-if type rbenv >/dev/null; then
-  echo "in $(rbenv root)"
-  (cd $(rbenv root) && ln -sfv ${DOTDIRABS}/ruby/version)
-  echo
-fi
-
-echo "misc"
-echo "===="
-ln -sfv ${DOTDIR}/.agignore
-ln -sfv ${DOTDIR}/.hushlogin
-ln -sfv ${DOTDIR}/.psqlrc
-echo
-
-echo "reverse links"
-echo "===="
-(cd ${DOTDIR} && ln -sfv ${HOME}/.config)
-(cd ${DOTDIR} && ln -sfv ${HOME}/.ssh)
-(cd ${DOTDIR} && ln -sfv ${HOME}/Library/LaunchAgents)
-echo
-
-echo "setup autoupdate"
-echo "===="
-(
-  cd ${DOTDIR}
-  curl ${PLIST_URL} --output ${WHOAMI}.UpdateDotfiles.plist
-  sed -i '' "s/gyourick/${WHOAMI}/g" ${WHOAMI}.UpdateDotfiles.plist
-  (cd ${HOME}/Library/LaunchAgents && ln -sfv ${DOTDIRABS}/${WHOAMI}.UpdateDotfiles.plist)
-  launchctl load -w ${HOME}/Library/LaunchAgents/${WHOAMI}.UpdateDotfiles.plist
-)
