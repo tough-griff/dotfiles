@@ -1,6 +1,8 @@
 .aws
 .config
-.ssh
+
+.ssh/*
+!.ssh/config
 
 beets/*
 !beets/config.yaml

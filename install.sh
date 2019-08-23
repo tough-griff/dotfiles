@@ -1,10 +1,23 @@
 #!/usr/bin/env bash
 
+shopt -s extglob
+
 DOTDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) # Absolute path
 DOTDIR_REL=${DOTDIR/#"$HOME"/"."}                    # Relative path
 
 echo "# .config"
 ln -sfv "$DOTDIR/beets" "$DOTDIR/fish" "$HOME/.config"
+echo
+
+echo "# .ssh"
+mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh" && touch "$HOME/.ssh/config.personal"
+ln -sfv "$DOTDIR/.ssh/config" "$HOME/.ssh"
+if [[ ! -e "$HOME/.ssh/id_ed25519" ]]; then
+  echo "## ssh key"
+  ssh-keygen -t ed25519 -a 100 -C "$(whoami)@$(hostname)"
+fi
+echo "## reverse links"
+ln -sfv "$HOME"/.ssh/!(config) "$DOTDIR/.ssh"
 echo
 
 echo "# git"
@@ -31,7 +44,7 @@ ln -sfv "$DOTDIR_REL/.agignore" "$DOTDIR_REL/.hushlogin" "$DOTDIR_REL/.psqlrc" "
 echo
 
 echo "# reverse links"
-ln -sfv "$HOME/.config" "$HOME/.ssh" "$HOME/Library/LaunchAgents" "$DOTDIR"
+ln -sfv "$HOME/.config" "$HOME/Library/LaunchAgents" "$DOTDIR"
 echo
 
 echo "# autoupdate"
