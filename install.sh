@@ -5,6 +5,14 @@ shopt -s extglob
 DOTDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) # Absolute path
 DOTDIR_REL=${DOTDIR/#"$HOME"/"."}                    # Relative path
 
+echo "# macos & homebrew"
+if (! command -v brew >/dev/null 2>&1); then
+  echo "## installing homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+(cd "$DOTDIR/macos" && brew bundle)
+echo
+
 echo "# .config"
 ln -sfv "$DOTDIR/beets" "$DOTDIR/fish" "$HOME/.config"
 echo
@@ -27,14 +35,14 @@ echo
 
 echo "# js"
 ln -sfv "$DOTDIR_REL/js/.noderc" "$HOME"
-if type nodenv >/dev/null; then
+if command -v nodenv >/dev/null 2>&1; then
   ln -sfv "$DOTDIR/js/version" "$(nodenv root)"
 fi
 echo
 
 echo "# ruby"
 ln -sfv "$DOTDIR_REL/ruby/.gemrc" "$DOTDIR_REL/ruby/.pryrc" "$DOTDIR_REL/ruby/.railsrc" "$DOTDIR_REL/ruby/.rubocop.yml" "$HOME"
-if type rbenv >/dev/null; then
+if command -v rbenv >/dev/null 2>&1; then
   ln -sfv "$DOTDIR/ruby/version" "$(rbenv root)"
 fi
 echo
