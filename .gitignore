@@ -33,4 +33,5 @@ js/node_modules/
 LaunchAgents
 
 .hgrc
+*.UpdateDotfiles.log
 *.UpdateDotfiles.plist
