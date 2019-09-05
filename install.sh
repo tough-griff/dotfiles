@@ -53,6 +53,7 @@ echo
 
 echo "# reverse links"
 ln -sfv "$HOME/.config" "$HOME/Library/LaunchAgents" "$DOTDIR"
+ln -sfv "$HOME/.npmrc" "$DOTDIR/js"
 echo
 
 echo "# autoupdate"

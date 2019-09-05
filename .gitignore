@@ -29,6 +29,7 @@ fish/fish_variables
 git/.gitconfig.personal
 
 js/node_modules/
+js/.npmrc
 
 LaunchAgents
 
