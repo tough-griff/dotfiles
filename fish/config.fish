@@ -9,4 +9,9 @@ alias psa 'ps aux'
 alias path 'echo "" $PATH\n'
 alias where 'type -a'
 
-test -e $HOME/.iterm2_shell_integration.fish; and source $HOME/.iterm2_shell_integration.fish
+eval (ssh-agent -c) >/dev/null
+
+test -e $HOME/.iterm2_shell_integration.fish
+and source $HOME/.iterm2_shell_integration.fish
+
+eval (starship init fish)

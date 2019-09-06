@@ -1,3 +1,5 @@
+eval (hub alias -s fish)
+
 # Provides abbr for completions, aliases for use in `eval`
 abbr g 'git'
 alias g 'git'
