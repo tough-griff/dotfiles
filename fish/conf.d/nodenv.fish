@@ -6,7 +6,7 @@ end
 set -l nodenv_root ''
 if test -z "$NODENV_ROOT"
     set nodenv_root "$HOME/.nodenv"
-    set -x NODENV_ROOT "$HOME/.nodenv"
+    set -gx NODENV_ROOT "$HOME/.nodenv"
 else
     set nodenv_root "$NODENV_ROOT"
 end

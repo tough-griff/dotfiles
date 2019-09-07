@@ -7,8 +7,8 @@ DOTDIR_REL=${DOTDIR/#"$HOME"/"."}                    # Relative path
 
 echo "# macos & homebrew"
 if (! command -v brew >/dev/null 2>&1); then
-  echo "## installing homebrew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "## installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 (cd "$DOTDIR/macos" && brew bundle)
 echo
@@ -21,8 +21,8 @@ echo "# .ssh"
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh" && touch "$HOME/.ssh/config.personal"
 ln -sfv "$DOTDIR/.ssh/config" "$HOME/.ssh"
 if [[ ! -e "$HOME/.ssh/id_ed25519" ]]; then
-  echo "## ssh key"
-  ssh-keygen -t ed25519 -a 100 -C "$(whoami)@$(hostname)"
+    echo "## ssh key"
+    ssh-keygen -t ed25519 -a 100 -C "$(whoami)@$(hostname)"
 fi
 echo "## reverse links"
 ln -sfv "$HOME"/.ssh/!(config) "$DOTDIR/.ssh"
@@ -36,14 +36,14 @@ echo
 echo "# js"
 ln -sfv "$DOTDIR_REL/js/.noderc" "$HOME"
 if command -v nodenv >/dev/null 2>&1; then
-  ln -sfv "$DOTDIR/js/version" "$(nodenv root)"
+    ln -sfv "$DOTDIR/js/version" "$(nodenv root)"
 fi
 echo
 
 echo "# ruby"
 ln -sfv "$DOTDIR_REL/ruby/.gemrc" "$DOTDIR_REL/ruby/.pryrc" "$DOTDIR_REL/ruby/.railsrc" "$DOTDIR_REL/ruby/.rubocop.yml" "$HOME"
 if command -v rbenv >/dev/null 2>&1; then
-  ln -sfv "$DOTDIR/ruby/version" "$(rbenv root)"
+    ln -sfv "$DOTDIR/ruby/version" "$(rbenv root)"
 fi
 echo
 
