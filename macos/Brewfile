@@ -1,5 +1,7 @@
 # Usage: `brew bundle`
 
+tap "homebrew/cask-fonts"
+
 brew "awscli"
 brew "bash"
 brew "bat"
@@ -13,7 +15,6 @@ brew "httpie"
 brew "hub"
 brew "imagemagick"
 brew "mas"
-brew "mongodb"
 brew "node-build"
 brew "nodenv"
 brew "openssl"
@@ -38,7 +39,6 @@ cask "alfred"
 cask "appcleaner"
 cask "bartender"
 cask "beardedspice"
-# cask "cheatsheet"
 cask "discord"
 cask "docker"
 cask "dropbox"
@@ -48,19 +48,23 @@ cask "google-chrome"
 cask "java"
 cask "kap"
 cask "keyboard-cleaner"
-# cask "kid3"
 cask "postgres"
 cask "postico"
 cask "postman"
 cask "spectacle"
 cask "spotify"
 cask "transmission"
-# cask "ubersicht"
 cask "unity-web-player"
 cask "visual-studio-code"
 cask "vlc"
-# cask "xld"
 cask "xquartz"
+
+# Music
+# cask "kid3"
+# cask "xld"
+
+# Fonts
+cask "font-fira-code"
 
 # Install Mac App Store Applications
 mas "1Password 7", id: 1333542190
