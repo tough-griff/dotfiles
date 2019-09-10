@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # Allows files to be required from the ~/dotfiles/ruby/ directory.
 #  note: currently not requiring local files!
 $LOAD_PATH << File.dirname(File.realpath(__FILE__))
