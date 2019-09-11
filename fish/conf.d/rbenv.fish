@@ -1,4 +1,4 @@
-if not command -s rbenv > /dev/null
+if not command -s rbenv >/dev/null
     echo "rbenv: command not found. See https://github.com/rbenv/rbenv"
     exit 1
 end
@@ -11,8 +11,10 @@ else
     set rbenv_root "$RBENV_ROOT"
 end
 
-if test ! -d "$rbenv_root/shims"; or test ! -d "$rbenv_root/versions"
-    command mkdir -p $rbenv_root/{shims,versions}
+if test ! -d "$rbenv_root/shims"
+    or test ! -d "$rbenv_root/versions"
+    command mkdir -p "$rbenv_root"/{shims,versions}
 end
 
-status --is-interactive; and source (rbenv init -|psub)
+status --is-interactive
+and source (rbenv init - | psub)

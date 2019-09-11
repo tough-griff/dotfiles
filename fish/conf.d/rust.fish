@@ -14,11 +14,11 @@ else
     set cargo_home "$CARGO_HOME"
 end
 
-set -gx PATH $cargo_home/bin $PATH
-if not command -s rustup > /dev/null
+set -gx PATH "$cargo_home/bin" $PATH
+if not command -s rustup >/dev/null
     echo "rustup: command not found. See https://rustup.rs"
     exit 1
 end
-if test ! -f $HOME/.config/fish/completions/rustup.fish
-    rustup completions fish > $HOME/.config/fish/completions/rustup.fish
+if test ! -f "$HOME/.config/fish/completions/rustup.fish"
+    rustup completions fish >"$HOME/.config/fish/completions/rustup.fish"
 end

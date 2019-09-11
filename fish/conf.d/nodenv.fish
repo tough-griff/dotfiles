@@ -1,4 +1,4 @@
-if not command -s nodenv > /dev/null
+if not command -s nodenv >/dev/null
     echo "nodenv: command not found. See https://github.com/nodenv/nodenv"
     exit 1
 end
@@ -11,8 +11,10 @@ else
     set nodenv_root "$NODENV_ROOT"
 end
 
-if test ! -d "$nodenv_root/shims"; or test ! -d "$nodenv_root/versions"
-    command mkdir -p $nodenv_root/{shims,versions}
+if test ! -d "$nodenv_root/shims"
+    or test ! -d "$nodenv_root/versions"
+    command mkdir -p "$nodenv_root"/{shims,versions}
 end
 
-status --is-interactive; and source (nodenv init -|psub)
+status --is-interactive
+and source (nodenv init - | psub)

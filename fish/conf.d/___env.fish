@@ -25,4 +25,4 @@ set -gx RUBY_CONFIGURE_OPTS --disable-install-doc
 
 # rust
 set -gx RUSTUP_HOME /usr/local/var/rustup
-set -gx CARGO_HOME $RUSTUP_HOME
+set -gx CARGO_HOME "$RUSTUP_HOME"
