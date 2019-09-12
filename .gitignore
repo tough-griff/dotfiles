@@ -19,11 +19,14 @@ fish/conf.d/*
 !fish/conf.d/nodenv.fish
 !fish/conf.d/rbenv.fish
 !fish/conf.d/rust.fish
+!fish/conf.d/smartdot.fish
 fish/functions/*
+!fish/functions/_smartdot*.fish
 !fish/functions/abbralias.fish
 !fish/functions/each.fish
 !fish/functions/edit.fish
 !fish/functions/fish_greeting.fish
+!fish/functions/fish_title.fish
 !fish/functions/mkcd.fish
 !fish/functions/psg.fish
 !fish/functions/set-device-name.fish
