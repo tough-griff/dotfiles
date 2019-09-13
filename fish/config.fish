@@ -9,6 +9,8 @@ abbralias psa 'ps aux'
 alias path 'echo "" $PATH\n'
 abbralias where 'type -a'
 
+set -x THEFUCK_OVERRIDDEN_ALIASES 'bat,git'
+
 eval (ssh-agent -c) >/dev/null
 
 # Do this last...
