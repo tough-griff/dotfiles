@@ -21,7 +21,7 @@ fish/conf.d/*
 !fish/conf.d/rust.fish
 !fish/conf.d/smartdot.fish
 fish/functions/*
-!fish/functions/_smartdot*.fish
+!fish/functions/_smartdot.fish
 !fish/functions/abbralias.fish
 !fish/functions/each.fish
 !fish/functions/edit.fish

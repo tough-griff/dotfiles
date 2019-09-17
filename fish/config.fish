@@ -1,5 +1,4 @@
 # Miscellaneous
-alias ag 'ag --path-to-ignore $HOME/.ignore'
 abbralias c 'clear'
 abbralias cat 'bat'
 abbralias df 'df -kh'

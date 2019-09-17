@@ -22,7 +22,7 @@ set -U fish_color_user white
 set -U fish_color_valid_path --underline
 
 set -U fish_pager_color_description yellow
-set -U fish_pager_color_prefix white
+set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
 if not test -f ~/.config/fish/functions/fisher.fish
