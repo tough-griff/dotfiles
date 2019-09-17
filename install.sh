@@ -48,7 +48,7 @@ fi
 echo
 
 echo "# misc"
-ln -sfv "$DOTDIR_REL/.agignore" "$DOTDIR_REL/.hushlogin" "$DOTDIR_REL/.psqlrc" "$HOME"
+ln -sfv "$DOTDIR_REL/.hushlogin" "$DOTDIR_REL/.ignore" "$DOTDIR_REL/.psqlrc" "$HOME"
 echo
 
 echo "# reverse links"
