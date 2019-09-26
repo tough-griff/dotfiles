@@ -9,5 +9,5 @@ abbralias brewU 'brew update; and brew upgrade; and brew cask upgrade; and brew 
 abbralias cask 'brew cask'
 abbralias caski 'brew cask install'
 abbralias caskl 'brew cask list'
-abbralias casks 'brew cask search'
+abbralias casks 'brew search'
 abbralias caskx 'brew cask uninstall'

@@ -7,21 +7,22 @@ const _ = require('lodash');
 const defaultValCb = i => i + 1;
 const defaultKeyCb = c => String.fromCharCode(96 + (c + 1));
 
-function initializeContext(ctx) {
-  Object.defineProperty(ctx, '_', {
-    value: _.runInContext(ctx),
+const init = function initializeContext(ctx) {
+  Object.defineProperties(ctx, {
+    Bluebird: {
+      value: Bluebird.getNewLibraryCopy()
+    },
+    _: {
+      value: _.runInContext(ctx)
+    }
   });
+};
 
-  Object.defineProperty(ctx, 'Bluebird', {
-    value: Bluebird
-  });
-}
-
-module.exports = (repl) => {
+module.exports = repl => {
   repl.setPrompt(`${process.version} ${chalk.green('❯')} `);
 
-  initializeContext(repl.context);
-  repl.on('reset', initializeContext);
+  init(repl.context);
+  repl.on('reset', init);
 
   Object.defineProperty(Array, 'toy', {
     /**
@@ -32,7 +33,7 @@ module.exports = (repl) => {
      */
     value: function toy(n = 10, cb = defaultValCb) {
       return _.times(n, cb);
-    },
+    }
   });
 
   Object.defineProperty(Object, 'toy', {
@@ -44,12 +45,11 @@ module.exports = (repl) => {
      * @param {(num: number) => any} valCb
      * @returns {{string: any}}
      */
-
     value: function toy(n = 10, keyCb = defaultKeyCb, valCb = defaultValCb) {
       const keyArray = Array.toy(n, keyCb);
       const valArray = Array.toy(n, valCb);
 
       return _.zipObject(keyArray, valArray);
-    },
+    }
   });
 };
