@@ -14,7 +14,7 @@ fi
 echo
 
 echo "# .config"
-ln -sfv "$DOTDIR/beets" "$DOTDIR/fish" "$HOME/.config"
+ln -sfv "$DOTDIR/beets" "$DOTDIR/fish" "$DOTDIR/starship.toml" "$HOME/.config"
 echo
 
 echo "# .ssh"
