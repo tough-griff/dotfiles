@@ -28,6 +28,7 @@ fish/functions/*
 !fish/functions/fish_greeting.fish
 !fish/functions/fish_title.fish
 !fish/functions/fuck.fish
+!fish/functions/gen-secret.fish
 !fish/functions/mkcd.fish
 !fish/functions/psg.fish
 !fish/functions/set-device-name.fish
