@@ -1,6 +1,3 @@
-[include]
-  path = ~/.gitconfig.personal
-
 [alias]
   # commonly used git functions
   a = "add -A"
@@ -36,7 +33,7 @@
   up = "pull --rebase --autostash"        # this is basically what `git-up` did
 
 [branch]
-  autosetuprebase = always
+  autoSetupRebase = always
 
 [color]
   ui = true
@@ -64,20 +61,23 @@
   untracked = magenta bold
 
 [commit]
-  gpgsign = true
+  gpgSign = true
 
 [core]
   autocrlf = input
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesFile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -FRSX
 
 [diff]
   compactionHeuristic = true # let's give it a try!
-  mnemonicprefix = true
+  mnemonicPrefix = true
 
 [format]
   pretty = "%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(bold blue)<%an>%C(reset)"
+
+[gpg]
+  program = /usr/local/bin/gpg
 
 [interactive]
   diffFilter = diff-so-fancy
@@ -89,15 +89,18 @@
   default = current
   followTags = true
 
+[submodule]
+  recurse = true
+
+[tag]
+  gpgSign = true
+
 # plugins and etc
 [credential]
   helper = osxkeychain
 
 [diff-so-fancy]
 	first-run = false
-
-[gpg]
-  program = /usr/local/bin/gpg
 
 [heroku]
   account = personal
@@ -108,3 +111,7 @@
   clean = git-lfs clean -- %f
   process = git-lfs filter-process
   smudge = git-lfs smudge -- %f
+
+# personal config and overrides
+[include]
+  path = ~/.gitconfig.personal

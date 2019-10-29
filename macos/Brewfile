@@ -37,6 +37,7 @@ brew "wget"
 brew "wifi-password"
 
 # Install Applications
+cask "1password-cli"
 cask "aerial"
 cask "alfred"
 cask "appcleaner"
