@@ -24,6 +24,7 @@
   sb = "show-branch"
   sh = "show"
   st = "status"
+  sy = "sync"
   u = "up"
 
   # new functionality
