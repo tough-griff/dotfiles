@@ -14,7 +14,6 @@ fish/conf.d/*
 !fish/conf.d/brew.fish
 !fish/conf.d/direnv.fish
 !fish/conf.d/git.fish
-!fish/conf.d/iterm2.fish
 !fish/conf.d/node.fish
 !fish/conf.d/nodenv.fish
 !fish/conf.d/rbenv.fish
