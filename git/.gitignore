@@ -1,3 +1,6 @@
+.envrc
+.node-version
+
 # === Diff.gitignore ===
 *.patch
 *.diff
