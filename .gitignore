@@ -10,7 +10,7 @@ beets/*
 fish/completions/*
 !fish/completions/nodenv.fish
 fish/conf.d/*
-!fish/conf.d/___env.fish
+!fish/conf.d/00-env.fish
 !fish/conf.d/brew.fish
 !fish/conf.d/direnv.fish
 !fish/conf.d/git.fish
