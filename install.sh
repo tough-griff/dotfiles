@@ -3,7 +3,6 @@
 shopt -s extglob
 
 DOTDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) # Absolute path
-DOTDIR_REL=${DOTDIR/#"$HOME"/"."}                    # Relative path
 
 echo "# macos & homebrew"
 if (! command -v brew >/dev/null 2>&1); then
@@ -14,6 +13,7 @@ fi
 echo
 
 echo "# .config"
+mkdir -p "$HOME/.config"
 ln -sfv "$DOTDIR/beets" "$DOTDIR/fish" "$DOTDIR/starship.toml" "$HOME/.config"
 echo
 
@@ -30,25 +30,25 @@ echo
 
 echo "# git"
 touch "$DOTDIR/git/.gitconfig.personal"
-ln -sfv "$DOTDIR_REL/git/.gitconfig" "$DOTDIR_REL/git/.gitconfig.personal" "$DOTDIR_REL/git/.gitignore" "$HOME"
+ln -sfv "$DOTDIR/git/.gitconfig" "$DOTDIR/git/.gitconfig.personal" "$DOTDIR/git/.gitignore" "$HOME"
 echo
 
 echo "# js"
-ln -sfv "$DOTDIR_REL/js/.noderc" "$HOME"
+ln -sfv "$DOTDIR/js/.noderc" "$HOME"
 if command -v nodenv >/dev/null 2>&1; then
     ln -sfv "$DOTDIR/js/version" "$(nodenv root)"
 fi
 echo
 
 echo "# ruby"
-ln -sfv "$DOTDIR_REL/ruby/.gemrc" "$DOTDIR_REL/ruby/.pryrc" "$DOTDIR_REL/ruby/.railsrc" "$DOTDIR_REL/ruby/.rubocop.yml" "$HOME"
+ln -sfv "$DOTDIR/ruby/.gemrc" "$DOTDIR/ruby/.pryrc" "$DOTDIR/ruby/.railsrc" "$DOTDIR/ruby/.rubocop.yml" "$HOME"
 if command -v rbenv >/dev/null 2>&1; then
     ln -sfv "$DOTDIR/ruby/version" "$(rbenv root)"
 fi
 echo
 
 echo "# misc"
-ln -sfv "$DOTDIR_REL/.hushlogin" "$DOTDIR_REL/.psqlrc" "$HOME"
+ln -sfv "$DOTDIR/.hushlogin" "$DOTDIR/.psqlrc" "$HOME"
 echo
 
 echo "# reverse links"
