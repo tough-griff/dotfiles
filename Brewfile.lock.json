@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask-fonts": {
-        "revision": "fca9a79d88b9b9da43d47b0b959854fc8506ac69"
+        "revision": "4b639dae64056fa794ddc593cb2e2f7fd7ee5f16"
       }
     },
     "brew": {
@@ -208,22 +208,22 @@
         }
       },
       "imagemagick": {
-        "version": "7.0.9-23",
+        "version": "7.0.9-27",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.9-23.catalina.bottle.tar.gz",
-              "sha256": "e3e61bbbcf1b16248136f1743dd0358c10e97dc8637f3dda556a8b6b39229999"
+              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.9-27.catalina.bottle.tar.gz",
+              "sha256": "a7ac78361861e8495139ff89f2bf0b34d280b7f1c07393f5485357c5b8d05c58"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.9-23.mojave.bottle.tar.gz",
-              "sha256": "649fbbb8f9ff2b26a1a0691e132094bcf7469249bd406c8b9619d826ed8fde8f"
+              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.9-27.mojave.bottle.tar.gz",
+              "sha256": "45794f765c9c4afe6f962ff1c9b876be22d3039f7cfcb4f2dd7bcfe7d6a02983"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.9-23.high_sierra.bottle.tar.gz",
-              "sha256": "4797b56109daf440c4c98d6634b9ae60cf317da78fd398dc65dfd75027ba1aaf"
+              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.9-27.high_sierra.bottle.tar.gz",
+              "sha256": "b66cf7d523e26e6f855468c5899394f10168dadf64d555bc366f3d4c53368a2b"
             }
           }
         }
@@ -429,22 +429,22 @@
         }
       },
       "starship": {
-        "version": "0.36.1",
+        "version": "0.37.0",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/starship-0.36.1.catalina.bottle.tar.gz",
-              "sha256": "f2893d0d8f0444f181efdc746411cfaec2ffdc104a2232dba6e04d4463aeef72"
+              "url": "https://homebrew.bintray.com/bottles/starship-0.37.0.catalina.bottle.tar.gz",
+              "sha256": "4e395c0227a781bb04554de649931efdb50952d52f0431f18ac4f02ae5d5188c"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/starship-0.36.1.mojave.bottle.tar.gz",
-              "sha256": "54d55c479d348666c1d354a6e8815b1f5c9042a064bf162d27c23f06ef509dcb"
+              "url": "https://homebrew.bintray.com/bottles/starship-0.37.0.mojave.bottle.tar.gz",
+              "sha256": "d50d05341d3ecf3329f59e1e92aeb8f4c3b519df89c0d775e667995c82f38d7f"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/starship-0.36.1.high_sierra.bottle.tar.gz",
-              "sha256": "6208d4620187201d9f0706350fe14d36811adef12e1cfc16b7d4b950842ed428"
+              "url": "https://homebrew.bintray.com/bottles/starship-0.37.0.high_sierra.bottle.tar.gz",
+              "sha256": "8837011c07c7d9a96ca5ed9ba72eb500f96893d82b8893324b469ba22a12f015"
             }
           }
         }
@@ -612,7 +612,7 @@
         }
       },
       "aerial": {
-        "version": "1.8.0",
+        "version": "1.8.1",
         "options": {
           "full_name": "aerial"
         }
@@ -648,7 +648,7 @@
         }
       },
       "discord": {
-        "version": "0.0.255",
+        "version": "0.0.256",
         "options": {
           "full_name": "discord"
         }
@@ -848,16 +848,16 @@
       "Textual 7": null,
       "The Unarchiver": {
         "id": "425424353",
-        "version": "4.1.0"
+        "version": "4.2.0"
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.6",
+        "HOMEBREW_VERSION": "2.2.9",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "8fb7f7b7f2a4002696a1e84e266f25f9b574c9db",
+        "Homebrew/homebrew-core": "ba1112d5fe9024dc9716df32586b6b05d7b62d07",
         "CLT": "11.0.33.17",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
