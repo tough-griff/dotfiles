@@ -1,6 +1,7 @@
 # Usage: `brew bundle`
 
 tap "homebrew/cask-fonts"
+tap "teamookla/speedtest"
 
 brew "awscli"
 brew "bash"
@@ -29,6 +30,7 @@ brew "redis"
 brew "rename"
 brew "ruby-build"
 brew "shellcheck"
+brew "speedtest"
 brew "starship"
 brew "terminal-notifier"
 brew "the_silver_searcher"
