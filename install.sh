@@ -24,6 +24,10 @@ if [[ ! -e "$HOME/.ssh/id_ed25519" ]]; then
     echo "## ssh key"
     ssh-keygen -t ed25519 -a 100 -C "$(whoami)@$(hostname)"
 fi
+if [[ ! -e "$HOME/.ssh/id_rsa" ]]; then
+    echo "## ssh key (rsa)"
+    ssh-keygen -t rsa -b 4096 -C "$(whoami)@$(hostname)"
+fi
 echo "## reverse links"
 ln -sfv "$HOME"/.ssh/!(config) "$DOTDIR/.ssh"
 echo
