@@ -1,4 +1,5 @@
 # Miscellaneous
+alias 1p 'op'
 abbralias c 'clear'
 abbralias cat 'bat'
 abbralias df 'df -kh'
