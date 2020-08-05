@@ -19,10 +19,6 @@ set -gx LDFLAGS "-L/usr/local/lib"
 # nodenv
 set -gx NODENV_ROOT /usr/local/var/nodenv
 
-# rbenv & ruby-build
-set -gx RBENV_ROOT /usr/local/var/rbenv
-set -gx RUBY_CONFIGURE_OPTS --disable-install-doc
-
 # rust
 set -gx RUSTUP_HOME /usr/local/var/rustup
 set -gx CARGO_HOME "$RUSTUP_HOME"

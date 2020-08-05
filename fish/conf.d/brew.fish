@@ -4,7 +4,7 @@ abbralias brewl 'brew list'
 abbralias brews 'brew search'
 abbralias brewu 'brew update; and brew upgrade'
 abbralias brewx 'brew uninstall'
-abbralias brewU 'brew update; and brew upgrade; and brew cask upgrade; and brew cleanup'
+abbralias brewU 'brew update; and brew upgrade; and brew cleanup'
 
 abbralias cask 'brew cask'
 abbralias caski 'brew cask install'

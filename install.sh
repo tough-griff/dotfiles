@@ -44,13 +44,6 @@ if command -v nodenv >/dev/null 2>&1; then
 fi
 echo
 
-echo "# ruby"
-ln -sfv "$DOTDIR/ruby/.gemrc" "$DOTDIR/ruby/.pryrc" "$DOTDIR/ruby/.railsrc" "$DOTDIR/ruby/.rubocop.yml" "$HOME"
-if command -v rbenv >/dev/null 2>&1; then
-    ln -sfv "$DOTDIR/ruby/version" "$(rbenv root)"
-fi
-echo
-
 echo "# misc"
 ln -sfv "$DOTDIR/.hushlogin" "$DOTDIR/.psqlrc" "$HOME"
 echo
