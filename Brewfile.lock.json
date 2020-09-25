@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask-fonts": {
-        "revision": "db71e6a6bc22e8121d9df769671396207cd42a6e"
+        "revision": "150a19118317f8725145dcaf0af51d293beba068"
       },
       "teamookla/speedtest": {
         "revision": "b79ea77017ea57c98658225883d7ecc3d4410fbd"
@@ -11,19 +11,22 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/bundle": {
-        "revision": "b84d4569eafe799c7c46c6c12c63215cb8095b6d"
+        "revision": "12702c2b9111a447bb89cd887771d20cffab4e63"
       },
       "homebrew/cask": {
-        "revision": "31da67cf36e2df8162323e179322251c48136b16"
+        "revision": "e6332e6066fa631753048db75e32629e19210490"
       },
       "homebrew/cask-versions": {
-        "revision": "8290294ea2c10d9bfa2a85a7cc5fafd86dfae7b6"
+        "revision": "2c36401c999216a114f520466165619d507c1250"
       },
       "homebrew/core": {
-        "revision": "c899d98ff122c16facdf0aa0c206d4c3c6a2a662"
+        "revision": "136a43943a8bb8dc47cba8f25bf0e73e29b3ffe1"
       },
       "homebrew/services": {
-        "revision": "5ba553ecb4d4dad31eabd9535f262212d5098214"
+        "revision": "3d59cdac249a3edd554357ecf67785020a17dc08"
+      },
+      "adoptopenjdk/openjdk": {
+        "revision": "a32570b9c178a4307967ea044eff06deca680a8f"
       }
     },
     "brew": {
@@ -617,27 +620,6 @@
           }
         }
       },
-      "openjdk": {
-        "version": "14.0.1",
-        "bottle": {
-          "cellar": ":any",
-          "prefix": "/usr/local",
-          "files": {
-            "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/openjdk-14.0.1.catalina.bottle.tar.gz",
-              "sha256": "d44db8c5b212a36d73f1102468106124e5f5e2f20600768a9d8cecc172df4601"
-            },
-            "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/openjdk-14.0.1.mojave.bottle.tar.gz",
-              "sha256": "4549644dc93f35362c65fe12543bd77d580944673d836f71108f4bcaabf7c206"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/openjdk-14.0.1.high_sierra.bottle.tar.gz",
-              "sha256": "b72286cb7187fa0682761f70ea5e6f6922667ceac4de4ac3ebd855786358c773"
-            }
-          }
-        }
-      },
       "yq": {
         "version": "3.4.0",
         "bottle": {
@@ -690,7 +672,7 @@
         }
       },
       "aerial": {
-        "version": "2.0.9",
+        "version": "2.0.10",
         "options": {
           "full_name": "aerial"
         }
@@ -771,12 +753,6 @@
         "version": "3.2.9",
         "options": {
           "full_name": "iterm2"
-        }
-      },
-      "java": {
-        "version": "14.0.2,12:205943a0976c4ed48cb16f1043c5c647",
-        "options": {
-          "full_name": "java"
         }
       },
       "keyboard-cleaner": {
@@ -910,6 +886,12 @@
         "options": {
           "full_name": "ubersicht"
         }
+      },
+      "adoptopenjdk11": {
+        "version": "11.0.8,10",
+        "options": {
+          "full_name": "adoptopenjdk11"
+        }
       }
     },
     "mas": {
@@ -964,7 +946,7 @@
       },
       "Grammarly for Safari": {
         "id": "1462114288",
-        "version": "9.18"
+        "version": "9.19"
       },
       "Textual IRC Client": {
         "id": "1262957439",
@@ -977,7 +959,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "c899d98ff122c16facdf0aa0c206d4c3c6a2a662",
+        "Homebrew/homebrew-core": "136a43943a8bb8dc47cba8f25bf0e73e29b3ffe1",
         "CLT": "12.0.0.0.1.1599194153",
         "Xcode": "12.0",
         "macOS": "10.15.6"

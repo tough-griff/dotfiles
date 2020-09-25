@@ -1,5 +1,6 @@
 # Usage: `brew bundle`
 
+tap "AdoptOpenJDK/openjdk"
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -29,7 +30,6 @@ brew "jq"
 brew "mas"
 brew "node-build"
 brew "nodenv"
-brew "openjdk"
 brew "openssl"
 brew "p7zip"
 brew "python"
@@ -50,6 +50,7 @@ brew "teamookla/speedtest/speedtest"
 
 # Install Applications
 cask "1password-cli"
+cask "adoptopenjdk11"
 cask "aerial"
 cask "alfred"
 cask "appcleaner"
