@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask-fonts": {
-        "revision": "150a19118317f8725145dcaf0af51d293beba068"
+        "revision": "68fac0066c97476a9e559332e9d88ec1e02bc622"
       },
       "teamookla/speedtest": {
         "revision": "b79ea77017ea57c98658225883d7ecc3d4410fbd"
@@ -14,19 +14,19 @@
         "revision": "12702c2b9111a447bb89cd887771d20cffab4e63"
       },
       "homebrew/cask": {
-        "revision": "e6332e6066fa631753048db75e32629e19210490"
+        "revision": "fa12e37aa1731358880f9d1936838e337817c705"
       },
       "homebrew/cask-versions": {
-        "revision": "2c36401c999216a114f520466165619d507c1250"
+        "revision": "92646be5010c25f861cf11f6c2cfe96147cb2c65"
       },
       "homebrew/core": {
-        "revision": "136a43943a8bb8dc47cba8f25bf0e73e29b3ffe1"
+        "revision": "0b6544fedc9e2232a12826922dfc3b12872ff410"
       },
       "homebrew/services": {
         "revision": "3d59cdac249a3edd554357ecf67785020a17dc08"
       },
       "adoptopenjdk/openjdk": {
-        "revision": "a32570b9c178a4307967ea044eff06deca680a8f"
+        "revision": "55114892fc2fb171617ad8130e959e7d5c6d8de9"
       }
     },
     "brew": {
@@ -253,22 +253,22 @@
         }
       },
       "imagemagick": {
-        "version": "7.0.10-30_1",
+        "version": "7.0.10-31",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.10-30_1.catalina.bottle.tar.gz",
-              "sha256": "fa768ad79004da69dd9b3c9486fc6770386449cae5bd78a74173ff85c5d70fe7"
+              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.10-31.catalina.bottle.tar.gz",
+              "sha256": "bd7e71be34fe43b99b050da61a258bbbd91f5f5ed85471ca2a95b6cc857d8d68"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.10-30_1.mojave.bottle.tar.gz",
-              "sha256": "9ea06c3a95d448950b2a5693d5a5f408ddea48dcbebb4e3a03af89c40e0f237a"
+              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.10-31.mojave.bottle.tar.gz",
+              "sha256": "79e15c2d7e26dd3ad3c321e69987f69f73b148f5a4ea98bee8ff58c35513d88f"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.10-30_1.high_sierra.bottle.tar.gz",
-              "sha256": "757ab6057e6efccf70027dd997c7c0e0acce127963eba7b213e88a181138c7d4"
+              "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.10-31.high_sierra.bottle.tar.gz",
+              "sha256": "22a0ccbaaa4829c4a8623b2e49417a1ef77fbb023e196c7679bab6206dfff94b"
             }
           }
         }
@@ -672,7 +672,7 @@
         }
       },
       "aerial": {
-        "version": "2.0.10",
+        "version": "2.1.0",
         "options": {
           "full_name": "aerial"
         }
@@ -959,10 +959,10 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "136a43943a8bb8dc47cba8f25bf0e73e29b3ffe1",
-        "CLT": "12.0.0.0.1.1599194153",
-        "Xcode": "12.0",
-        "macOS": "10.15.6"
+        "Homebrew/homebrew-core": "0b6544fedc9e2232a12826922dfc3b12872ff410",
+        "CLT": "12.0.32.2",
+        "Xcode": "12.0.1",
+        "macOS": "10.15.7"
       }
     }
   }
