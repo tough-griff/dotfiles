@@ -68,7 +68,7 @@
   autocrlf = input
   editor = vim
   excludesFile = ~/.gitignore
-  pager = diff-so-fancy | less --tabs=4 -FRSX
+  pager = delta
 
 [diff]
   compactionHeuristic = true # let's give it a try!
@@ -81,7 +81,7 @@
   program = /usr/local/bin/gpg
 
 [interactive]
-  diffFilter = diff-so-fancy
+  diffFilter = delta --color-only
 
 [pull]
   rebase = true
@@ -100,8 +100,16 @@
 [credential]
   helper = osxkeychain
 
-[diff-so-fancy]
-	first-run = false
+[delta]
+  minus-style = bold red "#3f0001"
+  minus-non-emph-style = bold red "#3f0001"
+  minus-emph-style = bold red 52
+  minus-empty-line-marker-style = normal "#3f0001"
+  plus-style = bold green "#002800"
+  plus-non-emph-style = bold green "#002800"
+  plus-emph-style = bold green 22
+  plus-empty-line-marker-style  = normal "#002800"
+  syntax-theme = TwoDark
 
 [heroku]
   account = personal
