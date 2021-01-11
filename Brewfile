@@ -34,7 +34,6 @@ brew "openssl"
 brew "p7zip"
 brew "python"
 brew "readline"
-brew "redis", restart_service: true
 brew "rename"
 brew "shellcheck"
 brew "starship"
