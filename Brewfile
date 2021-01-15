@@ -88,6 +88,7 @@ cask "xquartz"
 
 # Fonts
 cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "font-hasklig"
 cask "font-source-code-pro"
 cask "font-source-sans-pro"
