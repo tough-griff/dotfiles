@@ -8,3 +8,7 @@ style = "bold red"
 [[battery.display]]
 threshold = 50
 style = "bold yellow"
+
+[status]
+format = "[$common_meaning$signal_name$maybe_int]($style) "
+disabled = false
