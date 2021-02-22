@@ -98,7 +98,6 @@ cask "font-source-serif-pro"
 mas "1Password 7", id: 1333542190
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
-mas "Grammarly for Safari", id: 1462114288
 mas "Keynote", id: 409183694
 mas "Monit", id: 1014850245
 mas "Numbers", id: 409203825
