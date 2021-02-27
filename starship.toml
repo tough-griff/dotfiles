@@ -9,6 +9,12 @@ style = "bold red"
 threshold = 50
 style = "bold yellow"
 
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
+
 [status]
 format = "[$common_meaning$signal_name$maybe_int]($style) "
 disabled = false
