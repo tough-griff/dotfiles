@@ -1,6 +1,3 @@
-[aws]
-disabled = true
-
 [[battery.display]]
 threshold = 20
 style = "bold red"
@@ -8,12 +5,6 @@ style = "bold red"
 [[battery.display]]
 threshold = 50
 style = "bold yellow"
-
-[nodejs]
-disabled = true
-
-[package]
-disabled = true
 
 [status]
 format = "[$common_meaning$signal_name$maybe_int]($style) "
