@@ -25,7 +25,6 @@ fish/functions/*
 !fish/functions/each.fish
 !fish/functions/edit.fish
 !fish/functions/fish_greeting.fish
-!fish/functions/fish_title.fish
 !fish/functions/fuck.fish
 !fish/functions/gen-secret.fish
 !fish/functions/mkcd.fish

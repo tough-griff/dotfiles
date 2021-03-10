@@ -15,10 +15,5 @@ set -x THEFUCK_OVERRIDDEN_ALIASES 'bat,git'
 
 eval (ssh-agent -c) >/dev/null
 
-# Order here is important.
-# Starship prompt...
-starship init fish | source
-
-# ...then iTerm2
 test -e "$HOME/.iterm2_shell_integration.fish"
 and source "$HOME/.iterm2_shell_integration.fish"
