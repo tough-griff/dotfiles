@@ -111,9 +111,8 @@
   plus-empty-line-marker-style  = normal "#002800"
   syntax-theme = TwoDark
 
-[heroku]
-  account = personal
-  remote = heroku
+[hub]
+  protocol = https
 
 [filter "lfs"]
   required = true
