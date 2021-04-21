@@ -1,15 +1,14 @@
 .aws
 .config
 
-.ssh/*
+.ssh/
 !.ssh/config
 
-beets/*
+beets/
 !beets/config.yaml
 
-fish/completions/*
-!fish/completions/nodenv.fish
-fish/conf.d/*
+fish/completions/
+fish/conf.d/
 !fish/conf.d/00-env.fish
 !fish/conf.d/brew.fish
 !fish/conf.d/direnv.fish
@@ -18,14 +17,12 @@ fish/conf.d/*
 !fish/conf.d/nodenv.fish
 !fish/conf.d/rbenv.fish
 !fish/conf.d/rust.fish
-!fish/conf.d/smartdot.fish
-fish/functions/*
-!fish/functions/_smartdot.fish
+!fish/conf.d/thefuck.fish
+fish/functions/
 !fish/functions/abbralias.fish
 !fish/functions/each.fish
 !fish/functions/edit.fish
 !fish/functions/fish_greeting.fish
-!fish/functions/fuck.fish
 !fish/functions/gen-secret.fish
 !fish/functions/mkcd.fish
 !fish/functions/psg.fish

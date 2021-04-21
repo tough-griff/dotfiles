@@ -1,7 +1,8 @@
-barnybug/docker-fish-completion
 jethrokuan/z
+jorgebucaran/autopair.fish
 jorgebucaran/fisher
-laughedelic/pisces
+jorgebucaran/hydro
+jorgebucaran/replay.fish
 oh-my-fish/plugin-aws
 oh-my-fish/plugin-osx
-jorgebucaran/hydro
+tough-griff/smartdot.fish

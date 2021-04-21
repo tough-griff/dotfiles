@@ -15,5 +15,4 @@ set -x THEFUCK_OVERRIDDEN_ALIASES 'bat,git'
 
 eval (ssh-agent -c) >/dev/null
 
-test -e "$HOME/.iterm2_shell_integration.fish"
-and source "$HOME/.iterm2_shell_integration.fish"
+test -e "$HOME/.iterm2_shell_integration.fish" && source "$HOME/.iterm2_shell_integration.fish"

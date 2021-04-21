@@ -1,5 +1,4 @@
-function mkcd --description "mkdir and cd into new directory"
-    mkdir "$argv[1]"
-    cd "$argv[1]"
+function mkcd - "mkdir and cd into new directory" -a dir
+    mkdir "$dir" && cd "$dir"
 end
 

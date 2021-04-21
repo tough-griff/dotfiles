@@ -1,10 +1,9 @@
-function set-device-name --description "Set computer name (as done via System Preferences → Sharing)"
-    test -n "$argv"
-    or set argv (hostname -s)
+function set-device-name -d "Set computer name (as done via System Preferences → Sharing)" -a host
+    set --query host || set host (hostname -s)
 
-    echo "Setting computer name to $argv"
-    sudo scutil --set ComputerName "$argv"
-    sudo scutil --set HostName "$argv"
-    sudo scutil --set LocalHostName "$argv"
+    echo "Setting computer name to $host"
+    sudo scutil --set ComputerName "$host"
+    sudo scutil --set HostName "$host"
+    sudo scutil --set LocalHostName "$host"
     sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$argv"
 end
