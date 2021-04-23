@@ -1,4 +1,4 @@
-eval (hub alias -s fish)
+command -q hub && eval (hub alias -s fish)
 
 # Provides abbralias for completions, aliases for use in `eval`
 abbralias g 'git'

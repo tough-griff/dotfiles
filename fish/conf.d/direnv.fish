@@ -1,3 +1,1 @@
-if command -s direnv >/dev/null
-    direnv hook fish | source
-end
+command -q direnv && direnv hook fish | source

@@ -30,7 +30,7 @@ set -U hydro_color_git magenta
 set -U hydro_color_prompt green
 set -U hydro_color_pwd cyan
 
-if ! test -f ~/.config/fish/functions/fisher.fish
+if not test -f ~/.config/fish/functions/fisher.fish
     echo "installing fisherman"
     curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 end
