@@ -1,5 +1,5 @@
 function set-device-name -d "Set computer name (as done via System Preferences → Sharing)" -a host
-    set --query host || set host (hostname -s)
+    set -q host || set host (hostname -s)
 
     echo "Setting computer name to $host"
     sudo scutil --set ComputerName "$host"

@@ -10,6 +10,13 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "teamookla/speedtest"
 
+# gnu utils
+brew "coreutils"
+brew "moreutils"
+brew "findutils"
+brew "gnu-sed"
+brew "grep"
+
 brew "awscli"
 brew "bash"
 brew "bat"

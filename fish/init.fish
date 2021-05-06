@@ -1,5 +1,8 @@
 #!/usr/bin/env fish
 
+set -Ux LANG "en_US.UTF-8"
+set -Ux LC_ALL "en_US.UTF-8"
+
 set -U fish_color_autosuggestion brblack
 set -U fish_color_cancel red
 set -U fish_color_command green
@@ -25,12 +28,13 @@ set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
+set -U hydro_symbol_prompt ❯
 set -U hydro_color_duration yellow
 set -U hydro_color_git magenta
 set -U hydro_color_prompt green
 set -U hydro_color_pwd cyan
 
-if not test -f ~/.config/fish/functions/fisher.fish
+if test ! -f ~/.config/fish/functions/fisher.fish
     echo "installing fisherman"
     curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 end

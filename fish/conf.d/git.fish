@@ -1,5 +1,7 @@
 command -q hub && eval (hub alias -s fish)
 
+set -gx GITHUB_PROTOCOL https
+
 # Provides abbralias for completions, aliases for use in `eval`
 abbralias g 'git'
 abbralias ga 'git add -A'
