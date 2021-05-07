@@ -4,14 +4,16 @@ shopt -s extglob
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
+echo "Ensuring repository is up to date..."
 git pull origin main
+echo
 
 echo "# macos & homebrew"
 if (! command -v brew >/dev/null 2>&1); then
     echo "## installing homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-brew bundle check >/dev/null || brew bundle install
+brew bundle check || brew bundle install
 BREW_PREFIX=$(brew --prefix)
 echo
 
@@ -74,3 +76,6 @@ ln -sfv "$HOME/Library/Logs/$PLIST_LOG" "$PWD"
 launchctl list "$WHOAMI.UpdateDotfiles" >/dev/null 2>&1 && launchctl unload -w "$HOME/Library/LaunchAgents/$PLIST"
 launchctl load -w "$HOME/Library/LaunchAgents/$PLIST"
 echo
+
+echo "Installation complete!"
+echo "Exit and start a new terminal session to continue..."

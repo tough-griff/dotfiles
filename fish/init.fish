@@ -1,5 +1,8 @@
 #!/usr/bin/env fish
 
+# For one-off upgrades, see conf.d/00-init.fish
+set -U ___fish_init___ 1000
+
 set -Ux LANG "en_US.UTF-8"
 set -Ux LC_ALL "en_US.UTF-8"
 

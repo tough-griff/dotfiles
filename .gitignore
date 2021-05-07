@@ -9,8 +9,9 @@ beets/*
 
 fish/completions/*
 fish/conf.d/*
-!fish/conf.d/00-env.fish
-!fish/conf.d/01-path.fish
+!fish/conf.d/00-init.fish
+!fish/conf.d/01-env.fish
+!fish/conf.d/02-path.fish
 !fish/conf.d/brew.fish
 !fish/conf.d/direnv.fish
 !fish/conf.d/git.fish
