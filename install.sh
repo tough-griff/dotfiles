@@ -37,17 +37,22 @@ if command -v brew >/dev/null 2>&1; then
     BREW_PREFIX=$(brew --prefix)
     echo
 
+    # configure launchctl to have access to homebrew bin
+    echo "## configuring launchctl"
+    sudo launchctl config user path "$BREW_PREFIX/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    echo
+
     if ! grep -F -q "$BREW_PREFIX/bin" /etc/paths; then
-        echo "# configuring path"
+        echo "## configuring path"
         echo "$BREW_PREFIX/bin" | cat - /etc/paths | sudo tee /etc/paths
         echo
     fi
 
     if ! grep -F -q "$BREW_PREFIX/bin/fish" /etc/shells; then
-    echo "# configuring default shell"
-    echo "$BREW_PREFIX/bin/fish" | sudo tee -a /etc/shells
-    chsh -s "$BREW_PREFIX/bin/fish"
-    echo
+        echo "## configuring default shell"
+        echo "$BREW_PREFIX/bin/fish" | sudo tee -a /etc/shells
+        chsh -s "$BREW_PREFIX/bin/fish"
+        echo
     fi
 else
     echo "WARNING: Homebrew is still not in your PATH. Proceed anyway?"

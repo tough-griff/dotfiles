@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
-
 _indent() {
     sed 's/^/  /'
 }
