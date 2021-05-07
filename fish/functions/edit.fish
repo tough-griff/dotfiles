@@ -1,4 +1,4 @@
-function edit -d "Open a directory in \$VISUAL"
-    test -e "$argv[-1]" || set -a argv "."
-    $VISUAL $argv
+function edit -d "Open a directory in VS Code" -w code
+    test -n "$argv[-1]" || set -a argv "."
+    code $argv
 end

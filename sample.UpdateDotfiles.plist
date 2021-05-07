@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>WHOAMI.UpdateDotfiles</string>
+  <key>KeepAlive</key>
+  <false/>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>UserName</key>
+  <string>WHOAMI</string>
+  <key>Program</key>
+  <string>/Users/WHOAMI/dotfiles/update.sh</string>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>14</integer>
+    <key>Minute</key>
+    <integer>15</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/WHOAMI/Library/Logs/WHOAMI.UpdateDotfiles.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/WHOAMI/Library/Logs/WHOAMI.UpdateDotfiles.log</string>
+</dict>
+</plist>

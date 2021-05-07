@@ -8,10 +8,6 @@ set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
 set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 
-# editors
-set -gx EDITOR vim
-set -gx VISUAL code
-
 # homebrew
 set -gx CFLAGS "-I/usr/local/include"
 set -gx LDFLAGS "-L/usr/local/lib"

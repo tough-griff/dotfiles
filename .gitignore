@@ -1,14 +1,14 @@
 .aws
 .config
 
-.ssh/
+.ssh/*
 !.ssh/config
 
-beets/
+beets/*
 !beets/config.yaml
 
-fish/completions/
-fish/conf.d/
+fish/completions/*
+fish/conf.d/*
 !fish/conf.d/00-env.fish
 !fish/conf.d/01-path.fish
 !fish/conf.d/brew.fish
@@ -19,20 +19,23 @@ fish/conf.d/
 !fish/conf.d/rbenv.fish
 !fish/conf.d/rust.fish
 !fish/conf.d/thefuck.fish
-fish/functions/
+fish/functions/*
 !fish/functions/abbralias.fish
 !fish/functions/each.fish
 !fish/functions/edit.fish
 !fish/functions/fish_greeting.fish
 !fish/functions/gen-secret.fish
+!fish/functions/ipv4.fish
+!fish/functions/ipv6.fish
 !fish/functions/mkcd.fish
+!fish/functions/open.fish
 !fish/functions/psg.fish
 !fish/functions/set-device-name.fish
 fish/fish_variables
 
 git/.gitconfig.personal
 
-js/node_modules/
+js/node_modules
 js/.npmrc
 
 LaunchAgents
@@ -40,3 +43,4 @@ LaunchAgents
 .hgrc
 *.UpdateDotfiles.log
 *.UpdateDotfiles.plist
+!sample.UpdateDotfiles.plist

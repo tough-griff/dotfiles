@@ -1,6 +1,6 @@
 # Usage: `brew bundle`
 
-tap "AdoptOpenJDK/openjdk"
+tap "adoptopenjdk/openjdk"
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -12,9 +12,12 @@ tap "teamookla/speedtest"
 
 # gnu utils
 brew "coreutils"
+brew "diffutils"
 brew "moreutils"
 brew "findutils"
+brew "gawk"
 brew "gnu-sed"
+brew "gnu-tar"
 brew "grep"
 
 brew "awscli"
@@ -50,13 +53,13 @@ brew "thefuck"
 brew "tree"
 brew "wget"
 brew "wifi-password"
+brew "xz"
 brew "yq"
 brew "zsh"
 brew "teamookla/speedtest/speedtest"
 
 # Install Applications
 cask "1password-cli"
-cask "adoptopenjdk11"
 cask "aerial"
 cask "alfred"
 cask "appcleaner"
@@ -87,6 +90,7 @@ cask "unity-web-player"
 cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
+cask "adoptopenjdk/openjdk/adoptopenjdk11"
 
 # Music
 # cask "kid3"
