@@ -1,7 +1,9 @@
 #!/usr/bin/env fish
 
 # For one-off upgrades, see conf.d/00-init.fish
-set -U ___fish_init___ 1000
+set -U ___fish_init___ 1010
+
+set -Ux BREW_PREFIX (brew --prefix)
 
 set -Ux LANG "en_US.UTF-8"
 set -Ux LC_ALL "en_US.UTF-8"
@@ -36,6 +38,12 @@ set -U hydro_color_duration yellow
 set -U hydro_color_git magenta
 set -U hydro_color_prompt green
 set -U hydro_color_pwd cyan
+
+fish_add_path "$BREW_PREFIX/opt/grep/libexec/gnubin"
+fish_add_path "$BREW_PREFIX/opt/gnu-tar/libexec/gnubin"
+fish_add_path "$BREW_PREFIX/opt/gnu-sed/libexec/gnubin"
+fish_add_path "$BREW_PREFIX/opt/findutils/libexec/gnubin"
+fish_add_path "$BREW_PREFIX/opt/coreutils/libexec/gnubin"
 
 if test ! -f ~/.config/fish/functions/fisher.fish
     echo "installing fisherman"

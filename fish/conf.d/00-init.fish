@@ -1,2 +1,5 @@
 status is-login || exit
-test $___fish_init___ -le 1000 || $__fish_config_dir/init.fish
+
+if not set -q ___fish_init___ || test $___fish_init___ -lt 1010
+    $__fish_config_dir/init.fish
+end

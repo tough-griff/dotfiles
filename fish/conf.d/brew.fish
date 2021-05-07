@@ -1,3 +1,7 @@
+# homebrew
+set -gx CFLAGS "-I$BREW_PREFIX/include"
+set -gx LDFLAGS "-L$BREW_PREFIX/lib"
+
 abbralias brewc 'brew cleanup'
 abbralias brewi 'brew install'
 abbralias brewl 'brew list'

@@ -3,7 +3,8 @@ if not command -q nodenv
     exit
 end
 
-set -q NODENV_ROOT || set -gx NODENV_ROOT "$HOME/.nodenv"
+set -gx NODENV_ROOT "$BREW_PREFIX/var/nodenv"
+
 command mkdir -p "$NODENV_ROOT/shims"
 command mkdir -p "$NODENV_ROOT/versions"
 

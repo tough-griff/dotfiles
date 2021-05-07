@@ -46,7 +46,6 @@ brew "python"
 brew "readline"
 brew "rename"
 brew "shellcheck"
-brew "starship"
 brew "terminal-notifier"
 brew "the_silver_searcher"
 brew "thefuck"
@@ -69,10 +68,10 @@ cask "beardedspice"
 cask "choosy"
 cask "contexts"
 cask "discord"
+cask "displaperture"
 cask "docker"
 cask "dropbox"
 cask "firefox"
-cask "google-backup-and-sync"
 cask "google-chrome"
 cask "gpg-suite-no-mail"
 cask "iterm2"
@@ -86,7 +85,6 @@ cask "spectacle"
 cask "spotify"
 cask "transmission"
 cask "ubersicht"
-cask "unity-web-player"
 cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
@@ -109,13 +107,10 @@ mas "1Password 7", id: 1333542190
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Keynote", id: 409183694
-mas "Monit", id: 1014850245
 mas "Numbers", id: 409203825
-mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709
-mas "Textual IRC Client", id: 1262957439
 mas "The Unarchiver", id: 425424353
 # mas "Xcode", id: 497799835
