@@ -93,7 +93,7 @@ fi
 echo
 
 echo "# misc"
-ln -sfv "$PWD/.hushlogin" "$PWD/.psqlrc" "$HOME"
+ln -sfv "$PWD/.editorconfig" "$PWD/.hushlogin" "$PWD/.psqlrc" "$HOME"
 echo
 
 echo "# reverse links"

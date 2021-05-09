@@ -14,7 +14,6 @@ abbralias ip 'ipv4'
 abbralias o 'open'
 abbralias tree 'tree -h -C --dirsfirst'
 abbralias psa 'ps aux'
-alias path 'echo "" $PATH\n'
 abbralias where 'type -a'
 
 # ...do this last
