@@ -23,3 +23,12 @@ disable it with the following command:
 ```sh
 launchctl unload -w "$HOME/Library/LaunchAgents/$(whoami).UpdateDotfiles.plist"
 ```
+
+## macOS Defaults
+
+The legendary `~/.macos` script is pulled from https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+with a few tweaks to my liking. Run it with:
+
+```sh
+./macos.sh
+```

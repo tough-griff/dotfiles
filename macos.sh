@@ -689,7 +689,7 @@ defaults write com.apple.terminal SecureKeyboardEntry -bool true
 defaults write com.apple.Terminal ShowLineMarks -int 0
 
 # Install the One Dark theme for iTerm
-open "${HOME}/dotfiles/One Dark.itermcolors"
+open "${HOME}/dotfiles/iterm2/One Dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
@@ -830,7 +830,7 @@ defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault
 ###############################################################################
 
 # Set up my preferred keyboard shortcuts
-cp -r "${HOME}/dotfiles/spectacle.json" ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
+cp -r "${HOME}/dotfiles/spectacle/spectacle.json" ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
 
 ###############################################################################
 # Transmission.app                                                            #
