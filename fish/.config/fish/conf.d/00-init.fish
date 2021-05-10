@@ -1,7 +1,8 @@
-#!/usr/bin/env fish
+if not status is-login || not set -q ___fish_init___ || test $___fish_init___ -ge 1011
+    exit
+end
 
-# For one-off upgrades, see conf.d/00-init.fish
-set -U ___fish_init___ 1010
+set -U ___fish_init___ 1011
 
 set -Ux BREW_PREFIX (brew --prefix)
 

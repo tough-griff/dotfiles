@@ -65,10 +65,8 @@
   gpgSign = true
 
 [core]
-  attributesFile = ~/.gitattributes
   autocrlf = input
   editor = code --wait
-  excludesFile = ~/.gitignore
   pager = delta
   precomposeUnicode = true
   trustctime = false
