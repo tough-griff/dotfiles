@@ -11,7 +11,7 @@ if ! command -v brew >/dev/null 2>&1; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 if command -v brew >/dev/null 2>&1; then
-    brew bundle check || brew bundle install
+    brew bundle check || brew bundle install --no-lock
     BREW_PREFIX=$(brew --prefix)
     BREW_BIN="$BREW_PREFIX/bin"
     echo
@@ -60,6 +60,8 @@ if [[ ! -e "$HOME/.ssh/id_rsa" ]]; then
     echo "generating ssh key (rsa)"
     ssh-keygen -t rsa -b 4096 -C "$(whoami)@$(hostname)"
 fi
+
+stow -v starship
 
 # create "reverse" links so we can view config directories from this repo
 ln -sf "$HOME/.aws" "$HOME/.config" "$HOME/.ssh" .

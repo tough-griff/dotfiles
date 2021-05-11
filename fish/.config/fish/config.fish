@@ -3,18 +3,22 @@
 set -gx BAT_THEME "TwoDark"
 set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
 
-alias 1p 'op'
-abbralias c 'clear'
-abbralias cat 'bat'
-abbralias df 'df -kh'
-abbralias du 'du -khd1'
-abbralias e 'edit'
-abbralias ea 'edit --add'
-abbralias ip 'ipv4'
-abbralias o 'open'
-abbralias tree 'tree -h -C --dirsfirst'
-abbralias psa 'ps aux'
-abbralias where 'type -a'
+alias 1p "op"
+abbralias c "clear"
+abbralias cat "bat"
+abbralias df "df -kh"
+abbralias du "du -khd1"
+abbralias e "edit"
+abbralias ea "edit --add"
+abbralias edf "cd $DOTDIR && edit ."
+abbralias ip "ipv4"
+alias ls "ls --color=auto --group-directories-first"
+abbralias o "open"
+alias tree "tree -aC --dirsfirst -I '.git|node_modules'"
+abbralias psa "ps aux"
+abbralias where "type -a"
+
+starship init fish | source
 
 # ...do this last
 test -e "$HOME/.iterm2_shell_integration.fish" && source "$HOME/.iterm2_shell_integration.fish"

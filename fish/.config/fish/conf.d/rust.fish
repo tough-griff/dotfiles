@@ -6,7 +6,7 @@ if test ! -f "$CARGO_HOME/bin/rustup"
     exit
 end
 
-set -gx PATH "$CARGO_HOME/bin" $PATH
+contains -- "$CARGO_HOME/bin" $PATH || set -gx PATH "$CARGO_HOME/bin" $PATH
 
 if test ! -f "$HOME/.config/fish/completions/rustup.fish"
     rustup completions fish >"$HOME/.config/fish/completions/rustup.fish"

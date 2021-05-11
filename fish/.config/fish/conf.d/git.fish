@@ -3,32 +3,32 @@ command -q hub && eval (hub alias -s fish)
 set -gx GITHUB_PROTOCOL https
 
 # Provides abbralias for completions, aliases for use in `eval`
-abbralias g 'git'
-abbralias ga 'git add -A'
-abbralias gam 'git amend'
-abbralias gb 'git branch -vv'
-abbralias gba 'git branch -avv'
-abbralias gc 'git commit -m'
-abbralias gbd 'git branch -d'
-abbralias gci 'git commit'
-abbralias gco 'git checkout'
-abbralias gcob 'git checkout -b'
-abbralias gd 'git diff'
-abbralias gdc 'git diff --cached'
-abbralias gf 'git fetch -v'
-abbralias gfa 'git fetch --all -v'
-abbralias gha 'git hash'
-abbralias ghac 'git hash | pbcopy'
-abbralias gl 'git log'
-abbralias glb 'git log --graph --branches'
-abbralias gp 'git push'
-abbralias gpf 'git push -f'
-abbralias gpl 'git pull'
-abbralias gpu 'git push -u'
-abbralias gr 'git remote -v'
-abbralias gs 'git status -s'
-abbralias gsb 'git show-branch'
-abbralias gsh 'git show'
-abbralias gst 'git status'
-abbralias gsy 'git sync'
-abbralias gu 'git up'
+abbralias g "git"
+abbralias ga "git add -A"
+abbralias gam "git amend"
+abbralias gb "git branch -vv"
+abbralias gba "git branch -avv"
+abbralias gc "git commit -m"
+abbralias gbd "git branch -d"
+abbralias gci "git commit"
+abbralias gco "git checkout"
+abbralias gcob "git checkout -b"
+abbralias gd "git diff"
+abbralias gdc "git diff --cached"
+abbralias gf "git fetch -v"
+abbralias gfa "git fetch --all -v"
+abbralias gha "git hash"
+abbralias ghac "git hash | pbcopy"
+abbralias gl "git log"
+abbralias glb "git log --graph --branches"
+abbralias gp "git push"
+abbralias gpf "git push -f"
+abbralias gpl "git pull"
+abbralias gpu "git push -u"
+abbralias gr "git remote -v"
+abbralias gs "git status -s"
+abbralias gsb "git show-branch"
+abbralias gsh "git show"
+abbralias gst "git status"
+abbralias gsy "git sync"
+abbralias gu "git up"

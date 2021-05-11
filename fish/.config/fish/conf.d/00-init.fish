@@ -1,11 +1,11 @@
-if not status is-login || not set -q ___fish_init___ || test $___fish_init___ -ge 1011
+if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2000
     exit
 end
 
-set -U ___fish_init___ 1011
+set -U ___fish_init___ 2000
 
 set -Ux BREW_PREFIX (brew --prefix)
-
+set -Ux DOTDIR (cd (dirname (realpath (status current-filename)))/../../../.. && pwd)
 set -Ux LANG "en_US.UTF-8"
 set -Ux LC_ALL "en_US.UTF-8"
 
@@ -34,12 +34,6 @@ set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
-set -U hydro_symbol_prompt ❯
-set -U hydro_color_duration yellow
-set -U hydro_color_git magenta
-set -U hydro_color_prompt green
-set -U hydro_color_pwd cyan
-
 fish_add_path "$BREW_PREFIX/opt/grep/libexec/gnubin"
 fish_add_path "$BREW_PREFIX/opt/gnu-tar/libexec/gnubin"
 fish_add_path "$BREW_PREFIX/opt/gnu-sed/libexec/gnubin"
@@ -48,6 +42,8 @@ fish_add_path "$BREW_PREFIX/opt/coreutils/libexec/gnubin"
 
 if test ! -f ~/.config/fish/functions/fisher.fish
     echo "installing fisherman"
-    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 end
 fish -c "fisher update"
+
+cd "$DOTDIR" && stow -R fish
