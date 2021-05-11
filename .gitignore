@@ -1,12 +1,10 @@
 /.aws
 /.config
 /.ssh
-/git/.gitconfig.personal
-
-!/node/.node-version
 
 node_modules
 
-*.UpdateDotfiles.log
 *.UpdateDotfiles.plist
 !sample.UpdateDotfiles.plist
+.gitconfig.personal
+!.node-version

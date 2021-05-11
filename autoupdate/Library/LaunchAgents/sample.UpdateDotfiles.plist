@@ -8,10 +8,8 @@
   <false/>
   <key>RunAtLoad</key>
   <false/>
-  <key>UserName</key>
-  <string>WHOAMI</string>
   <key>Program</key>
-  <string>/Users/WHOAMI/dotfiles/update.sh</string>
+  <string>PWD/update</string>
   <key>StartCalendarInterval</key>
   <dict>
     <key>Hour</key>
