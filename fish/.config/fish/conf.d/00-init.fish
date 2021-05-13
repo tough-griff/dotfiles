@@ -1,8 +1,8 @@
-if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2000
+if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2001
     exit
 end
 
-set -U ___fish_init___ 2000
+set -U ___fish_init___ 2001
 
 set -Ux BREW_PREFIX (brew --prefix)
 set -Ux DOTDIR (cd (dirname (realpath (status current-filename)))/../../../.. && pwd)
@@ -46,4 +46,4 @@ if test ! -f ~/.config/fish/functions/fisher.fish
 end
 fish -c "fisher update"
 
-cd "$DOTDIR" && stow -R fish
+cd $DOTDIR && stow -R fish

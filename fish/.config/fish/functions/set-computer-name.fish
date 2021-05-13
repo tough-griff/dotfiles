@@ -1,4 +1,4 @@
-function set-computer-name -d "Set computer name (as done via System Preferences → Sharing)" -a host
+function set-computer-name -a host -d "Set computer name (as done via System Preferences → Sharing)"
     set -q host || set host (hostname -s)
 
     echo "Setting computer name to $host. This requires sudo"
