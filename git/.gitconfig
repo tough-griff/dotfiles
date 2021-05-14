@@ -27,11 +27,17 @@
   sy = "sync"
   u = "up"
 
-  # new functionality
-  amend = "commit --amend --no-edit"      # amend your last commit
-  hash = "rev-parse --short HEAD"         # print the most recent commit's hash
-  uncommit = "reset --soft HEAD^"         # go back before last commit
-  up = "pull --rebase --autostash"        # this is basically what `git-up` did
+  # amend your last commit
+  amend = "commit --amend --no-edit"
+
+  # print the most recent commit's hash
+  hash = "!git rev-parse --short HEAD | tr -d '\n'"
+
+  # go back before last commit
+  uncommit = "reset --soft HEAD^"
+
+  # this is basically what `git-up` did
+  up = "pull --rebase --autostash"
 
 [branch]
   autoSetupRebase = always

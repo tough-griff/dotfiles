@@ -1,8 +1,8 @@
-if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2001
+if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2002
     exit
 end
 
-set -U ___fish_init___ 2001
+set -U ___fish_init___ 2002
 
 set -Ux BREW_PREFIX (brew --prefix)
 set -Ux DOTDIR (cd (dirname (realpath (status current-filename)))/../../../.. && pwd)

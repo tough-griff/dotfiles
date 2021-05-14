@@ -6,5 +6,5 @@ node_modules
 
 *.UpdateDotfiles.plist
 !sample.UpdateDotfiles.plist
-.gitconfig.personal
+*.personal
 !.node-version

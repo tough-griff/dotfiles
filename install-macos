@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [[ -z $(command -v brew) ]]; then
+  echo "Unable to locate Homebrew, installing..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+if [[ -z $(command -v brew) ]]; then
+  echo "ERROR: Homebrew is still not in your PATH, aborting installation."
+  exit 1
+fi
+
+brew bundle check || brew bundle install --no-lock
+BREW_PREFIX=$(brew --prefix)
+BREW_BIN="$BREW_PREFIX/bin"
+echo
+
+if ! grep -F -q "$BREW_BIN" /etc/paths; then
+  echo "configuring /etc/path for Homebrew"
+  echo "$BREW_BIN" | cat - /etc/paths | sudo tee /etc/paths
+  echo
+fi

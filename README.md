@@ -17,7 +17,9 @@ To update this repo accordingly you can simply re-run the `install` script.
 > NOTE: when adding any new files or functions to your fish config, you will
 > need to re-run the `stow fish` command
 
-## Sync Instructions
+## macOS Specifics
+
+### Autoupdate
 
 This repository offers the option to configure a `launchd` script to
 automatically commit and push any changes daily.
@@ -26,7 +28,7 @@ For this to work, you should fork the repository for yourself and then run the
 following script:
 
 ```sh
-./setup-autoupdate
+./setup-autoupdate-macos
 ```
 
 You can view logs for the update script at
@@ -38,7 +40,7 @@ If at any point you wish to disable the auto-update script, run:
 launchctl unload -w "$HOME/Library/LaunchAgents/$(whoami).UpdateDotfiles.plist"
 ```
 
-## macOS Defaults
+### macOS Defaults
 
 The legendary `~/.macos` script is pulled from https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 with a few tweaks to my liking. Run it with:
