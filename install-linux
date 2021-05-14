@@ -2,9 +2,9 @@
 
 if [[ -n $(command -v apt) ]]; then
   sudo apt update
-  xargs -a packages.txt -r -- sudo apt install
+  xargs -a packages.txt -r -- sudo apt install -y
 fi
 
 if [[ -z $(command -v starship) ]]; then
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 fi
