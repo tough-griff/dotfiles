@@ -1,5 +1,9 @@
-set -gx RUSTUP_HOME "$BREW_PREFIX/var/rustup"
-set -gx CARGO_HOME "$RUSTUP_HOME"
+if command -sq brew
+    set -gx RUSTUP_HOME "$BREW_PREFIX/var/rustup"
+    set -gx CARGO_HOME "$RUSTUP_HOME"
+else
+    set -gx CARGO_HOME "$HOME/.cargo"
+end
 
 test -f "$CARGO_HOME/bin/rustup" || exit
 
