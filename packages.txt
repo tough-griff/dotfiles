@@ -3,3 +3,4 @@ fish
 git
 hub
 stow
+thefuck

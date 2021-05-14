@@ -22,7 +22,7 @@ style_user = "green"
 style_root = "bold green"
 
 [hostname]
-format = "[@$hostname]($style)"
+format = "[@$hostname]($style) "
 style = "green"
 
 [directory]

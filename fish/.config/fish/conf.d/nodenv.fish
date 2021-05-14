@@ -1,7 +1,4 @@
-if not command -sq nodenv
-    echo "nodenv: command not found. See https://github.com/nodenv/nodenv"
-    exit
-end
+command -sq nodenv || exit
 
 set -gx NODENV_ROOT "$BREW_PREFIX/var/nodenv"
 
