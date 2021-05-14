@@ -5,14 +5,13 @@ set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
 
 alias 1p op
 abbralias c clear
-abbralias cat bat
 abbralias df "df -kh"
 abbralias du "du -khd1"
 abbralias e edit
 abbralias ea "edit --add"
 abbralias edf "cd $DOTDIR && edit ."
 abbralias ip ipv4
-alias ls "ls --color=auto --group-directories-first"
+alias ls "ls -Fv --color=auto --group-directories-first"
 abbralias o open
 alias tree "tree -aC --dirsfirst -I '.git|node_modules'"
 abbralias psa "ps aux"

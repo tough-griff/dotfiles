@@ -16,7 +16,7 @@ WHOAMI=$(whoami)
 sed -e "s|WHOAMI|$WHOAMI|g" -e "s|PWD|$PWD|g" autoupdate/Library/LaunchAgents/sample.UpdateDotfiles.plist > "autoupdate/Library/LaunchAgents/$WHOAMI.UpdateDotfiles.plist"
 touch "$HOME/Library/Logs/$WHOAMI.UpdateDotfiles.log"
 
-stow -v autoupdate
+stow -t "$HOME" -v autoupdate
 
 launchctl list "$WHOAMI.UpdateDotfiles" >/dev/null 2>&1 && launchctl unload -w "$HOME/Library/LaunchAgents/$WHOAMI.UpdateDotfiles.plist"
 launchctl load -w "$HOME/Library/LaunchAgents/$WHOAMI.UpdateDotfiles.plist"

@@ -1,4 +1,4 @@
-command -q hub && eval (hub alias -s fish)
+command -sq hub && eval (hub alias -s fish)
 
 set -gx GITHUB_PROTOCOL https
 

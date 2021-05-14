@@ -1,4 +1,4 @@
-if not command -q nodenv
+if not command -sq nodenv
     echo "nodenv: command not found. See https://github.com/nodenv/nodenv"
     exit
 end

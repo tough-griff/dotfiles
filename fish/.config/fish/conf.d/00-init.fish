@@ -4,7 +4,6 @@ end
 
 set -U ___fish_init___ 2002
 
-set -Ux BREW_PREFIX (brew --prefix)
 set -Ux DOTDIR (cd (dirname (realpath (status current-filename)))/../../../.. && pwd)
 set -Ux LANG "en_US.UTF-8"
 set -Ux LC_ALL "en_US.UTF-8"
@@ -34,11 +33,14 @@ set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
-fish_add_path "$BREW_PREFIX/opt/grep/libexec/gnubin"
-fish_add_path "$BREW_PREFIX/opt/gnu-tar/libexec/gnubin"
-fish_add_path "$BREW_PREFIX/opt/gnu-sed/libexec/gnubin"
-fish_add_path "$BREW_PREFIX/opt/findutils/libexec/gnubin"
-fish_add_path "$BREW_PREFIX/opt/coreutils/libexec/gnubin"
+if test (uname -s) = Darwin
+    set -Ux BREW_PREFIX (brew --prefix)
+    fish_add_path "$BREW_PREFIX/opt/grep/libexec/gnubin"
+    fish_add_path "$BREW_PREFIX/opt/gnu-tar/libexec/gnubin"
+    fish_add_path "$BREW_PREFIX/opt/gnu-sed/libexec/gnubin"
+    fish_add_path "$BREW_PREFIX/opt/findutils/libexec/gnubin"
+    fish_add_path "$BREW_PREFIX/opt/coreutils/libexec/gnubin"
+end
 
 if test ! -f ~/.config/fish/functions/fisher.fish
     echo "installing fisherman"
@@ -46,4 +48,4 @@ if test ! -f ~/.config/fish/functions/fisher.fish
 end
 fish -c "fisher update"
 
-cd $DOTDIR && stow -R fish
+cd "$DOTDIR" && stow -t "$HOME" -R fish

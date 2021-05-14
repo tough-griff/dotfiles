@@ -20,12 +20,12 @@ case $(uname -s) in
   ;;
 esac
 
-if [[ -z $(command -v stow) ]]; then
-  echo "ERROR: Unable to locate stow, aborting installation."
+if [[ -z $(command -v stow -t "$HOME") ]]; then
+  echo "ERROR: Unable to locate stow -t "$HOME", aborting installation."
   exit 1
 fi
 
-stow -v editorconfig
+stow -t "$HOME" -v editorconfig
 
 FISH_PATH=$(command -v fish)
 if ! grep -F -q "$FISH_PATH" /etc/shells; then
@@ -39,18 +39,18 @@ if [[ "$SHELL" != "$FISH_PATH" ]]; then
   echo
 fi
 mkdir -p "$HOME/.config/fish/completions" "$HOME/.config/fish/conf.d" "$HOME/.config/fish/functions"
-stow -v fish
+stow -t "$HOME" -v fish
 
 touch git/.gitconfig.personal
-stow -v git
+stow -t "$HOME" -v git
 
-stow -v login
-stow -v node
-stow -v psql
+stow -t "$HOME" -v login
+stow -t "$HOME" -v node
+stow -t "$HOME" -v psql
 
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 touch ssh/.ssh/config.personal
-stow -v ssh
+stow -t "$HOME" -v ssh
 if [[ ! -e "$HOME/.ssh/id_ed25519" ]]; then
   echo "generating ssh key"
   ssh-keygen -t ed25519 -a 100 -C "$(whoami)@$(hostname)"
@@ -61,7 +61,7 @@ if [[ ! -e "$HOME/.ssh/id_rsa" ]]; then
 fi
 chmod 644 "$HOME/.ssh/"*.pub
 
-stow -v starship
+stow -t "$HOME" -v starship
 
 # create "reverse" links so we can view config directories from this repo
 ln -sf "$HOME/.aws" "$HOME/.config" "$HOME/.ssh" .

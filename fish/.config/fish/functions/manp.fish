@@ -3,5 +3,5 @@ function manp -w man -d "Open a specified man page in Preview"
         echo "What manual page do you want?" && exit
     end
 
-    man -t $argv | open -f -a Preview
+    man -t "$argv" | open -f -a Preview
 end
