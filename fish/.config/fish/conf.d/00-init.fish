@@ -1,10 +1,10 @@
-if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2002
+if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2003
     exit
 end
 
-set -U ___fish_init___ 2002
+set -U ___fish_init___ 2003
 
-set -Ux DOTDIR (cd (dirname (realpath (status current-filename)))/../../../.. && pwd)
+set -Ux DOTDIR (realpath (dirname (realpath (status current-filename)))/../../../..)
 set -Ux LANG "en_US.UTF-8"
 set -Ux LC_ALL "en_US.UTF-8"
 
@@ -48,4 +48,4 @@ if test ! -f ~/.config/fish/functions/fisher.fish
 end
 fish -c "fisher update"
 
-cd "$DOTDIR" && stow -t "$HOME" -R fish
+stow -d "$DOTDIR" -t "$HOME" -R fish

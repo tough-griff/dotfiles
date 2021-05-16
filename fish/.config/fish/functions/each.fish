@@ -4,10 +4,10 @@ function each -w eval -d "Evaluate a command in each subdirectory"
             set_color -o blue
             echo "$dir:"
             set_color normal
-            cd "$dir" || break
+            pushd "$dir" || break
             eval "$argv"
             echo
-            cd ..
+            popd
         end
     end
 end
