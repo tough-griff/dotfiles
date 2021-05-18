@@ -55,7 +55,7 @@ style = "208"
 
 [cmd_duration]
 format = "[$duration]($style) "
-show_notifications = true
+show_notifications = false
 
 [status]
 format = "[$status]($style) "

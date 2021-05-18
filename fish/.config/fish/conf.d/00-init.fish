@@ -1,8 +1,8 @@
-if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2003
+if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2004
     exit
 end
 
-set -U ___fish_init___ 2003
+set -U ___fish_init___ 2004
 
 set -Ux DOTDIR (realpath (dirname (realpath (status current-filename)))/../../../..)
 set -Ux LANG "en_US.UTF-8"
@@ -46,6 +46,11 @@ if test ! -f ~/.config/fish/functions/fisher.fish
     echo "installing fisherman"
     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 end
-fish -c "fisher update"
+fisher install franciscolourenco/done
+fisher install jethrokuan/z
+fisher install jorgebucaran/autopair.fish
+fisher install jorgebucaran/replay.fish
+fisher install oh-my-fish/plugin-thefuck
+fisher install tough-griff/smartdot.fish
 
 stow -d "$DOTDIR" -t "$HOME" -R fish
