@@ -1,8 +1,8 @@
-if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2004
+if not status is-login || test -n "$___fish_init___" -a "$___fish_init___" -ge 2005
     exit
 end
 
-set -U ___fish_init___ 2004
+set -U ___fish_init___ 2005
 
 set -Ux DOTDIR (realpath (dirname (realpath (status current-filename)))/../../../..)
 set -Ux LANG "en_US.UTF-8"

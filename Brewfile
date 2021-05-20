@@ -59,6 +59,10 @@ brew "wifi-password"
 brew "xz"
 brew "yq"
 brew "zsh"
+brew "nodenv/nodenv/node-build-update-defs"
+brew "nodenv/nodenv/nodenv-aliases"
+brew "nodenv/nodenv/nodenv-default-packages"
+brew "nodenv/nodenv/nodenv-each"
 brew "teamookla/speedtest/speedtest"
 
 # Install Applications
