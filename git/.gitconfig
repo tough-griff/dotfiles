@@ -73,6 +73,7 @@
 [core]
   autocrlf = input
   editor = code -n -w
+  ignoreCase = false
   pager = delta
   precomposeUnicode = true
   trustctime = false
