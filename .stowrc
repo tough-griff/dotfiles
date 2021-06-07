@@ -1,4 +1,5 @@
 --target=$HOME
+--ignore=\.gitignore
 --ignore=node_modules
 --ignore=package(-lock)?\.json
 --ignore=sample\.UpdateDotfiles\.plist

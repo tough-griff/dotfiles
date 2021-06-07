@@ -20,7 +20,7 @@ case $(uname -s) in
   ;;
 esac
 
-if [[ -z $(command -v stow -t "$HOME") ]]; then
+if [[ -z $(command -v stow) ]]; then
   echo "ERROR: Unable to locate stow, aborting installation."
   exit 1
 fi

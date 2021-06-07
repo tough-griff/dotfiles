@@ -33,7 +33,7 @@ set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
-if test (uname -s) = Darwin
+if command -sq brew
     set -Ux BREW_PREFIX (brew --prefix)
     fish_add_path "$BREW_PREFIX/opt/grep/libexec/gnubin"
     fish_add_path "$BREW_PREFIX/opt/gnu-tar/libexec/gnubin"

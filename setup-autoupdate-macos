@@ -2,18 +2,17 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
-BREW_PREFIX=$(brew --prefix)
-BREW_BIN="$BREW_PREFIX/bin"
+BREW_BIN="$(brew --prefix)/bin"
 
 if [[ ! $(launchctl getenv PATH) == *$BREW_BIN* ]]; then
-    echo "## configuring launchctl"
-    sudo launchctl config user path "$BREW_BIN:/usr/bin:/bin:/usr/sbin:/sbin"
-    echo
+  echo "## configuring launchctl"
+  sudo launchctl config user path "$BREW_BIN:/usr/bin:/bin:/usr/sbin:/sbin"
+  echo
 fi
 
 WHOAMI=$(whoami)
 
-sed -e "s|WHOAMI|$WHOAMI|g" -e "s|PWD|$PWD|g" autoupdate/Library/LaunchAgents/sample.UpdateDotfiles.plist > "autoupdate/Library/LaunchAgents/$WHOAMI.UpdateDotfiles.plist"
+sed -e "s|WHOAMI|$WHOAMI|g" -e "s|PWD|$PWD|g" autoupdate/Library/LaunchAgents/sample.UpdateDotfiles.plist >"autoupdate/Library/LaunchAgents/$WHOAMI.UpdateDotfiles.plist"
 touch "$HOME/Library/Logs/$WHOAMI.UpdateDotfiles.log"
 
 stow -t "$HOME" -v autoupdate

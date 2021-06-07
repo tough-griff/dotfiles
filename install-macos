@@ -11,8 +11,7 @@ if [[ -z $(command -v brew) ]]; then
 fi
 
 brew bundle check || brew bundle install --no-lock
-BREW_PREFIX=$(brew --prefix)
-BREW_BIN="$BREW_PREFIX/bin"
+BREW_BIN="$(brew --prefix)/bin"
 echo
 
 if ! grep -F -q "$BREW_BIN" /etc/paths; then

@@ -2,9 +2,4 @@
 /.config
 /.ssh
 
-node_modules
-
-*.UpdateDotfiles.plist
-!sample.UpdateDotfiles.plist
 *.personal
-!.node-version

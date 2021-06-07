@@ -5,4 +5,6 @@ if [[ -n $(command -v apt) ]]; then
   xargs -a packages.txt -r -- sudo apt install -y
 fi
 
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+if [[ -z $(command -v starship) ]]; then
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+fi
