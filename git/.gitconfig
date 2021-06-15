@@ -115,9 +115,6 @@
   gpgSign = true
 
 # plugins and etc
-[credential]
-  helper = osxkeychain
-
 [delta]
   minus-style = bold red "#3f0001"
   minus-non-emph-style = bold red "#3f0001"
