@@ -17,47 +17,57 @@ $character\
 """
 
 [username]
+disabled = false
 format = "[$user]($style)"
 style_user = "green"
 style_root = "bold green"
 
 [hostname]
+disabled = false
 format = "[@$hostname]($style) "
 style = "green"
 
 [directory]
+disabled = false
 format = "[$path]($style)[$read_only]($read_only_style) "
 style = "cyan"
 read_only = "!"
 
 [git_branch]
+disabled = false
 format = "[$branch]($style) "
 style = "purple"
 
 [git_commit]
+disabled = false
 style = "bold purple"
 
 [git_state]
+disabled = false
 style = "italic purple"
 
 [git_status]
+disabled = false
 style = "purple"
 deleted = "-"
 modified = "*"
 
 [nodejs]
+disabled = false
 format = "[$symbol($version)]($style) "
 detect_files = ["package.json"]
 
 [package]
+disabled = false
 format = "[$version]($style) "
 style = "yellow"
 
 [cmd_duration]
+disabled = false
 format = "[$duration]($style) "
 show_notifications = false
 
 [status]
+disabled = false
 format = "[$status]($style) "
 style = "red"
-disabled = false
