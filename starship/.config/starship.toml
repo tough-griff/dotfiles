@@ -71,3 +71,6 @@ show_notifications = false
 disabled = false
 format = "[$status]($style) "
 style = "red"
+pipestatus = true
+pipestatus_separator = ""
+pipestatus_format = "[$pipestatus]($style)"
