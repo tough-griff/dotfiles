@@ -72,7 +72,6 @@ cask "alfred"
 cask "appcleaner"
 cask "balenaetcher"
 cask "bartender"
-cask "beardedspice"
 cask "choosy"
 cask "contexts"
 cask "discord"
@@ -88,10 +87,10 @@ cask "ngrok"
 cask "postico"
 cask "postman"
 cask "rectangle"
+cask "rocket"
 cask "scroll-reverser"
 cask "spotify"
 cask "transmission"
-cask "ubersicht"
 cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
@@ -120,4 +119,3 @@ mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709
 mas "The Unarchiver", id: 425424353
-# mas "Xcode", id: 497799835

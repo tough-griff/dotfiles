@@ -18,6 +18,3 @@ abbralias psa "ps aux"
 abbralias where "type -a"
 
 starship init fish | source
-
-# ...do this last
-test -e "$HOME/.iterm2_shell_integration.fish" && source "$HOME/.iterm2_shell_integration.fish"
