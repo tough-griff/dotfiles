@@ -135,10 +135,5 @@
 [hub]
   protocol = https
 
-[merge "npm-merge-driver"]
-	name = automatically merge npm lockfiles
-	driver = npx npm-merge-driver merge %A %O %B %P
-
-# personal config and overrides
 [include]
   path = ~/.gitconfig.personal
