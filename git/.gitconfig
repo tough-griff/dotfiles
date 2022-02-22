@@ -73,7 +73,7 @@
 
 [core]
   autocrlf = input
-  editor = code -n -w
+  editor = vim
   ignoreCase = false
   pager = delta
   precomposeUnicode = true
