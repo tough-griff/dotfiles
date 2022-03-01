@@ -21,6 +21,8 @@
   pl = "pull"
   pu = "push --set-upstream"
   r = "remote --verbose"
+  rb = "rebase"
+  rbc = "rebase --continue"
   s = "status --short"
   sb = "show-branch"
   sh = "show"
