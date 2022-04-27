@@ -17,10 +17,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "hermes-cs"
-sudo scutil --set HostName "hermes-cs"
-sudo scutil --set LocalHostName "hermes-cs"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "hermes-cs"
+# sudo scutil --set ComputerName "hermes"
+# sudo scutil --set HostName "hermes"
+# sudo scutil --set LocalHostName "hermes"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "hermes"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
