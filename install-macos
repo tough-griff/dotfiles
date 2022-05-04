@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
+if [[ "$(/usr/bin/uname -m)" == "arm64" ]]; then
+  # On ARM macOS, this script installs to /opt/homebrew only
+  HOMEBREW_PREFIX="/opt/homebrew"
+else
+  # On Intel macOS, this script installs to /usr/local only
+  HOMEBREW_PREFIX="/usr/local"
+fi
+
 if [[ -z $(command -v brew) ]]; then
   echo "Unable to locate Homebrew, installing..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 fi
 
 if [[ -z $(command -v brew) ]]; then
@@ -11,11 +21,10 @@ if [[ -z $(command -v brew) ]]; then
 fi
 
 brew bundle check || brew bundle install --no-lock
-BREW_BIN="$(brew --prefix)/bin"
 echo
 
-if ! grep -F -q "$BREW_BIN" /etc/paths; then
+if ! grep -F -q "$HOMEBREW_PREFIX/bin" /etc/paths; then
   echo "configuring /etc/path for Homebrew"
-  echo "$BREW_BIN" | cat - /etc/paths | sudo tee /etc/paths
+  echo "$HOMEBREW_PREFIX/bin" | cat - /etc/paths | sudo tee /etc/paths
   echo
 fi
