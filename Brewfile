@@ -109,13 +109,11 @@ cask "font-source-sans-pro"
 cask "font-source-serif-pro"
 
 # Install Mac App Store Applications
-mas "1Password 7", id: 1333542190
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709
 mas "The Unarchiver", id: 425424353
