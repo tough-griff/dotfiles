@@ -8,6 +8,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "nodenv/nodenv"
 tap "teamookla/speedtest"
 
 # gnu utils
