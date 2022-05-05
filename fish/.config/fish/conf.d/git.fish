@@ -1,13 +1,10 @@
-command -sq hub && eval "$(hub alias -s fish)"
-
-set -gx GITHUB_PROTOCOL https
-
 # Provides abbralias for completions, aliases for use in `eval`
 abbralias g "git"
 abbralias ga "git add -A"
 abbralias gam "git amend"
 abbralias gb "git branch -vv"
 abbralias gba "git branch -avv"
+abbralias gbr "gh browse"
 abbralias gc "git commit -m"
 abbralias gbd "git branch -d"
 abbralias gci "git commit"
@@ -33,5 +30,5 @@ abbralias gs "git status -s"
 abbralias gsb "git show-branch"
 abbralias gsh "git show"
 abbralias gst "git status"
-abbralias gsy "git sync"
+abbralias gsy "gh repo sync"
 abbralias gu "git up"

@@ -1,7 +1,6 @@
 # Usage: `brew bundle`
 
 tap "adoptopenjdk/openjdk"
-tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -35,7 +34,6 @@ brew "git-lfs"
 brew "hr"
 brew "htop"
 brew "httpie"
-brew "hub"
 brew "imagemagick"
 brew "jq"
 brew "less"

@@ -3,6 +3,8 @@
   a = "add -A"
   b = "branch --verbose --verbose"
   ba = "branch --all --verbose --verbose"
+  br = "browse"
+  browse = "!gh browse"
   c = "commit --message"
   ci = "commit"
   co = "checkout"
@@ -28,6 +30,7 @@
   sh = "show"
   st = "status"
   sy = "sync"
+  sync = "!gh repo sync"
   u = "up"
 
   # amend your last commit
@@ -133,9 +136,6 @@
   clean = git-lfs clean -- %f
   process = git-lfs filter-process
   smudge = git-lfs smudge -- %f
-
-[hub]
-  protocol = https
 
 [include]
   path = ~/.gitconfig.personal
