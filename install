@@ -4,6 +4,10 @@ set -u
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
+if [[ -z "${USER-}" ]]; then
+  USER=$(id -un)
+fi
+
 if [[ -n "$(command -v git)" ]]; then
   echo "Ensuring repository is up to date..."
   git pull origin main
@@ -25,10 +29,6 @@ esac
 if [[ -z "$(command -v stow)" ]]; then
   echo "ERROR: Unable to locate stow, aborting installation."
   exit 1
-fi
-
-if [[ -z "${USER-}" ]]; then
-  USER=$(id -un)
 fi
 
 stow -t "$HOME" -v editorconfig
