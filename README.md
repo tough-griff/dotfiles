@@ -37,7 +37,7 @@ You can view logs for the update script at
 If at any point you wish to disable the auto-update script, run:
 
 ```sh
-launchctl unload -w "$HOME/Library/LaunchAgents/$(whoami).UpdateDotfiles.plist"
+launchctl unload -w "$HOME/Library/LaunchAgents/$USER.UpdateDotfiles.plist"
 ```
 
 ### macOS Defaults

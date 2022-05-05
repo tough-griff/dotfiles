@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -u
+
 if [[ "$(/usr/bin/uname -m)" == "arm64" ]]; then
   # On ARM macOS, this script installs to /opt/homebrew only
   HOMEBREW_PREFIX="/opt/homebrew"
@@ -8,23 +10,23 @@ else
   HOMEBREW_PREFIX="/usr/local"
 fi
 
-if [[ -z $(command -v brew) ]]; then
+if [[ ! -x "$HOMEBREW_PREFIX/bin/brew" ]]; then
   echo "Unable to locate Homebrew, installing..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+  echo
 fi
 
 if [[ -z $(command -v brew) ]]; then
-  echo "ERROR: Homebrew is still not in your PATH, aborting installation."
-  exit 1
+  echo "Temporarily adding Homebrew bin directory to PATH"
+  eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+  echo
 fi
 
 brew bundle check || brew bundle install --no-lock
 echo
 
 if ! grep -F -q "$HOMEBREW_PREFIX/bin" /etc/paths; then
-  echo "configuring /etc/path for Homebrew"
+  echo "Configuring /etc/path for Homebrew"
   echo "$HOMEBREW_PREFIX/bin" | cat - /etc/paths | sudo tee /etc/paths
   echo
 fi

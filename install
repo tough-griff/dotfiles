@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
+set -u
+
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
-if [[ -n $(command -v git) ]]; then
+if [[ -n "$(command -v git)" ]]; then
   echo "Ensuring repository is up to date..."
   git pull origin main
   echo
 fi
 
-case $(uname -s) in
+case "$(uname -s)" in
 "Darwin")
   source install-macos || exit 1
   ;;
@@ -20,21 +22,25 @@ case $(uname -s) in
   ;;
 esac
 
-if [[ -z $(command -v stow) ]]; then
+if [[ -z "$(command -v stow)" ]]; then
   echo "ERROR: Unable to locate stow, aborting installation."
   exit 1
 fi
 
+if [[ -z "${USER-}" ]]; then
+  USER=$(id -un)
+fi
+
 stow -t "$HOME" -v editorconfig
 
-FISH_PATH=$(command -v fish)
+FISH_PATH="$(command -v fish)"
 if ! grep -F -q "$FISH_PATH" /etc/shells; then
-  echo "configuring /etc/shells"
+  echo "Configuring /etc/shells"
   echo "$FISH_PATH" | sudo tee -a /etc/shells
   echo
 fi
 if [[ "$SHELL" != "$FISH_PATH" ]]; then
-  echo "configuring default shell: $FISH_PATH"
+  echo "Configuring default shell: $FISH_PATH"
   chsh -s "$FISH_PATH"
   echo
 fi
@@ -52,12 +58,12 @@ mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 touch ssh/.ssh/config.personal
 stow -t "$HOME" -v ssh
 if [[ ! -e "$HOME/.ssh/id_ed25519" ]]; then
-  echo "generating ssh key"
-  ssh-keygen -t ed25519 -a 100 -C "$(whoami)@$(hostname)"
+  echo "Generating ssh key"
+  ssh-keygen -t ed25519 -a 100 -C "$USER@$(hostname)"
 fi
 if [[ ! -e "$HOME/.ssh/id_rsa" ]]; then
-  echo "generating ssh key (rsa)"
-  ssh-keygen -t rsa -b 4096 -a 100 -C "$(whoami)@$(hostname)"
+  echo "Generating ssh key (rsa)"
+  ssh-keygen -t rsa -b 4096 -a 100 -C "$USER@$(hostname)"
 fi
 chmod 644 "$HOME/.ssh/"*.pub
 
