@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -u
 
@@ -14,7 +14,7 @@ if [[ -n "$(command -v git)" ]]; then
   echo
 fi
 
-case "$(uname -s)" in
+case "$(/usr/bin/uname -s)" in
 "Darwin")
   source install-macos || exit 1
   ;;

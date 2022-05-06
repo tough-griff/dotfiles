@@ -2,9 +2,26 @@ if not status is-login
     exit
 end
 
+if test "$(/usr/bin/uname -s)" = Darwin
+    if test "$(/usr/bin/uname -m)" = arm64
+        set -gx HOMEBREW_PREFIX /opt/homebrew
+    else
+        set -gx HOMEBREW_PREFIX /usr/local
+    end
+end
+
+if test -x "$HOMEBREW_PREFIX/bin/brew"
+    eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+    fish_add_path -P "$HOMEBREW_PREFIX/opt/grep/libexec/gnubin"
+    fish_add_path -P "$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin"
+    fish_add_path -P "$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin"
+    fish_add_path -P "$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin"
+    fish_add_path -P "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"
+end
+
 set -q __fish_initialized_me || set -U __fish_initialized_me 0
 
-if test $__fish_initialized_me -lt 1000
+if test "$__fish_initialized_me" -lt 1001
     set -Ux DOTDIR (realpath (dirname (realpath (status current-filename)))/../../../..)
     set -Ux LANG "en_US.UTF-8"
     set -Ux LC_ALL "en_US.UTF-8"
@@ -34,16 +51,7 @@ if test $__fish_initialized_me -lt 1000
     set -U fish_pager_color_prefix green
     set -U fish_pager_color_progress brblack
 
-    if command -sq brew
-        set -Ux BREW_PREFIX "$(brew --prefix)"
-        fish_add_path "$BREW_PREFIX/opt/grep/libexec/gnubin"
-        fish_add_path "$BREW_PREFIX/opt/gnu-tar/libexec/gnubin"
-        fish_add_path "$BREW_PREFIX/opt/gnu-sed/libexec/gnubin"
-        fish_add_path "$BREW_PREFIX/opt/findutils/libexec/gnubin"
-        fish_add_path "$BREW_PREFIX/opt/coreutils/libexec/gnubin"
-    end
-
-    if test ! -f ~/.config/fish/functions/fisher.fish
+    if not test -f "$HOME/.config/fish/functions/fisher.fish"
         echo "installing fisherman"
         curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
     end
@@ -51,10 +59,9 @@ if test $__fish_initialized_me -lt 1000
     fisher install jethrokuan/z
     fisher install jorgebucaran/autopair.fish
     fisher install jorgebucaran/replay.fish
-    fisher install oh-my-fish/plugin-thefuck
     fisher install tough-griff/smartdot.fish
 
     stow -d "$DOTDIR" -t "$HOME" -R fish
 end
 
-set -U __fish_initialized_me 1000
+set -U __fish_initialized_me 1001

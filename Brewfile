@@ -67,7 +67,6 @@ brew "teamookla/speedtest/speedtest"
 
 # Install Applications
 cask "1password"
-cask "1password-cli"
 cask "aerial"
 cask "alfred"
 cask "appcleaner"

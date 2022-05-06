@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -u
 
@@ -24,9 +24,3 @@ fi
 
 brew bundle check || brew bundle install --no-lock
 echo
-
-if ! grep -F -q "$HOMEBREW_PREFIX/bin" /etc/paths; then
-  echo "Configuring /etc/path for Homebrew"
-  echo "$HOMEBREW_PREFIX/bin" | cat - /etc/paths | sudo tee /etc/paths
-  echo
-fi
