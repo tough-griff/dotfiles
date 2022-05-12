@@ -14,7 +14,7 @@ if [[ -n "$(command -v git)" ]]; then
   echo
 fi
 
-case "$(/usr/bin/uname -s)" in
+case "$(uname -s)" in
 "Darwin")
   source install-macos || exit 1
   ;;

@@ -2,11 +2,11 @@ if not status is-login
     exit
 end
 
-if test "$(/usr/bin/uname -s)" = Darwin
-    if test "$(/usr/bin/uname -m)" = arm64
-        set -gx HOMEBREW_PREFIX /opt/homebrew
+if test "$(uname -s)" = "Darwin"
+    if test "$(uname -m)" = "arm64"
+        set -gx HOMEBREW_PREFIX "/opt/homebrew"
     else
-        set -gx HOMEBREW_PREFIX /usr/local
+        set -gx HOMEBREW_PREFIX "/usr/local"
     end
 end
 

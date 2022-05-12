@@ -1,6 +1,5 @@
 # Usage: `brew bundle`
 
-tap "adoptopenjdk/openjdk"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -82,12 +81,10 @@ cask "google-chrome"
 cask "gpg-suite-no-mail"
 cask "iterm2"
 cask "keyboard-cleaner"
-cask "muzzle"
 cask "ngrok"
 cask "postico"
 cask "postman"
 cask "rectangle"
-cask "rocket"
 cask "scroll-reverser"
 cask "slack"
 cask "spotify"
@@ -95,7 +92,6 @@ cask "transmission"
 cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
-cask "adoptopenjdk/openjdk/adoptopenjdk11"
 
 # Music
 # cask "kid3"

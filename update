@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 _indent() {
-  sed 's/^/  /'
+  sed "s/^/  /"
 }
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
