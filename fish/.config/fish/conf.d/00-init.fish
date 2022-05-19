@@ -1,12 +1,11 @@
-if not status is-login
-    exit
-end
+status is-login || exit
 
-if test "$(uname -s)" = "Darwin"
-    if test "$(uname -m)" = "arm64"
-        set -gx HOMEBREW_PREFIX "/opt/homebrew"
+set -Ux OS "$(uname -s)"
+if test "$OS" = Darwin
+    if test "$(uname -m)" = arm64
+        set -gx HOMEBREW_PREFIX /opt/homebrew
     else
-        set -gx HOMEBREW_PREFIX "/usr/local"
+        set -gx HOMEBREW_PREFIX /usr/local
     end
 end
 
@@ -21,10 +20,14 @@ end
 
 set -q __fish_initialized_me || set -U __fish_initialized_me 0
 
-if test "$__fish_initialized_me" -lt 1001
+if test "$__fish_initialized_me" -lt 1002
     set -Ux DOTDIR (realpath (dirname (realpath (status current-filename)))/../../../..)
     set -Ux LANG "en_US.UTF-8"
     set -Ux LC_ALL "en_US.UTF-8"
+
+    if test "$OS" = Darwin
+        set -Ux CPU_BRAND "$(sysctl -n machdep.cpu.brand_string)"
+    end
 
     set -U fish_color_autosuggestion brblack
     set -U fish_color_cancel red
@@ -64,4 +67,4 @@ if test "$__fish_initialized_me" -lt 1001
     stow -d "$DOTDIR" -t "$HOME" -R fish
 end
 
-set -U __fish_initialized_me 1001
+set -U __fish_initialized_me 1002

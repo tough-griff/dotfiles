@@ -7,6 +7,7 @@ $git_commit\
 $git_state\
 $git_status\
 $nodejs\
+$rust\
 $package\
 $cmd_duration\
 $line_break\
@@ -57,6 +58,11 @@ modified = "*"
 disabled = false
 format = "[$symbol($version)]($style) "
 detect_files = ["package.json"]
+
+[rust]
+disabled = false
+symbol = "⚙ "
+format = "[$symbol($version)]($style) "
 
 [package]
 disabled = false
