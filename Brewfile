@@ -75,7 +75,6 @@ cask "choosy"
 cask "contexts"
 cask "discord"
 cask "displaperture"
-cask "dropbox"
 cask "firefox"
 cask "google-chrome"
 cask "gpg-suite-no-mail"
@@ -88,7 +87,6 @@ cask "rectangle"
 cask "scroll-reverser"
 cask "slack"
 cask "spotify"
-cask "transmission"
 cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
@@ -106,9 +104,12 @@ cask "font-source-sans-pro"
 cask "font-source-serif-pro"
 
 # Install Mac App Store Applications
+mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
+mas "Hush", id: 1544743900
 mas "Keynote", id: 409183694
+mas "Keyword Search", id: 1558453954
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
