@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>Command</key>
 	<string>arch-x86_64/bin/zsh</string>
 	<key>Custom Color Presets</key>
@@ -1224,7 +1214,10 @@
 				<real>0.15686275064945221</real>
 			</dict>
 			<key>Tags</key>
-			<array/>
+			<array>
+				<string>fish</string>
+				<string>dark</string>
+			</array>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
@@ -2006,13 +1999,17 @@
 				<real>0.15686275064945221</real>
 			</dict>
 			<key>Tags</key>
-			<array/>
+			<array>
+				<string>fish</string>
+				<string>dark</string>
+				<string>x64</string>
+			</array>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Title Components</key>
-			<integer>14</integer>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<integer>0</integer>
 			<key>Unicode Normalization</key>
