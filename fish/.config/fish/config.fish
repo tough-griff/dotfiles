@@ -11,9 +11,18 @@ abbralias ea "edit --add"
 abbralias edf "cd $DOTDIR && edit ."
 abbralias ip ipv4
 abbralias o open
-alias tree "tree -aC --dirsfirst -I \".git|node_modules\""
+abbralias tree "tree -aC --dirsfirst"
 abbralias psa "ps aux"
 abbralias where "type -a"
+
+if command -sq exa
+    alias ls "exa -F --group-directories-first"
+    abbralias ll "ls -l"
+    abbralias la "ls -al"
+    abbralias lt "ls -l --tree"
+end
+
+command -sq bat && abbralias cat bat
 
 # clean up PATH
 set -l clean

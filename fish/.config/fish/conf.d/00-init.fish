@@ -7,15 +7,9 @@ if test "$OS" = Darwin
     else
         set -gx HOMEBREW_PREFIX /usr/local
     end
-end
 
-if test -x "$HOMEBREW_PREFIX/bin/brew"
-    eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
-    fish_add_path -P "$HOMEBREW_PREFIX/opt/grep/libexec/gnubin"
-    fish_add_path -P "$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin"
-    fish_add_path -P "$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin"
-    fish_add_path -P "$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin"
-    fish_add_path -P "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"
+    test -x "$HOMEBREW_PREFIX/bin/brew" &&
+        eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 end
 
 set -q __fish_initialized_me || set -U __fish_initialized_me 0
