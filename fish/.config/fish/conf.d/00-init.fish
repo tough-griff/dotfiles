@@ -1,8 +1,10 @@
 status is-login || exit
 
 set -Ux OS "$(uname -s)"
+set -Ux ARCH "$(uname -m)"
+
 if test "$OS" = Darwin
-    if test "$(uname -m)" = arm64
+    if test "$ARCH" = arm64
         set -gx HOMEBREW_PREFIX /opt/homebrew
     else
         set -gx HOMEBREW_PREFIX /usr/local

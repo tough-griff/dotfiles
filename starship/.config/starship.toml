@@ -11,7 +11,6 @@ $rust\
 $package\
 $cmd_duration\
 $line_break\
-$env_var\
 $jobs\
 $battery\
 $status\
@@ -74,10 +73,6 @@ style = "yellow"
 disabled = false
 format = "[$duration]($style) "
 show_notifications = false
-
-[env_var.ARCH]
-format = "[$env_value]($style) "
-style = "green"
 
 [status]
 disabled = false

@@ -69,6 +69,8 @@ chmod 644 "$HOME/.ssh/"*.pub
 
 stow -t "$HOME" -v starship
 
+stow -t "$HOME" -v zsh
+
 # create "reverse" links so we can view config directories from this repo
 ln -sf "$HOME/.aws" "$HOME/.config" "$HOME/.ssh" .
 
