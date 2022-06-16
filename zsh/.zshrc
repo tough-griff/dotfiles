@@ -11,4 +11,4 @@ fi
 
 [[ -x "$HOMEBREW_PREFIX/bin/brew" ]] && eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 
-eval "$(starship init zsh)"
+[[ -n "$(command -v starship)" ]] && eval "$(starship init zsh)"
