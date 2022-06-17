@@ -4,19 +4,16 @@ set -Ux OS "$(uname -s)"
 set -Ux ARCH "$(uname -m)"
 
 if test "$OS" = Darwin
-    if test "$ARCH" = arm64
-        set -gx HOMEBREW_PREFIX /opt/homebrew
-    else
-        set -gx HOMEBREW_PREFIX /usr/local
+    if test -x /opt/homebrew/bin/brew
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    else if test -x /usr/local/bin/brew
+        eval "$(/usr/local/bin/brew shellenv)"
     end
-
-    test -x "$HOMEBREW_PREFIX/bin/brew" &&
-        eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 end
 
 set -q __fish_initialized_me || set -U __fish_initialized_me 0
 
-if test "$__fish_initialized_me" -lt 1002
+if test "$__fish_initialized_me" -lt 1003
     set -Ux DOTDIR (realpath (dirname (realpath (status current-filename)))/../../../..)
     set -Ux LANG "en_US.UTF-8"
     set -Ux LC_ALL "en_US.UTF-8"
@@ -63,4 +60,4 @@ if test "$__fish_initialized_me" -lt 1002
     stow -d "$DOTDIR" -t "$HOME" -R fish
 end
 
-set -U __fish_initialized_me 1002
+set -U __fish_initialized_me 1003

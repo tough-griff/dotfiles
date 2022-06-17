@@ -1,6 +1,5 @@
 command -sq brew || exit
 
-# homebrew
 set -gx CFLAGS "-I$HOMEBREW_PREFIX/include"
 set -gx LDFLAGS "-L$HOMEBREW_PREFIX/lib"
 

@@ -14,7 +14,8 @@ if [[ -n "$(command -v git)" ]]; then
   echo
 fi
 
-case "$(uname -s)" in
+OS=$(uname -s)
+case "$OS" in
 "Darwin")
   source install-macos || exit 1
   ;;
@@ -55,17 +56,12 @@ stow -t "$HOME" -v node
 stow -t "$HOME" -v psql
 
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
+if [[ "$OS" == "Darwin" ]]; then
+  mkdir -p "$HOME/.1password" && ln -sf "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
+fi
+
 touch ssh/.ssh/config.personal
 stow -t "$HOME" -v ssh
-if [[ ! -e "$HOME/.ssh/id_ed25519" ]]; then
-  echo "Generating ssh key"
-  ssh-keygen -f "$HOME/.ssh/id_ed25519" -t ed25519 -a 100 -C "$USER@$(hostname)"
-fi
-if [[ ! -e "$HOME/.ssh/id_rsa" ]]; then
-  echo "Generating ssh key (rsa)"
-  ssh-keygen -f "$HOME/.ssh/id_rsa" -t rsa -b 4096 -a 100 -C "$USER@$(hostname)"
-fi
-chmod 644 "$HOME/.ssh/"*.pub
 
 stow -t "$HOME" -v starship
 

@@ -1,7 +1,7 @@
 # This file contains configs that don't warrant their own entry in conf.d
-set -gx BAT_THEME TwoDark
 set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
 set -gx FORCE_COLOR 1
+set -gx SSH_AUTH_SOCK "$HOME/.1password/agent.sock"
 
 abbralias c clear
 abbralias df "df -kh"
@@ -15,16 +15,7 @@ abbralias tree "tree -aC --dirsfirst"
 abbralias psa "ps aux"
 abbralias where "type -a"
 
-if command -sq exa
-    alias ls "exa -F --group-directories-first"
-    abbralias ll "ls -l"
-    abbralias la "ls -al"
-    abbralias lt "ls -l --tree"
-end
-
-command -sq bat && abbralias cat bat
-
-# clean up PATH
+# clean up $PATH
 set -l clean
 for path in $PATH
     if not contains -- $path $clean
