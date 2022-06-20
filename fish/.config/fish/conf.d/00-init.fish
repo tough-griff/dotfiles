@@ -1,9 +1,15 @@
 status is-login || exit
 
-set -Ux OS "$(uname -s)"
-set -Ux ARCH "$(uname -m)"
+set -gx OS "$(uname -s)"
+set -gx ARCH "$(uname -m)"
+
+set -gx DOTDIR "$(realpath $(status filename)/../../../../..)"
+set -gx LANG "en_US.UTF-8"
+set -gx LC_ALL "en_US.UTF-8"
 
 if test "$OS" = Darwin
+    set -gx CPU_BRAND "$(sysctl -n machdep.cpu.brand_string)"
+
     if test -x /opt/homebrew/bin/brew
         eval "$(/opt/homebrew/bin/brew shellenv)"
     else if test -x /usr/local/bin/brew
@@ -14,14 +20,6 @@ end
 set -q __fish_initialized_me || set -U __fish_initialized_me 0
 
 if test "$__fish_initialized_me" -lt 1003
-    set -Ux DOTDIR (realpath (dirname (realpath (status current-filename)))/../../../..)
-    set -Ux LANG "en_US.UTF-8"
-    set -Ux LC_ALL "en_US.UTF-8"
-
-    if test "$OS" = Darwin
-        set -Ux CPU_BRAND "$(sysctl -n machdep.cpu.brand_string)"
-    end
-
     set -U fish_color_autosuggestion brblack
     set -U fish_color_cancel red
     set -U fish_color_command green
