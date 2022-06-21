@@ -3,7 +3,7 @@ status is-login || exit
 set -gx OS "$(uname -s)"
 set -gx ARCH "$(uname -m)"
 
-set -gx DOTDIR "$(realpath $(status filename)/../../../../..)"
+set -gx DOTDIR "$(path resolve $(status filename)/../../../../..)"
 set -gx LANG "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
 

@@ -1,12 +1,14 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
 format = """
-$username\
-$hostname\
+($username$hostname )\
 $directory\
-$git_branch\
-$git_commit\
+($git_branch$git_commit )\
 $git_state\
 $git_status\
+$c\
 $nodejs\
+$python\
 $rust\
 $package\
 $cmd_duration\
@@ -20,28 +22,33 @@ $character\
 [username]
 disabled = false
 format = "[$user]($style)"
-style_user = "green"
 style_root = "bold green"
+style_user = "green"
 
 [hostname]
 disabled = false
-format = "[@$hostname]($style) "
-style = "green"
+format = "[@$hostname]($style)"
+style = "dimmed green"
 
 [directory]
 disabled = false
-format = "[$path]($style)[$read_only]($read_only_style) "
 style = "cyan"
 read_only = "!"
+read_only_style = "italic red"
+repo_root_style = "bold cyan"
+truncation_length = 5
 
 [git_branch]
 disabled = false
-format = "[$branch]($style) "
+format = "[$branch(:$remote_branch)]($style)"
 style = "purple"
 
 [git_commit]
 disabled = false
-style = "bold purple"
+format = "[#$hash(@$tag)]($style)"
+style = "dimmed purple"
+tag_disabled = false
+tag_symbol = ""
 
 [git_state]
 disabled = false
@@ -53,21 +60,33 @@ style = "purple"
 deleted = "-"
 modified = "*"
 
+[c]
+disabled = false
+detect_files = ["binding.gyp"]
+format = "[$name:$version ]($style)"
+style = "51"
+
 [nodejs]
 disabled = false
-format = "[$symbol($version)]($style) "
-detect_files = ["package.json"]
+format = "[node:$version ]($style)"
+style = "green"
+not_capable_style = "dimmed green"
+
+[python]
+disabled = false
+format = "[py:$pyenv_prefix($version )(\\($virtualenv\\) )]($style)"
+style = "yellow"
 
 [rust]
 disabled = false
-style = "bold yellow"
-symbol = "⚙ "
-format = "[$symbol($version)]($style) "
+format = "[rs:$version ]($style)"
+style = "red"
+symbol = "rs:"
 
 [package]
 disabled = false
-format = "[$version]($style) "
-style = "yellow"
+format = "[pkg:$version ]($style)"
+style = "208"
 
 [cmd_duration]
 disabled = false
@@ -81,3 +100,13 @@ style = "red"
 pipestatus = true
 pipestatus_separator = ""
 pipestatus_format = "[$pipestatus]($style)"
+
+[character]
+disabled = false
+format = "$symbol "
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](green)"
+vimcmd_replace_symbol = "[❮](purple)"
+vimcmd_replace_one_symbol = "[❮](purple)"
+vimcmd_visual_symbol = "[❮](yellow)"
