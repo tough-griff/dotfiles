@@ -1,7 +1,0 @@
-bash
-exa
-fish
-fd-find
-git
-stow
-thefuck
