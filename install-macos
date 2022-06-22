@@ -16,12 +16,17 @@ find_brew() {
       eval "$("$HOME/.linuxbrew/bin/brew" shellenv)"
     fi
   fi
+
+  if [[ -x "$HOMEBREW_PREFIX/bin/brew" ]]; then
+    echo "Using Homebrew at $HOMEBREW_PREFIX"
+  else
+    echo "Unable to locate Homebrew"
+  fi
 }
 
 find_brew
 
-if [[ -z $(command -v brew) ]]; then
-  echo Unable to locate Homebrew, installing...
+if [[ ! -x "$HOMEBREW_PREFIX/bin/brew" ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo
 
