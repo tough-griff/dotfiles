@@ -1,9 +1,6 @@
 # Usage: `brew bundle`
 
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "nodenv/nodenv"
 
@@ -51,6 +48,9 @@ brew "nodenv/nodenv/nodenv-each"
 
 # macOS specifics
 if /darwin/ =~ RUBY_PLATFORM
+  tap "homebrew/cask"
+  tap "homebrew/cask-fonts"
+  tap "homebrew/cask-versions"
   tap "homebrew/services"
   tap "teamookla/speedtest"
 
