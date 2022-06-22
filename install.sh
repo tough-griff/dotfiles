@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -u
-
 find_brew() {
   if [[ $(uname -s) == Darwin ]]; then
     if [[ -x /opt/homebrew/bin/brew ]]; then
@@ -17,7 +15,7 @@ find_brew() {
     fi
   fi
 
-  if [[ -x "$HOMEBREW_PREFIX/bin/brew" ]]; then
+  if [[ -n "$HOMEBREW_PREFIX" && -x "$HOMEBREW_PREFIX/bin/brew" ]]; then
     echo "Using Homebrew at $HOMEBREW_PREFIX"
     return 0
   else
@@ -55,16 +53,18 @@ fi
 stow -t "$HOME" -v editorconfig
 
 # fish
-FISH_PATH="$(command -v fish)"
-if ! grep -F -q "$FISH_PATH" /etc/shells; then
-  echo "Configuring /etc/shells"
-  echo "$FISH_PATH" | sudo tee -a /etc/shells
-  echo
-fi
-if [[ "$SHELL" != "$FISH_PATH" ]]; then
-  echo "Configuring default shell: $FISH_PATH"
-  chsh -s "$FISH_PATH"
-  echo
+if [[ -z "$CODESPACES" ]]; then
+  FISH_PATH="$(command -v fish)"
+  if ! grep -F -q "$FISH_PATH" /etc/shells; then
+    echo "Configuring /etc/shells"
+    echo "$FISH_PATH" | sudo tee -a /etc/shells
+    echo
+  fi
+  if [[ "$SHELL" != "$FISH_PATH" ]]; then
+    echo "Configuring default shell: $FISH_PATH"
+    chsh -s "$FISH_PATH"
+    echo
+  fi
 fi
 mkdir -p "$HOME/.config/fish/completions" "$HOME/.config/fish/conf.d" "$HOME/.config/fish/functions"
 stow -t "$HOME" -v fish
@@ -84,7 +84,7 @@ stow -t "$HOME" -v psql
 
 # ssh
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
-if [[ "$OS" == "Darwin" ]]; then
+if [[ "$(uname -s)" == Darwin ]]; then
   mkdir -p "$HOME/.1password" && ln -sf "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
 fi
 touch ssh/.ssh/config.personal
