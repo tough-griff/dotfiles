@@ -5,21 +5,8 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/services"
 tap "nodenv/nodenv"
-tap "teamookla/speedtest"
 
-# gnu utils
-brew "coreutils"
-brew "diffutils"
-brew "moreutils"
-brew "findutils"
-brew "gawk"
-brew "gnu-sed"
-brew "gnu-tar"
-brew "grep"
-
-brew "awscli"
 brew "bash"
 brew "bat"
 brew "bfg"
@@ -38,7 +25,6 @@ brew "httpie"
 brew "imagemagick"
 brew "jq"
 brew "less"
-brew "mas"
 brew "node-build"
 brew "nodenv"
 brew "openssl"
@@ -51,12 +37,10 @@ brew "shfmt"
 brew "starship"
 brew "stow"
 brew "svn"
-brew "terminal-notifier"
 brew "the_silver_searcher"
 brew "thefuck"
 brew "tree"
 brew "wget"
-brew "wifi-password"
 brew "xz"
 brew "yq"
 brew "zsh"
@@ -64,56 +48,65 @@ brew "nodenv/nodenv/node-build-update-defs"
 brew "nodenv/nodenv/nodenv-aliases"
 brew "nodenv/nodenv/nodenv-default-packages"
 brew "nodenv/nodenv/nodenv-each"
-brew "teamookla/speedtest/speedtest"
 
-# Install Applications
-cask "1password"
-cask "aerial"
-cask "alfred"
-cask "appcleaner"
-cask "balenaetcher"
-cask "bartender"
-cask "choosy"
-cask "contexts"
-cask "discord"
-cask "displaperture"
-cask "firefox"
-cask "google-chrome"
-cask "gpg-suite-no-mail"
-cask "iterm2"
-cask "keyboard-cleaner"
-cask "ngrok"
-cask "postico"
-cask "postman"
-cask "rectangle"
-cask "scroll-reverser"
-cask "slack"
-cask "spotify"
-cask "visual-studio-code"
-cask "vlc"
-cask "xquartz"
+# macOS specifics
+if /darwin/ =~ RUBY_PLATFORM
+  tap "homebrew/services"
+  tap "teamookla/speedtest"
 
-# Music
-# cask "kid3"
-# cask "xld"
+  brew "mas"
+  brew "wifi-password"
+  brew "teamookla/speedtest/speedtest"
 
-# Fonts
-cask "font-fira-code"
-cask "font-fira-code-nerd-font"
-cask "font-hasklig"
-cask "font-source-code-pro"
-cask "font-source-sans-pro"
-cask "font-source-serif-pro"
+  # Install Applications
+  cask "1password"
+  cask "aerial"
+  cask "alfred"
+  cask "appcleaner"
+  cask "balenaetcher"
+  cask "bartender"
+  cask "choosy"
+  cask "contexts"
+  cask "discord"
+  cask "displaperture"
+  cask "firefox"
+  cask "google-chrome"
+  cask "gpg-suite-no-mail"
+  cask "iterm2"
+  cask "keyboard-cleaner"
+  cask "ngrok"
+  cask "postico"
+  cask "postman"
+  cask "rectangle"
+  cask "scroll-reverser"
+  cask "slack"
+  cask "spotify"
+  cask "visual-studio-code"
+  cask "vlc"
+  cask "xquartz"
 
-# Install Mac App Store Applications
-mas "1Password for Safari", id: 1569813296
-mas "AdGuard for Safari", id: 1440147259
-mas "Amphetamine", id: 937984704
-mas "Hush", id: 1544743900
-mas "Keynote", id: 409183694
-mas "Keyword Search", id: 1558453954
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Spark", id: 1176895641
-mas "Speedtest", id: 1153157709
-mas "The Unarchiver", id: 425424353
+  # Music
+  # cask "kid3"
+  # cask "xld"
+
+  # Fonts
+  cask "font-fira-code"
+  cask "font-fira-code-nerd-font"
+  cask "font-hasklig"
+  cask "font-source-code-pro"
+  cask "font-source-sans-pro"
+  cask "font-source-serif-pro"
+
+  # Install Mac App Store Applications
+  mas "1Password for Safari", id: 1569813296
+  mas "AdGuard for Safari", id: 1440147259
+  mas "Amphetamine", id: 937984704
+  mas "Hush", id: 1544743900
+  mas "Keynote", id: 409183694
+  mas "Keyword Search", id: 1558453954
+  mas "Numbers", id: 409203825
+  mas "Pages", id: 409201541
+  mas "Spark", id: 1176895641
+  mas "Speedtest", id: 1153157709
+  mas "The Unarchiver", id: 425424353
+end
