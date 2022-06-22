@@ -9,7 +9,7 @@
   <key>RunAtLoad</key>
   <false/>
   <key>Program</key>
-  <string>PWD/update</string>
+  <string>PWD/update.sh</string>
   <key>StartCalendarInterval</key>
   <dict>
     <key>Hour</key>
