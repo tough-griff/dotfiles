@@ -15,6 +15,12 @@ if test "$OS" = Darwin
     else if test -x /usr/local/bin/brew
         eval "$(/usr/local/bin/brew shellenv)"
     end
+else
+    if test -x /home/linuxbrew/.linuxbrew/bin/brew
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    else if -x "$HOME/.linuxbrew/bin/brew"
+        eval "$("$HOME/.linuxbrew/bin/brew" shellenv)"
+    end
 end
 
 set -q __fish_initialized_me || set -U __fish_initialized_me 0
