@@ -33,30 +33,33 @@ brew "xz"
 brew "yq"
 brew "zsh"
 
-# macOS and main laptop specifics
-if /darwin/ =~ RUBY_PLATFORM
-  tap "homebrew/cask"
-  tap "homebrew/cask-fonts"
-  tap "homebrew/cask-versions"
-  tap "homebrew/services"
+# don't install these in a GitHub Codespace
+unless ENV["CODESPACES"]
   tap "nodenv/nodenv"
-  tap "teamookla/speedtest"
 
-  brew "imagemagick"
-  brew "mas"
-  brew "node-build"
   brew "nodenv"
-  brew "openssl"
-  brew "p7zip"
-  brew "python"
+  brew "pyenv"
+  brew "rbenv"
   brew "readline"
-  brew "rename"
-  brew "svn"
-  brew "wifi-password"
+
   brew "nodenv/nodenv/node-build-update-defs"
   brew "nodenv/nodenv/nodenv-aliases"
   brew "nodenv/nodenv/nodenv-default-packages"
   brew "nodenv/nodenv/nodenv-each"
+end
+
+# macOS specifics
+if RUBY_PLATFORM.include?('darwin')
+  tap "homebrew/cask"
+  tap "homebrew/cask-fonts"
+  tap "homebrew/services"
+  tap "teamookla/speedtest"
+
+  brew "mas"
+  brew "p7zip"
+  brew "rename"
+  brew "svn"
+  brew "wifi-password"
   brew "teamookla/speedtest/speedtest"
 
   # Install Applications
