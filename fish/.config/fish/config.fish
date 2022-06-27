@@ -16,13 +16,13 @@ abbralias psa "ps aux"
 abbralias where "type -a"
 
 # clean up $PATH
-set -l clean
-for path in $PATH
-    if not contains -- $path $clean
-        set clean $clean $path
+set -l CLEAN_PATH
+for entry in $PATH
+    if not contains -- $entry $CLEAN_PATH
+        set CLEAN_PATH $CLEAN_PATH $entry
     end
 end
-set PATH $clean
+set PATH $CLEAN_PATH
 
 # Do this last.
 if command -sq starship

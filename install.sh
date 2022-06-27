@@ -49,10 +49,11 @@ if [[ -z "$(command -v stow)" ]]; then
   exit 1
 fi
 
-# editorconfig
-stow -t "$HOME" -v editorconfig
+# bash
+stow -v bash
 
 # fish
+mkdir -p "$HOME/.config/fish/completions" "$HOME/.config/fish/conf.d" "$HOME/.config/fish/functions"
 if [[ -z "$CODESPACES" ]]; then
   FISH_PATH="$(command -v fish)"
   if ! grep -F -q "$FISH_PATH" /etc/shells; then
@@ -66,21 +67,16 @@ if [[ -z "$CODESPACES" ]]; then
     echo
   fi
 fi
-mkdir -p "$HOME/.config/fish/completions" "$HOME/.config/fish/conf.d" "$HOME/.config/fish/functions"
-stow -t "$HOME" -v fish
+stow -v fish
 
 # git
-touch git/.gitconfig.personal
-stow -t "$HOME" -v git
-
-# login
-stow -t "$HOME" -v login
+mkdir -p "$HOME/.config/git"
+touch git/.gitconfig
+stow -v git
 
 # node
-stow -t "$HOME" -v node
-
-# psql
-stow -t "$HOME" -v psql
+mkdir -p "$HOME/.nodenv"
+stow -v node
 
 # ssh
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
@@ -88,16 +84,19 @@ if [[ "$(uname -s)" == Darwin ]]; then
   mkdir -p "$HOME/.1password" && ln -sf "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
 fi
 touch ssh/.ssh/config.personal
-stow -t "$HOME" -v ssh
+stow -v ssh
 
 # starship
-stow -t "$HOME" -v starship
+stow -v starship
 
 # zsh
-stow -t "$HOME" -v zsh
+stow -v zsh
+
+# miscellanous dotfiles
+stow -v misc
 
 # create "reverse" links so we can view config directories from this repo
-ln -sf "$HOME/.config" "$HOME/.ssh" .
+ln -sf "$HOME/.config" "$HOME/.ssh" "$HOME/.nodenv" .
 
 echo "Installation complete!"
 echo "Exit and start a new terminal session to continue..."

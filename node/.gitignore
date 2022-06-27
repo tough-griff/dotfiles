@@ -1,4 +1,1 @@
-.nodenv/
-!.nodenv/default-packages
-!.nodenv/version
 node_modules/

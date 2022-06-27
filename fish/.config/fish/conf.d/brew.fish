@@ -2,9 +2,6 @@ command -sq brew || exit
 
 set -gx HOMEBREW_NO_ENV_HINTS true
 
-set -gx CFLAGS "-I$HOMEBREW_PREFIX/include"
-set -gx LDFLAGS "-L$HOMEBREW_PREFIX/lib"
-
 abbralias brewc "brew cleanup"
 abbralias brewi "brew install"
 abbralias brewl "brew list"

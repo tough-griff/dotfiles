@@ -1,5 +1,5 @@
-/.aws
 /.config
 /.ssh
+/.nodenv
 
 *.personal

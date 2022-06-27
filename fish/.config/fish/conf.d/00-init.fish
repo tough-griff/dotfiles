@@ -25,7 +25,7 @@ end
 
 set -q __fish_initialized_me || set -U __fish_initialized_me 0
 
-if test "$__fish_initialized_me" -lt 1003
+if test "$__fish_initialized_me" -lt 1005
     set -U fish_color_autosuggestion brblack
     set -U fish_color_cancel red
     set -U fish_color_command green
@@ -61,7 +61,7 @@ if test "$__fish_initialized_me" -lt 1003
     fisher install jorgebucaran/replay.fish
     fisher install tough-griff/smartdot.fish
 
-    stow -d "$DOTDIR" -t "$HOME" -R fish
+    stow -d "$DOTDIR" -R fish
 end
 
-set -U __fish_initialized_me 1003
+set -U __fish_initialized_me 1005

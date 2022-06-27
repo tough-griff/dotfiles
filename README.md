@@ -15,7 +15,7 @@ and configure itself. This time a new terminal session should not be necessary.
 To update this repo accordingly you can simply re-run the `install.sh` script.
 
 > NOTE: when adding any new files or functions to your fish config, you will
-> need to re-run the `stow -t "$HOME" fish` command
+> need to re-run the `stow fish` command
 
 ## macOS Specifics
 
