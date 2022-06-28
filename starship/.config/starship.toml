@@ -9,6 +9,7 @@ $git_status\
 $c\
 $nodejs\
 $python\
+$ruby\
 $rust\
 $package\
 $cmd_duration\
@@ -18,6 +19,8 @@ $battery\
 $status\
 $character\
 """
+
+command_timeout = 1000
 
 [username]
 disabled = false
@@ -76,12 +79,17 @@ not_capable_style = "dimmed green"
 disabled = false
 format = "[py:$pyenv_prefix($version )(\\($virtualenv\\) )]($style)"
 style = "yellow"
+pyenv_version_name = true
+
+[ruby]
+disabled = false
+format = "[ruby:$version ]$(style)"
+style = "red"
 
 [rust]
 disabled = false
 format = "[rs:$version ]($style)"
 style = "red"
-symbol = "rs:"
 
 [package]
 disabled = false
@@ -106,7 +114,7 @@ disabled = false
 format = "$symbol "
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
+vimcmd_symbol = "[❮](green)"
 vimcmd_replace_symbol = "[❮](purple)"
 vimcmd_replace_one_symbol = "[❮](purple)"
 vimcmd_visual_symbol = "[❮](yellow)"
