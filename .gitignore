@@ -1,5 +1,7 @@
 /.config
-/.ssh
 /.nodenv
+/.pyenv
+/.rbenv
+/.ssh
 
 *.personal

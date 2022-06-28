@@ -96,7 +96,7 @@ stow -t "$HOME" -v zsh
 stow -t "$HOME" -v misc
 
 # create "reverse" links so we can view config directories from this repo
-ln -sf "$HOME/.config" "$HOME/.ssh" "$HOME/.nodenv" .
+ln -sf "$HOME/.config" "$HOME/.nodenv" "$HOME/.rbenv" "$HOME/.pyenv" "$HOME/.ssh" .
 
 echo "Installation complete!"
 echo "Exit and start a new terminal session to continue..."
