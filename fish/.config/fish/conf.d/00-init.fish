@@ -18,7 +18,7 @@ if test "$OS" = Darwin
 else
     if test -x /home/linuxbrew/.linuxbrew/bin/brew
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    else if -x "$HOME/.linuxbrew/bin/brew"
+    else if test -x "$HOME/.linuxbrew/bin/brew"
         eval "$("$HOME/.linuxbrew/bin/brew" shellenv)"
     end
 end
