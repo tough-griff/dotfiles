@@ -50,7 +50,7 @@ if [[ -z "$(command -v stow)" ]]; then
 fi
 
 # bash
-stow -v bash
+stow -t "$HOME" -v bash
 
 # fish
 mkdir -p "$HOME/.config/fish/completions" "$HOME/.config/fish/conf.d" "$HOME/.config/fish/functions"
@@ -67,16 +67,16 @@ if [[ -z "$CODESPACES" ]]; then
     echo
   fi
 fi
-stow -v fish
+stow -t "$HOME" -v fish
 
 # git
 mkdir -p "$HOME/.config/git"
 touch git/.gitconfig
-stow -v git
+stow -t "$HOME" -v git
 
 # node
 mkdir -p "$HOME/.nodenv"
-stow -v node
+stow -t "$HOME" -v node
 
 # ssh
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
@@ -84,16 +84,16 @@ if [[ "$(uname -s)" == Darwin ]]; then
   mkdir -p "$HOME/.1password" && ln -sf "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
 fi
 touch ssh/.ssh/config.personal
-stow -v ssh
+stow -t "$HOME" -v ssh
 
 # starship
-stow -v starship
+stow -t "$HOME" -v starship
 
 # zsh
-stow -v zsh
+stow -t "$HOME" -v zsh
 
 # miscellanous dotfiles
-stow -v misc
+stow -t "$HOME" -v misc
 
 # create "reverse" links so we can view config directories from this repo
 ln -sf "$HOME/.config" "$HOME/.ssh" "$HOME/.nodenv" .

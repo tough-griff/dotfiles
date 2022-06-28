@@ -19,7 +19,7 @@ sed -e "s|USER|$USER|g" -e "s|PWD|$PWD|g" autoupdate/Library/LaunchAgents/sample
 touch "$HOME/Library/Logs/$USER.UpdateDotfiles.log"
 
 mkdir -p "$HOME/Library/LaunchAgents"
-stow -v autoupdate
+stow -t "$HOME" -v autoupdate
 
 launchctl list "$USER.UpdateDotfiles" >/dev/null 2>&1 && launchctl unload -w "$HOME/Library/LaunchAgents/$USER.UpdateDotfiles.plist"
 launchctl load -w "$HOME/Library/LaunchAgents/$USER.UpdateDotfiles.plist"
