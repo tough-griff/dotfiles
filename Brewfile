@@ -64,6 +64,7 @@ if RUBY_PLATFORM.include?('darwin')
 
   # Install Applications
   cask "1password"
+  cask "1password-cli"
   cask "aerial"
   cask "alfred"
   cask "appcleaner"
