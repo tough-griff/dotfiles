@@ -693,10 +693,13 @@ defaults write com.apple.terminal SecureKeyboardEntry -bool true
 defaults write com.apple.Terminal ShowLineMarks -int 0
 
 # Install the One Dark theme for iTerm
-open "${HOME}/dotfiles/iterm2/One Dark.itermcolors"
+open {{ joinPath .chezmoi.workingTree "iterm2/One Dark.itermcolors" | quote }}
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+# Set config location to chezmoi
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string {{ joinPath .chezmoi.workingTree "iterm2" | quote }}
 
 ###############################################################################
 # Time Machine                                                                #
