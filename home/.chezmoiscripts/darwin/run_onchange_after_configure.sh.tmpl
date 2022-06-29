@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
 
 # ~/.macos — https://mths.be/macos
 
@@ -16,11 +17,13 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+{{- if .personal }}
 # Set computer name (as done via System Preferences → Sharing)
-# sudo scutil --set ComputerName "hermes"
-# sudo scutil --set HostName "hermes"
-# sudo scutil --set LocalHostName "hermes"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "hermes"
+sudo scutil --set ComputerName "hermes"
+sudo scutil --set HostName "hermes"
+sudo scutil --set LocalHostName "hermes"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "hermes"
+{{ end }}
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -885,3 +888,4 @@ for app in "Activity Monitor" \
 	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+{{ end -}}

@@ -1,4 +1,4 @@
-command -sq brew || exit
+{{ template "homebrew" . }}
 
 set -gx HOMEBREW_NO_ENV_HINTS true
 

@@ -1,4 +1,5 @@
 Host *
   IdentityAgent ~/.1password/agent.sock
 
-Include ~/.ssh/config.personal
+Host persephone 192.168.1.10
+  User pi

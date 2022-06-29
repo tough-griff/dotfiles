@@ -1,16 +1,18 @@
 # This file contains configs that don't warrant their own entry in conf.d
-set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
 set -gx FORCE_COLOR 1
+set -gx LANG "en_US.UTF-8"
+set -gx LC_ALL "en_US.UTF-8"
+set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
+set -gx PATH "$HOME/bin" $PATH
 set -gx SSH_AUTH_SOCK "$HOME/.1password/agent.sock"
 
-set -gx PATH "$HOME/bin" $PATH
-
 abbralias c clear
+abbralias cdf "cd {{ .chezmoi.workingTree }}"
 abbralias df "df -kh"
 abbralias du "du -khd1"
 abbralias e edit
 abbralias ea "edit --add"
-abbralias edf "cd $DOTDIR && edit ."
+abbralias edf "cd {{ .chezmoi.workingTree }} && edit ."
 abbralias ip ipv4
 abbralias o open
 abbralias tree "tree -aC --dirsfirst"
@@ -26,7 +28,6 @@ for entry in $PATH
 end
 set PATH $CLEAN_PATH
 
-# Do this last.
 if command -sq starship
     starship init fish | source
 end

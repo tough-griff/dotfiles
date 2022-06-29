@@ -1,0 +1,3 @@
+{{- if .homebrew -}}
+eval "$({{ .homebrew }} shellenv)"
+{{- end -}}

@@ -1,0 +1,18 @@
+{{- if not .ephemeral -}}
+#!/bin/bash
+
+{{ template "homebrew" . }}
+
+FISH_PATH="$(command -v fish)"
+if ! grep -F -q "$FISH_PATH" /etc/shells; then
+  echo "Configuring /etc/shells"
+  echo "$FISH_PATH" | sudo tee -a /etc/shells
+  echo
+fi
+
+if [[ "$SHELL" != "$FISH_PATH" ]]; then
+  echo "Configuring default shell: $FISH_PATH"
+  chsh -s "$FISH_PATH"
+  echo
+fi
+{{ end -}}

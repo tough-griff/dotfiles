@@ -1,0 +1,15 @@
+{{- if (and (not .ephemeral) (not .headless)) }}
+{{-   $fontDir := "" -}}
+{{-   if eq .chezmoi.os "darwin" -}}
+{{-     $fontDir = "Library/Fonts" -}}
+{{-   else if eq .chezmoi.os "linux" -}}
+{{-     $fontDir = ".local/share/fonts" -}}
+{{-   end -}}
+{{ $fontDir }}:
+  type: archive
+  url: https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip
+  include:
+    - ttf/*
+  stripComponents: 1
+  refreshPeriod: "168h"
+{{- end }}
