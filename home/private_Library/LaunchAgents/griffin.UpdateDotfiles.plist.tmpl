@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>USER.UpdateDotfiles</string>
+  <string>{{ .chezmoi.username }}.UpdateDotfiles</string>
   <key>KeepAlive</key>
   <false/>
   <key>RunAtLoad</key>
   <false/>
   <key>Program</key>
-  <string>PWD/update.sh</string>
+  <string>{{ .chezmoi.workingTree }}/update.sh</string>
   <key>StartCalendarInterval</key>
   <dict>
     <key>Hour</key>
@@ -18,8 +18,8 @@
     <integer>15</integer>
   </dict>
   <key>StandardOutPath</key>
-  <string>/Users/USER/Library/Logs/USER.UpdateDotfiles.log</string>
+  <string>{{ .chezmoi.homeDir }}/Library/Logs/{{ .chezmoi.username }}.UpdateDotfiles.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/USER/Library/Logs/USER.UpdateDotfiles.log</string>
+  <string>{{ .chezmoi.homeDir }}/Library/Logs/{{ .chezmoi.username }}.UpdateDotfiles.log</string>
 </dict>
 </plist>

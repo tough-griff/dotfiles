@@ -60,8 +60,6 @@ if test "$__fish_initialized_me" -lt 1006
     fisher install jorgebucaran/autopair.fish
     fisher install jorgebucaran/replay.fish
     fisher install tough-griff/smartdot.fish
-
-    stow -t "$HOME" -d "$DOTDIR" -R fish
 end
 
 set -U __fish_initialized_me 1006
