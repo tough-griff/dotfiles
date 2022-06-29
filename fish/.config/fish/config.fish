@@ -3,6 +3,8 @@ set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
 set -gx FORCE_COLOR 1
 set -gx SSH_AUTH_SOCK "$HOME/.1password/agent.sock"
 
+set -gx PATH "$HOME/bin" $PATH
+
 abbralias c clear
 abbralias df "df -kh"
 abbralias du "du -khd1"
