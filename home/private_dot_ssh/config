@@ -1,5 +1,0 @@
-Host *
-  IdentityAgent ~/.1password/agent.sock
-
-Host persephone 192.168.1.10
-  User pi

@@ -1,0 +1,18 @@
+Host *
+{{- if stat (joinPath .chezmoi.homeDir ".1password/agent.sock") }}
+  IdentityAgent ~/.1password/agent.sock
+{{- else }}
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_rsa
+{{   if eq .chezmoi.os "darwin" }}
+  AddKeysToAgent yes
+  UseKeychain yes
+{{-   end }}
+{{- end }}
+
+Host github.com
+  User git
+
+Host persephone 192.168.1.10
+  User pi
