@@ -1,8 +1,6 @@
 {{- if .homebrew -}}
 #!/bin/bash
 
-set -eufo pipefail
-
 {{ template "homebrew" . }}
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
