@@ -1,5 +1,5 @@
 #!/bin/bash
-{{- if (or (eq .chezmoi.os "darwin") (and (eq .chezmoi.os "linux") (not eq .chezmoi.arch "arm"))) }}
+{{- if (or (eq .chezmoi.os "darwin") (and (eq .chezmoi.os "linux") (not (eq .chezmoi.arch "arm")))) }}
 
 {{ template "homebrew" . }}
 
