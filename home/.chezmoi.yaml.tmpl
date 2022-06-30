@@ -1,7 +1,6 @@
 {{- $ephemeral := false -}}
 {{- $headless := false -}}
-{{- $homebrew := "" -}}
-{{- $personal := false -}}
+{{- $hostname := .chezmoi.hostname -}}
 
 {{/* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
 {{- if (or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode")) -}}
@@ -9,38 +8,23 @@
 {{-   $headless = true -}}
 {{- end -}}
 
+{{/* determine or set hostname */}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $hostname = output "scutil" "--get" "ComputerName" | trim -}}
+{{- end -}}
+{{- if hasKey . "hostname" -}}
+{{-   $hostname = .hostname -}}
+{{- else if not $ephemeral -}}
+{{-   $hostname := promptString "hostname" $hostname -}}
+{{- end -}}
+
 {{- if not $ephemeral -}}
-{{-   if eq .chezmoi.hostname "persephone" -}}
+{{-   if eq $hostname "persephone" -}}
 {{-     $headless = true -}}
 {{-   end -}}
-{{- end -}}
-
-{{/* determine if homebrew is installed */}}
-{{- $homebrew := "" -}}
-{{- if eq .chezmoi.os "darwin" -}}
-{{-   if stat "/opt/homebrew/bin/brew" -}}
-{{-     $homebrew = "/opt/homebrew/bin/brew" -}}
-{{-   else if stat "/usr/local/bin/brew" -}}
-{{-     $homebrew = "/usr/local/bin/brew" -}}
-{{-   end -}}
-{{- else if eq .chezmoi.os "linux" -}}
-{{-   if stat "/home/linuxbrew/.linuxbrew/bin/brew" -}}
-{{-     $homebrew = "/home/linuxbrew/.linuxbrew/bin/brew" -}}
-{{-   else if stat "$HOME/.linuxbrew/bin/brew" -}}
-{{-     $homebrew = "$HOME/.linuxbrew/bin/brew" -}}
-{{-   end -}}
-{{- end -}}
-
-{{/* are we on a personal machine? */}}
-{{- $personal := false -}}
-{{- if hasKey . "personal" -}}
-{{-   $personal = .personal -}}
-{{- else -}}
-{{-   $personal := promptBool "personal" -}}
 {{- end -}}
 
 data:
   ephemeral: {{ $ephemeral }}
   headless: {{ $headless }}
-  homebrew: {{ $homebrew | quote }}
-  personal: {{ $personal }}
+  hostname: {{ $hostname | quote }}
