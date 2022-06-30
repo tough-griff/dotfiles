@@ -35,6 +35,14 @@ fisher install tough-griff/smartdot.fish
 
 # setup completions
 mkdir -p "$HOME/.config/fish/completions"
-command -sq chezmoi && chezmoi completion fish >"$HOME/.config/fish/completions/chezmoi.fish"
-command -sq op && op completion fish >"$HOME/.config/fish/completions/op.fish"
-command -sq rustup && rustup completions fish >"$HOME/.config/fish/completions/rustup.fish"
+if command -sq chezmoi
+    chezmoi completion fish >"$HOME/.config/fish/completions/chezmoi.fish"
+end
+
+if command -sq op
+    op completion fish >"$HOME/.config/fish/completions/op.fish"
+end
+
+if command -sq rustup
+    rustup completions fish >"$HOME/.config/fish/completions/rustup.fish"
+end
