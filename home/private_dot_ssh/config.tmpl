@@ -14,5 +14,7 @@ Host *
 Host github.com
   User git
 
+{{ if not .ephemeral -}}
 Host persephone 192.168.1.10
   User pi
+{{ end -}}

@@ -1,8 +1,10 @@
 [user]
   name = "Griffin Yourick"
   email = "gryphon92@gmail.com"
+{{- if not .ephemeral }}
   useConfigOnly = true
   signingKey = {{ (onepasswordItemFields "crpxekjwtzednals732siqfbxm" "" "my.1password.com").keyId.value }}
+{{- end }}
 
 [alias]
   # commonly used git functions
