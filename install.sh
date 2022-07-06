@@ -17,4 +17,4 @@ else
   chezmoi=chezmoi
 fi
 
-$chezmoi init --apply --ssh tough-griff
+exec $chezmoi init --apply --source="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
