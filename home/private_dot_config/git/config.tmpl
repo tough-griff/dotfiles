@@ -7,10 +7,13 @@
 {{- end }}
 
 [alias]
-  # commonly used git functions
   a = "add -A"
+  am = "amend"
+  amend = "commit --amend --no-edit" # amend your last commit
   b = "branch --verbose --verbose"
   ba = "branch --all --verbose --verbose"
+  bd = "branch -d"
+  bD = "branch -D"
   br = "browse"
   browse = "!gh browse"
   c = "commit --message"
@@ -24,6 +27,7 @@
   fa = "fetch --all --verbose"
   ha = "hash"
   hac = "!git hash | pbcopy"
+  hash = "!git rev-parse --short HEAD | tr -d '\n'" # print the most recent commit's hash
   l = "log"
   lb = "log --graph --branches"
   p = "push"
@@ -40,18 +44,9 @@
   sy = "sync"
   sync = "!gh repo sync"
   u = "up"
-
-  # amend your last commit
-  amend = "commit --amend --no-edit"
-
-  # print the most recent commit's hash
-  hash = "!git rev-parse --short HEAD | tr -d '\n'"
-
-  # go back before last commit
-  uncommit = "reset --soft HEAD^"
-
-  # this is basically what `git-up` did
-  up = "pull --rebase --autostash"
+  up = "pull --rebase --autostash" # this is basically what `git-up` did
+  uc = "uncommit"
+  uncommit = "reset --soft HEAD^" # go back before last commit
 
 [branch]
   autoSetupRebase = always
