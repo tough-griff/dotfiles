@@ -6,6 +6,9 @@
   signingKey = {{ (onepasswordItemFields "crpxekjwtzednals732siqfbxm" "" "my.1password.com").keyId.value }}
 {{- end }}
 
+[add.interactive]
+  useBuiltin = false
+
 [alias]
   a = "add -A"
   am = "amend"
