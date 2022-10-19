@@ -1,3 +1,3 @@
 command -sq dust || exit
 
-abbralias du dust
+abbralias du "dust -r"
