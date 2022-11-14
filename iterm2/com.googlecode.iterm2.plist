@@ -367,6 +367,12 @@
 	<real>676917312.80159199</real>
 	<key>DeleteProfile_selection</key>
 	<integer>0</integer>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<true/>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000-0x30</key>
@@ -738,7 +744,7 @@
 			<key>Blur</key>
 			<false/>
 			<key>Blur Radius</key>
-			<real>23.528673537234042</real>
+			<real>25</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -2914,8 +2920,12 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.25</real>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>URLHandlersByGuid</key>
