@@ -1,3 +1,0 @@
-{{- if (and (eq .chezmoi.os "darwin") (stat (joinPath .chezmoi.homeDir "Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" ))) -}}
-{{ joinPath .chezmoi.homeDir "Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" }}
-{{- end -}}
