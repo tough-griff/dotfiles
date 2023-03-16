@@ -101,6 +101,10 @@ disabled = false
 format = "[$duration]($style) "
 show_notifications = false
 
+[battery]
+disabled = false
+format = "[$percentage]($style) "
+
 [status]
 disabled = false
 format = "[$status]($style) "
