@@ -1,5 +1,5 @@
 # Provides abbralias for completions, aliases for use in `eval`
-abbralias g "git"
+abbralias g git
 abbralias ga "git add -A"
 abbralias gam "git amend"
 abbralias gb "git branch -vv"
@@ -14,8 +14,9 @@ abbralias gcob "git checkout -b"
 abbralias gcp "git cherry-pick"
 abbralias gd "git diff"
 abbralias gdc "git diff --cached"
-abbralias gf "git fetch -v"
-abbralias gfa "git fetch --all -v"
+abbralias gf "git fetch"
+abbralias gfa "git fetch --all -Pp"
+abbralias gfv "git fetch -v"
 abbralias gha "git hash"
 abbralias ghac "git hash | pbcopy"
 abbralias gl "git log"

@@ -26,8 +26,9 @@
   cp = "cherry-pick"
   d = "diff"
   dc = "diff --cached"
-  f = "fetch --verbose"
-  fa = "fetch --all --verbose"
+  f = "fetch"
+  fa = "fetch --all --prune --prune-tags"
+  fv = "fetch --verbose"
   ha = "hash"
   hac = "!git hash | pbcopy"
   hash = "rev-parse --short HEAD" # print the most recent commit's hash
