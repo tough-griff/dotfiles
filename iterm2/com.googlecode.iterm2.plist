@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdjustWindowForFontSizeChange</key>
+	<false/>
 	<key>Command</key>
 	<string>/opt/homebrew/bin/zsh</string>
 	<key>Custom Color Presets</key>
@@ -362,7 +364,7 @@
 		</dict>
 	</dict>
 	<key>Default Arrangement Name</key>
-	<string>Default</string>
+	<string>Vertical</string>
 	<key>Default Bookmark Guid</key>
 	<string>E76C5B98-05A5-46E9-848B-A4D9611DE543</string>
 	<key>DeleteProfile_SilenceUntil</key>
@@ -474,6 +476,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>NeverWarnAboutShortLivedSessions_E76C5B98-05A5-46E9-848B-A4D9611DE543</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E76C5B98-05A5-46E9-848B-A4D9611DE543_selection</key>
@@ -2881,6 +2885,8 @@
 			<string>/Users/griffinyourick</string>
 		</dict>
 	</array>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<true/>
 	<key>OpenNoWindowsAtStartup</key>
@@ -2936,7 +2942,7 @@
 	<false/>
 	<key>Window Arrangements</key>
 	<dict>
-		<key>Default</key>
+		<key>Vertical</key>
 		<array>
 			<dict>
 				<key>Desired Columns</key>
@@ -2946,7 +2952,7 @@
 				<key>Has Toolbelt</key>
 				<false/>
 				<key>Height</key>
-				<real>2560</real>
+				<real>2535</real>
 				<key>Hide After Opening</key>
 				<false/>
 				<key>Hiding Toolbelt Should Resize Window</key>
@@ -2969,7 +2975,7 @@
 						<key>Root</key>
 						<dict>
 							<key>Splitter ID</key>
-							<string>CD094DE8-76C9-4E7F-A7BF-7BB187D81F90</string>
+							<string>CBB1468E-BFBC-4751-A2DB-C9D3F8FE523D</string>
 							<key>Subviews</key>
 							<array>
 								<dict>
@@ -3807,9 +3813,9 @@
 											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
-										<integer>114</integer>
+										<integer>113</integer>
 										<key>Session GUID</key>
-										<string>E1B2907C-5BB8-4189-8379-4C58F5B19E23</string>
+										<string>3E71BC75-1A3B-4528-A569-11C225483573</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -3831,7 +3837,7 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>2522</real>
+										<real>2497</real>
 										<key>width</key>
 										<real>1440</real>
 										<key>x</key>
@@ -3846,7 +3852,7 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>2522</real>
+								<real>2497</real>
 								<key>width</key>
 								<real>1440</real>
 								<key>x</key>
@@ -3858,11 +3864,11 @@
 							<false/>
 						</dict>
 						<key>Tab GUID</key>
-						<string>A4FEA8E7-CF51-407C-9732-653F762BDE9D</string>
+						<string>37C19D7E-2D0D-4553-BAE7-DB0C6A494A8A</string>
 					</dict>
 				</array>
 				<key>TerminalGuid</key>
-				<string>pty-5ED13085-E496-483C-A8C9-7DE777FC8CB0</string>
+				<string>pty-F436ED6A-5912-4244-82F4-8B69B6E519CA</string>
 				<key>Toolbelt</key>
 				<dict>
 					<key>Profiles</key>
