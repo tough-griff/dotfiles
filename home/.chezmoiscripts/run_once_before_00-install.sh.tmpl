@@ -11,7 +11,6 @@ fi
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
-tap "homebrew/core"
 
 # core deps
 brew "bash"
@@ -63,7 +62,6 @@ brew "nodenv/nodenv/nodenv-each"
 
 {{ if eq .chezmoi.os "darwin" -}}
 # macOS specifics
-tap "homebrew/cask"
 tap "teamookla/speedtest"
 
 brew "mas"
