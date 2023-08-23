@@ -14,12 +14,14 @@ end
 
 command -sq brew || exit
 
+set -gx HOMEBREW_AUTOREMOVE true
+set -gx HOMEBREW_BAT true
 set -gx HOMEBREW_NO_ENV_HINTS true
 
 abbralias brewc "brew cleanup"
 abbralias brewi "brew install"
 abbralias brewl "brew list"
 abbralias brews "brew search"
-abbralias brewu "brew update && brew upgrade"
+abbralias brewu "brew upgrade"
 abbralias brewx "brew uninstall"
-abbralias brewU "brew update && brew upgrade && brew cleanup"
+abbralias brewU "brew upgrade && brew cleanup"
