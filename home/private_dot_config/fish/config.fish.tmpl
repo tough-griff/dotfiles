@@ -3,7 +3,7 @@ set -gx FORCE_COLOR 1
 set -gx LANG "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
-set -gx PATH "$HOME/bin" $PATH
+set -gx PATH "$HOME/.local/bin" $PATH
 
 abbralias c clear
 abbralias cdf "cd {{ .chezmoi.workingTree }}"

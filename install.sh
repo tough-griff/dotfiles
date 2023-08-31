@@ -5,12 +5,12 @@ set -euf
 chezmoi="chezmoi"
 
 if [ ! "$(command -v chezmoi)" ]; then
-  BIN_DIR="$HOME/bin"
+  BIN_DIR="$HOME/.local/bin"
 
   if [ "$(command -v curl)" ]; then
-    sh -c "$(curl -fsSL https://git.io/chezmoi)" -- -b "$BIN_DIR"
+    sh -c "$(curl -fsSL https://get.chezmoi.io)" -- -b "$BIN_DIR"
   elif [ "$(command -v wget)" ]; then
-    sh -c "$(wget -qO- https://git.io/chezmoi)" -- -b "$BIN_DIR"
+    sh -c "$(wget -qO- https://get.chezmoi.io)" -- -b "$BIN_DIR"
   else
     echo "To install chezmoi, you must have curl or wget installed." >&2
     exit 1

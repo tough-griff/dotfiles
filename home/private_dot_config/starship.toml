@@ -76,13 +76,12 @@ style = "green"
 not_capable_style = "dimmed green"
 
 [python]
-disabled = true # temporarily disable
-format = "[py:$pyenv_prefix($version )(\\($virtualenv\\) )]($style)"
+disabled = false
+format = "[py:($virtualenv:)$version ]($style)"
 style = "yellow"
-pyenv_version_name = true
 
 [ruby]
-disabled = true # temporarily disable
+disabled = true
 format = "[ruby:$version ]$(style)"
 style = "red"
 

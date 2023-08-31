@@ -25,7 +25,7 @@ set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
 # install fisher packages
-curl -sL https://git.io/fisher | source
+curl -fsSL https://git.io/fisher | source
 fisher install jorgebucaran/fisher
 fisher install franciscolourenco/done
 fisher install jethrokuan/z
