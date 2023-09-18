@@ -1,12 +1,13 @@
 #!/bin/bash
-{{- if (or (eq .chezmoi.os "darwin") (and (eq .chezmoi.os "linux") (not (eq .chezmoi.arch "arm")))) }}
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{- if (or (eq .chezmoi.os "darwin") (and (eq .chezmoi.os "linux") (not (eq .chezmoi.arch "arm")))) }}
 
-{{ template "homebrew" . }}
+# {{ template "homebrew" . }}
 
 if [ ! "$(command -v brew)" ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-{{ template "homebrew" . }}
+# {{ includeTemplate "homebrew" . | indent 2 }}
 fi
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
@@ -46,7 +47,7 @@ brew "xz"
 brew "yq"
 brew "zsh"
 
-{{ if not .ephemeral -}}
+# {{ if not .ephemeral -}}
 tap "nodenv/nodenv"
 
 brew "dive"
@@ -58,9 +59,9 @@ brew "nodenv/nodenv/node-build-update-defs"
 brew "nodenv/nodenv/nodenv-aliases"
 brew "nodenv/nodenv/nodenv-default-packages"
 brew "nodenv/nodenv/nodenv-each"
-{{- end }}
+# {{- end }}
 
-{{ if eq .chezmoi.os "darwin" -}}
+# {{ if eq .chezmoi.os "darwin" -}}
 # macOS specifics
 tap "teamookla/speedtest"
 
@@ -106,6 +107,6 @@ mas "Keyword Search", id: 1558453954
 mas "Parcel", id: 639968404
 mas "Speedtest", id: 1153157709
 mas "The Unarchiver", id: 425424353
-{{- end }}
+# {{- end }}
 EOF
-{{- end }}
+# {{- end }}

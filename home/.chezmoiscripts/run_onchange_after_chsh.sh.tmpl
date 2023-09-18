@@ -1,7 +1,8 @@
-{{- if not .ephemeral -}}
 #!/bin/bash
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{- if not .ephemeral }}
 
-{{ template "homebrew" . }}
+# {{ template "homebrew" . }}
 
 FISH_PATH="$(command -v fish)"
 if ! grep -F -q "$FISH_PATH" /etc/shells; then
@@ -15,4 +16,4 @@ if [[ "$SHELL" != "$FISH_PATH" ]]; then
   chsh -s "$FISH_PATH"
   echo
 fi
-{{- end }}
+# {{- end }}
