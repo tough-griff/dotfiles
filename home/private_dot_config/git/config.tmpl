@@ -3,7 +3,7 @@
   email = "gryphon92@gmail.com"
 {{- if not .ephemeral }}
   useConfigOnly = true
-  signingKey = {{ (onepasswordItemFields "crpxekjwtzednals732siqfbxm" "" "my.1password.com").keyId.value }}
+  signingKey = {{ onepasswordRead "op://Personal/crpxekjwtzednals732siqfbxm/keyId" "my.1password.com" }}
 {{- end }}
 
 [add.interactive]

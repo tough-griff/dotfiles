@@ -2,7 +2,7 @@ Host *
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_ed25519
   IdentityFile ~/.ssh/id_rsa
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
   AddKeysToAgent yes
   UseKeychain yes
 {{- end }}
@@ -10,7 +10,7 @@ Host *
 Host github.com
   User git
 
-{{ if not .ephemeral -}}
+{{- if not .ephemeral }}
 Host persephone 192.168.1.10
   User pi
-{{ end -}}
+{{- end }}
