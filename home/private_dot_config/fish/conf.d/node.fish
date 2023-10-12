@@ -1,8 +1,10 @@
 abbralias npmi "npm install"
 
 alias rrepl "env NODE_REPL_MODE=strict NODE_OPTIONS=\"--experimental-repl-await\" npx rrepl"
-alias npm6 "npx npm@6"
-alias npm8 "npx npm@8"
+
+for v in (seq 6 10)
+    alias "npm$v" "npx npm@$v"
+end
 
 set -l bun_install "$HOME/.bun"
 if test -d "$bun_install"
