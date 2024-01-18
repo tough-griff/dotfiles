@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "**/git/config.tmpl": "ini",
+    "*.sh.tmpl": "shellscript",
+    "*.fish.tmpl": "fish"
+  }
+}
