@@ -4,6 +4,6 @@ function manp -w man -d "Open a specified man page in Preview"
         echo "What manual page do you want?" && return
     end
 
-    man -t "$argv" | open -f -a Preview
+    man -t "$argv" | ps2pdf - - | open -g -f -a Preview
 end
 {{- end }}
