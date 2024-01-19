@@ -92,6 +92,14 @@
   trustctime = false
   untrackedCache = true
 
+{{- $ghPath := lookPath "gh" }}
+{{ if $ghPath }}
+[credential "https://github.com"]
+	helper = !{{ $ghPath }} auth git-credential
+[credential "https://gist.github.com"]
+	helper = !{{ $ghPath }} auth git-credential
+{{- end }}
+
 [diff]
   colorMoved = default
   compactionHeuristic = true # let's give it a try!
