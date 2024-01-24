@@ -1,9 +1,15 @@
+{{- $ghPath := lookPath "gh" -}}
+{{- $gpgPath := lookPath "gpg" -}}
+{{- $lfsPath := lookPath "git-lfs" -}}
+{{- $deltaPath := lookPath "delta" -}}
 [user]
   name = "Griffin Yourick"
   email = "gryphon92@gmail.com"
 {{- if not .ephemeral }}
   useConfigOnly = true
+{{-   if $gpgPath }}
   signingKey = {{ onepasswordRead "op://Personal/crpxekjwtzednals732siqfbxm/keyId" "my.1password.com" }}
+{{-   end }}
 {{- end }}
 
 [add.interactive]
@@ -92,12 +98,11 @@
   trustctime = false
   untrackedCache = true
 
-{{- $ghPath := lookPath "gh" }}
-{{ if $ghPath }}
+{{- if $ghPath -}}
 [credential "https://github.com"]
-	helper = !{{ $ghPath }} auth git-credential
+  helper = !{{ $ghPath }} auth git-credential
 [credential "https://gist.github.com"]
-	helper = !{{ $ghPath }} auth git-credential
+  helper = !{{ $ghPath }} auth git-credential
 {{- end }}
 
 [diff]
@@ -113,14 +118,40 @@
   prune = true
   pruneTags = true
 
+{{ if $lfsPath -}}
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
+  smudge = git-lfs smudge -- %f
+{{- end }}
+
 [format]
   pretty = "%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(bold blue)<%an>%C(reset)"
+
+{{ if $gpgPath -}}
+[gpg]
+  program = {{ $gpgPath }}
+{{- end }}
 
 [init]
   defaultBranch = main
 
+{{ if $deltaPath -}}
 [interactive]
   diffFilter = delta --color-only
+
+[delta]
+  minus-style = bold red "#3f0001"
+  minus-non-emph-style = bold red "#3f0001"
+  minus-emph-style = bold red 52
+  minus-empty-line-marker-style = normal "#3f0001"
+  plus-style = bold green "#002800"
+  plus-non-emph-style = bold green "#002800"
+  plus-emph-style = bold green 22
+  plus-empty-line-marker-style  = normal "#002800"
+  syntax-theme = TwoDark
+{{- end }}
 
 [merge]
   conflictStyle = diff3
@@ -138,21 +169,3 @@
 
 [tag]
   gpgSign = true
-
-# plugins and etc
-[delta]
-  minus-style = bold red "#3f0001"
-  minus-non-emph-style = bold red "#3f0001"
-  minus-emph-style = bold red 52
-  minus-empty-line-marker-style = normal "#3f0001"
-  plus-style = bold green "#002800"
-  plus-non-emph-style = bold green "#002800"
-  plus-emph-style = bold green 22
-  plus-empty-line-marker-style  = normal "#002800"
-  syntax-theme = TwoDark
-
-[filter "lfs"]
-  required = true
-  clean = git-lfs clean -- %f
-  process = git-lfs filter-process
-  smudge = git-lfs smudge -- %f
