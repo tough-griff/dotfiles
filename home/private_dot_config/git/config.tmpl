@@ -8,7 +8,7 @@
 {{- if not .ephemeral }}
   useConfigOnly = true
 {{-   if $gpgPath }}
-  signingKey = {{ onepasswordRead "op://Personal/crpxekjwtzednals732siqfbxm/keyId" "my.1password.com" }}
+  signingKey = {{ onepasswordRead "op://Personal/crpxekjwtzednals732siqfbxm/keyId" "NEEAJNLHOFFVDJH6GZJPA3PTIQ" }}
 {{-   end }}
 {{- end }}
 
@@ -93,7 +93,7 @@
   autocrlf = input
   editor = vim
   ignoreCase = false
-{{ if $deltaPath -}}
+{{- if $deltaPath }}
   pager = delta
 {{- end }}
   precomposeUnicode = true
