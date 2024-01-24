@@ -93,7 +93,9 @@
   autocrlf = input
   editor = vim
   ignoreCase = false
+{{ if $deltaPath -}}
   pager = delta
+{{- end }}
   precomposeUnicode = true
   trustctime = false
   untrackedCache = true
