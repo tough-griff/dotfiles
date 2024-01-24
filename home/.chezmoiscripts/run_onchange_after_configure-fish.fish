@@ -1,4 +1,5 @@
 #!/usr/bin/env fish
+
 set -U fish_color_autosuggestion brblack
 set -U fish_color_cancel red
 set -U fish_color_command green

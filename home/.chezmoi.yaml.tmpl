@@ -1,25 +1,24 @@
+{{/* Defaults */}}
 {{- $ephemeral := false -}}
 {{- $headless := false -}}
 {{- $hostname := .chezmoi.hostname -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $hostname = output "scutil" "--get" "ComputerName" | trim -}}
+{{- end -}}
 
-{{/* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
+{{/* Detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
 {{- if (or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode")) -}}
 {{-   $ephemeral = true -}}
 {{-   $headless = true -}}
 {{- end -}}
 
-{{/* determine or set hostname */}}
-{{- if eq .chezmoi.os "darwin" -}}
-{{-   $hostname = output "scutil" "--get" "ComputerName" | trim -}}
-{{- end -}}
-{{- if hasKey . "hostname" -}}
-{{-   $hostname = .hostname -}}
-{{- else if not $ephemeral -}}
-{{-   $hostname := promptString "hostname" $hostname -}}
-{{- end -}}
-
 {{- if not $ephemeral -}}
-{{-   if eq $hostname "persephone" -}}
+{{-   if stdinIsATTY -}}
+{{-     $ephemeral = promptBoolOnce . "ephemeral" "ephemeral" -}}
+{{-     $headless = promptBoolOnce . "headless" "headless" -}}
+{{-     $hostname = promptStringOnce . "hostname" "hostname" $hostname -}}
+{{-   else -}}
+{{-     $ephemeral = true -}}
 {{-     $headless = true -}}
 {{-   end -}}
 {{- end -}}

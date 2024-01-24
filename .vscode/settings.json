@@ -1,4 +1,7 @@
 {
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
   "files.associations": {
     "**/git/config.tmpl": "ini",
     "*.sh.tmpl": "shellscript",

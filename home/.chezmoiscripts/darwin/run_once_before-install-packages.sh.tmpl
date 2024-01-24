@@ -1,13 +1,11 @@
 #!/bin/bash
 # chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
-# {{- if (or (eq .chezmoi.os "darwin") (and (eq .chezmoi.os "linux") (not (eq .chezmoi.arch "arm")))) }}
 
 # {{ template "homebrew" . }}
 
 if [ ! "$(command -v brew)" ]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# {{ includeTemplate "homebrew" . | indent 2 }}
+  echo "Install homebrew first! See: https://brew.sh"
+  exit
 fi
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
@@ -108,4 +106,3 @@ mas "Parcel", id: 639968404
 mas "The Unarchiver", id: 425424353
 # {{- end }}
 EOF
-# {{- end }}

@@ -1,35 +1,18 @@
-{{- if not .headless }}
+{{- if and (not .ephemeral) (not .headless) }}
 {{-   $fontDir := "" -}}
 {{-   if eq .chezmoi.os "darwin" -}}
 {{-     $fontDir = "Library/Fonts" -}}
 {{-   else if eq .chezmoi.os "linux" -}}
 {{-     $fontDir = ".local/share/fonts" -}}
+{{-   else if eq .chezmoi.os "windows" -}}
+{{-     $fontDir = "AppData/Local/Microsoft/Windows/Fonts" -}}
 {{-   end -}}
-{{-   $fontWeights := list
-        "Thin"
-        "ThinItalic"
-        "ExtraLight"
-        "ExtraLightItalic"
-        "Light"
-        "LightItalic"
-        "Regular"
-        "Italic"
-        "Medium"
-        "MediumItalic"
-        "SemiBold"
-        "SemiBoldItalic"
-        "Bold"
-        "BoldItalic"
-        "ExtraBold"
-        "ExtraBoldItalic" -}}
-{{-   range $fontWeights -}}
-"{{ $fontDir }}/JetBrainsMono-{{ . }}.ttf":
+{{-   range $url, $fonts := .fonts -}}
+{{-     range $fonts -}}
+"{{ $fontDir }}/{{ . }}":
   type: file
-  url: "https://github.com/JetBrains/JetBrainsMono/raw/master/fonts/ttf/JetBrainsMono-{{ . }}.ttf"
+  url: "{{ $url }}/raw/master/fonts/ttf/{{ . }}"
   refreshPeriod: 168h
-"{{ $fontDir }}/JetBrainsMonoNL-{{ . }}.ttf":
-  type: file
-  url: "https://github.com/JetBrains/JetBrainsMono/raw/master/fonts/ttf/JetBrainsMonoNL-{{ . }}.ttf"
-  refreshPeriod: 168h
-{{   end -}}
+{{      end -}}
+{{    end -}}
 {{- end }}

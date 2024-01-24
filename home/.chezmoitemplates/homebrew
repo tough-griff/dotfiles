@@ -1,14 +1,11 @@
-# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
-# {{- if eq .chezmoi.os "darwin" -}}
-if [ -x "/opt/homebrew/bin/brew" ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ -x "/usr/local/bin/brew" ]; then
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
-# {{- else if eq .chezmoi.os "linux" -}}
-if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-elif [ -x "$HOME/.linuxbrew/bin/brew" ]; then
-  eval "$("$HOME/.linuxbrew/bin/brew shellenv")"
-fi
-# {{- end -}}
+{{- $brew := lookPath "brew" }}
+{{- if not $brew }}
+{{-   if eq .chezmoi.os "darwin" -}}
+{{-     $brew = findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin") -}}
+{{-   else if eq .chezmoi.os "linux" -}}
+{{-     $brew = findExecutable "brew" (list "/home/linuxbrew/.linuxbrew/bin" "$HOME/.linuxbrew/bin/brew") -}}
+{{-   end -}}
+{{- end -}}
+{{- if stat $brew -}}
+eval "$({{ $brew }} shellenv)"
+{{- end -}}
