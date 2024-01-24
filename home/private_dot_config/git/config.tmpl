@@ -98,11 +98,11 @@
   trustctime = false
   untrackedCache = true
 
-{{- if $ghPath -}}
+{{ if $ghPath -}}
 [credential "https://github.com"]
-  helper = !{{ $ghPath }} auth git-credential
+  helper = !{{ $ghPath | quote }} auth git-credential
 [credential "https://gist.github.com"]
-  helper = !{{ $ghPath }} auth git-credential
+  helper = !{{ $ghPath | quote }} auth git-credential
 {{- end }}
 
 [diff]
@@ -131,7 +131,7 @@
 
 {{ if $gpgPath -}}
 [gpg]
-  program = {{ $gpgPath }}
+  program = {{ $gpgPath | quote }}
 {{- end }}
 
 [init]
