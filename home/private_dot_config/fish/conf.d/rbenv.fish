@@ -1,3 +1,3 @@
 command -sq rbenv || exit
 
-status is-interactive && rbenv init - fish | source
+status is-interactive && source (rbenv init - | psub)

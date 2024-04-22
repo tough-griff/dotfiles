@@ -1,3 +1,3 @@
 command -sq pyenv || exit
 
-status is-interactive && pyenv init - fish | source
+status is-interactive && source (pyenv init - | psub)

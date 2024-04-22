@@ -1,6 +1,6 @@
 abbralias npmi "npm install"
 
-alias rrepl "env NODE_REPL_MODE=strict NODE_OPTIONS=\"--experimental-repl-await\" npx rrepl"
+alias rrepl "env NODE_REPL_MODE=strict npx rrepl"
 
 for v in (seq 6 10)
     alias "npm$v" "npx npm@$v"
