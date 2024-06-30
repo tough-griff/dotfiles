@@ -35,15 +35,20 @@ fisher install jorgebucaran/replay.fish
 fisher install tough-griff/smartdot.fish
 
 # setup completions
-mkdir -p "$HOME/.config/fish/completions"
+set -l completions "$HOME/.config/fish/completions"
+mkdir -p "$completions"
 if command -sq chezmoi
-    chezmoi completion fish >"$HOME/.config/fish/completions/chezmoi.fish"
+    chezmoi completion fish >"$completions/chezmoi.fish"
+end
+
+if command -sq docker
+    docker completion fish >"$completions/docker.fish"
 end
 
 if command -sq op
-    op completion fish >"$HOME/.config/fish/completions/op.fish"
+    op completion fish >"$completions/op.fish"
 end
 
 if command -sq rustup
-    rustup completions fish >"$HOME/.config/fish/completions/rustup.fish"
+    rustup completions fish >"$completions/rustup.fish"
 end
