@@ -10,11 +10,11 @@ end
 set -l bun_install "$HOME/.bun"
 if test -d "$bun_install"
     set -gx BUN_INSTALL $bun_install
-    set -gx PATH "$BUN_INSTALL/bin" $PATH
+    fish_add_path -gP "$BUN_INSTALL/bin"
 end
 
 set -l deno_install "$HOME/.deno"
 if test -d "$deno_install"
     set -gx DENO_INSTALL $deno_install
-    set -gx PATH "$DENO_INSTALL/bin" $PATH
+    fish_add_path -gP "$DENO_INSTALL/bin"
 end

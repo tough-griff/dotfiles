@@ -3,7 +3,8 @@ set -gx FORCE_COLOR 1
 set -gx LANG "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
-set -gx PATH "$HOME/.local/bin" $PATH
+
+fish_add_path -gP "$HOME/.local/bin"
 
 abbralias c clear
 abbralias cdf "cd {{ .chezmoi.workingTree }}"
@@ -15,15 +16,6 @@ abbralias o open
 abbralias tree "tree -aC --dirsfirst"
 abbralias psa "ps aux"
 abbralias where "type -a"
-
-# clean up $PATH
-set -l CLEAN_PATH
-for entry in $PATH
-    if not contains -- $entry $CLEAN_PATH
-        set CLEAN_PATH $CLEAN_PATH $entry
-    end
-end
-set PATH $CLEAN_PATH
 
 if command -sq starship
     starship init fish | source

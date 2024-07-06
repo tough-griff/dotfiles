@@ -3,4 +3,4 @@ set -gx CARGO_HOME "$HOME/.cargo"
 
 test -x "$CARGO_HOME/bin/rustup" || exit
 
-set -gx PATH "$CARGO_HOME/bin" $PATH
+fish_add_path -gP "$CARGO_HOME/bin"
