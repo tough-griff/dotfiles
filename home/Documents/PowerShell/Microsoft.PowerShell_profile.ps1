@@ -8,7 +8,3 @@ Invoke-Expression (&starship init powershell)
 Import-Module "C:\Program Files\PowerToys\WinUI3Apps\..\WinGetCommandNotFound.psd1"
 
 New-Alias -Name chez -Value "chezmoi"
-
-function edit {
-    code --profile PC $args
-}
