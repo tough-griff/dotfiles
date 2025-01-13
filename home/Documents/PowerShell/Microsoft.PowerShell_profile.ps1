@@ -5,6 +5,6 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 Invoke-Expression (&starship init powershell)
 
-Import-Module "C:\Program Files\PowerToys\WinUI3Apps\..\WinGetCommandNotFound.psd1"
+Import-Module -Name Microsoft.WinGet.CommandNotFound
 
 New-Alias -Name chez -Value "chezmoi"
