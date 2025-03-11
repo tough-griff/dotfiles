@@ -7,5 +7,6 @@ Invoke-Expression (&starship init powershell)
 
 Import-Module -Name Microsoft.WinGet.CommandNotFound
 
+New-Alias -Name c -Value "clear"
 New-Alias -Name chez -Value "chezmoi"
 New-Alias -Name g -Value "git"

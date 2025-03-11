@@ -11,10 +11,8 @@
   signingKey = {{ onepasswordRead "op://Personal/crpxekjwtzednals732siqfbxm/keyId" "NEEAJNLHOFFVDJH6GZJPA3PTIQ" }}
 {{-   end }}
 {{- end }}
-
 [add.interactive]
   useBuiltin = false
-
 [alias]
   a = "add -A"
   am = "amend"
@@ -57,10 +55,8 @@
   up = "pull --rebase --autostash" # this is basically what `git-up` did
   uc = "uncommit"
   uncommit = "reset --soft HEAD^" # go back before last commit
-
 [branch]
   autoSetupRebase = always
-
 [color]
   ui = true
 [color "branch"]
@@ -85,10 +81,8 @@
   branch = green bold
   unmerged = red bold
   untracked = magenta bold
-
 [commit]
   gpgSign = true
-
 [core]
   autocrlf = input
   editor = vim
@@ -99,50 +93,40 @@
   precomposeUnicode = true
   trustctime = false
   untrackedCache = true
-
-{{ if $ghPath -}}
+{{- if $ghPath }}
 [credential "https://github.com"]
-  helper = !{{ $ghPath | quote }} auth git-credential
+  helper = !{{ $ghPath | quote | replaceAllRegex `"` `'` }} auth git-credential
 [credential "https://gist.github.com"]
-  helper = !{{ $ghPath | quote }} auth git-credential
+  helper = !{{ $ghPath | quote | replaceAllRegex `"` `'` }} auth git-credential
 {{- end }}
-
 [diff]
   colorMoved = default
   compactionHeuristic = true # let's give it a try!
   mnemonicPrefix = true
   renames = copies
-
 [diff "bin"]
   textconv = hexdump -v -C
-
 [fetch]
   prune = true
   pruneTags = true
-
-{{ if $lfsPath -}}
+{{- if $lfsPath }}
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
   process = git-lfs filter-process
   smudge = git-lfs smudge -- %f
 {{- end }}
-
 [format]
   pretty = "%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(bold blue)<%an>%C(reset)"
-
-{{ if $gpgPath -}}
+{{- if $gpgPath }}
 [gpg]
   program = {{ $gpgPath | quote }}
 {{- end }}
-
 [init]
   defaultBranch = main
-
-{{ if $deltaPath -}}
+{{- if $deltaPath }}
 [interactive]
   diffFilter = delta --color-only
-
 [delta]
   minus-style = bold red "#3f0001"
   minus-non-emph-style = bold red "#3f0001"
@@ -154,20 +138,15 @@
   plus-empty-line-marker-style  = normal "#002800"
   syntax-theme = TwoDark
 {{- end }}
-
 [merge]
   conflictStyle = diff3
-
 [pull]
   rebase = true
-
 [push]
   autoSetupRemote = true
   default = simple
   followTags = true
-
 [submodule]
   recurse = true
-
 [tag]
   gpgSign = true
