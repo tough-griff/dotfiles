@@ -1,18 +1,18 @@
 {{- if and (not .ephemeral) (not .headless) }}
-{{-   $fontDir := "" -}}
-{{-   if eq .chezmoi.os "darwin" -}}
-{{-     $fontDir = "Library/Fonts" -}}
-{{-   else if eq .chezmoi.os "linux" -}}
-{{-     $fontDir = ".local/share/fonts" -}}
-{{-   else if eq .chezmoi.os "windows" -}}
-{{-     $fontDir = "AppData/Local/Microsoft/Windows/Fonts" -}}
-{{-   end -}}
-{{-   range $url, $fonts := .fonts -}}
-{{-     range $fonts -}}
+{{-   $fontDir := "" }}
+{{-   if eq .chezmoi.os "darwin" }}
+{{-     $fontDir = "Library/Fonts" }}
+{{-   else if eq .chezmoi.os "linux" }}
+{{-     $fontDir = ".local/share/fonts" }}
+{{-   else if eq .chezmoi.os "windows" }}
+{{-     $fontDir = "AppData/Local/Microsoft/Windows/Fonts" }}
+{{-   end }}
+{{-   range $url, $fonts := .fonts }}
+{{-     range $fonts }}
 "{{ $fontDir }}/{{ . }}":
   type: file
   url: "{{ $url }}/raw/master/fonts/ttf/{{ . }}"
   refreshPeriod: 168h
-{{      end -}}
-{{    end -}}
+{{-      end }}
+{{-    end }}
 {{- end }}

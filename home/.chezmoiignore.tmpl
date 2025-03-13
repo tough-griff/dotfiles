@@ -1,18 +1,18 @@
-{{ if ne .chezmoi.os "darwin" }}
+{{ if ne .chezmoi.os "darwin" -}}
 .chezmoiscripts/darwin/**
-{{ end }}
+{{ end -}}
 
-{{ if ne .chezmoi.os "linux" }}
+{{ if ne .chezmoi.os "linux" -}}
 .chezmoiscripts/linux/**
-{{ end }}
+.hushlogin
+{{ end -}}
 
-{{ if ne .chezmoi.os "windows" }}
+{{ if ne .chezmoi.os "windows" -}}
 .chezmoiscripts/windows/**
-AppData
 Documents
-{{ else }}
-.chezmoiscripts/chsh.sh
-.chezmoiscripts/configure-fish.fish
+{{ else -}}
+.chezmoiscripts/*.sh
+.chezmoiscripts/*.fish
 .config/beets
 .config/fish
 .bashrc
@@ -20,5 +20,11 @@ Documents
 .psqlrc
 .zshenv
 .zshrc
-.hushlogin
-{{ end }}
+{{ end -}}
+
+{{ if .ephemeral -}}
+.chezmoiscripts/gpg.sh
+.chezmoiscripts/chsh.sh
+.aws/
+.ssh/
+{{ end -}}

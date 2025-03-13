@@ -1,6 +1,6 @@
 #!/bin/bash
 # chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
-# {{- if not .ephemeral }}
+set -eufo pipefail
 
 # {{ template "homebrew" . }}
 
@@ -16,4 +16,3 @@ if [[ "$SHELL" != "$FISH_PATH" ]]; then
   chsh -s "$FISH_PATH"
   echo
 fi
-# {{- end }}

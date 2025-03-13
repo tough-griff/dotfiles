@@ -1,5 +1,5 @@
-{{- $brew := lookPath "brew" }}
-{{- if not $brew }}
+{{- $brew := lookPath "brew" -}}
+{{- if not $brew -}}
 {{-   if eq .chezmoi.os "darwin" -}}
 {{-     $brew = findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin") -}}
 {{-   else if eq .chezmoi.os "linux" -}}

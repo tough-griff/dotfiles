@@ -1,5 +1,4 @@
 #!/bin/bash
-# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
 # ~/.macos — https://mths.be/macos
 
 # Close any open System Preferences panes, to prevent them from overriding
@@ -21,10 +20,10 @@ done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName                                                                        # {{ .hostname | quote }}
-sudo scutil --set HostName                                                                            # {{ .hostname | quote }}
-sudo scutil --set LocalHostName                                                                       # {{ .hostname | quote }}
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string # {{ .hostname | quote }}
+sudo scutil --set ComputerName {{ .hostname | quote }}
+sudo scutil --set HostName {{ .hostname | quote }}
+sudo scutil --set LocalHostName {{ .hostname | quote }}
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string {{ .hostname | quote }}
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
