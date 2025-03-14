@@ -25,6 +25,11 @@ set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
+set -Ux XDG_DATA_HOME "$HOME/.local/share"
+set -Ux XDG_CONFIG_HOME "$HOME/.config"
+set -Ux XDG_STATE_HOME "$HOME/.local/state"
+set -Ux XDG_CACHE_HOME "$HOME/.cache"
+
 # install fisher packages
 curl -fsSL https://git.io/fisher | source
 fisher install jorgebucaran/fisher
