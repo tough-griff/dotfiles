@@ -95,9 +95,9 @@
   untrackedCache = true
 {{- if $ghPath }}
 [credential "https://github.com"]
-  helper = !{{ $ghPath | squote }} auth git-credential
+  helper = !{{ $ghPath | quote | replace `"` `'` }} auth git-credential
 [credential "https://gist.github.com"]
-  helper = !{{ $ghPath | squote }} auth git-credential
+  helper = !{{ $ghPath | quote | replace `"` `'` }} auth git-credential
 {{- end }}
 [diff]
   colorMoved = default
