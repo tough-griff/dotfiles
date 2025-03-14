@@ -3,7 +3,11 @@ Set-PSReadlineOption -EditMode Emacs
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
+function Invoke-Starship-TransientFunction {
+  &starship module character
+}
 Invoke-Expression (&starship init powershell)
+Enable-TransientPrompt
 
 Import-Module -Name Microsoft.WinGet.CommandNotFound
 
