@@ -27,3 +27,6 @@ data:
   ephemeral: {{ $ephemeral }}
   headless: {{ $headless }}
   hostname: {{ $hostname | quote }}
+  email: "gryphon92@gmail.com"
+  onepassword:
+    account: {{ promptStringOnce . "onepassword.account" "1Password Account User ID (from `op account list`)" }}

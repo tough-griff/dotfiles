@@ -4,11 +4,11 @@
 {{- $deltaPath := lookPath "delta" -}}
 [user]
   name = "Griffin Yourick"
-  email = "gryphon92@gmail.com"
+  email = {{ .email | quote }}
 {{- if not .ephemeral }}
   useConfigOnly = true
 {{-   if $gpgPath }}
-  signingKey = {{ onepasswordRead "op://Personal/crpxekjwtzednals732siqfbxm/keyId" "NEEAJNLHOFFVDJH6GZJPA3PTIQ" }}
+  signingKey = {{ onepasswordRead "op://Personal/GPG Key/keyId" .onepassword.account }}
 {{-   end }}
 {{- end }}
 [add.interactive]
@@ -95,9 +95,9 @@
   untrackedCache = true
 {{- if $ghPath }}
 [credential "https://github.com"]
-  helper = !{{ $ghPath | quote | replaceAllRegex `"` `'` }} auth git-credential
+  helper = !{{ $ghPath | squote }} auth git-credential
 [credential "https://gist.github.com"]
-  helper = !{{ $ghPath | quote | replaceAllRegex `"` `'` }} auth git-credential
+  helper = !{{ $ghPath | squote }} auth git-credential
 {{- end }}
 [diff]
   colorMoved = default
