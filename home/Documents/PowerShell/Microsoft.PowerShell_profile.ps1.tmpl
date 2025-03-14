@@ -1,0 +1,72 @@
+Import-Module PSReadLine
+Set-PSReadlineOption -EditMode Emacs
+Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
+Import-Module -Name Microsoft.WinGet.CommandNotFound
+Import-Module -Name z
+
+if (Get-Command fnm -ErrorAction SilentlyContinue) {
+  fnm env --use-on-cd --version-file-strategy=recursive --shell powershell | Out-String | Invoke-Expression
+}
+
+function Edit {
+  $codeArgs = $args
+  if ($args.Length -eq 0 -or (-not (Test-Path $args[-1]))) {
+    $codeArgs += "."
+  }
+
+  code $codeArgs
+}
+
+New-Alias -Name c -Value "clear"
+function cdf { Set-Location { { .chezmoi.workingTree | quote } } }
+New-Alias -Name chez -Value "chezmoi"
+New-Alias -Name e -Value "Edit"
+function ea { Edit --add $args }
+function edf { Set-Location {{ .chezmoi.workingTree | quote }} && code . }
+
+function g { git $args }
+function ga { git add -A $args }
+function gam { git amend $args }
+function gb { git branch -vv $args }
+function gba { git branch -avv $args }
+function gbd { git branch -d $args }
+function gbD { git branch -D $args }
+function gbr { gh browse $args }
+function gc { git commit -m $args }
+function gci { git commit $args }
+function gco { git checkout $args }
+function gcob { git checkout -b $args }
+function gcp { git cherry-pick $args }
+function gd { git diff $args }
+function gdc { git diff --cached $args }
+function gf { git fetch $args }
+function gfa { git fetch --all -Pp $args }
+function gfv { git fetch -v $args }
+function gha { git hash $args }
+function ghac { git hash | pbcopy $args }
+function gl { git log $args }
+function glb { git log --graph --branches $args }
+function gp { git push $args }
+function gpf { git push -f $args }
+function gpl { git pull $args }
+function gpu { git push -u $args }
+function gr { git remote -v $args }
+function grb { git rebase $args }
+function grbc { git rebase --continue $args }
+function gs { git status -s $args }
+function gsb { git show-branch $args }
+function gsh { git show $args }
+function gst { git status $args }
+function gsy { gh repo sync $args }
+function gu { git up $args }
+function guc { git uncommit $args }
+
+if (Get-Command starship -ErrorAction SilentlyContinue) {
+  function Invoke-Starship-TransientFunction {
+    &starship module character
+  }
+  Invoke-Expression (&starship init powershell)
+  Enable-TransientPrompt
+}
