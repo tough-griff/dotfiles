@@ -7,7 +7,8 @@
   },
   "files.associations": {
     "**/git/config.tmpl": "ini",
+    "*.fish.tmpl": "fish",
+    "*.ps1.tmpl": "powershell",
     "*.sh.tmpl": "shellscript",
-    "*.fish.tmpl": "fish"
   }
 }
