@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eufo pipefail
-op document get qjak7e3w77zhlohdjedl3ag4vi | gpg --import
-op document get xyofootrl4b2urkh63vpsdztii | gpg --import-ownertrust
+op document get 3glsglf3o2iqrdbxzoe6hjxxnm | gpg --import
+op document get erkyqjbuzxptdvxwlkbyudkn3e | gpg --import-ownertrust

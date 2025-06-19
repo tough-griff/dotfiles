@@ -8,7 +8,7 @@
 {{- if not .ephemeral }}
   useConfigOnly = true
 {{-   if $gpgPath }}
-  signingKey = {{ onepasswordRead "op://Personal/GPG Key/keyId" .onepassword.account }}
+  signingKey = {{ onepasswordRead "op://Chezmoi/GPG Key/keyId" }}
 {{-   end }}
 {{- end }}
 [add.interactive]

@@ -14,8 +14,8 @@
 
 {{- if not $ephemeral -}}
 {{-   if stdinIsATTY -}}
-{{-     $ephemeral = promptBoolOnce . "ephemeral" "ephemeral" -}}
-{{-     $headless = promptBoolOnce . "headless" "headless" -}}
+{{-     $ephemeral = promptBoolOnce . "ephemeral" "ephemeral" $ephemeral -}}
+{{-     $headless = promptBoolOnce . "headless" "headless" $headless -}}
 {{-     $hostname = promptStringOnce . "hostname" "hostname" $hostname -}}
 {{-   else -}}
 {{-     $ephemeral = true -}}
@@ -28,5 +28,6 @@ data:
   headless: {{ $headless }}
   hostname: {{ $hostname | quote }}
   email: "gryphon92@gmail.com"
-  onepassword:
-    account: {{ promptStringOnce . "onepassword.account" "1Password Account User ID (from `op account list`)" }}
+
+onepassword:
+  mode: {{ promptStringOnce .chezmoi.config "onepassword.mode" "1password mode? (\"account\", \"connect\", \"service\")" "account" }}
