@@ -30,4 +30,4 @@ data:
   email: "gryphon92@gmail.com"
 
 onepassword:
-  mode: {{ promptStringOnce .chezmoi.config "onepassword.mode" "1password mode? (\"account\", \"connect\", \"service\")" "account" }}
+  mode: {{ promptChoice "1password mode?" (list "account" "connect" "service") }}
