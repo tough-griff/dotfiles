@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 function manp -w man -d "Open a specified man page in Preview"
     if test -z "$argv"
         echo "What manual page do you want?" && return
@@ -6,4 +6,4 @@ function manp -w man -d "Open a specified man page in Preview"
 
     man -t "$argv" | ps2pdf - - | open -g -f -a Preview
 end
-{{- end }}
+{{ end -}}

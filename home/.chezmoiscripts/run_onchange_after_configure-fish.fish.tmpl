@@ -25,6 +25,9 @@ set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix green
 set -U fish_pager_color_progress brblack
 
+{{ if eq .chezmoi.config.onepassword.mode "service" -}}
+set -Ux OP_SERVICE_ACCOUNT_TOKEN "$OP_SERVICE_ACCOUNT_TOKEN"
+{{ end -}}
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux XDG_STATE_HOME "$HOME/.local/state"
