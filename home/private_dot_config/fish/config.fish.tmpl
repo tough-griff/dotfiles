@@ -1,5 +1,6 @@
 # This file contains configs that don't warrant their own entry in conf.d
 set -gx FORCE_COLOR 1
+set -gx GPG_TTY $(tty)
 set -gx LANG "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LESS "-F -g -i -M -R -S -w -X -z-4"

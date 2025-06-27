@@ -8,4 +8,6 @@ max-cache-ttl-ssh 86400
 pinentry-program {{ lookPath "pinentry-mac" }}
 {{ else if eq .chezmoi.os "windows" -}}
 pinentry-program {{ lookPath "pinentry-basic" | quote }}
+{{ else -}}
+pinentry-program {{ lookPath "pinentry" }}
 {{ end -}}
