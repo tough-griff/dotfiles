@@ -3,7 +3,8 @@
 # 2. Run `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process`
 # 3. Run `chezmoi apply ~/.chezmoiscripts/windows/remove-apps.ps1`
 
-$Junk = "549981C3F5F10|Clipchamp|Copilot|Bing|GetHelp|NarratorScript|MicrosoftOfficeHub|MicrosoftSolitaireCollection|MicrosoftStickyNotes|OneDrive|Todos|DevHome|People|WindowsAlarms|WindowsCalculator|WindowsCamera|WindowsCommunicationsApps|WindowsFeedbackHub|WindowsMaps|YourPhone|Zune|MSTeams|QuickAssist|CrossDevice"
+# $Junk = "549981C3F5F10|Clipchamp|Copilot|Bing|NarratorScript|MicrosoftOfficeHub|MicrosoftSolitaireCollection|MicrosoftStickyNotes|OneDrive|Todos|DevHome|People|WindowsAlarms|WindowsCamera|WindowsCommunicationsApps|WindowsFeedbackHub|WindowsMaps|Zune|MSTeams|QuickAssist"
+$Junk = "Clipchamp" # Temporarily disabling the removal of most of these.
 
 Get-AppxPackage | Where-Object { $_.Name -match $Junk -and $_.NonRemovable -eq $false } | ForEach-Object {
     "Removing {0}" -f $_.Name
