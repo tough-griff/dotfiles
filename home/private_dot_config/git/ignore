@@ -1,6 +1,7 @@
 .direnv
 .envrc
 .node-version
+.claude/*.local.json
 
 # === Diff.gitignore ===
 *.patch
