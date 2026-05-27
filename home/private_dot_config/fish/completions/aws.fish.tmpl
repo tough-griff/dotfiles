@@ -1,7 +1,9 @@
-{{ if lookPath "aws_completer" -}}
-function __fish_complete_aws
-    env COMP_LINE=(commandline -pc) aws_completer | tr -d ' '
+{{- if lookPath "aws_completer" -}}
+function __aws_completer
+    set -lx COMP_SHELL fish
+    set -lx COMP_LINE (commandline -cp)
+    aws_completer | tr -d ' '
 end
 
-complete -c aws -f -a "(__fish_complete_aws)"
+complete -c aws -f -a "(__aws_completer)"
 {{ end -}}
