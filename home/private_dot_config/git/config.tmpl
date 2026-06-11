@@ -95,8 +95,10 @@
   untrackedCache = true
 {{- if $ghPath }}
 [credential "https://github.com"]
+  helper =
   helper = !{{ $ghPath | quote | replace `"` `'` }} auth git-credential
 [credential "https://gist.github.com"]
+  helper =
   helper = !{{ $ghPath | quote | replace `"` `'` }} auth git-credential
 {{- end }}
 [diff]
@@ -150,3 +152,7 @@
   recurse = true
 [tag]
   gpgSign = true
+[url "https://"]
+  insteadOf = git://
+[url "https://github.com/"]
+  insteadOf = git@github.com:
