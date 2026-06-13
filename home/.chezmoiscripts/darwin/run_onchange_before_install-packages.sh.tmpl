@@ -1,8 +1,8 @@
 #!/bin/bash
-# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+{{- $macOSVersion := index (splitList "." (output "sw_vers" "-productVersion" | trim)) 0 | atoi }}
 set -eufo pipefail
 
-# {{ template "homebrew" . }}
+{{ template "homebrew" . }}
 
 if [ ! "$(command -v brew)" ]; then
   echo "Install homebrew first! See: https://brew.sh"
@@ -19,6 +19,7 @@ brew "bfg"
 brew "bottom"
 brew "direnv"
 brew "dive"
+brew "doggo"
 brew "duf"
 brew "dust"
 brew "eza"
@@ -69,7 +70,6 @@ cask "firefox"
 cask "google-chrome"
 cask "iterm2"
 cask "keyboard-cleaner"
-cask "postico"
 cask "rectangle"
 cask "slack"
 cask "spotify"
@@ -83,10 +83,15 @@ cask "visual-studio-code"
 # Install Mac App Store Applications
 mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
-# mas "Amphetamine", id: 937984704
+mas "Amphetamine", id: 937984704
 mas "Keyword Search", id: 1558453954
-# mas "Parcel", id: 375589283
-# mas "Parcel Classic", id: 639968404 # fixme
-# mas "The Unarchiver", id: 425424353 # fixme
-# mas "Velja", id: 1607635845
+{{- if ge $macOSVersion 26 }}
+mas "Parcel", id: 375589283
+{{- else }}
+mas "Parcel Classic", id: 639968404
+{{- end }}
+mas "Velja", id: 1607635845
+{{- if not .work }}
+mas "WireGuard", id: 1451685025
+{{- end }}
 EOF
