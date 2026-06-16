@@ -1,17 +1,17 @@
 allow-loopback-pinentry
-{{ if eq .chezmoi.os "windows" -}}
+{{- if eq .chezmoi.os "windows" }}
 allow-preset-passphrase
-{{ end -}}
+{{- end }}
 default-cache-ttl 86400
 default-cache-ttl-ssh 86400
 enable-ssh-support
 max-cache-ttl 86400
 max-cache-ttl-ssh 86400
 no-allow-external-cache
-{{ if eq .chezmoi.os "darwin" -}}
+{{- if eq .chezmoi.os "darwin" }}
 pinentry-program {{ lookPath "pinentry-mac" }}
-{{ else if eq .chezmoi.os "windows" -}}
+{{- else if eq .chezmoi.os "windows" }}
 pinentry-program {{ lookPath "pinentry-basic" | quote }}
-{{ else -}}
+{{- else }}
 pinentry-program {{ lookPath "pinentry" }}
-{{ end -}}
+{{- end }}

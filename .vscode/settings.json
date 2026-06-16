@@ -1,12 +1,6 @@
 {
-  "[fish]": {
-    "editor.formatOnSave": false
-  },
   "[powershell]": {
     "editor.formatOnSave": false
-  },
-  "[yaml]": {
-    "editor.formatOnSave": true
   },
   "files.associations": {
     "**/git/config.tmpl": "ini",

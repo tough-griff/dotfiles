@@ -1,4 +1,5 @@
-{{ if eq .chezmoi.os "darwin" -}}
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{ if eq .chezmoi.os "darwin" -}}
 function set-computer-name -a host -d "Set computer name (as done via System Preferences → Sharing)"
     test -n "$host" || set host "$(hostname -s)"
 
@@ -11,4 +12,4 @@ function set-computer-name -a host -d "Set computer name (as done via System Pre
     sudo scutil --set LocalHostName "$host"
     sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$host"
 end
-{{ end -}}
+# {{- end }}

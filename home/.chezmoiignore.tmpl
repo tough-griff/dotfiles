@@ -1,17 +1,17 @@
-{{ if ne .chezmoi.os "darwin" -}}
+{{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
-{{ end -}}
+{{- end }}
 
-{{ if ne .chezmoi.os "linux" -}}
+{{- if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
 .hushlogin
-{{ end -}}
+{{- end }}
 
-{{ if ne .chezmoi.os "windows" -}}
+{{- if ne .chezmoi.os "windows" }}
 .chezmoiscripts/windows/**
 AppData
 Documents
-{{ else -}}
+{{- else }}
 .chezmoiscripts/*.sh
 .chezmoiscripts/*.fish
 .config/beets
@@ -21,12 +21,12 @@ Documents
 .psqlrc
 .zshenv
 .zshrc
-{{ end -}}
+{{- end }}
 
-{{ if .ephemeral -}}
+{{- if .ephemeral }}
 .chezmoiscripts/gpg.sh
 .chezmoiscripts/chsh.sh
 .aws
 .gnupg
 .ssh
-{{ end -}}
+{{- end }}

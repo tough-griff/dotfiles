@@ -1,4 +1,5 @@
-{{- if lookPath "aws_completer" -}}
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{- if lookPath "aws_completer" }}
 function __aws_completer
     set -lx COMP_SHELL fish
     set -lx COMP_LINE (commandline -cp)
@@ -6,4 +7,4 @@ function __aws_completer
 end
 
 complete -c aws -f -a "(__aws_completer)"
-{{ end -}}
+# {{- end }}

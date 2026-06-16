@@ -1,8 +1,9 @@
 #!/bin/bash
-{{- $macOSVersion := index (splitList "." (output "sw_vers" "-productVersion" | trim)) 0 | atoi }}
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{- $macOSVersion := index (splitList "." (output "sw_vers" "-productVersion" | trim)) 0 | atoi }}
 set -eufo pipefail
 
-{{ template "homebrew" . }}
+# {{ template "homebrew" . }}
 
 if [ ! "$(command -v brew)" ]; then
   echo "Install homebrew first! See: https://brew.sh"
@@ -71,7 +72,9 @@ cask "google-chrome"
 cask "iterm2"
 cask "keyboard-cleaner"
 cask "rectangle"
+# {{- if .work }}
 cask "slack"
+# {{- end}}
 cask "spotify"
 cask "thaw"
 cask "visual-studio-code"
@@ -85,13 +88,13 @@ mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Keyword Search", id: 1558453954
-{{- if ge $macOSVersion 26 }}
+# {{- if ge $macOSVersion 26 }}
 mas "Parcel", id: 375589283
-{{- else }}
+# {{- else }}
 mas "Parcel Classic", id: 639968404
-{{- end }}
+# {{- end }}
 mas "Velja", id: 1607635845
-{{- if not .work }}
+# {{- if not .work }}
 mas "WireGuard", id: 1451685025
-{{- end }}
+# {{- end }}
 EOF
