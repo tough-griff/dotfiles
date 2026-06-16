@@ -30,7 +30,7 @@ data:
   headless: {{ $headless }}
   hostname: {{ $hostname | quote }}
   email: "gryphon92@gmail.com"
-  work: {{ hasPrefix $hostname "GYOURICK-" }}
+  work: {{ hasPrefix "GYOURICK-" $hostname }}
   onepasswordMode: {{ $onepasswordMode | quote }}
 
 onepassword:

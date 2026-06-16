@@ -65,19 +65,20 @@ cask "alfred"
 cask "appcleaner"
 cask "bettermouse"
 cask "contexts"
-cask "discord"
 cask "displaperture"
 cask "firefox"
 cask "google-chrome"
 cask "iterm2"
 cask "keyboard-cleaner"
 cask "rectangle"
-# {{- if .work }}
-cask "slack"
-# {{- end}}
 cask "spotify"
 cask "thaw"
 cask "visual-studio-code"
+# {{- if .work }}
+cask "slack"
+# {{- else }}
+cask "discord"
+# {{- end }}
 
 # Music
 # cask "kid3"
@@ -93,8 +94,8 @@ mas "Parcel", id: 375589283
 # {{- else }}
 mas "Parcel Classic", id: 639968404
 # {{- end }}
-mas "Velja", id: 1607635845
 # {{- if not .work }}
+mas "Velja", id: 1607635845
 mas "WireGuard", id: 1451685025
 # {{- end }}
 EOF
