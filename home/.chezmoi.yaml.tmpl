@@ -32,6 +32,9 @@ data:
   email: "gryphon92@gmail.com"
   work: {{ hasPrefix "GYOURICK-" $hostname }}
   onepasswordMode: {{ $onepasswordMode | quote }}
+{{- if eq .chezmoi.os "darwin" }}
+  macOS: {{ index (output "sw_vers" "-productVersion" | trim | splitList ".") 0 | atoi }}
+{{- end }}
 
 onepassword:
   mode: {{ $onepasswordMode | quote }}
