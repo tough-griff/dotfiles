@@ -1,7 +1,9 @@
+. "$(Split-Path $PROFILE)\chezmoi.ps1"
 . "$(Split-Path $PROFILE)\fnm.ps1"
 . "$(Split-Path $PROFILE)\git.ps1"
 . "$(Split-Path $PROFILE)\PSReadLine.ps1"
-Import-Module -Name Microsoft.WinGet.CommandNotFound
+. "$(Split-Path $PROFILE)\uv.ps1"
+. "$(Split-Path $PROFILE)\winget.ps1"
 
 function Edit {
   $codeArgs = $args
@@ -21,6 +23,7 @@ function Edit-Add { Edit --add $args }
 New-Alias -Name ea -Value "Edit-Add"
 function Edit-Dotfiles { Set-Location {{ .chezmoi.workingTree | quote }} && code . }
 New-Alias -Name edf -Value "Edit-Dotfiles"
+New-Alias -name Which -Value "Get-Command"
 
 if (Get-Command starship -ErrorAction SilentlyContinue) {
   function Invoke-Starship-TransientFunction {

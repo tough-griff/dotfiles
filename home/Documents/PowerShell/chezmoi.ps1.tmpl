@@ -1,0 +1,4 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{- completion "powershell" -}}
+
+Register-ArgumentCompleter -CommandName 'chez' -ScriptBlock ${__chezmoiCompleterBlock}
