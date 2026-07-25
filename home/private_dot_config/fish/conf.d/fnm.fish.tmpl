@@ -1,0 +1,14 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{ if eq .chezmoi.os "darwin" -}}
+command -sq fnm || exit
+
+fnm env --use-on-cd --version-file-strategy recursive --shell fish | source
+# {{ else -}}
+if test -d "$XDG_DATA_HOME/fnm"
+    set -gx FNM_DIR "$XDG_DATA_HOME/fnm"
+    set -gx FNM_VERSION_FILE_STRATEGY "recursive"
+    command -sq fnm || fish_add_path "$FNM_DIR"
+
+    fnm env --use-on-cd --shell fish | source
+end
+# {{ end -}}
