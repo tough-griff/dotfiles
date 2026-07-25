@@ -1,0 +1,176 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "1",
+        "type": "model",
+        "color": "blue",
+        "rawValue": true
+      },
+      {
+        "id": "f2597dee-6825-4f14-9b94-f98023992bfc",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "b23de991-0ba3-4443-b81f-35837735ae38",
+        "type": "context-bar",
+        "color": "gradient:mind",
+        "rawValue": true,
+        "metadata": {
+          "display": "slider"
+        }
+      },
+      {
+        "id": "30b31c4d-9cca-4f8a-a77f-86f46cf18b71",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "fef7c226-6074-4eda-b067-73e4691ef976",
+        "type": "session-clock",
+        "color": "",
+        "bold": false,
+        "dim": true,
+        "rawValue": true
+      },
+      {
+        "id": "14bc0aa6-6bd2-462c-8dd0-1811cf5ffe2c",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "20dca7cd-89d8-4ca9-ac04-9f2ff0332860",
+        "type": "session-cost",
+        "color": "yellow",
+        "rawValue": true
+      },
+      {
+        "id": "c10c8286-2bbd-4c6d-98ac-3bfc115a5592",
+        "type": "flex-separator",
+        "color": ""
+      },
+      {
+        "id": "b125133a-d2da-4254-955e-ad9bfa5a3487",
+        "type": "session-usage",
+        "color": "brightBlue",
+        "rawValue": false,
+        "metadata": {
+          "display": "time",
+          "invert": "false"
+        }
+      },
+      {
+        "id": "b81a9287-a952-4962-8bac-fe1938eadf24",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "6fa9558a-8a03-442c-bfef-dfb5854cba65",
+        "type": "reset-timer",
+        "color": "brightBlue",
+        "dim": true,
+        "rawValue": true,
+        "metadata": {
+          "display": "time",
+          "compact": "true"
+        }
+      },
+      {
+        "id": "d7a551fb-4953-44bd-8448-ecaecacf9668",
+        "type": "separator",
+        "character": "|"
+      },
+      {
+        "id": "a73d2332-9fbb-48f9-abc5-02d4561157ca",
+        "type": "weekly-usage",
+        "rawValue": false,
+        "metadata": {
+          "display": "time",
+          "invert": "false"
+        }
+      },
+      {
+        "id": "1df9ff5e-64a3-41ad-8f97-d45367ba35ee",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "1a69f9af-0275-40f5-8521-af07f0e8940b",
+        "type": "weekly-reset-timer",
+        "color": "brightBlue",
+        "dim": true,
+        "rawValue": true,
+        "metadata": {
+          "display": "time"
+        }
+      }
+    ],
+    [
+      {
+        "id": "1d8711c5-1bec-46d8-aae9-418d1ddca51c",
+        "type": "tokens-input",
+        "color": "green"
+      },
+      {
+        "id": "eff15cb2-2f61-429a-88d7-67adb047936f",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "28256e6c-46e1-4232-a81f-fc96d8e62b86",
+        "type": "tokens-output",
+        "color": "green",
+        "dim": true
+      },
+      {
+        "id": "b9ded6c1-a807-4ce5-a12c-52d9c213ef31",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "7a13765a-e8e2-4f42-aab1-a1d15a33b776",
+        "type": "tokens-cached",
+        "color": "cyan"
+      },
+      {
+        "id": "9569b4b9-dc8b-4f3c-ba1c-c54267161630",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "54cb6389-6b9f-497c-b8b9-fd0e473aba9c",
+        "type": "tokens-total",
+        "color": "cyan",
+        "dim": true
+      }
+    ]
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "defaultPadding": "",
+  "defaultPaddingSide": "both",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [],
+    "autoAlign": false,
+    "continueThemeAcrossLines": false
+  },
+  "installation": {
+    "method": "pinned",
+    "installedVersion": "2.2.26"
+  }
+}
