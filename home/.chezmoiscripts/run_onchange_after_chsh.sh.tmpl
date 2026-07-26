@@ -13,6 +13,10 @@ fi
 
 if [[ "$SHELL" != "$FISH_PATH" ]]; then
   echo "Configuring default shell: $FISH_PATH"
+  # {{ if eq .chezmoi.os "darwin" -}}
   chsh -s "$FISH_PATH"
+  # {{ else -}}
+  sudo usermod -s "$FISH_PATH" "$USER"
+  # {{ end -}}
   echo
 fi
