@@ -1,4 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
 # {{- if lookPath "docker" -}}
-# {{- output "docker" "completion" "fish" -}}
+# {{- $dockerCompletion := output "sh" "-c" "docker completion fish 2>/dev/null || true" -}}
+# {{- if $dockerCompletion -}}
+# {{- $dockerCompletion -}}
+# {{- end -}}
 # {{- end -}}

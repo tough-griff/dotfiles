@@ -1,0 +1,13 @@
+#!/bin/bash
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+set -eufo pipefail
+
+# {{ if lookPath "apt-get" -}}
+sudo apt-get install -y \
+  bash \
+  fish \
+  gh \
+  git \
+  gpg \
+  starship
+# {{ end -}}

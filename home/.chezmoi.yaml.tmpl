@@ -38,3 +38,8 @@ data:
 
 onepassword:
   mode: {{ $onepasswordMode | quote }}
+
+hooks:
+  read-source-state:
+    pre:
+      command: .local/share/chezmoi/.install-password-manager.sh

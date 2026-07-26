@@ -2,6 +2,7 @@
 
 format = """
 ($username$hostname )\
+${env_var.WSL_DISTRO}\
 $directory\
 ($git_branch$git_commit )\
 $git_state\
@@ -111,6 +112,11 @@ style = "red"
 pipestatus = true
 pipestatus_separator = ""
 pipestatus_format = "[$pipestatus]($style)"
+
+[env_var.WSL_DISTRO]
+variable = "WSL_DISTRO_NAME"
+format = "[WSL:$env_value]($style) "
+style = "bold blue"
 
 [character]
 disabled = false
