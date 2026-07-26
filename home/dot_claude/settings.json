@@ -14,9 +14,9 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "ccstatusline",
+    "command": "bunx -y ccstatusline@latest",
     "padding": 0,
-    "refreshInterval": 1
+    "refreshInterval": 10
   },
   "autoUpdatesChannel": "latest",
   "theme": "auto",

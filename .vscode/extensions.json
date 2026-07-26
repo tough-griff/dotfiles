@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "bmalehorn.vscode-fish",
+        "ms-vscode.powershell",
+        "tamasfe.even-better-toml"
+    ]
+}
