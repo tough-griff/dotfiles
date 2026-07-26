@@ -1,9 +1,16 @@
 {
+  "permissions": {
+    "defaultMode": "default"
+  },
   "hooks": {
     "PreToolUse": [
       {
         "matcher": "Bash",
         "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/enforce-builtin-tools.sh"
+          },
           {
             "type": "command",
             "command": "rtk hook claude"
@@ -19,6 +26,8 @@
     "refreshInterval": 10
   },
   "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
   "theme": "auto",
-  "tui": "fullscreen"
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
