@@ -24,6 +24,7 @@ New-Alias -Name ea -Value "Edit-Add"
 function Edit-Dotfiles { Set-Location {{ .chezmoi.workingTree | quote }} && code . }
 New-Alias -Name edf -Value "Edit-Dotfiles"
 New-Alias -name Which -Value "Get-Command"
+function splitpath { $env:PATH -split [IO.Path]::PathSeparator }
 
 if (Get-Command starship -ErrorAction SilentlyContinue) {
   function Invoke-Starship-TransientFunction {
