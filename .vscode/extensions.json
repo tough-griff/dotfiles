@@ -1,7 +1,9 @@
 {
-    "recommendations": [
-        "bmalehorn.vscode-fish",
-        "ms-vscode.powershell",
-        "tamasfe.even-better-toml"
-    ]
+  "recommendations": [
+    "bmalehorn.vscode-fish",
+    "ms-vscode.powershell",
+    "tamasfe.even-better-toml",
+    "timonwong.shellcheck",
+    "foxundermoon.shell-format"
+  ]
 }
