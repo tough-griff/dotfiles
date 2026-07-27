@@ -23,7 +23,7 @@
     "type": "command",
     "command": "bunx -y ccstatusline@latest",
     "padding": 0,
-    "refreshInterval": 10
+    "refreshInterval": 1
   },
   "autoUpdatesChannel": "latest",
   "tui": "fullscreen",
