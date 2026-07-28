@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{ if eq .chezmoi.os "linux" -}}
+if status is-interactive; and command -sq keychain
+    keychain --quiet --eval | source
+end
+# {{ end -}}
