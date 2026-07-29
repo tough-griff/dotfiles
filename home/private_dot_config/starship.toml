@@ -26,7 +26,7 @@ command_timeout = 1000
 [username]
 disabled = false
 format = "[$user]($style)"
-style_root = "bold green"
+style_root = "bold yellow"
 style_user = "green"
 
 [hostname]
