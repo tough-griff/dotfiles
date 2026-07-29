@@ -4,6 +4,7 @@
 . "$(Split-Path $PROFILE)\PSReadLine.ps1"
 . "$(Split-Path $PROFILE)\uv.ps1"
 . "$(Split-Path $PROFILE)\winget.ps1"
+Import-Module "gsudoModule.psd1"
 
 function Edit {
   $codeArgs = $args

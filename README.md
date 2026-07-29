@@ -15,3 +15,11 @@ or if chezmoi is already present:
 export OP_SERVICE_ACCOUNT_TOKEN="XXXXXYYYYYZZZZZ"
 chezmoi init --apply tough-griff
 ```
+
+## Notes
+
+### Create symlinks
+
+For chezmoi to be able to create symlinks, the current user must have the
+appropriate permissions. This can be achieved by turning on developer mode or
+setting the permission `SeCreateSymbolicLinkPrivilege` directly.
