@@ -73,12 +73,14 @@ cask "iterm2"
 cask "keyboard-cleaner"
 cask "rectangle"
 cask "spotify"
+cask "visual-studio-code"
+
 # {{- if ge .macOS 26 }}
 cask "thaw@beta"
 # {{- else }}
 cask "thaw" # 1.3.0 once 2.0 is released
 # {{- end }}
-cask "visual-studio-code"
+
 # {{- if .work }}
 cask "slack"
 # {{- else }}

@@ -12,6 +12,8 @@ no-allow-external-cache
 pinentry-program {{ lookPath "pinentry-mac" }}
 {{- else if eq .chezmoi.os "windows" }}
 pinentry-program {{ lookPath "pinentry-basic" | quote }}
+{{- else if .chezmoi.kernel.osrelease | lower | contains "microsoft" }}
+pinentry-program {{ lookPath "pinentry-basic.exe" | quote }}
 {{- else }}
 pinentry-program {{ lookPath "pinentry" }}
 {{- end }}
