@@ -29,5 +29,6 @@
   "tui": "fullscreen",
   "theme": "auto",
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "enableWorkflows": true
 }

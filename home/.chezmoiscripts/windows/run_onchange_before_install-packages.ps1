@@ -1,0 +1,9 @@
+winget install --exact --id ajeetdsouza.zoxide
+winget install --exact --id albertony.npiperelay
+winget install --exact --id Git.Git
+winget install --exact --id GitHub.cli
+winget install --exact --id GnuPG.GnuPG
+winget install --exact --id jqlang.jq
+winget install --exact --id Microsoft.PowerShell
+winget install --exact --id MikeFarah.yq
+winget install --exact --id Starship.Starship

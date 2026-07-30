@@ -16,3 +16,6 @@ if (Test-Path "C:\ProgramData\ssh\administrators_authorized_keys") {
 } else {
     "C:\ProgramData\ssh\administrators_authorized_keys does not exist, skipping ACL fix"
 }
+
+gsudo { Set-Service sshd -StartupType Automatic }
+gsudo { Start-Service sshd }
