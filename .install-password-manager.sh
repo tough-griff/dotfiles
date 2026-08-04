@@ -10,12 +10,12 @@ fi
 case "$(uname -s)" in
 Darwin)
   # commands to install op on Darwin
-  brew install 1password-cli
+  brew install --cask 1password-cli
   ;;
 Linux)
   # commands to install op on Linux
   if [ "$(command -v brew)" ]; then
-    brew install 1password-cli
+    brew install --cask 1password-cli
   elif [ "$(command -v apt-get)" ]; then
     sudo apt-get install -y curl gpg
     curl -sS https://downloads.1password.com/linux/keys/1password.asc |

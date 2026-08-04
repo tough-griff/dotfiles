@@ -1,8 +1,8 @@
 #!/bin/bash
-# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 set -eufo pipefail
 
-# {{ template "homebrew" . }}
+#{{ template "homebrew" . }}
 
 FISH_PATH="$(command -v fish)"
 if ! grep -F -q "$FISH_PATH" /etc/shells; then
@@ -13,10 +13,10 @@ fi
 
 if [[ "$SHELL" != "$FISH_PATH" ]]; then
   echo "Configuring default shell: $FISH_PATH"
-  # {{ if eq .chezmoi.os "darwin" -}}
+  #{{ if eq .chezmoi.os "darwin" -}}
   chsh -s "$FISH_PATH"
-  # {{ else -}}
+  #{{ else -}}
   sudo usermod -s "$FISH_PATH" "$USER"
-  # {{ end -}}
+  #{{ end -}}
   echo
 fi

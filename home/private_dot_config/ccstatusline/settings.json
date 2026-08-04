@@ -38,7 +38,10 @@
       },
       {
         "id": "1aed159a-a28d-479d-8f9f-30d7ff987e4c",
-        "type": "compaction-counter"
+        "type": "compaction-counter",
+        "metadata": {
+          "hideZero": "true"
+        }
       },
       {
         "id": "30b31c4d-9cca-4f8a-a77f-86f46cf18b71",
@@ -62,6 +65,11 @@
         "type": "session-cost",
         "color": "yellow",
         "rawValue": true
+      },
+      {
+        "id": "7b7a85a1-f7f9-4146-8306-c2a4bcb803b7",
+        "type": "separator",
+        "character": " "
       },
       {
         "id": "c10c8286-2bbd-4c6d-98ac-3bfc115a5592",
@@ -118,7 +126,9 @@
         "dim": true,
         "rawValue": true,
         "metadata": {
-          "display": "time"
+          "display": "time",
+          "hours": "false",
+          "compact": "true"
         }
       }
     ],
@@ -126,8 +136,7 @@
       {
         "id": "1d8711c5-1bec-46d8-aae9-418d1ddca51c",
         "type": "tokens-input",
-        "color": "ansi256:76",
-        "merge": true
+        "color": "ansi256:76"
       },
       {
         "id": "eff15cb2-2f61-429a-88d7-67adb047936f",
@@ -181,7 +190,10 @@
         "type": "cache-timer",
         "color": "ansi256:78",
         "dim": true,
-        "rawValue": true
+        "rawValue": true,
+        "metadata": {
+          "hideWhenEmpty": "true"
+        }
       },
       {
         "id": "bd2f95c4-e7d1-46ac-9189-f9f06f9c00e0",
@@ -205,6 +217,11 @@
         "rawValue": true
       },
       {
+        "id": "b9cde17c-731d-40a0-a5b2-ec76faab45b5",
+        "type": "separator",
+        "character": " "
+      },
+      {
         "id": "e39ca93f-ec2f-416f-acae-407ac7dc9e17",
         "type": "flex-separator"
       },
@@ -218,6 +235,7 @@
   "flexMode": "full-minus-40",
   "compactThreshold": 60,
   "colorLevel": 3,
+  "defaultPaddingSide": "both",
   "inheritSeparatorColors": false,
   "globalBold": false,
   "gitCacheTtlSeconds": 5,

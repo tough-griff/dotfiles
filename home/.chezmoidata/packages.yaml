@@ -1,0 +1,30 @@
+packages:
+  brews:
+    - bash
+    - bat
+    - bun
+    - direnv
+    - doggo
+    - duf
+    - dust
+    - eza
+    - fd
+    - fish
+    - fzf
+    - gh
+    - git
+    - git-delta
+    - git-filter-repo
+    - git-lfs
+    - jq
+    - less
+    - ripgrep
+    - shellcheck
+    - shfmt
+    - starship
+    - thefuck
+    - tree
+    - yq
+    - zoxide
+  casks:
+    - 1password-cli

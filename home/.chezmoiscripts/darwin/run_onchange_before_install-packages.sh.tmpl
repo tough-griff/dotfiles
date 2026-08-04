@@ -1,66 +1,44 @@
 #!/bin/bash
-# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 set -eufo pipefail
 
-# {{ template "homebrew" . }}
+#{{ template "homebrew" . }}
 
 if [ ! "$(command -v brew)" ]; then
   echo "Install homebrew first! See: https://brew.sh"
   exit
 fi
 
-brew bundle --file=- <<EOF
+brew bundle --file=/dev/stdin <<EOF
+#{{- range .packages.brews }}
+brew #{{ . | quote }}
+#{{- end }}
+
 tap "teamookla/speedtest"
 
-# core deps
-brew "bash"
-brew "bat"
 brew "bfg"
 brew "bottom"
-brew "bun"
-brew "direnv"
 brew "dive"
-brew "doggo"
-brew "duf"
-brew "dust"
-brew "eza"
-brew "fd"
-brew "fish"
 brew "fnm"
-brew "fzf"
-brew "gh"
-brew "git-delta"
-brew "git-filter-repo"
-brew "git-lfs"
-brew "git"
 brew "gnupg"
 brew "hr"
 brew "htop"
 brew "httpie"
-brew "jq"
-brew "less"
 brew "mas"
 brew "pinentry-mac"
 brew "p7zip"
-brew "python"
 brew "rename"
-brew "ripgrep"
-brew "shellcheck"
-brew "shfmt"
-brew "starship"
 brew "svn"
 brew "teamookla/speedtest/speedtest", trusted: true
-brew "thefuck"
-brew "tree"
 brew "wget"
 brew "xz"
-brew "yq"
-brew "zoxide"
 brew "zsh"
 
-# Install Applications
+#{{- range .packages.casks }}
+cask #{{ . | quote }}
+#{{- end }}
+
 cask "1password"
-cask "1password-cli"
 cask "alfred"
 cask "appcleaner"
 cask "bettermouse"
@@ -76,17 +54,17 @@ cask "rectangle"
 cask "spotify"
 cask "visual-studio-code"
 
-# {{- if ge .macOS 26 }}
+#{{- if ge .macOS 26 }}
 cask "thaw@beta"
-# {{- else }}
+#{{- else }}
 cask "thaw" # 1.3.0 once 2.0 is released
-# {{- end }}
+#{{- end }}
 
-# {{- if .work }}
+#{{- if .work }}
 cask "slack"
-# {{- else }}
+#{{- else }}
 cask "discord"
-# {{- end }}
+#{{- end }}
 
 # Music
 # cask "kid3"
@@ -97,13 +75,13 @@ mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Keyword Search", id: 1558453954
-# {{- if ge .macOS 26 }}
+#{{- if ge .macOS 26 }}
 mas "Parcel", id: 375589283
-# {{- else }}
+#{{- else }}
 mas "Parcel Classic", id: 639968404
-# {{- end }}
-# {{- if not .work }}
+#{{- end }}
+#{{- if not .work }}
 mas "Velja", id: 1607635845
 mas "WireGuard", id: 1451685025
-# {{- end }}
+#{{- end }}
 EOF

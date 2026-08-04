@@ -1,8 +1,8 @@
 #!/bin/bash
-# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 set -eufo pipefail
 
-# {{ template "homebrew" . }}
+#{{ template "homebrew" . }}
 
 if [ ! "$(command -v brew)" ]; then
   echo "Install homebrew first! See: https://brew.sh"
@@ -10,31 +10,13 @@ if [ ! "$(command -v brew)" ]; then
 fi
 
 brew bundle --file=/dev/stdin <<EOF
-# core deps
-brew "bash"
-brew "bat"
-brew "bun"
-brew "direnv"
-brew "doggo"
-brew "duf"
-brew "dust"
-brew "eza"
-brew "fd"
-brew "fish"
-brew "fzf"
-brew "gh"
-brew "git-delta"
-brew "git-filter-repo"
-brew "git-lfs"
-brew "git"
-brew "jq"
+#{{- range .packages.brews }}
+brew #{{ . | quote }}
+#{{- end }}
+
 brew "keychain"
-brew "less"
-brew "ripgrep"
-brew "shellcheck"
-brew "starship"
-brew "thefuck"
-brew "tree"
-brew "yq"
-brew "zoxide"
+
+#{{- range .packages.casks }}
+cask #{{ . | quote }}
+#{{- end }}
 EOF
