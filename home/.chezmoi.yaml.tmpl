@@ -39,9 +39,11 @@ data:
 onepassword:
   mode: {{ $onepasswordMode | quote }}
 
-{{- if ne .chezmoi.os "windows" }}
 hooks:
   read-source-state:
     pre:
+{{- if eq .chezmoi.os "windows" }}
+      command: .local\share\chezmoi\.install-password-manager.cmd
+{{- else }}
       command: .local/share/chezmoi/.install-password-manager.sh
 {{- end }}
