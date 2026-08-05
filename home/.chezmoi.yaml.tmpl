@@ -43,7 +43,7 @@ hooks:
   read-source-state:
     pre:
 {{- if eq .chezmoi.os "windows" }}
-      command: .local\share\chezmoi\.install-password-manager.cmd
+      command: {{ joinPath .chezmoi.workingTree ".prepare.cmd" }}
 {{- else }}
-      command: .local/share/chezmoi/.install-password-manager.sh
+      command: {{ joinPath .chezmoi.workingTree ".prepare.sh" }}
 {{- end }}

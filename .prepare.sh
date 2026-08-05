@@ -2,6 +2,22 @@
 
 set -eu
 
+# install homebrew if it's missing, so it's available on Darwin and as the
+# preferred path on Linux
+if [ ! "$(command -v brew)" ]; then
+  case "$(uname -s)" in
+  Darwin | Linux)
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    for brew_bin in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew "$HOME/.linuxbrew/bin/brew"; do
+      if [ -x "$brew_bin" ]; then
+        eval "$("$brew_bin" shellenv)"
+        break
+      fi
+    done
+    ;;
+  esac
+fi
+
 # exit immediately if op is already in $PATH
 if [ "$(command -v op)" ]; then
   exit
@@ -17,7 +33,7 @@ Linux)
   if [ "$(command -v brew)" ]; then
     brew install --cask 1password-cli
   elif [ "$(command -v apt-get)" ]; then
-    sudo apt-get install -y curl gpg
+    sudo apt-get update && apt-get install -y curl gpg
     curl -sS https://downloads.1password.com/linux/keys/1password.asc |
       sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" |
@@ -34,6 +50,7 @@ Linux)
     sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=\"https://downloads.1password.com/linux/keys/1password.asc\"" > /etc/yum.repos.d/1password.repo'
     sudo dnf check-update -y 1password-cli && sudo dnf install 1password-cli
   elif [ "$(command -v apk)" ]; then
+    apk update && apk add wget
     echo https://downloads.1password.com/linux/alpinelinux/stable/ >>/etc/apk/repositories
     wget https://downloads.1password.com/linux/keys/alpinelinux/support@1password.com-61ddfc31.rsa.pub -P /etc/apk/keys
     apk update && apk add 1password-cli
