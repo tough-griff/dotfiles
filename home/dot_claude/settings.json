@@ -21,7 +21,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "ccstatusline",
+    "command": "bunx --bun ccstatusline",
     "padding": 0,
     "refreshInterval": 10
   },
