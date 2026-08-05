@@ -21,9 +21,9 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bunx -y ccstatusline@latest",
+    "command": "ccstatusline",
     "padding": 0,
-    "refreshInterval": 1
+    "refreshInterval": 10
   },
   "autoUpdatesChannel": "latest",
   "tui": "fullscreen",
