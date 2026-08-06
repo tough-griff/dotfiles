@@ -30,5 +30,6 @@
   "theme": "auto",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "enableWorkflows": true
+  "enableWorkflows": true,
+  "model": "sonnet"
 }

@@ -7,6 +7,7 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
+echo "Running macOS configure.sh"
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
@@ -63,7 +64,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f -r -domain local -domain system -domain user
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -222,6 +223,10 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Show hidden files in Open/Save dialogs by default (Finder's setting above
+# doesn't apply to the standard Cocoa open/save panel used by other apps)
+defaults write NSGlobalDomain AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true

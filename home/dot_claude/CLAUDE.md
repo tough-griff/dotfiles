@@ -1,4 +1,4 @@
-@RTK.md
+@~/.claude/RTK.md
 
 # Git
 

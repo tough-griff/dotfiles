@@ -3,6 +3,7 @@
     "editor.formatOnSave": false
   },
   "files.associations": {
+    "symlink_*": "plaintext",
     "**/git/config.tmpl": "ini",
     "*.fish.tmpl": "fish",
     "*.ps1.tmpl": "powershell",

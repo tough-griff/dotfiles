@@ -32,3 +32,8 @@ Documents
 .gnupg
 .ssh
 {{- end }}
+
+{{- if not .work }}
+.claude.personal/**
+.claude.work/**
+{{- end }}

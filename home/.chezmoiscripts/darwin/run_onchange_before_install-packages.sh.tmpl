@@ -14,9 +14,8 @@ brew bundle --file=/dev/stdin <<EOF
 brew #{{ . | quote }}
 #{{- end }}
 
-tap "teamookla/speedtest"
+tap "teamookla/speedtest", trusted: true
 
-brew "bfg"
 brew "bottom"
 brew "dive"
 brew "fnm"
@@ -25,11 +24,12 @@ brew "hr"
 brew "htop"
 brew "httpie"
 brew "mas"
-brew "pinentry-mac"
 brew "p7zip"
+brew "pinentry-mac"
 brew "rename"
 brew "svn"
 brew "teamookla/speedtest/speedtest", trusted: true
+brew "uv"
 brew "wget"
 brew "xz"
 brew "zsh"
