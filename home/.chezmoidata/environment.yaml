@@ -1,0 +1,3 @@
+environment:
+  - key: NODE_EXTRA_CA_CERTS
+    value: /Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem

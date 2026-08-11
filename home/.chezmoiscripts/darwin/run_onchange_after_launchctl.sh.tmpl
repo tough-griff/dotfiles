@@ -1,5 +1,5 @@
 #!/bin/bash
-# hash of environment.plist: {{ include "Library/LaunchAgents/environment.plist" | sha256sum }}
+# hash of environment.plist: {{ includeTemplate "Library/LaunchAgents/environment.plist.tmpl" . | sha256sum }}
 set -eu
 
 PLIST="$HOME/Library/LaunchAgents/environment.plist"
