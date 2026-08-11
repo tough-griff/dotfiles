@@ -1,9 +1,11 @@
 {
   "entries" : [
     {
+      "associatedDisplayName" : "Built-in Retina Display",
+      "associatedDisplayUUID" : "37D8832A-2D66-02CA-B9F7-8F30A301B230",
       "profile" : {
         "advancedSettings" : {
-          "enableAlwaysHiddenSection" : false,
+          "enableAlwaysHiddenSection" : true,
           "enableDiagnosticLogging" : false,
           "enableMenuBarItemOverflow" : true,
           "enableSecondaryContextMenu" : true,
@@ -25,7 +27,8 @@
           "tooltipDelay" : 0.5,
           "useDoubleClickToShowAlwaysHiddenSection" : false,
           "useLCSSortingOnNotchedDisplays" : true,
-          "useOptionClickToShowAlwaysHiddenSection" : false
+          "useOptionClickToShowAlwaysHiddenSection" : false,
+          "useThawBarOnNotchOverflow" : true
         },
         "appearanceConfiguration" : {
           "darkModeConfiguration" : {
@@ -354,7 +357,7 @@
           }
         },
         "confirmSpacingRelaunch" : true,
-        "createdAt" : "2026-06-24T14:20:54Z",
+        "createdAt" : "2026-08-11T17:17:56Z",
         "displayConfigurations" : {
           "37D8832A-2D66-02CA-B9F7-8F30A301B230" : {
             "alwaysShowHiddenItems" : false,
@@ -418,14 +421,9 @@
           "useIceBar" : false
         },
         "hotkeys" : {
-          "EnableIceBar" : "bnVsbA==",
-          "SearchMenuBarItems" : "bnVsbA==",
-          "ShowSectionDividers" : "bnVsbA==",
-          "ToggleAlwaysHiddenSection" : "bnVsbA==",
-          "ToggleApplicationMenus" : "bnVsbA==",
-          "ToggleHiddenSection" : "bnVsbA=="
+          "ShowSectionDividers" : "bnVsbA=="
         },
-        "id" : "5E7AB761-34E7-42D1-9542-9E746D9741C7",
+        "id" : "D0E4E496-F045-423B-9FE7-93D868B8CAC1",
         "menuBarLayout" : {
           "customNames" : {
 
@@ -434,16 +432,19 @@
 
           },
           "itemOrder" : {
-            "hidden" : [
+            "alwaysHidden" : [
               "com.netskope.client.Netskope-Client:Item-0",
-              "com.okta.mobile:Item-0",
+              "com.okta.mobile:Item-0"
+            ],
+            "hidden" : [
               "com.electron.dockerdesktop:Item-0",
               "com.naotanhaocan.BetterMouse:Item-1",
               "com.mr-brightside.myParcel:Item-0",
-              "com.runningwithcrayons.Alfred:Item-0",
-              "com.knollsoft.Rectangle:Item-0",
               "com.if.Amphetamine:Amphetamine",
-              "com.adguard.safari.AdGuard:Item-0"
+              "com.adguard.safari.AdGuard:Item-0",
+              "com.knollsoft.Rectangle:Item-0",
+              "com.runningwithcrayons.Alfred:Item-0",
+              "com.raycast.macos:raycastIcon"
             ],
             "visible" : [
               "com.1password.1password:bb3cc23c-6950-4e96-8b40-850e09f46934",
@@ -462,13 +463,14 @@
             "com.knollsoft.Rectangle:Item-0" : "hidden",
             "com.mr-brightside.myParcel:Item-0" : "hidden",
             "com.naotanhaocan.BetterMouse:Item-1" : "hidden",
-            "com.netskope.client.Netskope-Client:Item-0" : "hidden",
-            "com.okta.mobile:Item-0" : "hidden",
+            "com.netskope.client.Netskope-Client:Item-0" : "alwaysHidden",
+            "com.okta.mobile:Item-0" : "alwaysHidden",
+            "com.raycast.macos:raycastIcon" : "hidden",
             "com.runningwithcrayons.Alfred:Item-0" : "hidden",
             "com.stonerl.Thaw:Thaw.ControlItem.Visible" : "visible"
           },
           "newItemsPlacement" : {
-            "anchorIdentifier" : "com.netskope.client.Netskope-Client:Item-0",
+            "anchorIdentifier" : "com.naotanhaocan.BetterMouse:Item-1",
             "relation" : "leftOfAnchor",
             "sectionKey" : "hidden"
           },
@@ -479,16 +481,19 @@
 
           ],
           "savedSectionOrder" : {
-            "hidden" : [
+            "alwaysHidden" : [
               "com.netskope.client.Netskope-Client:Item-0",
-              "com.okta.mobile:Item-0",
+              "com.okta.mobile:Item-0"
+            ],
+            "hidden" : [
               "com.electron.dockerdesktop:Item-0",
               "com.naotanhaocan.BetterMouse:Item-1",
               "com.mr-brightside.myParcel:Item-0",
-              "com.runningwithcrayons.Alfred:Item-0",
-              "com.knollsoft.Rectangle:Item-0",
               "com.if.Amphetamine:Amphetamine",
-              "com.adguard.safari.AdGuard:Item-0"
+              "com.adguard.safari.AdGuard:Item-0",
+              "com.knollsoft.Rectangle:Item-0",
+              "com.runningwithcrayons.Alfred:Item-0",
+              "com.raycast.macos:raycastIcon"
             ],
             "visible" : [
               "com.1password.1password:bb3cc23c-6950-4e96-8b40-850e09f46934",
@@ -498,8 +503,8 @@
             ]
           }
         },
-        "modifiedAt" : "2026-06-24T14:20:56Z",
-        "name" : "Default",
+        "modifiedAt" : "2026-08-11T17:18:25Z",
+        "name" : "Notch",
         "unconfirmedSpacingProfileScope" : "activeProfile"
       }
     }

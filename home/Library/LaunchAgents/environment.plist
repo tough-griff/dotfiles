@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.environment.globals</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>launchctl</string>
+        <string>setenv</string>
+        <string>NODE_EXTRA_CA_CERTS</string>
+        <string>/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>

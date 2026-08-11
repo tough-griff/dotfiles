@@ -1,0 +1,8 @@
+#!/bin/bash
+# hash of environment.plist: {{ include "Library/LaunchAgents/environment.plist" | sha256sum }}
+set -eu
+
+PLIST="$HOME/Library/LaunchAgents/environment.plist"
+
+launchctl unload "$PLIST" 2>/dev/null || true
+launchctl load "$PLIST"
