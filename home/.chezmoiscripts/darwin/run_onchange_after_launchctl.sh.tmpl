@@ -3,5 +3,7 @@ set -eufo pipefail
 
 PLIST="$HOME/Library/LaunchAgents/environment.plist" # {{ includeTemplate "Library/LaunchAgents/environment.plist.tmpl" . | sha256sum }}
 
-launchctl unload "$PLIST" 2>/dev/null || true
-launchctl load "$PLIST"
+if [ -f "$PLIST" ]; then
+  launchctl unload "$PLIST" 2>/dev/null || true
+  launchctl load "$PLIST"
+fi
