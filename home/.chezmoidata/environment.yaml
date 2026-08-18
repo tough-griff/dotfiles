@@ -1,4 +1,0 @@
-# Conditional entries (machine-specific, file-existence-gated) live in
-# Library/LaunchAgents/environment.plist.tmpl instead, since .chezmoidata
-# files are plain data and can't be templated.
-environment: []
