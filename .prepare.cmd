@@ -1,4 +1,11 @@
 @echo off
+rem install chocolatey if it's missing, so it's available alongside winget
+where choco >nul 2>nul
+if errorlevel 1 (
+    echo Installing Chocolatey...
+    powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
+)
+
 rem exit immediately if op is already in %PATH%
 where op >nul 2>nul && exit /b 0
 
