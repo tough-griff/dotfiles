@@ -6,10 +6,30 @@
   - only actual value changes to keys we manage do. Keys the app adds on
   its own (not in .claude) are left untouched at their current position.
 
-  jq's `*` merge preserves the current file's key order (unlike
-  toPrettyJson, which always sorts alphabetically), so the merge shells
-  out to jq via `output` rather than using chezmoi's own JSON functions.
+  A hand-rolled jq deepmerge (rather than jq's `*`, chezmoi's toPrettyJson,
+  or `output`-ing the merge through Go's JSON encoder) is required to
+  actually preserve the current file's key order: `*` replaces arrays
+  wholesale instead of merging them element-wise, and both toPrettyJson
+  and Go's encoding/json (which is what backs plain toJson on the map
+  parsed from claude.yaml) always sort object keys alphabetically. That
+  combination is what let array-nested objects like the PreToolUse hook
+  entries come out alphabetized even though top-level keys looked fine.
 */ -}}
 {{- $current := or .chezmoi.stdin "{}" -}}
 {{- $managed := deepCopy .claude | setValueAtPath "remoteControlAtStartup" (not .work) | toJson -}}
-{{ output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed "$current * $managed" | replace "\r" "" | trimSuffix "\n" }}
+{{ output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed (`
+  def deepmerge(a; b):
+    if (a|type) == "object" and (b|type) == "object" then
+      reduce ((a + b) | keys_unsorted[]) as $k
+        ({}; . + {($k): (
+          if (a|has($k)) and (b|has($k)) then deepmerge(a[$k]; b[$k])
+          elif (b|has($k)) then b[$k]
+          else a[$k] end
+        )})
+    elif (a|type) == "array" and (b|type) == "array" then
+      [range(0; (b|length)) as $i | if $i < (a|length) then deepmerge(a[$i]; b[$i]) else b[$i] end]
+    else
+      b
+    end;
+  deepmerge($current; $managed)
+`) | replace "\r" "" | trimSuffix "\n" }}
