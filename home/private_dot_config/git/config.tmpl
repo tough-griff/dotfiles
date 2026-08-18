@@ -1,15 +1,12 @@
 {{- $ghPath := lookPath "gh" -}}
-{{- $gpgPath := lookPath "gpg" -}}
 {{- $lfsPath := lookPath "git-lfs" -}}
 {{- $deltaPath := lookPath "delta" -}}
 [user]
-  name = "Griffin Yourick"
+  name = {{ .name | quote }}
   email = {{ .email | quote }}
 {{- if not .ephemeral }}
   useConfigOnly = true
-{{-   if $gpgPath }}
-  signingKey = {{ onepasswordRead "op://Chezmoi/GPG Key/keyId" }}
-{{-   end }}
+  signingKey = ~/.ssh/id_ed25519.pub
 {{- end }}
 [add.interactive]
   useBuiltin = false
@@ -81,8 +78,10 @@
   branch = green bold
   unmerged = red bold
   untracked = magenta bold
+{{- if not .ephemeral }}
 [commit]
   gpgSign = true
+{{- end }}
 [core]
   autocrlf = input
   editor = vim
@@ -120,9 +119,14 @@
 {{- end }}
 [format]
   pretty = "%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(bold blue)<%an>%C(reset)"
-{{- if $gpgPath }}
+{{- if not .ephemeral }}
 [gpg]
-  program = {{ $gpgPath | quote }}
+  format = ssh
+[gpg "ssh"]
+  allowedSignersFile = ~/.ssh/allowed_signers
+{{-   if eq .chezmoi.os "windows" }}
+  program = {{ lookPath "ssh-keygen.exe" | quote}}
+{{-   end }}
 {{- end }}
 [init]
   defaultBranch = main
@@ -151,8 +155,10 @@
   followTags = true
 [submodule]
   recurse = true
+{{- if not .ephemeral }}
 [tag]
   gpgSign = true
+{{- end }}
 [url "https://"]
   insteadOf = git://
 [url "https://github.com/"]
