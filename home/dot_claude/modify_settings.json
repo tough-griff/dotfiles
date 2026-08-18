@@ -1,0 +1,15 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /*
+  Deep-merges .claude (home/.chezmoidata/claude.yaml) onto whatever is
+  currently on disk, so key reordering/whitespace churned by the Claude
+  Code process never shows up as noise in `chezmoi diff`/`chezmoi apply`
+  - only actual value changes to keys we manage do. Keys the app adds on
+  its own (not in .claude) are left untouched at their current position.
+
+  jq's `*` merge preserves the current file's key order (unlike
+  toPrettyJson, which always sorts alphabetically), so the merge shells
+  out to jq via `output` rather than using chezmoi's own JSON functions.
+*/ -}}
+{{- $current := or .chezmoi.stdin "{}" -}}
+{{- $managed := deepCopy .claude | setValueAtPath "remoteControlAtStartup" (not .work) | toJson -}}
+{{ output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed "$current * $managed" | replace "\r" "" | trimSuffix "\n" }}

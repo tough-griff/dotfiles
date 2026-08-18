@@ -1,0 +1,26 @@
+claude:
+  permissions:
+    defaultMode: default
+
+  hooks:
+    PreToolUse:
+      - matcher: Bash
+        hooks:
+          - type: command
+            command: ~/.claude/hooks/enforce-builtin-tools.sh
+          - type: command
+            command: rtk hook claude
+
+  statusLine:
+    type: command
+    command: bunx --bun ccstatusline
+    padding: 0
+    refreshInterval: 10
+
+  agentPushNotifEnabled: true
+  autoUpdatesChannel: latest
+  enableWorkflows: true
+  inputNeededNotifEnabled: true
+  model: sonnet
+  theme: auto
+  tui: fullscreen
