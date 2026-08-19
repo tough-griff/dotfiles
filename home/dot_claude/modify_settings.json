@@ -17,6 +17,9 @@
 */ -}}
 {{- $current := or .chezmoi.stdin "{}" -}}
 {{- $managed := deepCopy .claude | setValueAtPath "remoteControlAtStartup" (not .work) | toJson -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{-   $managed = fromJson $managed | setValueAtPath "defaultShell" "powershell" | setValueAtPath "env.CLAUDE_CODE_USE_POWERSHELL_TOOL" "1" | toJson -}}
+{{- end -}}
 {{ output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed (`
   def deepmerge(a; b):
     if (a|type) == "object" and (b|type) == "object" then
