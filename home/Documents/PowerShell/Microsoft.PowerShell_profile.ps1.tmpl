@@ -10,7 +10,10 @@ Import-Module "WSLTabCompletion"
 
 function Edit {
   $codeArgs = $args
-  if ($args.Length -eq 0 -or (-not (Test-Path $args[-1]))) {
+  if ($args.Length -eq 0) {
+    $workspaces = Get-ChildItem -Filter *.code-workspace -File
+    $codeArgs += if ($workspaces) { $workspaces.Name } else { "." }
+  } elseif (-not (Test-Path $args[-1])) {
     $codeArgs += "."
   }
 

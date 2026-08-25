@@ -1,6 +1,6 @@
 claude:
   permissions:
-    defaultMode: default
+    defaultMode: auto
 
   hooks:
     PreToolUse:
@@ -8,12 +8,6 @@ claude:
         hooks:
           - type: command
             command: ~/.claude/hooks/enforce-builtin-tools.sh
-          - type: command
-            command: rtk hook claude
-      - matcher: PowerShell
-        hooks:
-          - type: command
-            command: rtk hook claude
 
   statusLine:
     type: command
