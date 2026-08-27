@@ -5,12 +5,12 @@
       {
         "id": "1cb576c3-a462-46bd-ac63-b23cb2329633",
         "type": "current-working-dir",
+        "color": "gradient:mind",
+        "bold": true,
+        "rawValue": true,
         "metadata": {
           "fishStyle": "true"
-        },
-        "color": "blue",
-        "bold": true,
-        "rawValue": true
+        }
       },
       {
         "id": "369d3913-c658-4e12-b98f-074c59290bcd",
@@ -46,8 +46,10 @@
       {
         "id": "bd299a29-8d00-4ea0-88bb-c711cd03ca08",
         "type": "git-insertions",
+        "color": "brightGreen",
         "metadata": {
-          "hideNoGit": "true"
+          "hideNoGit": "true",
+          "hideZero": "true"
         }
       },
       {
@@ -58,8 +60,10 @@
       {
         "id": "e0d1d73f-ccd9-46d6-8903-0c160fa41e25",
         "type": "git-deletions",
+        "color": "brightRed",
         "metadata": {
-          "hideNoGit": "true"
+          "hideNoGit": "true",
+          "hideZero": "true"
         }
       },
       {
@@ -71,7 +75,8 @@
         "id": "f5c2cd19-3e54-44c0-99f2-595ee000e09c",
         "type": "git-staged-files",
         "metadata": {
-          "hideNoGit": "true"
+          "hideNoGit": "true",
+          "hideZero": "true"
         }
       },
       {
@@ -83,7 +88,8 @@
         "id": "82c7a85b-9c13-4a67-a77f-ccb7fc44dc1e",
         "type": "git-unstaged-files",
         "metadata": {
-          "hideNoGit": "true"
+          "hideNoGit": "true",
+          "hideZero": "true"
         }
       },
       {
@@ -95,7 +101,8 @@
         "id": "5f42a2c9-dcb6-4470-a664-5fc94c1bb510",
         "type": "git-untracked-files",
         "metadata": {
-          "hideNoGit": "true"
+          "hideNoGit": "true",
+          "hideZero": "true"
         }
       },
       {
@@ -118,11 +125,22 @@
       {
         "id": "293e50bd-2efa-41e1-a482-a4dad3c568c5",
         "type": "git-review",
+        "color": "brightCyan",
         "metadata": {
           "hideStatus": "false",
           "hideTitle": "true",
           "hideNoGit": "true"
         }
+      },
+      {
+        "id": "5fa4ee0a-9611-4692-aaf7-94f54cbe51ae",
+        "type": "flex-separator"
+      },
+      {
+        "id": "95aaea2b-47c6-44f7-8bff-6d30b7b8d403",
+        "type": "claude-account-email",
+        "color": "gradient:morning",
+        "rawValue": true
       }
     ],
     [
@@ -359,8 +377,12 @@
   "minimalistMode": false,
   "powerline": {
     "enabled": false,
-    "separators": [""],
-    "separatorInvertBackground": [false],
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
     "startCaps": [],
     "endCaps": [],
     "autoAlign": false,
