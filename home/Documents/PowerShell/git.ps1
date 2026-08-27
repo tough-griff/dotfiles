@@ -70,3 +70,6 @@ function Invoke-GitAlias-gu { git up $args }
 New-Alias -Name gu -Value "Invoke-GitAlias-gu" -Force
 function Invoke-GitAlias-guc { git uncommit $args }
 New-Alias -Name guc -Value "Invoke-GitAlias-guc" -Force
+
+# After the aliases so posh-git registers completion for `g` too.
+Import-Module posh-git

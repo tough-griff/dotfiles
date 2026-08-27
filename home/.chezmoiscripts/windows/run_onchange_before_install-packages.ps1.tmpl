@@ -16,3 +16,15 @@ foreach ($id in $packages) {
         Write-Host "winget install $id failed (exit $LASTEXITCODE):`n$out"
     }
 }
+
+$modules = @(
+#{{- range .packages.psmodules }}
+    #{{ . | quote }}
+#{{- end }}
+)
+
+foreach ($name in $modules) {
+    if (-not (Get-Module -ListAvailable -Name $name)) {
+        Install-Module -Name $name -Scope CurrentUser -Force
+    }
+}

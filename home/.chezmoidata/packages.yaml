@@ -25,6 +25,11 @@ packages:
     - zoxide
   casks:
     - 1password-cli
+  psmodules:
+    - Microsoft.WinGet.Client
+    - Microsoft.WinGet.CommandNotFound
+    - posh-git
+    - WSLTabCompletion
   winget:
     - ajeetdsouza.zoxide
     - albertony.npiperelay
