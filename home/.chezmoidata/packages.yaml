@@ -25,3 +25,17 @@ packages:
     - zoxide
   casks:
     - 1password-cli
+  winget:
+    - ajeetdsouza.zoxide
+    - albertony.npiperelay
+    - dandavison.delta
+    - eza-community.eza
+    - gerardog.gsudo
+    - Git.Git
+    - GitHub.cli
+    - GnuPG.GnuPG
+    - jqlang.jq
+    - Microsoft.PowerShell
+    - MikeFarah.yq
+    - sharkdp.bat
+    - Starship.Starship

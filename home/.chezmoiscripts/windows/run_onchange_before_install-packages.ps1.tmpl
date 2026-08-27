@@ -1,0 +1,18 @@
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
+$packages = @(
+#{{- range .packages.winget }}
+    #{{ . | quote }}
+#{{- end }}
+)
+
+# winget exit codes that mean "nothing to do", not a real failure:
+#   -1978335189  UPDATE_NOT_APPLICABLE
+#   -1978335135  PACKAGE_ALREADY_INSTALLED (returned with --no-upgrade)
+$ok = @(0, -1978335189, -1978335135)
+
+foreach ($id in $packages) {
+    $out = winget install --exact --id $id --no-upgrade --disable-interactivity --accept-package-agreements --accept-source-agreements 2>&1
+    if ($ok -notcontains $LASTEXITCODE) {
+        Write-Host "winget install $id failed (exit $LASTEXITCODE):`n$out"
+    }
+}
