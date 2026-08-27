@@ -1,6 +1,7 @@
 winget install --exact --id ajeetdsouza.zoxide
 winget install --exact --id albertony.npiperelay
 winget install --exact --id dandavison.delta
+winget install --exact --id eza-community.eza
 winget install --exact --id gerardog.gsudo
 winget install --exact --id Git.Git
 winget install --exact --id GitHub.cli
