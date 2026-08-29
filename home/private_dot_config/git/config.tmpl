@@ -126,7 +126,7 @@
 [gpg "ssh"]
   allowedSignersFile = ~/.ssh/allowed_signers
 {{-   if eq .chezmoi.os "windows" }}
-  program = {{ lookPath "ssh-keygen.exe" | quote}}
+  program = {{ findExecutable "ssh-keygen.exe" (list (printf "%s/System32/OpenSSH" (env "SystemRoot"))) | quote }}
 {{-   end }}
 {{- end }}
 [init]

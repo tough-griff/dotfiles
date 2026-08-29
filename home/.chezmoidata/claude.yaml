@@ -19,6 +19,5 @@ claude:
   autoUpdatesChannel: latest
   enableWorkflows: true
   inputNeededNotifEnabled: true
-  model: sonnet
   theme: auto
   tui: fullscreen

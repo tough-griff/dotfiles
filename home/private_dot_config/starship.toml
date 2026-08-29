@@ -3,6 +3,7 @@
 format = """
 ($username$hostname )\
 ${env_var.WSL_DISTRO}\
+${env_var.MSYSTEM}\
 $directory\
 ($git_branch$git_commit )\
 $git_state\
@@ -112,6 +113,11 @@ style = "red"
 pipestatus = true
 pipestatus_separator = ""
 pipestatus_format = "[$pipestatus]($style)"
+
+[env_var.MSYSTEM]
+variable = "MSYSTEM"
+format = "[$env_value]($style) "
+style = "bold blue"
 
 [env_var.WSL_DISTRO]
 variable = "WSL_DISTRO_NAME"

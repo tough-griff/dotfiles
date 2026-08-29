@@ -21,7 +21,7 @@
 {{-   $managed = $managed | setValueAtPath "defaultShell" "powershell" | setValueAtPath "env.CLAUDE_CODE_USE_POWERSHELL_TOOL" "1" -}}
 {{- end -}}
 {{- $managed = $managed | toJson -}}
-{{ output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed (`
+{{- output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed (`
   def deepmerge(a; b):
     if (a|type) == "object" and (b|type) == "object" then
       reduce ((a + b) | keys_unsorted[]) as $k
@@ -36,4 +36,4 @@
       b
     end;
   deepmerge($current; $managed)
-`) | replace "\r" "" | trimSuffix "\n" }}
+`) | replace "\r" "" | trimSuffix "\n" -}}
