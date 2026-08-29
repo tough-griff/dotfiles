@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "lines": [
     [
       {
@@ -22,7 +22,7 @@
         "type": "git-root-dir",
         "metadata": {
           "linkToIDE": "vscode",
-          "hideNoGit": "true"
+          "hide": "no-git"
         }
       },
       {
@@ -48,8 +48,7 @@
         "type": "git-insertions",
         "color": "brightGreen",
         "metadata": {
-          "hideNoGit": "true",
-          "hideZero": "true"
+          "hide": "no-git,zero"
         }
       },
       {
@@ -62,8 +61,7 @@
         "type": "git-deletions",
         "color": "brightRed",
         "metadata": {
-          "hideNoGit": "true",
-          "hideZero": "true"
+          "hide": "no-git,zero"
         }
       },
       {
@@ -75,8 +73,7 @@
         "id": "f5c2cd19-3e54-44c0-99f2-595ee000e09c",
         "type": "git-staged-files",
         "metadata": {
-          "hideNoGit": "true",
-          "hideZero": "true"
+          "hide": "no-git,zero"
         }
       },
       {
@@ -88,8 +85,7 @@
         "id": "82c7a85b-9c13-4a67-a77f-ccb7fc44dc1e",
         "type": "git-unstaged-files",
         "metadata": {
-          "hideNoGit": "true",
-          "hideZero": "true"
+          "hide": "no-git,zero"
         }
       },
       {
@@ -101,8 +97,7 @@
         "id": "5f42a2c9-dcb6-4470-a664-5fc94c1bb510",
         "type": "git-untracked-files",
         "metadata": {
-          "hideNoGit": "true",
-          "hideZero": "true"
+          "hide": "no-git,zero"
         }
       },
       {
@@ -114,7 +109,7 @@
         "id": "5dd5a86f-c48d-4392-ae5f-d9a7c877a53a",
         "type": "git-ahead-behind",
         "metadata": {
-          "hideNoGit": "true"
+          "hide": "no-git,no-upstream,zero"
         }
       },
       {
@@ -127,9 +122,7 @@
         "type": "git-review",
         "color": "brightCyan",
         "metadata": {
-          "hideStatus": "false",
-          "hideTitle": "true",
-          "hideNoGit": "true"
+          "hide": "no-git,no-data,title"
         }
       },
       {
@@ -182,7 +175,7 @@
         "id": "1aed159a-a28d-479d-8f9f-30d7ff987e4c",
         "type": "compaction-counter",
         "metadata": {
-          "hideZero": "true"
+          "hide": "zero"
         }
       },
       {
@@ -331,7 +324,7 @@
         "dim": true,
         "rawValue": true,
         "metadata": {
-          "hideWhenEmpty": "true"
+          "hide": "empty"
         }
       },
       {
