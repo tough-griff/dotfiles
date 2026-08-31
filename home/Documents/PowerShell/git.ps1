@@ -64,6 +64,8 @@ function Invoke-GitAlias-gsh { git show $args }
 New-Alias -Name gsh -Value "Invoke-GitAlias-gsh" -Force
 function Invoke-GitAlias-gst { git status $args }
 New-Alias -Name gst -Value "Invoke-GitAlias-gst" -Force
+function Invoke-GitAlias-gsw { git switch $args }
+New-Alias -Name gsw -Value "Invoke-GitAlias-gsw" -Force
 function Invoke-GitAlias-gsy { gh repo sync $args }
 New-Alias -Name gsy -Value "Invoke-GitAlias-gsy" -Force
 function Invoke-GitAlias-gu { git up $args }
