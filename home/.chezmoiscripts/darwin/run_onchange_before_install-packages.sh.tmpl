@@ -53,12 +53,6 @@ cask "rectangle"
 cask "spotify"
 cask "visual-studio-code"
 
-#{{- if ge .macOS 26 }}
-cask "thaw@beta"
-#{{- else }}
-cask "thaw" # 1.3.0 once 2.0 is released
-#{{- end }}
-
 #{{- if .work }}
 cask "slack"
 #{{- else }}
