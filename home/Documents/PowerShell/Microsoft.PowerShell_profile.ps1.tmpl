@@ -26,7 +26,7 @@ function Set-Location-Dotfiles { Set-Location {{ .chezmoi.workingTree | quote }}
 New-Alias -Name cdf -Value "Set-Location-Dotfiles"
 New-Alias -Name chez -Value "chezmoi"
 New-Alias -Name e -Value "Edit"
-function Edit-Add { Edit --add $args }
+function Edit-Add { Edit --add @args }
 New-Alias -Name ea -Value "Edit-Add"
 function Edit-Dotfiles { Set-Location {{ .chezmoi.workingTree | quote }}; Edit . }
 New-Alias -Name edf -Value "Edit-Dotfiles"
