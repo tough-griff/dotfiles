@@ -17,9 +17,6 @@
 */ -}}
 {{- $current := or .chezmoi.stdin "{}" -}}
 {{- $managed := deepCopy .claude | setValueAtPath "remoteControlAtStartup" (not .work) -}}
-{{- if eq .chezmoi.os "windows" -}}
-{{-   $managed = $managed | setValueAtPath "defaultShell" "powershell" | setValueAtPath "env.CLAUDE_CODE_USE_POWERSHELL_TOOL" "1" -}}
-{{- end -}}
 {{- $managed = $managed | toJson -}}
 {{- output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed (`
   def deepmerge(a; b):
