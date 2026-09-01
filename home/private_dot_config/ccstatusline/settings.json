@@ -199,7 +199,10 @@
         "id": "20dca7cd-89d8-4ca9-ac04-9f2ff0332860",
         "type": "session-cost",
         "color": "yellow",
-        "rawValue": true
+        "rawValue": true,
+        "metadata": {
+          "hide": "zero"
+        }
       },
       {
         "id": "c10c8286-2bbd-4c6d-98ac-3bfc115a5592",
@@ -209,8 +212,10 @@
         "id": "b125133a-d2da-4254-955e-ad9bfa5a3487",
         "type": "session-usage",
         "color": "brightBlue",
+        "rawValue": true,
         "metadata": {
-          "invert": "false"
+          "invert": "false",
+          "hide": "no-data"
         }
       },
       {
@@ -238,10 +243,11 @@
         "id": "a73d2332-9fbb-48f9-abc5-02d4561157ca",
         "type": "weekly-usage",
         "color": "blue",
-        "rawValue": false,
+        "rawValue": true,
         "metadata": {
           "display": "time",
-          "invert": "false"
+          "invert": "false",
+          "hide": "no-data"
         }
       },
       {
@@ -257,16 +263,31 @@
         "rawValue": true,
         "metadata": {
           "display": "time",
-          "hours": "false",
-          "compact": "true"
+          "compact": "true",
+          "hours": "false"
         }
       }
     ],
     [
       {
+        "id": "9638cf7e-d243-41b0-a838-637ebfe25d5f",
+        "type": "custom-text",
+        "color": "ansi256:76",
+        "customText": "i: ",
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
         "id": "1d8711c5-1bec-46d8-aae9-418d1ddca51c",
         "type": "tokens-input",
-        "color": "ansi256:76"
+        "color": "ansi256:76",
+        "rawValue": true,
+        "merge": true,
+        "metadata": {
+          "hide": "zero"
+        }
       },
       {
         "id": "eff15cb2-2f61-429a-88d7-67adb047936f",
@@ -278,7 +299,10 @@
         "type": "input-speed",
         "color": "ansi256:76",
         "dim": true,
-        "rawValue": true
+        "rawValue": true,
+        "metadata": {
+          "hide": "no-data"
+        }
       },
       {
         "id": "afaf7aa7-4c35-475a-aeb9-b0d86ea6e223",
@@ -286,9 +310,24 @@
         "dim": true
       },
       {
+        "id": "48bb7224-dbea-4287-9fec-a3e5624021bd",
+        "type": "custom-text",
+        "color": "ansi256:77",
+        "customText": "o: ",
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
         "id": "28256e6c-46e1-4232-a81f-fc96d8e62b86",
         "type": "tokens-output",
-        "color": "ansi256:77"
+        "color": "ansi256:77",
+        "rawValue": true,
+        "merge": true,
+        "metadata": {
+          "hide": "zero"
+        }
       },
       {
         "id": "db318c00-9788-4cfd-bd00-86e660e6b608",
@@ -300,7 +339,10 @@
         "type": "output-speed",
         "color": "ansi256:77",
         "dim": true,
-        "rawValue": true
+        "rawValue": true,
+        "metadata": {
+          "hide": "no-data"
+        }
       },
       {
         "id": "d0d6feb6-2f6c-4fd5-aab0-bef28d89d3fa",
@@ -308,9 +350,24 @@
         "dim": true
       },
       {
+        "id": "28b2c509-2ab2-44d3-b7af-4a46f86a71ba",
+        "type": "custom-text",
+        "color": "ansi256:78",
+        "customText": "c: ",
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
         "id": "7a13765a-e8e2-4f42-aab1-a1d15a33b776",
         "type": "tokens-cached",
-        "color": "ansi256:78"
+        "color": "ansi256:78",
+        "rawValue": true,
+        "merge": true,
+        "metadata": {
+          "hide": "zero"
+        }
       },
       {
         "id": "60b9116b-52a0-47d3-959e-9eeb13f3bcc2",
@@ -333,9 +390,24 @@
         "dim": true
       },
       {
+        "id": "ccf5c745-7e1c-455d-956e-a85286d43613",
+        "type": "custom-text",
+        "color": "ansi256:79",
+        "customText": "t: ",
+        "merge": true,
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
         "id": "54cb6389-6b9f-497c-b8b9-fd0e473aba9c",
         "type": "tokens-total",
-        "color": "ansi256:79"
+        "color": "ansi256:79",
+        "rawValue": true,
+        "merge": true,
+        "metadata": {
+          "hide": "zero"
+        }
       },
       {
         "id": "9a036e9c-aedc-40d4-bf5f-b7b3a358cc97",
@@ -347,7 +419,10 @@
         "type": "total-speed",
         "color": "ansi256:79",
         "dim": true,
-        "rawValue": true
+        "rawValue": true,
+        "metadata": {
+          "hide": "no-data"
+        }
       },
       {
         "id": "e39ca93f-ec2f-416f-acae-407ac7dc9e17",
@@ -356,7 +431,8 @@
       {
         "id": "15e414b3-5b11-45ac-800d-68281ff3b920",
         "type": "free-memory",
-        "color": "ansi256:5"
+        "color": "ansi256:5",
+        "rawValue": true
       }
     ]
   ],
