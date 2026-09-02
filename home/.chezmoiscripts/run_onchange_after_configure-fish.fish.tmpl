@@ -28,6 +28,9 @@ set -U fish_pager_color_progress brblack
 
 # {{ if eq .chezmoi.config.onepassword.mode "service" -}}
 set -Ux OP_SERVICE_ACCOUNT_TOKEN "$OP_SERVICE_ACCOUNT_TOKEN"
+set -Ux GITHUB_TOKEN (gh auth token)
+set -Ux GITHUB_PERSONAL_ACCESS_TOKEN "$GITHUB_TOKEN"
+set -Ux CONTEXT7_API_KEY (op read "op://Chezmoi/CONTEXT7_API_KEY/credential")
 # {{- end }}
 # {{ if .work -}}
 set -Ux CLAUDE_CONFIG_DIR "$HOME/.claude.personal"
