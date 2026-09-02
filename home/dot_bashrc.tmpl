@@ -1,8 +1,19 @@
 {{ template "homebrew" . }}
 {{ template "xdg" . }}
 
-{{ if eq .chezmoi.os "windows" -}}
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init bash)"
-fi
-{{ end -}}
+case ":${PATH}:" in
+  *":${HOME}/.local/bin:"*) ;;
+  *) PATH="${HOME}/.local/bin:${PATH}" ;;
+esac
+export PATH
+
+# Everything below is interactive-only.
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+for _f in "${HOME}/.config/bash/conf.d"/*.sh; do
+  [ -r "${_f}" ] && . "${_f}"
+done
+unset _f
