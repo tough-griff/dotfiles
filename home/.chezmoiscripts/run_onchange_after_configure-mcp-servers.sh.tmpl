@@ -1,0 +1,29 @@
+#!/bin/bash
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
+set -eufo pipefail
+
+# Register MCP servers (user scope) from .chezmoidata/claude.yaml identically on
+# every machine. $(...) in header values is expanded by the shell here at apply
+# time and baked into each profile's .claude.json, so re-run `chezmoi apply` if a
+# token rotates. On work machines both the .claude.personal and .claude.work
+# profiles are configured, since CLAUDE_CONFIG_DIR selects which .claude.json the
+# `claude mcp` writes land in.
+
+if ! command -v claude >/dev/null 2>&1; then
+  echo "claude CLI not found; skipping MCP server setup"
+  exit 0
+fi
+
+#{{ if .work -}}
+config_dirs=("$HOME/.claude.personal" "$HOME/.claude.work")
+#{{ else -}}
+config_dirs=("$HOME/.claude")
+#{{ end -}}
+
+for dir in "${config_dirs[@]}"; do
+  export CLAUDE_CONFIG_DIR="$dir"
+#{{ range $name, $cfg := .mcp.servers }}
+  claude mcp remove -s user #{{ $name | quote }} >/dev/null 2>&1 || true
+  claude mcp add-json -s user #{{ $name | quote }} #{{ $cfg | toJson | quote }}
+#{{ end -}}
+done

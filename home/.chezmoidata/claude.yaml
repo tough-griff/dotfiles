@@ -14,3 +14,16 @@ claude:
   inputNeededNotifEnabled: true
   theme: auto
   tui: fullscreen
+
+mcp:
+  servers:
+    github:
+      type: http
+      url: https://api.githubcopilot.com/mcp/
+      headers:
+        Authorization: Bearer $(gh auth token)
+    context7:
+      type: http
+      url: https://mcp.context7.com/mcp
+      headers:
+        Authorization: Bearer $(op read 'op://Chezmoi/CONTEXT7_API_KEY/credential')
