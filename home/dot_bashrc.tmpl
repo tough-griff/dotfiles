@@ -31,3 +31,7 @@ for _f in "${HOME}/.config/bash/conf.d"/*.sh; do
   [ -r "${_f}" ] && . "${_f}"
 done
 unset _f
+
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init bash)"
+fi

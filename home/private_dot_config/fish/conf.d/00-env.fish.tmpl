@@ -1,0 +1,11 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+set -gx FORCE_COLOR 1
+set -gx GPG_TTY $(tty)
+set -gx LANG "en_US.UTF-8"
+set -gx LC_ALL "en_US.UTF-8"
+set -gx LESS -FgimrSwX -z-4
+# {{ if eq .chezmoi.os "linux" -}}
+# {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+set -gx COLORTERM truecolor
+# {{   end -}}
+# {{ end -}}

@@ -1,10 +1,3 @@
-# This file contains configs that don't warrant their own entry in conf.d
-set -gx FORCE_COLOR 1
-set -gx GPG_TTY $(tty)
-set -gx LANG "en_US.UTF-8"
-set -gx LC_ALL "en_US.UTF-8"
-set -gx LESS -FgimrSwX -z-4
-
 abbralias ag rg # temporary so i remember
 abbralias c clear
 abbralias cdf "cd {{ .chezmoi.workingTree }}"
@@ -18,6 +11,7 @@ abbralias tree "tree -aC --dirsfirst"
 abbralias psa "ps aux"
 abbralias where "type -a"
 
+# this must come last
 if command -sq starship
     function starship_transient_prompt_func
         starship module character

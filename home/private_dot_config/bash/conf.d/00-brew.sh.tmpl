@@ -1,10 +1,11 @@
-{{ if ne .chezmoi.os "windows" -}}
-{{ template "homebrew" . }}
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{ if ne .chezmoi.os "windows" -}}
+# {{ template "homebrew" . }}
 
 command -v brew >/dev/null 2>&1 || return
 
 export HOMEBREW_BAT=1
-export HOMEBREW_GITHUB_API_TOKEN='{{ onepasswordRead "op://Chezmoi/HOMEBREW_GITHUB_API_TOKEN/token" }}'
+export HOMEBREW_GITHUB_API_TOKEN='# {{ onepasswordRead "op://Chezmoi/HOMEBREW_GITHUB_API_TOKEN/token" }}'
 export HOMEBREW_NO_ENV_HINTS=1
 
 alias brewc='brew cleanup'
@@ -13,4 +14,4 @@ alias brewl='brew list'
 alias brews='brew search'
 alias brewu='brew upgrade'
 alias brewx='brew uninstall'
-{{ end -}}
+# {{ end -}}

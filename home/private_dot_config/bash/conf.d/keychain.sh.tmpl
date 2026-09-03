@@ -1,10 +1,11 @@
-{{ if eq .chezmoi.os "linux" -}}
+# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# {{ if eq .chezmoi.os "linux" -}}
 if command -v keychain >/dev/null 2>&1; then
   eval "$(keychain --quiet --eval)"
 fi
-{{ else if eq .chezmoi.os "darwin" -}}
+# {{ else if eq .chezmoi.os "darwin" -}}
 # Identities without a keychain-stored passphrase (e.g. id_rsa) would otherwise
 # block on a TTY passphrase prompt here; redirecting stdin makes ssh-add treat
 # that as EOF and skip them instead of hanging.
 ssh-add --apple-load-keychain -q < /dev/null 2>/dev/null
-{{ end -}}
+# {{ end -}}
