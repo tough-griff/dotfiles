@@ -19,8 +19,8 @@ chezmoi diff            # preview changes without applying
 Check a single file's rendered/target output while editing a template:
 
 ```sh
-chezmoi execute-template -f home/path/to/file.tmpl   # render a template snippet
-chezmoi cat ~/.config/some/target                   # show what chezmoi would write
+chezmoi execute-template -f home/path/to/file.tmpl # render a template snippet
+chezmoi cat ~/.config/some/target                  # show what chezmoi would write
 ```
 
 Re-run onchange/prepare scripts (installs Homebrew, 1Password CLI, etc.) by touching the relevant `run_onchange_*` file or running `chezmoi apply` after editing `home/.chezmoidata/packages.yaml`.
@@ -46,5 +46,3 @@ There is no build/lint/test suite in this repo — validate changes by running `
 **Secrets**: 1Password is the secrets backend. `.prepare.sh`/`.prepare.cmd` ensure the `op` CLI is present before chezmoi templates run; `home/.chezmoi.yaml.tmpl`'s `onepasswordMode` (`account`/`connect`/`service`) controls how chezmoi authenticates to it. Templates for `private_dot_ssh/`, `private_dot_aws/`, `private_dot_gnupg/` pull key material via `op` at apply time — never hardcode secrets into these templates.
 
 **Shell setup**: fish is the primary shell (`home/private_dot_config/fish/`), with `conf.d/*.fish` for tool integrations (loaded alphabetically, hence the `0-`/`00-` prefixes for load-order-sensitive files like PATH setup and Homebrew shellenv) and `functions/` for one-function-per-file fish functions. Git Bash on Windows is the secondary interactive shell and mirrors that layout: `home/private_dot_config/bash/conf.d/*.sh` is sourced by `dot_bashrc.tmpl` (after an interactive-shell guard) and ports the fish `conf.d`/`functions` content one file per tool, each self-gating with `command -v`. `dot_bashrc.tmpl` applies on every OS; `dot_bash_profile` sources `~/.profile` then `~/.bashrc` for login shells. `dot_zshrc`/`dot_zshenv.tmpl` remain a minimal fallback/interop layer.
-
-**Claude Code hook**: `home/dot_claude/hooks/executable_enforce-builtin-tools.sh` is a `PreToolUse` hook (wired in `home/dot_claude/settings.json`) that denies `Bash` invocations of `cat`/`sed`/`awk`, steering Claude Code toward its built-in Read/Edit tools instead. It hand-parses the shell command word-by-word (tracking quoting) rather than shelling out, so any edit to its parsing logic should preserve that quote/escape-aware tokenizer.

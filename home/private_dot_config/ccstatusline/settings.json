@@ -15,11 +15,13 @@
       {
         "id": "369d3913-c658-4e12-b98f-074c59290bcd",
         "type": "separator",
+        "color": "ansi256:7",
         "dim": true
       },
       {
         "id": "792f382e-5ef6-4501-ad62-8e7726ad3645",
         "type": "git-root-dir",
+        "color": "ansi256:6",
         "metadata": {
           "linkToIDE": "vscode",
           "hide": "no-git"
@@ -34,6 +36,7 @@
         "id": "cba380a2-f094-4f98-ad58-ec4586e895cd",
         "type": "git-branch",
         "color": "ansi256:5",
+        "maxWidth": 20,
         "metadata": {
           "linkToRepo": "true"
         }
@@ -46,7 +49,7 @@
       {
         "id": "bd299a29-8d00-4ea0-88bb-c711cd03ca08",
         "type": "git-insertions",
-        "color": "brightGreen",
+        "color": "ansi256:10",
         "metadata": {
           "hide": "no-git,zero"
         }
@@ -59,7 +62,7 @@
       {
         "id": "e0d1d73f-ccd9-46d6-8903-0c160fa41e25",
         "type": "git-deletions",
-        "color": "brightRed",
+        "color": "ansi256:9",
         "metadata": {
           "hide": "no-git,zero"
         }
@@ -72,6 +75,7 @@
       {
         "id": "f5c2cd19-3e54-44c0-99f2-595ee000e09c",
         "type": "git-staged-files",
+        "color": "ansi256:2",
         "metadata": {
           "hide": "no-git,zero"
         }
@@ -84,6 +88,7 @@
       {
         "id": "82c7a85b-9c13-4a67-a77f-ccb7fc44dc1e",
         "type": "git-unstaged-files",
+        "color": "ansi256:3",
         "metadata": {
           "hide": "no-git,zero"
         }
@@ -96,6 +101,7 @@
       {
         "id": "5f42a2c9-dcb6-4470-a664-5fc94c1bb510",
         "type": "git-untracked-files",
+        "color": "ansi256:1",
         "metadata": {
           "hide": "no-git,zero"
         }
@@ -108,26 +114,16 @@
       {
         "id": "5dd5a86f-c48d-4392-ae5f-d9a7c877a53a",
         "type": "git-ahead-behind",
+        "color": "ansi256:6",
         "metadata": {
           "hide": "no-git,no-upstream,zero"
         }
       },
       {
-        "id": "6b7db842-f790-4fc3-8738-f746ad61a808",
-        "type": "separator",
-        "character": " "
-      },
-      {
-        "id": "293e50bd-2efa-41e1-a482-a4dad3c568c5",
-        "type": "git-review",
-        "color": "brightCyan",
-        "metadata": {
-          "hide": "no-git,no-data,title"
-        }
-      },
-      {
         "id": "5fa4ee0a-9611-4692-aaf7-94f54cbe51ae",
-        "type": "flex-separator"
+        "type": "flex-separator",
+        "color": "ansi256:7",
+        "dim": true
       },
       {
         "id": "95aaea2b-47c6-44f7-8bff-6d30b7b8d403",
@@ -140,7 +136,7 @@
       {
         "id": "1",
         "type": "model",
-        "color": "blue",
+        "color": "ansi256:12",
         "bold": true,
         "rawValue": true
       },
@@ -163,8 +159,14 @@
       {
         "id": "b23de991-0ba3-4443-b81f-35837735ae38",
         "type": "context-bar",
-        "bold": false,
-        "rawValue": true
+        "color": "ansi256:62",
+        "numberFormat": {
+          "style": "compact"
+        },
+        "rawValue": true,
+        "metadata": {
+          "display": "slider"
+        }
       },
       {
         "id": "b18a4483-1292-4259-b1ec-a98f69b26a3e",
@@ -174,6 +176,8 @@
       {
         "id": "1aed159a-a28d-479d-8f9f-30d7ff987e4c",
         "type": "compaction-counter",
+        "color": "ansi256:3",
+        "dim": true,
         "metadata": {
           "hide": "zero"
         }
@@ -186,8 +190,8 @@
       {
         "id": "fef7c226-6074-4eda-b067-73e4691ef976",
         "type": "session-clock",
-        "color": "brightBlack",
-        "bold": false,
+        "color": "ansi256:7",
+        "dim": true,
         "rawValue": true
       },
       {
@@ -198,7 +202,7 @@
       {
         "id": "20dca7cd-89d8-4ca9-ac04-9f2ff0332860",
         "type": "session-cost",
-        "color": "yellow",
+        "color": "ansi256:11",
         "rawValue": true,
         "metadata": {
           "hide": "zero"
@@ -206,12 +210,17 @@
       },
       {
         "id": "c10c8286-2bbd-4c6d-98ac-3bfc115a5592",
-        "type": "flex-separator"
+        "type": "flex-separator",
+        "color": "ansi256:7",
+        "dim": true
       },
       {
         "id": "b125133a-d2da-4254-955e-ad9bfa5a3487",
         "type": "session-usage",
-        "color": "brightBlue",
+        "color": "ansi256:80",
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "metadata": {
           "invert": "false",
@@ -226,23 +235,31 @@
       {
         "id": "6fa9558a-8a03-442c-bfef-dfb5854cba65",
         "type": "reset-timer",
-        "color": "brightBlue",
+        "color": "ansi256:80",
         "dim": true,
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "metadata": {
           "display": "time",
-          "compact": "true"
+          "compact": "true",
+          "absolute": "false"
         }
       },
       {
         "id": "d7a551fb-4953-44bd-8448-ecaecacf9668",
         "type": "separator",
+        "color": "ansi256:7",
         "dim": true
       },
       {
         "id": "a73d2332-9fbb-48f9-abc5-02d4561157ca",
         "type": "weekly-usage",
-        "color": "blue",
+        "color": "ansi256:81",
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "metadata": {
           "display": "time",
@@ -258,8 +275,11 @@
       {
         "id": "1a69f9af-0275-40f5-8521-af07f0e8940b",
         "type": "weekly-reset-timer",
-        "color": "blue",
+        "color": "ansi256:81",
         "dim": true,
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "metadata": {
           "display": "time",
@@ -283,6 +303,9 @@
         "id": "1d8711c5-1bec-46d8-aae9-418d1ddca51c",
         "type": "tokens-input",
         "color": "ansi256:76",
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "merge": true,
         "metadata": {
@@ -299,6 +322,9 @@
         "type": "input-speed",
         "color": "ansi256:76",
         "dim": true,
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "metadata": {
           "hide": "no-data"
@@ -307,6 +333,7 @@
       {
         "id": "afaf7aa7-4c35-475a-aeb9-b0d86ea6e223",
         "type": "separator",
+        "color": "ansi256:7",
         "dim": true
       },
       {
@@ -323,6 +350,9 @@
         "id": "28256e6c-46e1-4232-a81f-fc96d8e62b86",
         "type": "tokens-output",
         "color": "ansi256:77",
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "merge": true,
         "metadata": {
@@ -339,6 +369,9 @@
         "type": "output-speed",
         "color": "ansi256:77",
         "dim": true,
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "metadata": {
           "hide": "no-data"
@@ -347,6 +380,7 @@
       {
         "id": "d0d6feb6-2f6c-4fd5-aab0-bef28d89d3fa",
         "type": "separator",
+        "color": "ansi256:7",
         "dim": true
       },
       {
@@ -363,6 +397,9 @@
         "id": "7a13765a-e8e2-4f42-aab1-a1d15a33b776",
         "type": "tokens-cached",
         "color": "ansi256:78",
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "merge": true,
         "metadata": {
@@ -387,6 +424,7 @@
       {
         "id": "bd2f95c4-e7d1-46ac-9189-f9f06f9c00e0",
         "type": "separator",
+        "color": "ansi256:7",
         "dim": true
       },
       {
@@ -403,6 +441,9 @@
         "id": "54cb6389-6b9f-497c-b8b9-fd0e473aba9c",
         "type": "tokens-total",
         "color": "ansi256:79",
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "merge": true,
         "metadata": {
@@ -410,7 +451,7 @@
         }
       },
       {
-        "id": "9a036e9c-aedc-40d4-bf5f-b7b3a358cc97",
+        "id": "3ab354a7-9f9f-4dec-bf1c-b71770e5d950",
         "type": "separator",
         "character": " "
       },
@@ -419,6 +460,9 @@
         "type": "total-speed",
         "color": "ansi256:79",
         "dim": true,
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true,
         "metadata": {
           "hide": "no-data"
@@ -426,12 +470,17 @@
       },
       {
         "id": "e39ca93f-ec2f-416f-acae-407ac7dc9e17",
-        "type": "flex-separator"
+        "type": "flex-separator",
+        "color": "ansi256:7",
+        "dim": true
       },
       {
         "id": "15e414b3-5b11-45ac-800d-68281ff3b920",
         "type": "free-memory",
         "color": "ansi256:5",
+        "numberFormat": {
+          "style": "compact"
+        },
         "rawValue": true
       }
     ]
