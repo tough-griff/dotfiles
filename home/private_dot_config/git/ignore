@@ -2,6 +2,7 @@
 .envrc
 .node-version
 .claude/*.local.json
+.claude/worktrees/
 
 # === Diff.gitignore ===
 *.patch
