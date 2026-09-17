@@ -22,6 +22,7 @@
         "id": "792f382e-5ef6-4501-ad62-8e7726ad3645",
         "type": "git-root-dir",
         "color": "ansi256:6",
+        "maxWidth": 20,
         "metadata": {
           "linkToIDE": "vscode",
           "hide": "no-git"
