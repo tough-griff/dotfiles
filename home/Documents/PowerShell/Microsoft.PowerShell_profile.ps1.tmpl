@@ -31,14 +31,41 @@ New-Alias -Name ea -Value "Edit-Add"
 function Edit-Dotfiles { Set-Location {{ .chezmoi.workingTree | quote }}; Edit . }
 New-Alias -Name edf -Value "Edit-Dotfiles"
 New-Alias -name Which -Value "Get-Command"
-function Print-Env { Get-ChildItem Env: | ForEach-Object { "$($_.Name)=$($_.Value)" } }
-New-Alias -Name env -Value "Print-Env"
-function splitpath { $env:PATH -split [IO.Path]::PathSeparator }
+function Write-Env { Get-ChildItem Env: | ForEach-Object { "$($_.Name)=$($_.Value)" } }
+New-Alias -Name env -Value "Write-Env"
+function Write-Split-Path { $env:PATH -split [IO.Path]::PathSeparator }
+New-Alias -Name splitpath -Value "Write-Split-Path"
 
 if (Get-Command starship -ErrorAction SilentlyContinue) {
   function Invoke-Starship-TransientFunction {
     &starship module character
   }
+
+  function Set-TabTitle([string]$Job) {
+    $dir = $PWD.ProviderPath
+    if ($dir -eq $HOME -or $dir.StartsWith("$HOME\", [StringComparison]::OrdinalIgnoreCase)) {
+      $dir = "~" + $dir.Substring($HOME.Length)
+    }
+    $host.UI.RawUI.WindowTitle = "$Job — $dir"
+  }
+
+  function Invoke-Starship-PreCommand {
+    if ($PWD.Provider.Name -eq "FileSystem") {
+      $host.UI.Write("$([char]27)]9;9;`"$($PWD.ProviderPath)`"$([char]27)\")
+    }
+    Set-TabTitle "pwsh"
+  }
+
+  # Mirrors PSReadLine's own definition; $? must be read first or it gets flushed.
+  function PSConsoleHostReadLine {
+    $lastRunStatus = $?
+    Microsoft.PowerShell.Core\Set-StrictMode -Off
+    $line = [Microsoft.PowerShell.PSConsoleReadLine]::ReadLine($host.Runspace, $ExecutionContext, $lastRunStatus)
+    $job = ($line.Trim() -split '\s+', 2)[0]
+    if ($job) { Set-TabTitle $job }
+    $line
+  }
+
   Invoke-Expression (&starship init powershell)
   Enable-TransientPrompt
 }
