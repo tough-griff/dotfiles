@@ -30,6 +30,8 @@
 	<string>https://api.anthropic.com/v1/messages</string>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>ClaudeCodeWorkgroupUpsellSuppressed</key>
+	<true/>
 	<key>ClickToSelectCommand</key>
 	<false/>
 	<key>CodeReviewSavedPrompts</key>
@@ -437,7 +439,7 @@
 	<key>DoubleClickPerformsSmartSelection</key>
 	<true/>
 	<key>EnableAPIServer</key>
-	<true/>
+	<false/>
 	<key>EnableDivisionView</key>
 	<true/>
 	<key>GlobalKeyMap</key>
@@ -545,10 +547,6 @@
 	<true/>
 	<key>IRMemory</key>
 	<integer>4</integer>
-	<key>NeverWarnAboutShortLivedSessions_E76C5B98-05A5-46E9-848B-A4D9611DE543</key>
-	<true/>
-	<key>NeverWarnAboutShortLivedSessions_E76C5B98-05A5-46E9-848B-A4D9611DE543_selection</key>
-	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -559,7 +557,7 @@
 			<key>Allow Title Reporting</key>
 			<true/>
 			<key>Allow Title Setting</key>
-			<false/>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1806,56 +1804,11 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Title Components</key>
-			<integer>14</integer>
+			<integer>6</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
-			<array>
-				<dict>
-					<key>action</key>
-					<string>iTermEnterWorkgroupTrigger</string>
-					<key>contentregex</key>
-					<string></string>
-					<key>disabled</key>
-					<false/>
-					<key>eventParams</key>
-					<dict>
-						<key>jobName</key>
-						<string>claude</string>
-					</dict>
-					<key>matchType</key>
-					<integer>113</integer>
-					<key>parameter</key>
-					<string>builtin.claudeCode</string>
-					<key>partial</key>
-					<false/>
-					<key>regex</key>
-					<string></string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>iTermExitWorkgroupTrigger</string>
-					<key>contentregex</key>
-					<string></string>
-					<key>disabled</key>
-					<false/>
-					<key>eventParams</key>
-					<dict>
-						<key>jobName</key>
-						<string>claude</string>
-						<key>leaderOnly</key>
-						<true/>
-					</dict>
-					<key>matchType</key>
-					<integer>114</integer>
-					<key>parameter</key>
-					<string></string>
-					<key>partial</key>
-					<false/>
-					<key>regex</key>
-					<string></string>
-				</dict>
-			</array>
+			<array/>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
@@ -5824,34 +5777,7 @@
 	<true/>
 	<key>Workgroups</key>
 	<data>
-	W3sidW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4uY2xhdWRlQ29kZSIsIm5hbWUiOiJD
-	bGF1ZGUgQ29kZSIsInNlc3Npb25zIjpbeyJkaXNwbGF5TmFtZSI6IkNoYXQiLCJwZXJG
-	aWxlQ29tbWFuZCI6IiIsInVybFN0cmluZyI6IiIsInRvb2xiYXJJdGVtcyI6W3sia2lu
-	ZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6ImdpdFN0YXR1cyJ9LHsia2luZCI6ImF1
-	dG9SZXF1ZXN0UmV2aWV3V2hlbklkbGUifV0sIm1vZGUiOiJyZWd1bGFyIiwia2luZCI6
-	eyJraW5kIjoicm9vdCJ9LCJjb21tYW5kIjoiIiwidW5pcXVlSWRlbnRpZmllciI6ImJ1
-	aWx0aW4uY2xhdWRlQ29kZS5tYWluIn0seyJkaXNwbGF5TmFtZSI6IkRpZmYiLCJwZXJG
-	aWxlQ29tbWFuZCI6ImdpdCBkaWZmdG9vbCAteSAteCB2aW1kaWZmIFxcKGdpdEJhc2Up
-	IC0tIFxcKGZpbGUpIiwidXJsU3RyaW5nIjoiIiwidG9vbGJhckl0ZW1zIjpbeyJraW5k
-	IjoibW9kZVN3aXRjaGVyIn0seyJraW5kIjoiY2hhbmdlZEZpbGVTZWxlY3RvciJ9LHsi
-	a2luZCI6ImdpdEJhc2VTZWxlY3RvciJ9LHsiZm9yd2FyZFNob3J0Y3V0Ijp7InNlcmlh
-	bGl6ZWQiOiIweGY3MDMtMHgzNDAwMDAtMHg3YyJ9LCJyZWxvYWRTaG9ydGN1dCI6eyJz
-	ZXJpYWxpemVkIjoiMHg3Mi0weDEwMDAwMC0weGYifSwia2luZCI6Im5hdmlnYXRpb24i
-	LCJiYWNrU2hvcnRjdXQiOnsic2VyaWFsaXplZCI6IjB4ZjcwMi0weDM0MDAwMC0weDdi
-	In19XSwibW9kZSI6ImRpZmYiLCJraW5kIjp7ImtpbmQiOiJwZWVyIn0sImNvbW1hbmQi
-	OiJnaXQgZGlmZnRvb2wgLXkgLXggdmltZGlmZiBcXChnaXRCYXNlKSIsInVuaXF1ZUlk
-	ZW50aWZpZXIiOiJidWlsdGluLmNsYXVkZUNvZGUuZGlmZiIsInBhcmVudElEIjoiYnVp
-	bHRpbi5jbGF1ZGVDb2RlLm1haW4ifSx7ImRpc3BsYXlOYW1lIjoiQ29kZSBSZXZpZXci
-	LCJwZXJGaWxlQ29tbWFuZCI6IiIsInVybFN0cmluZyI6IiIsInRvb2xiYXJJdGVtcyI6
-	W3sia2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsic2hvcnRjdXQiOnsic2VyaWFsaXplZCI6
-	IjB4NzItMHgxMDAwMDAtMHhmIn0sImtpbmQiOiJyZWxvYWQifSx7ImtpbmQiOiJhdXRv
-	U2VuZENsaXBwaW5nc1doZW5JZGxlIn1dLCJtb2RlIjoiY29kZVJldmlldyIsImtpbmQi
-	Onsia2luZCI6InBlZXIifSwiY29tbWFuZCI6ImNsYXVkZSBcXChjb2RlUmV2aWV3UHJv
-	bXB0KSAtLWFwcGVuZC1zeXN0ZW0tcHJvbXB0LWZpbGUgJ1xcKGNvZGVSZXZpZXdTeXN0
-	ZW1Qcm9tcHRGaWxlKScgLS1zZXR0aW5ncyAnXFwoaXRlcm0yLmFwcEJ1bmRsZVBhdGgp
-	XC9Db250ZW50c1wvUmVzb3VyY2VzXC9jb2RlLXJldmlldy1zZXR0aW5ncy50eHQnIiwi
-	dW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4uY2xhdWRlQ29kZS5yZXZpZXciLCJwYXJl
-	bnRJRCI6ImJ1aWx0aW4uY2xhdWRlQ29kZS5tYWluIn1dfV0=
+	W10=
 	</data>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>

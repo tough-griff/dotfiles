@@ -4,7 +4,7 @@ claude:
 
   statusLine:
     type: command
-    command: bunx --bun ccstatusline
+    command: ccstatusline
     padding: 0
     refreshInterval: 10
 
