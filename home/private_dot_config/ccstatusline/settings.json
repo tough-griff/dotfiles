@@ -135,7 +135,7 @@
     ],
     [
       {
-        "id": "1",
+        "id": "0ba40f75-ef77-4f28-8869-db9f0af58f5a",
         "type": "model",
         "color": "ansi256:12",
         "bold": true,
@@ -219,9 +219,6 @@
         "id": "fb09dd02-a41b-4172-bfdf-4dd7e329b8a7",
         "type": "extra-usage-used",
         "color": "ansi256:11",
-        "numberFormat": {
-          "style": "compact"
-        },
         "rawValue": true,
         "metadata": {
           "hide": "disabled,no-data,zero"
@@ -331,26 +328,15 @@
     ],
     [
       {
-        "id": "9638cf7e-d243-41b0-a838-637ebfe25d5f",
-        "type": "custom-text",
-        "color": "ansi256:76",
-        "customText": "i: ",
-        "merge": true,
-        "metadata": {
-          "hide": "merge-target-hidden"
-        }
-      },
-      {
         "id": "1d8711c5-1bec-46d8-aae9-418d1ddca51c",
         "type": "tokens-input",
         "color": "ansi256:76",
         "numberFormat": {
           "style": "compact"
         },
-        "rawValue": true,
-        "merge": true,
+        "rawValue": false,
         "metadata": {
-          "hide": "zero"
+          "label": "i: "
         }
       },
       {
@@ -378,26 +364,15 @@
         "dim": true
       },
       {
-        "id": "48bb7224-dbea-4287-9fec-a3e5624021bd",
-        "type": "custom-text",
-        "color": "ansi256:77",
-        "customText": "o: ",
-        "merge": true,
-        "metadata": {
-          "hide": "merge-target-hidden"
-        }
-      },
-      {
         "id": "28256e6c-46e1-4232-a81f-fc96d8e62b86",
         "type": "tokens-output",
         "color": "ansi256:77",
         "numberFormat": {
           "style": "compact"
         },
-        "rawValue": true,
-        "merge": true,
+        "rawValue": false,
         "metadata": {
-          "hide": "zero"
+          "label": "o: "
         }
       },
       {
@@ -425,26 +400,15 @@
         "dim": true
       },
       {
-        "id": "28b2c509-2ab2-44d3-b7af-4a46f86a71ba",
-        "type": "custom-text",
-        "color": "ansi256:78",
-        "customText": "c: ",
-        "merge": true,
-        "metadata": {
-          "hide": "merge-target-hidden"
-        }
-      },
-      {
         "id": "7a13765a-e8e2-4f42-aab1-a1d15a33b776",
         "type": "tokens-cached",
         "color": "ansi256:78",
         "numberFormat": {
           "style": "compact"
         },
-        "rawValue": true,
-        "merge": true,
+        "rawValue": false,
         "metadata": {
-          "hide": "zero"
+          "label": "c: "
         }
       },
       {
@@ -469,26 +433,15 @@
         "dim": true
       },
       {
-        "id": "ccf5c745-7e1c-455d-956e-a85286d43613",
-        "type": "custom-text",
-        "color": "ansi256:79",
-        "customText": "t: ",
-        "merge": true,
-        "metadata": {
-          "hide": "merge-target-hidden"
-        }
-      },
-      {
         "id": "54cb6389-6b9f-497c-b8b9-fd0e473aba9c",
         "type": "tokens-total",
         "color": "ansi256:79",
         "numberFormat": {
           "style": "compact"
         },
-        "rawValue": true,
-        "merge": true,
+        "rawValue": false,
         "metadata": {
-          "hide": "zero"
+          "label": "t: "
         }
       },
       {
