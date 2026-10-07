@@ -76,8 +76,8 @@ tags
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
-Icon
+# Icon followed by a carriage return (macOS custom folder icons)
+Icon[\r]
 
 
 # Thumbnails
