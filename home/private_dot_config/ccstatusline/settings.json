@@ -423,7 +423,8 @@
         "dim": true,
         "rawValue": true,
         "metadata": {
-          "hide": "empty"
+          "hide": "empty",
+          "ttlSeconds": "3600"
         }
       },
       {
