@@ -8,5 +8,6 @@
     "*.fish.tmpl": "fish",
     "*.ps1.tmpl": "powershell",
     "*.sh.tmpl": "shellscript"
-  }
+  },
+  "go-template.patterns": ["**/*.tmpl"]
 }
