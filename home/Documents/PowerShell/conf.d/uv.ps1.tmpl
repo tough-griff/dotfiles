@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="<#{{" right-delimiter="}}#>"
+<#{{- if lookPath "uv" }}#>
+<#{{ output "uv" "generate-shell-completion" "powershell" }}#>
+# uvx repeats uv's `using` lines, which are only legal at the top of a file.
+<#{{ output "uvx" "--generate-shell-completion" "powershell" | replaceAllRegex "(?m)^using namespace .*\r?\n" "" }}#>
+<#{{- end }}#>

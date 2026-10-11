@@ -73,5 +73,9 @@ New-Alias -Name gu -Value "Invoke-GitAlias-gu" -Force
 function Invoke-GitAlias-guc { git uncommit $args }
 New-Alias -Name guc -Value "Invoke-GitAlias-guc" -Force
 
-# After the aliases so posh-git registers completion for `g` too.
-Import-Module posh-git
+# After the aliases so posh-git registers completion for `g` too. Deferred to
+# first idle since it's the slowest part of startup.
+$null = Register-EngineEvent -SourceIdentifier PowerShell.OnIdle -MaxTriggerCount 1 -Action {
+  # EnableProxyFunctionExpansion: completes `function f { git <cmd> $args }` wrappers and their aliases.
+  Import-Module posh-git -Global -ArgumentList $false, $false, $true
+}

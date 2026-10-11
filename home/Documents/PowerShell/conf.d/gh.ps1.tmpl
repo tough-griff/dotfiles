@@ -1,0 +1,5 @@
+# chezmoi:template:left-delimiter="<#{{" right-delimiter="}}#>"
+<#{{- if lookPath "gh" }}#>
+# gh prints "Completion ended with directive" to stderr, which leaks to the console.
+<#{{ output "gh" "completion" "-s" "powershell" | replace "\"$RequestComp\" 2>&1" "\"$RequestComp 2>`$null\" 2>&1" }}#>
+<#{{- end }}#>

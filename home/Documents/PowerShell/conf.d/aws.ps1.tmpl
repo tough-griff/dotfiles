@@ -1,0 +1,15 @@
+# chezmoi:template:left-delimiter="<#{{" right-delimiter="}}#>"
+<#{{- if lookPath "aws_completer" }}#>
+Register-ArgumentCompleter -Native -CommandName aws -ScriptBlock {
+  param($wordToComplete, $commandAst, $cursorPosition)
+  $env:COMP_LINE = $commandAst.ToString().PadRight($cursorPosition - $commandAst.Extent.StartOffset)
+  $env:COMP_POINT = $cursorPosition - $commandAst.Extent.StartOffset
+  try {
+    aws_completer | ForEach-Object {
+      [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
+  } finally {
+    Remove-Item Env:\COMP_LINE, Env:\COMP_POINT
+  }
+}
+<#{{- end }}#>

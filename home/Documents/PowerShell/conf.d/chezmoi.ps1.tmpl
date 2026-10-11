@@ -1,0 +1,5 @@
+# chezmoi:template:left-delimiter="<#{{" right-delimiter="}}#>"
+# chezmoi prints "Completion ended with directive" to stderr, which leaks to the console.
+<#{{ completion "powershell" | replace "\"$RequestComp\" 2>&1" "\"$RequestComp 2>`$null\" 2>&1" -}}#>
+
+Register-ArgumentCompleter -CommandName 'chez' -ScriptBlock ${__chezmoiCompleterBlock}

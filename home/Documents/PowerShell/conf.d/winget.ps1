@@ -1,5 +1,7 @@
 if (Get-Command winget -ErrorAction SilentlyContinue) {
-    Import-Module -Name Microsoft.WinGet.CommandNotFound
+    $null = Register-EngineEvent -SourceIdentifier PowerShell.OnIdle -MaxTriggerCount 1 -Action {
+        Import-Module -Name Microsoft.WinGet.CommandNotFound -Global
+    }
 
     Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
         param($wordToComplete, $commandAst, $cursorPosition)

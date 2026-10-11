@@ -1,0 +1,4 @@
+# chezmoi:template:left-delimiter="<#{{" right-delimiter="}}#>"
+<#{{- if lookPath "rustup" }}#>
+<#{{ output "rustup" "completions" "powershell" }}#>
+<#{{- end }}#>

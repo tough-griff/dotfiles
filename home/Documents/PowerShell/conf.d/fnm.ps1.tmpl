@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="<#{{" right-delimiter="}}#>"
+<#{{- if lookPath "fnm" }}#>
+<#{{ output "fnm" "completions" "--shell" "powershell" }}#>
+# Not cached: fnm env creates a per-session multishell path.
+fnm env --use-on-cd --version-file-strategy=recursive --shell powershell | Out-String | Invoke-Expression
+<#{{- end }}#>
