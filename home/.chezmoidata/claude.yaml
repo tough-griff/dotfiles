@@ -8,6 +8,9 @@ claude:
     padding: 0
     refreshInterval: 10
 
+  env:
+    ENABLE_CLAUDEAI_MCP_SERVERS: "false"
+
   agentPushNotifEnabled: true
   autoUpdatesChannel: latest
   enableWorkflows: true

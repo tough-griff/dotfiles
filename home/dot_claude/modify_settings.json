@@ -18,7 +18,7 @@
 {{- $current := or .chezmoi.stdin "{}" -}}
 {{- $managed := deepCopy .claude | setValueAtPath "remoteControlAtStartup" (not .work) -}}
 {{- $managed = $managed | toJson -}}
-{{- output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed (`
+{{- output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed "--argjson" "work" (.work | toJson) (`
   def deepmerge(a; b):
     if (a|type) == "object" and (b|type) == "object" then
       reduce ((a + b) | keys_unsorted[]) as $k
@@ -33,4 +33,8 @@
       b
     end;
   deepmerge($current; $managed)
+  # Work machines run separate personal/work profiles off this one shared
+  # file, and settings env beats the shell env, so the profile-specific
+  # value has to come from the environment (LaunchAgent/fish, direnv) instead.
+  | if $work then del(.env.ENABLE_CLAUDEAI_MCP_SERVERS) | if .env == {} then del(.env) else . end else . end
 `) | replace "\r" "" | trimSuffix "\n" -}}

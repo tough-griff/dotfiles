@@ -1,4 +1,13 @@
-{{- if and .work (stat "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem") -}}
+{{- $env := dict -}}
+{{- if .work -}}
+{{-   $env = set $env "CLAUDE_CONFIG_DIR" (joinPath .chezmoi.homeDir ".claude.personal") -}}
+{{-   $env = set $env "ENABLE_CLAUDEAI_MCP_SERVERS" "false" -}}
+{{- end -}}
+{{- $netskope := "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem" -}}
+{{- if and .work (stat $netskope) -}}
+{{-   $env = set $env "NODE_EXTRA_CA_CERTS" $netskope -}}
+{{- end -}}
+{{- if $env -}}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -7,10 +16,13 @@
     <string>com.user.environment.globals</string>
     <key>ProgramArguments</key>
     <array>
-        <string>launchctl</string>
-        <string>setenv</string>
-        <string>NODE_EXTRA_CA_CERTS</string>
-        <string>/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem</string>
+        <string>/bin/sh</string>
+        <string>-c</string>
+        <string>
+{{- range $k, $v := $env }}
+launchctl setenv {{ $k }} {{ $v | squote }}
+{{- end }}
+</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
