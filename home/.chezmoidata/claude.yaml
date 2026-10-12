@@ -11,6 +11,9 @@ claude:
   env:
     ENABLE_CLAUDEAI_MCP_SERVERS: "false"
 
+  enabledPlugins:
+    cowork-plugin-management@synced: false
+
   agentPushNotifEnabled: true
   autoUpdatesChannel: latest
   enableWorkflows: true
