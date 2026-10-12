@@ -1,4 +1,8 @@
-{{- $ghPath := lookPath "gh" -}}
+{{- $ghPath := "" -}}
+{{- /* Git config values need backslashes doubled for Windows paths */ -}}
+{{- with lookPath "gh" -}}
+{{-   $ghPath = . | replace "\\" "\\\\" | squote -}}
+{{- end -}}
 {{- $lfsPath := lookPath "git-lfs" -}}
 {{- $deltaPath := lookPath "delta" -}}
 [user]
@@ -96,10 +100,10 @@
 {{- if $ghPath }}
 [credential "https://github.com"]
   helper =
-  helper = !{{ $ghPath | quote | replace `"` `'` }} auth git-credential
+  helper = !{{ $ghPath }} auth git-credential
 [credential "https://gist.github.com"]
   helper =
-  helper = !{{ $ghPath | quote | replace `"` `'` }} auth git-credential
+  helper = !{{ $ghPath }} auth git-credential
 {{- end }}
 [diff]
   colorMoved = default
