@@ -1,5 +1,15 @@
 if command -v fnm >/dev/null 2>&1; then
   eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell bash)"
+
+  # Run a command with each installed fnm Node version
+  fnm-each() {
+    local v
+    for v in $(fnm list | sed -n 's/^\* \(v[^ ]*\).*/\1/p'); do
+      printf '\033[1;34m%s:\033[0m\n' "$v"
+      fnm exec --using="$v" -- "$@"
+      echo
+    done
+  }
 fi
 
 if command -v npm >/dev/null 2>&1; then
