@@ -1,8 +1,4 @@
 {{- $env := dict -}}
-{{- if .work -}}
-{{-   $env = set $env "CLAUDE_CONFIG_DIR" (joinPath .chezmoi.homeDir ".claude.personal") -}}
-{{-   $env = set $env "ENABLE_CLAUDEAI_MCP_SERVERS" "false" -}}
-{{- end -}}
 {{- $netskope := "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem" -}}
 {{- if and .work (stat $netskope) -}}
 {{-   $env = set $env "NODE_EXTRA_CA_CERTS" $netskope -}}

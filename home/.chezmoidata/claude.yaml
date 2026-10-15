@@ -8,15 +8,14 @@ claude:
     padding: 0
     refreshInterval: 10
 
-  env:
-    ENABLE_CLAUDEAI_MCP_SERVERS: "false"
-
   enabledPlugins:
     cowork-plugin-management@synced: false
 
   agentPushNotifEnabled: true
   autoUpdatesChannel: latest
+  disableClaudeAiConnectors: true
   enableWorkflows: true
   inputNeededNotifEnabled: true
+  remoteControlAtStartup: true
   theme: auto
   tui: fullscreen

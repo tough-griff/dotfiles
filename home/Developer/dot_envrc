@@ -1,0 +1,2 @@
+# shellcheck shell=sh
+export CLAUDE_CONFIG_DIR="$HOME/.claude.personal"
