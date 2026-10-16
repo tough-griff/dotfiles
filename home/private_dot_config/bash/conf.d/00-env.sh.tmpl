@@ -1,5 +1,5 @@
 # shellcheck shell=bash
-# chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 export FORCE_COLOR=1
 export GITHUB_TOKEN=$(gh auth token)
 export GITHUB_PERSONAL_ACCESS_TOKEN="$GITHUB_TOKEN"
@@ -11,6 +11,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-# {{ if .wsl -}}
+#{{ if .wsl -}}
 export COLORTERM=truecolor
-# {{ end -}}
+#{{ end -}}

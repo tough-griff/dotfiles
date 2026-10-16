@@ -25,6 +25,8 @@ brew #{{ . | quote }}
 #{{- end }}
 
 #{{- range .packages.casks }}
+#{{-   if not (and $.wsl (eq . "1password-cli")) }}
 cask #{{ . | quote }}
+#{{-   end }}
 #{{- end }}
 EOF

@@ -1,13 +1,17 @@
 # shellcheck shell=bash
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 alias ag=rg # temporary so i remember
 alias c=clear
-alias cdf='cd {{ .chezmoi.workingTree }}'
+alias cdf='cd #{{ .chezmoi.workingTree }}'
 alias chez=chezmoi
 alias dog=doggo
 alias e=edit
 alias ea='edit --add'
-alias edf='cd {{ .chezmoi.workingTree }} && edit .'
+alias edf='cd #{{ .chezmoi.workingTree }} && edit .'
 alias o=open
+#{{ if .wsl -}}
+alias op=op.exe
+#{{ end -}}
 alias tree='tree -aC --dirsfirst'
 alias psa='ps aux'
 alias where='type -a'

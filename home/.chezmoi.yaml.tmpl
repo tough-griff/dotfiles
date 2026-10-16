@@ -53,6 +53,10 @@ data:
 
 onepassword:
   mode: {{ $onepasswordMode | quote }}
+{{- if $wsl }}
+  # The Windows CLI can unlock through the desktop app; a Linux op can't reach it
+  command: "op.exe"
+{{- end }}
 
 {{- if eq $onepasswordMode "account" }}
 

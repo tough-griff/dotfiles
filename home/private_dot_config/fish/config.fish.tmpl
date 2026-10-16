@@ -1,15 +1,19 @@
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 abbralias ag rg # temporary so i remember
 abbralias c clear
-abbralias cdf "cd {{ .chezmoi.workingTree }}"
+abbralias cdf "cd #{{ .chezmoi.workingTree }}"
 abbralias chez chezmoi
 abbralias dog doggo
 abbralias e edit
 abbralias ea "edit --add"
-abbralias edf "cd {{ .chezmoi.workingTree }} && edit ."
+abbralias edf "cd #{{ .chezmoi.workingTree }} && edit ."
 abbralias o open
 abbralias tree "tree -aC --dirsfirst"
 abbralias psa "ps aux"
 abbralias where "type -a"
+#{{ if .wsl -}}
+alias op op.exe
+#{{- end }}
 
 # this must come last
 if command -sq starship

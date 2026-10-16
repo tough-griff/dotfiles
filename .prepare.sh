@@ -18,6 +18,16 @@ if [ ! "$(command -v brew)" ]; then
   esac
 fi
 
+# on WSL chezmoi uses the Windows op.exe, so install that instead
+if grep -qi microsoft /proc/sys/kernel/osrelease 2>/dev/null; then
+  if [ ! "$(command -v op.exe)" ]; then
+    winget.exe install --exact --id AgileBits.1Password.CLI
+    echo "Restart WSL (wsl --shutdown) so op.exe is on PATH, then re-run chezmoi."
+    exit 1
+  fi
+  exit
+fi
+
 # exit immediately if op is already in $PATH
 if [ "$(command -v op)" ]; then
   exit
