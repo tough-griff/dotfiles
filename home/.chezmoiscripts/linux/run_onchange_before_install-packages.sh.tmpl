@@ -14,7 +14,15 @@ brew bundle --file=/dev/stdin <<EOF
 brew #{{ . | quote }}
 #{{- end }}
 
+#{{- if not .onepasswordAgent }}
 brew "keychain"
+#{{- end }}
+
+#{{- if .wsl }}
+#{{-   range .packages.brews_wsl }}
+brew #{{ . | quote }}
+#{{-   end }}
+#{{- end }}
 
 #{{- range .packages.casks }}
 cask #{{ . | quote }}

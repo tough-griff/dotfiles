@@ -1,10 +1,7 @@
+{{- $sock := includeTemplate "ssh-auth-sock" . -}}
+{{- if $sock -}}
 Host *
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_ed25519
-  IdentityFile ~/.ssh/id_rsa
-  AddKeysToAgent yes
-{{- if eq .chezmoi.os "darwin" }}
-  UseKeychain yes
-{{- end }}
+  IdentityAgent {{ $sock | quote }}
 
+{{ end -}}
 {{ onepasswordRead "op://Chezmoi/ssh_config/notesPlain" }}

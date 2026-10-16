@@ -1,0 +1,18 @@
+{{- $unit := includeTemplate "private_dot_config/systemd/user/ssh-agent-relay.service.tmpl" . -}}
+#!/bin/bash
+set -eufo pipefail
+
+# ssh-agent-relay.service hash: {{ $unit | sha256sum }}
+{{- /* Both checks render into the script so it runs again once they pass. */}}
+{{- if not $unit }}
+echo "socat or npiperelay.exe not found; skipping ssh-agent-relay.service" >&2
+exit 0
+{{- end }}
+{{- if not (stat "/run/systemd/system") }}
+echo "systemd isn't running; set systemd=true under [boot] in /etc/wsl.conf" >&2
+exit 0
+{{- end }}
+
+systemctl --user daemon-reload
+systemctl --user enable ssh-agent-relay.service
+systemctl --user restart ssh-agent-relay.service

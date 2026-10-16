@@ -10,7 +10,7 @@
   email = {{ .email | quote }}
 {{- if not .ephemeral }}
   useConfigOnly = true
-  signingKey = ~/.ssh/id_ed25519.pub
+  signingKey = {{ onepasswordRead "op://Chezmoi/id_ed25519/public key" }}
 {{- end }}
 [add.interactive]
   useBuiltin = false
@@ -129,8 +129,16 @@
   format = ssh
 [gpg "ssh"]
   allowedSignersFile = ~/.ssh/allowed_signers
-{{-   if eq .chezmoi.os "windows" }}
-  program = {{ findExecutable "ssh-keygen.exe" (list (printf "%s/System32/OpenSSH" (env "SystemRoot"))) | quote }}
+{{-   if .onepasswordAgent }}
+{{-     if .wsl }}
+  program = {{ lookPath "op-ssh-sign-wsl.exe" | quote }}
+{{-     else if eq .chezmoi.os "windows" }}
+  program = {{ lookPath "op-ssh-sign" | quote }}
+{{-     else if eq .chezmoi.os "darwin" }}
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+{{-     else }}
+  program = "/opt/1Password/op-ssh-sign"
+{{-     end }}
 {{-   end }}
 {{- end }}
 [init]

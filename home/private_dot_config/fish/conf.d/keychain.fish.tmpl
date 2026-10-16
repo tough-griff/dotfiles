@@ -1,13 +1,9 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
-# {{ if eq .chezmoi.os "linux" -}}
+# {{ $sock := includeTemplate "ssh-auth-sock" . -}}
+# {{ if $sock -}}
+set -gx SSH_AUTH_SOCK # {{ $sock | quote }}
+# {{ else if eq .chezmoi.os "linux" -}}
 if status is-interactive; and command -sq keychain
     keychain --quiet --eval | source
-end
-# {{ else if eq .chezmoi.os "darwin" -}}
-if status is-interactive
-    # Identities without a keychain-stored passphrase (e.g. id_rsa) would
-    # otherwise block on a TTY passphrase prompt here; redirecting stdin
-    # makes ssh-add treat that as EOF and skip them instead of hanging.
-    ssh-add --apple-load-keychain -q < /dev/null 2>/dev/null
 end
 # {{ end -}}

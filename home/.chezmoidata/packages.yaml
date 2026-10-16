@@ -23,6 +23,8 @@ packages:
     - tree
     - yq
     - zoxide
+  brews_wsl:
+    - socat
   casks:
     - 1password-cli
   psmodules:

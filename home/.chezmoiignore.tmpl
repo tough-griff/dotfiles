@@ -6,7 +6,13 @@ Library
 
 {{- if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
+.config/systemd
 .hushlogin
+{{- else if .wsl }}
+.config/1Password
+{{- else }}
+.chezmoiscripts/linux/wsl/**
+.config/systemd/user/ssh-agent-relay.service
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
@@ -16,12 +22,17 @@ Documents
 {{- else }}
 .chezmoiscripts/chsh.sh
 .chezmoiscripts/*.fish
+.config/1Password
 .config/beets
 .config/fish
 .editorconfig
 .psqlrc
 .zshenv
 .zshrc
+{{- end }}
+
+{{- if not .onepasswordAgent }}
+.config/1Password
 {{- end }}
 
 {{- if .ephemeral }}
@@ -33,6 +44,6 @@ Documents
 {{- end }}
 
 {{- if not .work }}
-.claude.personal/**
+.claude.personal
 Developer/.envrc
 {{- end }}

@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 export RUSTUP_HOME="${HOME}/.rustup"
 export CARGO_HOME="${HOME}/.cargo"
 

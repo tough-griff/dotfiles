@@ -3,8 +3,11 @@
 {{- $headless := false -}}
 {{- $hostname := .chezmoi.hostname -}}
 {{- $onepasswordMode := "service" -}}
+{{- $wsl := false -}}
 {{- if eq .chezmoi.os "darwin" -}}
 {{-   $hostname = output "scutil" "--get" "ComputerName" | trim -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   $wsl = .chezmoi.kernel.osrelease | lower | contains "microsoft" -}}
 {{- end -}}
 
 {{/* Detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
@@ -25,6 +28,12 @@
 {{-   end -}}
 {{- end -}}
 
+{{/* Whether the 1Password SSH agent supplies keys; the .deb/.rpm installs live in /opt/1Password */}}
+{{- $onepasswordAgent := and (not $headless) (not $ephemeral) -}}
+{{- if and (eq .chezmoi.os "linux") (not $wsl) (not (stat "/opt/1Password")) -}}
+{{-   $onepasswordAgent = false -}}
+{{- end -}}
+
 data:
   ephemeral: {{ $ephemeral }}
   headless: {{ $headless }}
@@ -33,6 +42,8 @@ data:
   email: "gryphon92@gmail.com"
   work: {{ hasPrefix "GYOURICK-" $hostname }}
   onepasswordMode: {{ $onepasswordMode | quote }}
+  onepasswordAgent: {{ $onepasswordAgent }}
+  wsl: {{ $wsl }}
 {{- if eq .chezmoi.os "darwin" }}
   macOS: {{ index (output "sw_vers" "-productVersion" | trim | splitList ".") 0 | atoi }}
 {{- end }}

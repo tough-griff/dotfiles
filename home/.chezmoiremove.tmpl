@@ -1,0 +1,7 @@
+{{- /* Keys come from the 1Password SSH agent except on headless and ephemeral machines. */ -}}
+{{- if .onepasswordAgent }}
+.ssh/id_ed25519
+.ssh/id_ed25519.pub
+.ssh/id_rsa
+.ssh/id_rsa.pub
+{{- end }}

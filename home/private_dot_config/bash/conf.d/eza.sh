@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 command -v eza >/dev/null 2>&1 || return
 
 alias ls='eza -F --group-directories-first'

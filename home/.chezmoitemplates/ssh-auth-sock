@@ -1,0 +1,10 @@
+{{- /* The 1Password SSH agent socket, or nothing where ssh should use its default agent. */ -}}
+{{- if .onepasswordAgent -}}
+{{-   if eq .chezmoi.os "darwin" -}}
+{{-     joinPath .chezmoi.homeDir "Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" -}}
+{{-   else if .wsl -}}
+{{-     joinPath .chezmoi.homeDir ".ssh/agent.sock" -}}
+{{-   else if eq .chezmoi.os "linux" -}}
+{{-     joinPath .chezmoi.homeDir ".1password/agent.sock" -}}
+{{-   end -}}
+{{- end -}}

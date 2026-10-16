@@ -1,0 +1,15 @@
+{{- $socat := lookPath "socat" -}}
+{{- $npiperelay := lookPath "npiperelay.exe" -}}
+{{- if and $socat $npiperelay -}}
+# Bridges the 1Password SSH agent's Windows named pipe into WSL.
+[Unit]
+Description=1Password SSH agent relay
+
+[Service]
+ExecStartPre=/bin/rm -f %h/.ssh/agent.sock
+ExecStart={{ $socat }} UNIX-LISTEN:%h/.ssh/agent.sock,fork "EXEC:{{ $npiperelay }} -ei -s //./pipe/openssh-ssh-agent,nofork"
+Restart=always
+
+[Install]
+WantedBy=default.target
+{{ end -}}
