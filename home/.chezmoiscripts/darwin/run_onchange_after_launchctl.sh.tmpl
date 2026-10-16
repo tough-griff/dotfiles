@@ -1,9 +1,12 @@
 #!/bin/bash
 set -eufo pipefail
 
-PLIST="$HOME/Library/LaunchAgents/environment.plist" # {{ includeTemplate "Library/LaunchAgents/environment.plist.tmpl" . | sha256sum }}
+# environment.plist hash: {{ includeTemplate "Library/LaunchAgents/environment.plist.tmpl" . | sha256sum }}
+# com.1password.SSH_AUTH_SOCK.plist hash: {{ includeTemplate "Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist.tmpl" . | sha256sum }}
 
-if [ -f "$PLIST" ]; then
-  launchctl unload "$PLIST" 2>/dev/null || true
-  launchctl load "$PLIST"
-fi
+for PLIST in "$HOME/Library/LaunchAgents/environment.plist" "$HOME/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist"; do
+  if [ -f "$PLIST" ]; then
+    launchctl unload "$PLIST" 2>/dev/null || true
+    launchctl load -w "$PLIST"
+  fi
+done
