@@ -3,6 +3,10 @@
 # {{ $sock := includeTemplate "ssh-auth-sock" . -}}
 # {{ if $sock -}}
 export SSH_AUTH_SOCK=# {{ $sock | quote }}
+# {{ else if eq .chezmoi.os "windows" -}}
+# Git Bash's own ssh can't reach the agent's named pipe.
+alias ssh=/c/Windows/System32/OpenSSH/ssh.exe
+alias ssh-add=/c/Windows/System32/OpenSSH/ssh-add.exe
 # {{ else if eq .chezmoi.os "linux" -}}
 if command -v keychain >/dev/null 2>&1; then
   eval "$(keychain --quiet --eval)"

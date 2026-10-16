@@ -95,6 +95,10 @@
   pager = delta
 {{- end }}
   precomposeUnicode = true
+{{- if eq .chezmoi.os "windows" }}
+  # Git's bundled ssh can't reach the agent's named pipe.
+  sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+{{- end }}
   trustctime = false
   untrackedCache = true
 {{- if $ghPath }}
