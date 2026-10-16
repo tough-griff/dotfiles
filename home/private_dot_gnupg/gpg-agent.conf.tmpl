@@ -3,10 +3,14 @@ allow-loopback-pinentry
 allow-preset-passphrase
 {{- end }}
 default-cache-ttl 86400
+{{- if not .onepasswordAgent }}
 default-cache-ttl-ssh 86400
 enable-ssh-support
+{{- end }}
 max-cache-ttl 86400
+{{- if not .onepasswordAgent }}
 max-cache-ttl-ssh 86400
+{{- end }}
 no-allow-external-cache
 {{- if eq .chezmoi.os "darwin" }}
 pinentry-program {{ lookPath "pinentry-mac" }}
