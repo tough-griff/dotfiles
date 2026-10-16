@@ -20,6 +20,9 @@
 {{-   if stdinIsATTY -}}
 {{-     $ephemeral = promptBoolOnce . "ephemeral" "ephemeral" $ephemeral -}}
 {{-     $headless = promptBoolOnce . "headless" "headless" $headless -}}
+{{-     if not (or $ephemeral $headless) -}}
+{{-       $onepasswordMode = "account" -}}
+{{-     end -}}
 {{-     $hostname = promptStringOnce . "hostname" "hostname" $hostname -}}
 {{-     $onepasswordMode = promptChoiceOnce . "onepasswordMode" "1password mode" (list "account" "connect" "service") $onepasswordMode }}
 {{-   else -}}
@@ -50,6 +53,12 @@ data:
 
 onepassword:
   mode: {{ $onepasswordMode | quote }}
+
+{{- if eq $onepasswordMode "account" }}
+
+env:
+  OP_ACCOUNT: "my.1password.com"
+{{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
 

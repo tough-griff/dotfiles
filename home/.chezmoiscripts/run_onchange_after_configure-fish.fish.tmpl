@@ -28,14 +28,11 @@ set -U fish_pager_color_progress brblack
 
 # {{ if eq .chezmoi.config.onepassword.mode "service" -}}
 set -Ux OP_SERVICE_ACCOUNT_TOKEN "$OP_SERVICE_ACCOUNT_TOKEN"
-set -Ux GITHUB_TOKEN (gh auth token)
-set -Ux GITHUB_PERSONAL_ACCESS_TOKEN "$GITHUB_TOKEN"
-set -Ux CONTEXT7_API_KEY (op read "op://Chezmoi/CONTEXT7_API_KEY/credential")
-# {{- end }}
-set -Ux XDG_DATA_HOME "$HOME/.local/share"
-set -Ux XDG_CONFIG_HOME "$HOME/.config"
-set -Ux XDG_STATE_HOME "$HOME/.local/state"
-set -Ux XDG_CACHE_HOME "$HOME/.cache"
+
+# {{ else -}}
+set -eU OP_SERVICE_ACCOUNT_TOKEN
+
+# {{ end -}}
 
 # install fisher packages
 curl -fsSL https://git.io/fisher | source

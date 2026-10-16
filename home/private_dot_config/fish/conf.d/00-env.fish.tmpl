@@ -1,9 +1,15 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter="}}"
 set -gx FORCE_COLOR 1
+set -gx GITHUB_TOKEN (gh auth token)
+set -gx GITHUB_PERSONAL_ACCESS_TOKEN "$GITHUB_TOKEN"
 set -gx GPG_TTY $(tty)
 set -gx LANG "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
-set -gx LESS -FgimrSwX -z-4
+set -gx LESS "-FgimrSwX -z-4"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_STATE_HOME "$HOME/.local/state"
 # {{ if .wsl -}}
 set -gx COLORTERM truecolor
 # {{ end -}}
