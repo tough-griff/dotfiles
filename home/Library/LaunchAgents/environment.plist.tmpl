@@ -1,7 +1,11 @@
 {{- $env := dict -}}
 {{- $netskope := "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem" -}}
 {{- if and .work (stat $netskope) -}}
+{{-   $env = set $env "AWS_CA_BUNDLE" $netskope -}}
+{{-   $env = set $env "CURL_CA_BUNDLE" $netskope -}}
 {{-   $env = set $env "NODE_EXTRA_CA_CERTS" $netskope -}}
+{{-   $env = set $env "REQUESTS_CA_BUNDLE" $netskope -}}
+{{-   $env = set $env "SSL_CERT_FILE" $netskope -}}
 {{- end -}}
 {{- if $env -}}
 <?xml version="1.0" encoding="UTF-8"?>
