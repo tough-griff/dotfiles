@@ -47,3 +47,7 @@ Documents
 .claude.personal
 Developer/.envrc
 {{- end }}
+
+{{- if not .wsl }}
+.local/bin/op
+{{- end }}

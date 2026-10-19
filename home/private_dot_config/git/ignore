@@ -3,6 +3,7 @@
 .node-version
 .claude/*.local.json
 .claude/worktrees/
+.claude/.cc-writes/
 
 # === Diff.gitignore ===
 *.patch

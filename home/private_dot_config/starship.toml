@@ -18,6 +18,7 @@ $cmd_duration\
 $line_break\
 $jobs\
 $battery\
+$shell\
 $status\
 $character\
 """
@@ -34,6 +35,16 @@ style_user = "green"
 disabled = false
 format = "[@$hostname]($style)"
 style = "dimmed green"
+
+[env_var.WSL_DISTRO]
+variable = "WSL_DISTRO_NAME"
+format = "[WSL:$env_value]($style) "
+style = "bold blue"
+
+[env_var.MSYSTEM]
+variable = "MSYSTEM"
+format = "[$env_value]($style) "
+style = "bold blue"
 
 [directory]
 disabled = false
@@ -106,6 +117,16 @@ show_notifications = false
 disabled = false
 format = "[$percentage]($style) "
 
+[shell]
+disabled = false
+format = "[$indicator]($style)"
+style = "dimmed blue"
+fish_indicator = ''
+bash_indicator = 'bash '
+zsh_indicator = 'zsh '
+powershell_indicator = ''
+cmd_indicator = 'cmd '
+
 [status]
 disabled = false
 format = "[$status]($style) "
@@ -113,16 +134,6 @@ style = "red"
 pipestatus = true
 pipestatus_separator = ""
 pipestatus_format = "[$pipestatus]($style)"
-
-[env_var.MSYSTEM]
-variable = "MSYSTEM"
-format = "[$env_value]($style) "
-style = "bold blue"
-
-[env_var.WSL_DISTRO]
-variable = "WSL_DISTRO_NAME"
-format = "[WSL:$env_value]($style) "
-style = "bold blue"
 
 [character]
 disabled = false
