@@ -170,6 +170,12 @@
   autoSetupRemote = true
   default = simple
   followTags = true
+{{- if eq .chezmoi.os "windows" }}
+# WSL files are owned by a Linux UID that Git for Windows can't match to the current user.
+[safe]
+  directory = "%(prefix)///wsl.localhost/*"
+  directory = "%(prefix)///wsl$/*"
+{{- end }}
 [submodule]
   recurse = true
 {{- if not .ephemeral }}
