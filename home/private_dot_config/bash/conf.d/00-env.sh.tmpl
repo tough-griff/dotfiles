@@ -14,3 +14,12 @@ export XDG_STATE_HOME="$HOME/.local/state"
 #{{ if .wsl -}}
 export COLORTERM=truecolor
 #{{ end -}}
+#{{ $netskope := "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem" -}}
+#{{ if and .work (stat $netskope) -}}
+# launchctl setenv in com.user.environment.globals.plist misses apps launched before the agent runs
+export AWS_CA_BUNDLE=#{{ $netskope | squote }}
+export CURL_CA_BUNDLE=#{{ $netskope | squote }}
+export NODE_EXTRA_CA_CERTS=#{{ $netskope | squote }}
+export REQUESTS_CA_BUNDLE=#{{ $netskope | squote }}
+export SSL_CERT_FILE=#{{ $netskope | squote }}
+#{{ end -}}
