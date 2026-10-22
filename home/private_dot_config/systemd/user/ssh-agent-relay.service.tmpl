@@ -7,7 +7,9 @@ Description=1Password SSH agent relay
 
 [Service]
 ExecStartPre=/bin/rm -f %h/.ssh/agent.sock
-ExecStart={{ $socat }} UNIX-LISTEN:%h/.ssh/agent.sock,fork "EXEC:{{ $npiperelay }} -ei -s //./pipe/openssh-ssh-agent,nofork"
+# -p waits out a busy pipe instead of failing; concurrent clients (Ansible
+# forks) otherwise get random "Permission denied (publickey)".
+ExecStart={{ $socat }} UNIX-LISTEN:%h/.ssh/agent.sock,fork "EXEC:{{ $npiperelay }} -ei -s -p //./pipe/openssh-ssh-agent,nofork"
 Restart=always
 
 [Install]
