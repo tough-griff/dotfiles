@@ -42,7 +42,9 @@ packages:
     - GitHub.cli
     - GnuPG.GnuPG
     - jqlang.jq
+    - koalaman.shellcheck
     - Microsoft.PowerShell
     - MikeFarah.yq
+    - mvdan.shfmt
     - sharkdp.bat
     - Starship.Starship

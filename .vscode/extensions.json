@@ -1,10 +1,9 @@
 {
   "recommendations": [
     "bmalehorn.vscode-fish",
+    "jinliming2.vscode-go-template",
+    "mads-hartmann.bash-ide-vscode",
     "ms-vscode.powershell",
     "tamasfe.even-better-toml",
-    "timonwong.shellcheck",
-    "foxundermoon.shell-format",
-    "jinliming2.vscode-go-template"
   ]
 }
