@@ -1,7 +1,21 @@
 {{- $sock := includeTemplate "ssh-auth-sock" . -}}
-{{- if $sock -}}
+CanonicalizeHostname yes
+CanonicalDomains lab.yourick.net home.yourick.net
+
+{{- range (onepasswordRead "op://Chezmoi/ssh_config/notesPlain" | fromYaml) }}
+
+Host {{ .Host }}
+{{-   range $k, $v := . }}
+{{-     if ne $k "Host" }}
+{{-       range (kindIs "slice" $v | ternary $v (list $v)) }}
+  {{ $k }} {{ . }}
+{{-       end }}
+{{-     end }}
+{{-   end }}
+{{- end }}
+
+{{- if $sock }}
+
 Host *
   IdentityAgent {{ $sock | quote }}
-
-{{ end -}}
-{{ onepasswordRead "op://Chezmoi/ssh_config/notesPlain" }}
+{{- end }}
