@@ -60,6 +60,7 @@ function PSConsoleHostReadLine {
   $line
 }
 
+$env:STARSHIP_CONFIG = "$HOME\.config\starship-pwsh.toml"
 <#{{ output "starship" "init" "powershell" "--print-full-init" }}#>
 Enable-TransientPrompt
 <#{{ end -}}#>

@@ -129,7 +129,7 @@ cmd_indicator = 'cmd '
 
 [status]
 disabled = false
-format = "[$status]($style) "
+format = "[{{ .status }}]($style) "
 style = "red"
 pipestatus = true
 pipestatus_separator = ""
