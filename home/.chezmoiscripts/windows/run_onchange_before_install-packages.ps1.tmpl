@@ -23,8 +23,14 @@ $modules = @(
 #{{- end }}
 )
 
-foreach ($name in $modules) {
-    if (-not (Get-Module -ListAvailable -Name $name)) {
-        Install-Module -Name $name -Scope CurrentUser -Force
+# Runs under Windows PowerShell 5.1 (chezmoi's default ps1 interpreter), whose
+# PowerShellGet breaks when PSModulePath is inherited from pwsh. Call pwsh by
+# full path because a fresh install isn't on this process's PATH yet.
+$pwsh = "$env:LOCALAPPDATA\Microsoft\WindowsApps\pwsh.exe"
+& $pwsh -NoProfile -Command {
+    foreach ($name in $args) {
+        if (-not (Get-Module -ListAvailable -Name $name)) {
+            Install-Module -Name $name -Scope CurrentUser -Force
+        }
     }
-}
+} -args $modules
