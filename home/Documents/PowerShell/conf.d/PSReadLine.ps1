@@ -1,3 +1,7 @@
+# Non-interactive sessions (e.g. `ssh host 'cmd'`) have no console for
+# PSReadLine, and -PredictionSource errors there.
+if ([Console]::IsOutputRedirected) { return }
+
 Import-Module PSReadLine
 Set-PSReadlineOption -EditMode Emacs
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
