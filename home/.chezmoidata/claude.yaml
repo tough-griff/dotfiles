@@ -11,6 +11,20 @@ claude:
   enabledPlugins:
     cowork-plugin-management@synced: false
 
+  skillOverrides:
+    anthropic-skills:pdf: "user-invocable-only"
+    anthropic-skills:docx: "user-invocable-only"
+    anthropic-skills:xlsx: "user-invocable-only"
+    anthropic-skills:pptx: "user-invocable-only"
+    anthropic-skills:docs: "off"
+    anthropic-skills:google-workspace: "off"
+    anthropic-skills:computer-use: "off"
+    anthropic-skills:chrome-browser: "off"
+    anthropic-skills:built-in-browser: "off"
+    anthropic-skills:deep-research: "user-invocable-only"
+    anthropic-skills:skill-creator: "user-invocable-only"
+    anthropic-skills:import-memory: "user-invocable-only"
+
   agentPushNotifEnabled: true
   autoUpdatesChannel: latest
   disableClaudeAiConnectors: true
