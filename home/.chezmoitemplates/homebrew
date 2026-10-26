@@ -3,7 +3,7 @@
 {{-   if eq .chezmoi.os "darwin" -}}
 {{-     $brew = findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin") -}}
 {{-   else if eq .chezmoi.os "linux" -}}
-{{-     $brew = findExecutable "brew" (list "/home/linuxbrew/.linuxbrew/bin" "$HOME/.linuxbrew/bin/brew") -}}
+{{-     $brew = findExecutable "brew" (list "/home/linuxbrew/.linuxbrew/bin" (joinPath .chezmoi.homeDir ".linuxbrew/bin")) -}}
 {{-   end -}}
 {{- end -}}
 {{- if stat $brew -}}
