@@ -1,13 +1,4 @@
-{{- $env := dict -}}
-{{- $netskope := "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem" -}}
-{{- if and .work (stat $netskope) -}}
-{{-   $env = set $env "AWS_CA_BUNDLE" $netskope -}}
-{{-   $env = set $env "CURL_CA_BUNDLE" $netskope -}}
-{{-   $env = set $env "NODE_EXTRA_CA_CERTS" $netskope -}}
-{{-   $env = set $env "REQUESTS_CA_BUNDLE" $netskope -}}
-{{-   $env = set $env "SSL_CERT_FILE" $netskope -}}
-{{- end -}}
-{{- if $env -}}
+{{- if and .work (stat .netskope.bundle) -}}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -19,8 +10,8 @@
         <string>/bin/sh</string>
         <string>-c</string>
         <string>
-{{- range $k, $v := $env }}
-launchctl setenv {{ $k }} {{ $v | squote }}
+{{- range .netskope.env }}
+launchctl setenv {{ . }} {{ $.netskope.bundle | squote }}
 {{- end }}
 </string>
     </array>

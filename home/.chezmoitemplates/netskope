@@ -1,0 +1,6 @@
+{{- if and .work (stat .netskope.bundle) -}}
+# launchctl setenv in com.user.environment.globals.plist misses apps launched before the agent runs
+{{ range .netskope.env -}}
+export {{ . }}={{ $.netskope.bundle | squote }}
+{{ end -}}
+{{ end -}}
