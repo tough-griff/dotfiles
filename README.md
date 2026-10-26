@@ -5,15 +5,21 @@ Managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 Install with:
 
 ```sh
-export OP_SERVICE_ACCOUNT_TOKEN="XXXXXYYYYYZZZZZ"
 sh -c "$(curl -fsLS https://get.chezmoi.io/lb)" -- init --apply tough-griff
 ```
 
 or if chezmoi is already present:
 
 ```sh
-export OP_SERVICE_ACCOUNT_TOKEN="XXXXXYYYYYZZZZZ"
 chezmoi init --apply tough-griff
+```
+
+Secrets are read from 1Password through the desktop app. Where the app is
+unavailable (headless or ephemeral machines, or non-interactive installs),
+export a service account token first:
+
+```sh
+export OP_SERVICE_ACCOUNT_TOKEN="XXXXXYYYYYZZZZZ"
 ```
 
 ## Notes
