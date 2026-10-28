@@ -1,4 +1,13 @@
 # chezmoi:template:left-delimiter="<#{{" right-delimiter="}}#>"
+# Windows can't launch WinGet's Links symlinks in an SSH session, so put their
+# targets ahead of them on PATH.
+if ($env:SSH_CONNECTION) {
+  $winGetTargetDirs = Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Links" -ErrorAction SilentlyContinue |
+    Where-Object LinkType |
+    ForEach-Object { Split-Path $_.Target } |
+    Select-Object -Unique
+  $env:PATH = (@($winGetTargetDirs) + $env:PATH) -join [IO.Path]::PathSeparator
+}
 foreach ($file in Get-ChildItem "$(Split-Path $PROFILE)\conf.d\*.ps1") { . $file.FullName }
 Import-Module "gsudoModule.psd1"
 Import-Module "WSLTabCompletion"
