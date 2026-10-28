@@ -1,7 +1,10 @@
 # chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 #{{ $sock := includeTemplate "ssh-auth-sock" . -}}
 #{{ if $sock -}}
-set -gx SSH_AUTH_SOCK #{{ $sock | quote }}
+# Over SSH, keep the forwarded agent since 1Password can't prompt remotely.
+if not set -q SSH_CONNECTION
+    set -gx SSH_AUTH_SOCK #{{ $sock | quote }}
+end
 #{{ else if eq .chezmoi.os "linux" -}}
 if status is-interactive; and command -sq keychain
     keychain --quiet --eval | source

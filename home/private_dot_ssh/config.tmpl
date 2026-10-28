@@ -1,4 +1,3 @@
-{{- $sock := includeTemplate "ssh-auth-sock" . -}}
 CanonicalizeHostname yes
 CanonicalDomains {{ onepasswordRead "op://Chezmoi/ssh_config/canonicalDomains" }}
 ServerAliveInterval 60
@@ -20,10 +19,4 @@ Host {{ .Host }}
 {{-       end }}
 {{-     end }}
 {{-   end }}
-{{- end }}
-
-{{- if $sock }}
-
-Host *
-  IdentityAgent {{ $sock | quote }}
 {{- end }}

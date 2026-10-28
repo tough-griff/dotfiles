@@ -138,10 +138,6 @@
   program = {{ lookPath "op-ssh-sign-wsl.exe" | quote }}
 {{-     else if eq .chezmoi.os "windows" }}
   program = {{ lookPath "op-ssh-sign" | quote }}
-{{-     else if eq .chezmoi.os "darwin" }}
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-{{-     else }}
-  program = "/opt/1Password/op-ssh-sign"
 {{-     end }}
 {{-   end }}
 {{- end }}

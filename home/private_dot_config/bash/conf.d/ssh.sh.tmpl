@@ -2,7 +2,10 @@
 # chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
 #{{ $sock := includeTemplate "ssh-auth-sock" . -}}
 #{{ if $sock -}}
-export SSH_AUTH_SOCK=#{{ $sock | quote }}
+# Over SSH, keep the forwarded agent since 1Password can't prompt remotely.
+if [ -z "${SSH_CONNECTION:-}" ]; then
+  export SSH_AUTH_SOCK=#{{ $sock | quote }}
+fi
 #{{ else if eq .chezmoi.os "windows" -}}
 # Git Bash's own ssh can't reach the agent's named pipe.
 alias ssh=/c/Windows/System32/OpenSSH/ssh.exe
