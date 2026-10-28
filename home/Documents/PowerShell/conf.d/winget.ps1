@@ -1,6 +1,10 @@
 if (Get-Command winget -ErrorAction SilentlyContinue) {
-    $null = Register-EngineEvent -SourceIdentifier PowerShell.OnIdle -MaxTriggerCount 1 -Action {
-        Import-Module -Name Microsoft.WinGet.CommandNotFound -Global
+    # WinGet's COM server can't start over SSH, and the module's background
+    # warm-up crashes pwsh when it fails.
+    if (-not $env:SSH_CONNECTION) {
+        $null = Register-EngineEvent -SourceIdentifier PowerShell.OnIdle -MaxTriggerCount 1 -Action {
+            Import-Module -Name Microsoft.WinGet.CommandNotFound -Global
+        }
     }
 
     Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
