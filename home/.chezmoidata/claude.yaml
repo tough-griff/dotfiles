@@ -10,6 +10,7 @@ claude:
 
   enabledPlugins:
     cowork-plugin-management@synced: false
+    context7@context7-marketplace: true
 
   skillOverrides:
     anthropic-skills:artifact-emulator: "off"
@@ -21,10 +22,12 @@ claude:
     anthropic-skills:docx: "user-invocable-only"
     anthropic-skills:google-workspace: "off"
     anthropic-skills:import-memory: "user-invocable-only"
+    anthropic-skills:morning: "off"
     anthropic-skills:pdf: "user-invocable-only"
     anthropic-skills:pptx: "user-invocable-only"
     anthropic-skills:skill-creator: "user-invocable-only"
     anthropic-skills:xlsx: "user-invocable-only"
+    find-skills: "on"
 
   agentPushNotifEnabled: true
   autoUpdatesChannel: latest
