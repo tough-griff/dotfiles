@@ -252,7 +252,7 @@
       {
         "id": "b125133a-d2da-4254-955e-ad9bfa5a3487",
         "type": "session-usage",
-        "color": "ansi256:80",
+        "color": "ansi256:6",
         "numberFormat": {
           "style": "compact"
         },
@@ -271,7 +271,7 @@
       {
         "id": "6fa9558a-8a03-442c-bfef-dfb5854cba65",
         "type": "reset-timer",
-        "color": "ansi256:80",
+        "color": "ansi256:6",
         "dim": true,
         "numberFormat": {
           "style": "compact"
@@ -293,7 +293,7 @@
       {
         "id": "a73d2332-9fbb-48f9-abc5-02d4561157ca",
         "type": "weekly-usage",
-        "color": "ansi256:81",
+        "color": "ansi256:4",
         "numberFormat": {
           "style": "compact"
         },
@@ -312,7 +312,7 @@
       {
         "id": "1a69f9af-0275-40f5-8521-af07f0e8940b",
         "type": "weekly-reset-timer",
-        "color": "ansi256:81",
+        "color": "ansi256:4",
         "dim": true,
         "numberFormat": {
           "style": "compact"
@@ -330,7 +330,7 @@
       {
         "id": "1d8711c5-1bec-46d8-aae9-418d1ddca51c",
         "type": "tokens-input",
-        "color": "ansi256:76",
+        "color": "ansi256:2",
         "numberFormat": {
           "style": "compact"
         },
@@ -347,7 +347,7 @@
       {
         "id": "39a78308-c95a-485a-b3f4-59a4c6807302",
         "type": "input-speed",
-        "color": "ansi256:76",
+        "color": "ansi256:2",
         "dim": true,
         "numberFormat": {
           "style": "compact"
@@ -366,7 +366,7 @@
       {
         "id": "28256e6c-46e1-4232-a81f-fc96d8e62b86",
         "type": "tokens-output",
-        "color": "ansi256:77",
+        "color": "ansi256:6",
         "numberFormat": {
           "style": "compact"
         },
@@ -383,7 +383,7 @@
       {
         "id": "a303c9f0-a6e3-4569-963f-9d4fe31e3776",
         "type": "output-speed",
-        "color": "ansi256:77",
+        "color": "ansi256:6",
         "dim": true,
         "numberFormat": {
           "style": "compact"
@@ -402,7 +402,7 @@
       {
         "id": "7a13765a-e8e2-4f42-aab1-a1d15a33b776",
         "type": "tokens-cached",
-        "color": "ansi256:78",
+        "color": "ansi256:4",
         "numberFormat": {
           "style": "compact"
         },
@@ -419,7 +419,7 @@
       {
         "id": "54b7e8a6-3a56-4e4f-b940-bb3fb8c9223e",
         "type": "cache-timer",
-        "color": "ansi256:78",
+        "color": "ansi256:4",
         "dim": true,
         "rawValue": true,
         "metadata": {
@@ -436,7 +436,7 @@
       {
         "id": "54cb6389-6b9f-497c-b8b9-fd0e473aba9c",
         "type": "tokens-total",
-        "color": "ansi256:79",
+        "color": "ansi256:5",
         "numberFormat": {
           "style": "compact"
         },
@@ -453,7 +453,7 @@
       {
         "id": "9b637f56-666e-48dd-bed2-b14b62dde340",
         "type": "total-speed",
-        "color": "ansi256:79",
+        "color": "ansi256:5",
         "dim": true,
         "numberFormat": {
           "style": "compact"
