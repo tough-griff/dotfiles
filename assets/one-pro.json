@@ -1,0 +1,72 @@
+{
+  "one-dark-pro": {
+    "name": "One Dark Pro",
+    "appearance": "dark",
+    "background": "#282c34",
+    "foreground": "#abb2bf",
+    "bold": "#abb2bf",
+    "cursor": "#528bff",
+    "cursorText": "#282c34",
+    "cursorGuide": "#42b3c240",
+    "selection": "#41454e",
+    "selectionText": "#abb2bf",
+    "link": "#4aa5f0",
+    "badge": "#e0556180",
+    "tab": "#282c34",
+    "ansi": {
+      "black": "#3f4451",
+      "red": "#e05561",
+      "green": "#8cc265",
+      "yellow": "#d18f52",
+      "blue": "#4aa5f0",
+      "magenta": "#c162de",
+      "cyan": "#42b3c2",
+      "white": "#d7dae0"
+    },
+    "ansiBright": {
+      "black": "#4f5666",
+      "red": "#ff616e",
+      "green": "#a5e075",
+      "yellow": "#f0a45d",
+      "blue": "#4dc4ff",
+      "magenta": "#de73ff",
+      "cyan": "#4cd1e0",
+      "white": "#e6e6e6"
+    }
+  },
+  "one-light-pro": {
+    "name": "One Light Pro",
+    "appearance": "light",
+    "background": "#fafafa",
+    "foreground": "#383a42",
+    "bold": "#383a42",
+    "cursor": "#526fff",
+    "cursorText": "#fafafa",
+    "cursorGuide": "#0075a940",
+    "selection": "#d5d6d7",
+    "selectionText": "#383a42",
+    "link": "#2868f4",
+    "badge": "#e63e3080",
+    "tab": "#fafafa",
+    "ansi": {
+      "black": "#383a42",
+      "red": "#e63e30",
+      "green": "#449942",
+      "yellow": "#a45f00",
+      "blue": "#2868f4",
+      "magenta": "#9a1d99",
+      "cyan": "#0075a9",
+      "white": "#a0a1a7"
+    },
+    "ansiBright": {
+      "black": "#696c77",
+      "red": "#ff5142",
+      "green": "#42cd3c",
+      "yellow": "#ce7700",
+      "blue": "#2f89ff",
+      "magenta": "#e900e7",
+      "cyan": "#0094d1",
+      "white": "#e6e6e6"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+#!/bin/bash
+set -eufo pipefail
+
+# One Dark Pro: {{ include "private_dot_config/bat/themes/One Dark Pro.tmTheme" | sha256sum }}
+# One Light Pro: {{ include "private_dot_config/bat/themes/One Light Pro.tmTheme" | sha256sum }}
+# bat refuses to start on a cache built by an incompatible version, so an upgrade must trigger a rebuild.
+# {{ if lookPath "bat" }}{{ output "bat" "--version" | trim }}{{ end }}
+
+if ! command -v bat >/dev/null 2>&1; then
+  echo "bat not found; skipping theme cache build"
+  exit 0
+fi
+
+# --source because bat's default config dir on Windows isn't ~/.config/bat.
+bat cache --build --source "$HOME/.config/bat"

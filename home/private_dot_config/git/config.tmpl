@@ -5,6 +5,11 @@
 {{- end -}}
 {{- $lfsPath := lookPath "git-lfs" -}}
 {{- $deltaPath := lookPath "delta" -}}
+{{- /* Delta can't pick a syntax theme per light/dark mode, so choose a feature from the macOS appearance on each run */ -}}
+{{- $deltaFeatures := "dark-mode" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $deltaFeatures = `\"$(defaults read -g AppleInterfaceStyle >/dev/null 2>&1 && echo dark || echo light)-mode\"` -}}
+{{- end -}}
 [user]
   name = {{ .name | quote }}
   email = {{ .email | quote }}
@@ -92,7 +97,7 @@
   editor = vim
   ignoreCase = false
 {{- if $deltaPath }}
-  pager = delta
+  pager = delta --features {{ $deltaFeatures }}
 {{- end }}
   precomposeUnicode = true
 {{- if eq .chezmoi.os "windows" }}
@@ -145,18 +150,13 @@
   defaultBranch = main
 {{- if $deltaPath }}
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = delta --color-only --features {{ $deltaFeatures }}
 [delta]
-  minus-style = bold red "#3f0001"
-  minus-non-emph-style = bold red "#3f0001"
-  minus-emph-style = bold red 52
-  minus-empty-line-marker-style = normal "#3f0001"
   navigate = true
-  plus-style = bold green "#002800"
-  plus-non-emph-style = bold green "#002800"
-  plus-emph-style = bold green 22
-  plus-empty-line-marker-style  = normal "#002800"
-  syntax-theme = TwoDark
+[delta "dark-mode"]
+  syntax-theme = One Dark Pro
+[delta "light-mode"]
+  syntax-theme = One Light Pro
 {{- end }}
 [merge]
   conflictStyle = zdiff3
