@@ -12,6 +12,12 @@ abbralias tree "tree -aC --dirsfirst"
 abbralias psa "ps aux"
 abbralias where "type -a"
 
+#{{ if and .work (eq .chezmoi.os "darwin") -}}
+# Unset rather than point at ~/.claude: Claude Code only uses ~/.claude.json when this is unset.
+alias claude-work "env -u CLAUDE_CONFIG_DIR claude"
+alias claude-personal "env CLAUDE_CONFIG_DIR=$HOME/.claude.personal claude"
+
+#{{ end -}}
 # this must come last
 if command -sq starship
     function starship_transient_prompt_func

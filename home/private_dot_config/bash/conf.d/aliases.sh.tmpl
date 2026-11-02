@@ -12,3 +12,8 @@ alias o=open
 alias tree='tree -aC --dirsfirst'
 alias psa='ps aux'
 alias where='type -a'
+#{{ if and .work (eq .chezmoi.os "darwin") -}}
+# Unset rather than point at ~/.claude: Claude Code only uses ~/.claude.json when this is unset.
+alias claude-work='env -u CLAUDE_CONFIG_DIR claude'
+alias claude-personal='env CLAUDE_CONFIG_DIR="$HOME/.claude.personal" claude'
+#{{ end -}}
