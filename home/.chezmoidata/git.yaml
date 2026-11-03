@@ -1,0 +1,44 @@
+# Rendered as git aliases (`git a`) and as shell aliases with a `g` prefix (`ga`).
+# Shells expand `!`-prefixed values to the command itself and others to `git <value>`.
+gitAliases:
+  a: add --all
+  am: amend
+  b: branch -vv
+  ba: branch --all -vv
+  bd: branch --delete
+  bdf: branch --delete --force
+  br: "!gh browse"
+  c: commit --message
+  ci: commit
+  co: checkout
+  cob: checkout -b
+  cp: cherry-pick
+  d: diff
+  dc: diff --cached
+  f: fetch
+  fa: fetch --all --prune --prune-tags
+  fv: fetch --verbose
+  ha: hash
+  hac: copyhash
+  l: log
+  lb: log --graph --branches
+  p: push
+  pf: push --force
+  pl: pull
+  pu: push --set-upstream
+  r: remote --verbose
+  rb: rebase
+  rbc: rebase --continue
+  s: status --short
+  sb: show-branch
+  sh: show
+  st: status
+  sw: switch
+  sy: "!gh repo sync"
+  u: up
+  uc: uncommit
+  w: worktree
+  wa: worktree add
+  wl: worktree list
+  wp: worktree prune
+  wr: worktree remove

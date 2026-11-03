@@ -20,48 +20,16 @@
 [add.interactive]
   useBuiltin = false
 [alias]
-  a = "add -A"
-  am = "amend"
   amend = "commit --amend --no-edit" # amend your last commit
-  b = "branch --verbose --verbose"
-  ba = "branch --all --verbose --verbose"
-  bd = "branch -d"
-  bD = "branch -D"
-  br = "browse"
   browse = "!gh browse"
-  c = "commit --message"
-  ci = "commit"
-  co = "checkout"
-  cob = "checkout -b"
-  cp = "cherry-pick"
-  d = "diff"
-  dc = "diff --cached"
-  f = "fetch"
-  fa = "fetch --all --prune --prune-tags"
-  fv = "fetch --verbose"
-  ha = "hash"
-  hac = "!git hash | pbcopy"
+  copyhash = "!git hash | {{ .clipboard }}"
   hash = "rev-parse --short HEAD" # print the most recent commit's hash
-  l = "log"
-  lb = "log --graph --branches"
-  p = "push"
-  pf = "push --force"
-  pl = "pull"
-  pu = "push --set-upstream"
-  r = "remote --verbose"
-  rb = "rebase"
-  rbc = "rebase --continue"
-  s = "status --short"
-  sb = "show-branch"
-  sh = "show"
-  st = "status"
-  sw = "switch"
-  sy = "sync"
   sync = "!gh repo sync"
-  u = "up"
   up = "pull --rebase --autostash" # this is basically what `git-up` did
-  uc = "uncommit"
   uncommit = "reset --soft HEAD^" # go back before last commit
+{{- range $name, $cmd := .gitAliases }}
+  {{ $name }} = {{ $cmd | quote }}
+{{- end }}
 [branch]
   autoSetupRebase = always
 [color]

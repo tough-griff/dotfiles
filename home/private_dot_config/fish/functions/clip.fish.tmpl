@@ -1,0 +1,4 @@
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
+function clip -d "Copy stdin to the clipboard"
+    #{{ .clipboard }} $argv
+end

@@ -31,6 +31,19 @@
 {{-   end -}}
 {{- end -}}
 
+{{/* Matches Windows' clip so `clip` copies stdin on every OS */}}
+{{- $clipboard := "clip" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $clipboard = "pbcopy" -}}
+{{- else if $wsl -}}
+{{-   $clipboard = "clip.exe" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   $clipboard = "xclip -selection clipboard" -}}
+{{-   if lookPath "wl-copy" -}}
+{{-     $clipboard = "wl-copy" -}}
+{{-   end -}}
+{{- end -}}
+
 {{/* Whether the 1Password SSH agent supplies keys; the .deb/.rpm installs live in /opt/1Password */}}
 {{- $onepasswordAgent := and (not $headless) (not $ephemeral) -}}
 {{- if and (eq .chezmoi.os "linux") (not $wsl) (not (stat "/opt/1Password")) -}}
@@ -47,6 +60,7 @@ data:
   onepasswordMode: {{ $onepasswordMode | quote }}
   onepasswordAgent: {{ $onepasswordAgent }}
   wsl: {{ $wsl }}
+  clipboard: {{ $clipboard | quote }}
 {{- if eq .chezmoi.os "darwin" }}
   macOS: {{ index (output "sw_vers" "-productVersion" | trim | splitList ".") 0 | atoi }}
 {{- end }}

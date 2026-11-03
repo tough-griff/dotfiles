@@ -1,0 +1,5 @@
+# Provides abbralias for completions, aliases for use in `eval`
+abbralias g git
+{{- range $name, $cmd := .gitAliases }}
+abbralias g{{ $name }} {{ if hasPrefix "!" $cmd }}{{ trimPrefix "!" $cmd | quote }}{{ else }}{{ printf "git %s" $cmd | quote }}{{ end }}
+{{- end }}

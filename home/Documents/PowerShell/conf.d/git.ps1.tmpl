@@ -1,0 +1,12 @@
+New-Alias -Name g -Value "git" -Force
+{{  range $name, $cmd := .gitAliases }}
+function Invoke-GitAlias-g{{ $name }} { {{ if hasPrefix "!" $cmd }}{{ trimPrefix "!" $cmd }}{{ else }}git {{ $cmd }}{{ end }} $args }
+New-Alias -Name g{{ $name }} -Value "Invoke-GitAlias-g{{ $name }}" -Force
+{{- end }}
+
+# After the aliases so posh-git registers completion for `g` too. Deferred to
+# first idle since it's the slowest part of startup.
+$null = Register-EngineEvent -SourceIdentifier PowerShell.OnIdle -MaxTriggerCount 1 -Action {
+  # EnableProxyFunctionExpansion: completes `function f { git <cmd> $args }` wrappers and their aliases.
+  Import-Module posh-git -Global -ArgumentList $false, $false, $true
+}
