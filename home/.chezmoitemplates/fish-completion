@@ -1,0 +1,16 @@
+{{- /*
+  Usage: template "fish-completion" (list "<name>" "<command that prints completions>" [<shadow vendor>])
+  Prints nothing when <name> isn't installed, its command fails, or a vendor
+  completion for it already exists, since a copy here would shadow the vendor
+  one and go stale whenever the tool updates between applies. Pass true as the
+  third arg when the generated completion should win over the vendor one anyway.
+*/ -}}
+{{- $name := index . 0 -}}
+{{- $shadowVendor := and (gt (len .) 2) (index . 2) -}}
+{{- if lookPath $name -}}
+{{-   $script := `
+if [ "$3" != true ] && fish -c 'for d in $__fish_vendor_completionsdirs; test -e $d/$argv[1].fish; and exit 0; end; exit 1' "$1" 2>/dev/null; then exit 0; fi
+if out=$($2 2>/dev/null); then printf '%s\n' "$out"; fi
+` -}}
+{{-   output "sh" "-c" $script "sh" $name (index . 1) (printf "%t" $shadowVendor) -}}
+{{- end -}}

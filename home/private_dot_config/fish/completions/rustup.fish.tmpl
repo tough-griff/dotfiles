@@ -1,4 +1,2 @@
 # chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
-#{{- if lookPath "rustup" -}}
-#{{- output "rustup" "completions" "fish" -}}
-#{{- end -}}
+#{{- template "fish-completion" (list "rustup" "rustup completions fish") -}}
