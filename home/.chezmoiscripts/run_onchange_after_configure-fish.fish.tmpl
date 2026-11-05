@@ -1,5 +1,7 @@
-#!/usr/bin/env fish
 # chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
+#{{- /* Empty when fish is missing, since the shebang would fail; chezmoi runs it once fish exists. */ -}}
+#{{ if lookPath "fish" -}}
+#!/usr/bin/env fish
 
 set -U fish_color_autosuggestion brblack
 set -U fish_color_cancel red
@@ -41,3 +43,4 @@ fisher install franciscolourenco/done
 fisher install jorgebucaran/autopair.fish
 fisher install jorgebucaran/replay.fish
 fisher install tough-griff/smartdot.fish
+#{{ end -}}

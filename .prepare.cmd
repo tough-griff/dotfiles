@@ -22,3 +22,8 @@ if errorlevel 1 (
 )
 
 winget install --exact --id AgileBits.1Password.CLI
+
+rem winget usually adds op to PATH for new terminals only, so chezmoi can't run it yet
+where op >nul 2>nul && exit /b 0
+echo Open a new terminal so op is on PATH, then re-run chezmoi.
+exit /b 1

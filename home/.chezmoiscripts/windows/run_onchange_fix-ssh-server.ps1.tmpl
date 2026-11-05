@@ -1,3 +1,13 @@
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
+#{{- if not (lookPath "gsudo") -}}
+"gsudo not found; skipping"
+exit 0
+#{{ end -}}
+if (-not (Get-Service sshd -ErrorAction SilentlyContinue)) {
+    "Installing OpenSSH Server"
+    gsudo { Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0 | Out-Null }
+}
+
 # Fixes two common causes of inbound SSH failing on Windows OpenSSH Server:
 # - missing firewall allow rule for sshd
 if (-Not (Get-NetFirewallRule -Name sshd -ErrorAction SilentlyContinue)) {

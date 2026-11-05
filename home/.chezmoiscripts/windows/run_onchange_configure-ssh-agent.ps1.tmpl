@@ -1,2 +1,7 @@
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
+#{{- if not (lookPath "gsudo") -}}
+"gsudo not found; skipping"
+exit 0
+#{{ end -}}
 # The 1Password SSH agent listens on the same named pipe as the built-in agent.
 gsudo { Stop-Service ssh-agent; Set-Service ssh-agent -StartupType Disabled }

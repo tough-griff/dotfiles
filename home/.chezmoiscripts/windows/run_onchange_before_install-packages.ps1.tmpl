@@ -34,3 +34,8 @@ $pwsh = "$env:LOCALAPPDATA\Microsoft\WindowsApps\pwsh.exe"
         }
     }
 } -args $modules
+
+# The native installer keeps claude updated, unlike the winget package
+if (-not (Get-Command claude -ErrorAction SilentlyContinue) -and -not (Test-Path "$HOME\.local\bin\claude.exe")) {
+    & ([scriptblock]::Create((Invoke-RestMethod https://claude.ai/install.ps1)))
+}

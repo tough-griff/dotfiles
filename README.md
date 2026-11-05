@@ -2,6 +2,13 @@
 
 Managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
+On a fresh Mac, install the Xcode Command Line Tools first, since chezmoi clones
+with the system `git`:
+
+```sh
+xcode-select --install
+```
+
 Install with:
 
 ```sh
@@ -14,7 +21,9 @@ or if chezmoi is already present:
 chezmoi init --apply tough-griff
 ```
 
-Secrets are read from 1Password through the desktop app. Where the app is
+Secrets are read from 1Password through the desktop app. Install it, sign in,
+and turn on Settings > Developer > Integrate with 1Password CLI before
+installing (on Windows: `winget install AgileBits.1Password`). Where the app is
 unavailable (headless or ephemeral machines, or non-interactive installs),
 export a service account token first:
 

@@ -21,6 +21,10 @@
 {{-   $managed = $managed | setValueAtPath "remoteControlAtStartup" false -}}
 {{- end -}}
 {{- $managed = $managed | toJson -}}
+{{- /* On a fresh install jq may not be on PATH yet; keep the file as is and merge on a later apply. */ -}}
+{{- if not (lookPath "jq") -}}
+{{-   $current -}}
+{{- else -}}
 {{- output "jq" "-n" "--argjson" "current" $current "--argjson" "managed" $managed (`
   def deepmerge(a; b):
     if (a|type) == "object" and (b|type) == "object" then
@@ -37,3 +41,4 @@
     end;
   deepmerge($current; $managed)
 `) | replace "\r" "" -}}
+{{- end -}}

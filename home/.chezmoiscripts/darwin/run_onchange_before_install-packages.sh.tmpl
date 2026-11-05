@@ -19,7 +19,6 @@ tap "teamookla/speedtest", trusted: true
 brew "bottom"
 brew "dive"
 brew "fnm"
-brew "gnupg"
 brew "hr"
 brew "htop"
 brew "httpie"
@@ -80,3 +79,8 @@ mas "Parcel Classic", id: 639968404
 mas "WireGuard", id: 1451685025
 #{{- end }}
 EOF
+
+# The native installer keeps claude updated, unlike the brew cask
+if [ ! "$(command -v claude)" ] && [ ! -x "$HOME/.local/bin/claude" ]; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi

@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eufo pipefail
+{{- /* Renders into the script so it runs again once both are installed. */}}
+{{- if not (and (lookPath "op") (lookPath "gpg")) }}
+echo "op or gpg not found; skipping GPG key import" >&2
+exit 0
+{{- end }}
+
+op document get keut7m33ci3kiovpx3kjjydb4e | gpg --batch --import
+op document get erkyqjbuzxptdvxwlkbyudkn3e | gpg --batch --import-ownertrust

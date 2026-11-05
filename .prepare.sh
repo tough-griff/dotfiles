@@ -2,11 +2,18 @@
 
 set -eu
 
+# installs below only reach this script's PATH, not chezmoi's
+chezmoi_path=$PATH
+
 # install homebrew if it's missing, so it's available on Darwin and as the
 # preferred path on Linux
 if [ ! "$(command -v brew)" ]; then
   case "$(uname -s)" in
   Darwin | Linux)
+    # NONINTERACTIVE makes the installer abort instead of prompting for a sudo password
+    if [ "$(command -v sudo)" ]; then
+      sudo -v
+    fi
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     for brew_bin in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew "$HOME/.linuxbrew/bin/brew"; do
       if [ -x "$brew_bin" ]; then
@@ -43,13 +50,13 @@ Linux)
   if [ "$(command -v brew)" ]; then
     brew install --cask 1password-cli
   elif [ "$(command -v apt-get)" ]; then
-    sudo apt-get update && apt-get install -y curl gpg
+    sudo apt-get update && sudo apt-get install -y curl gpg
     curl -sS https://downloads.1password.com/linux/keys/1password.asc |
       sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" |
       sudo tee /etc/apt/sources.list.d/1password.list
     sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/ &&
-    curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol |
+      curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol |
       sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
     sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
     curl -sS https://downloads.1password.com/linux/keys/1password.asc |
@@ -75,3 +82,12 @@ Linux)
   exit 1
   ;;
 esac
+
+if ! (PATH=$chezmoi_path && command -v op >/dev/null); then
+  echo "op was installed to $(dirname "$(command -v op)"), which isn't on PATH yet." >&2
+  if [ "$(command -v brew)" ]; then
+    echo "Run: eval \"\$($(command -v brew) shellenv)\"" >&2
+  fi
+  echo "Then re-run chezmoi." >&2
+  exit 1
+fi

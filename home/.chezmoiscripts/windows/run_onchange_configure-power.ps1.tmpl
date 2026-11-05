@@ -1,3 +1,8 @@
+# chezmoi:template:left-delimiter="#{{" right-delimiter="}}"
+#{{- if not (lookPath "gsudo") -}}
+"gsudo not found; skipping"
+exit 0
+#{{ end -}}
 # USB selective suspend and PCIe link state power management are common causes
 # of USB devices not coming back after sleep. AC only, so laptops keep their
 # battery savings.

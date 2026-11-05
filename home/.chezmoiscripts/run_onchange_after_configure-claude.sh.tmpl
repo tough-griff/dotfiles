@@ -1,10 +1,9 @@
 #!/bin/bash
 set -eufo pipefail
-
-if ! command -v claude >/dev/null 2>&1; then
-  echo "claude CLI not found; skipping plugin setup"
-  exit 0
-fi
+{{- if not (lookPath "claude") }}
+echo "claude CLI not found; skipping plugin setup" >&2
+exit 0
+{{- end }}
 
 claude plugin marketplace add upstash/context7
 claude plugin install -y context7@context7-marketplace

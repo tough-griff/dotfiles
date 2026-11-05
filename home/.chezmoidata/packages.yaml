@@ -14,6 +14,7 @@ packages:
     - gh
     - git
     - git-delta
+    - gnupg
     - jq
     - less
     - ripgrep

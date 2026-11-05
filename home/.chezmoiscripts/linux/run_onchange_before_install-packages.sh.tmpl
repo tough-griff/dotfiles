@@ -30,3 +30,8 @@ cask #{{ . | quote }}
 #{{-   end }}
 #{{- end }}
 EOF
+
+# The native installer keeps claude updated, unlike the brew cask
+if [ ! "$(command -v claude)" ] && [ ! -x "$HOME/.local/bin/claude" ]; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
