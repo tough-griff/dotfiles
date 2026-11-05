@@ -3,6 +3,9 @@
 "gsudo not found; skipping"
 exit 0
 #{{ end -}}
+# One UAC prompt for the whole script instead of one per gsudo call
+gsudo cache on
+
 # USB selective suspend and PCIe link state power management are common causes
 # of USB devices not coming back after sleep. AC only, so laptops keep their
 # battery savings.
@@ -60,3 +63,5 @@ foreach ($ethernet in $adapters | Where-Object PhysicalMediaType -eq '802.3') {
         }
     } -args $ethernet.Name, $ethernet.InterfaceDescription
 }
+
+gsudo cache off

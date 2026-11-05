@@ -3,6 +3,9 @@
 "gsudo not found; skipping"
 exit 0
 #{{ end -}}
+# One UAC prompt for the whole script instead of one per gsudo call
+gsudo cache on
+
 if (-not (Get-Service sshd -ErrorAction SilentlyContinue)) {
     "Installing OpenSSH Server"
     gsudo { Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0 | Out-Null }
@@ -36,3 +39,5 @@ gsudo { New-ItemProperty -Path 'HKLM:\SOFTWARE\OpenSSH' -Name DefaultShell -Valu
 
 gsudo { Set-Service sshd -StartupType Automatic }
 gsudo { Start-Service sshd }
+
+gsudo cache off
